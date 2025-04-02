@@ -1,0 +1,4958 @@
+{
+  "general": {
+    "profilePhoto": "/content/media/profilePhoto.jpg",
+    "username": "agron",
+    "displayName": "Juan F. Agrón",
+    "profession": "Civic Impact, Design, etc.",
+    "location": null,
+    "pronouns": null,
+    "byline": "Civic Impact, Design, etc.",
+    "website": "https://agron.design",
+    "websiteURL": "https://agron.design",
+    "about": "For over a decade, I’ve contributed to companies large and small. My work spans across digital product, brand identity, and art direction. As part of [recidiviz](https://read.cv/teams/recidiviz), I design practical systems that actively reduce the amount of people incarcerated in the U.S.\n\nOutside of my career, you’ll find me reading esoteric essays, tinkering with cameras, or practicing Muay Thai. I spent my childhood in the Caribbean and my adolescence in California so I find rainy days beautifully nostalgic but cold winters really f\\* me.",
+    "status": {
+      "text": "burlao",
+      "emoji": "🍶",
+      "timestamp": "2024-02-01T17:30:33.984Z"
+    },
+    "sectionOrder": [
+      "Projects",
+      "Side Projects",
+      "Work Experience",
+      "Education",
+      "Teams",
+      "Contact",
+      "Exhibitions",
+      "Speaking",
+      "Writing",
+      "Awards",
+      "Features",
+      "Volunteering",
+      "Certifications"
+    ]
+  },
+  "projects": [
+    {
+      "id": "k5ZEEqHHfv5D7otWz7bQ",
+      "year": "Ongoing",
+      "heading": "Civic Impact",
+      "url": "https://agron.design",
+      "collaborators": [],
+      "description": "Digital products aimed at systemic criminal justice issues in order to reduce the amount of people incarcerated in the U.S. Since 2019, I've worked on the product strategy, brand ethos, digital design system, website, and team operations. Credits: Sonia Chokshi, Ian MacFarland, Allison Chan, William DeShazer\n\n[Learn more...](https://read.cv/teams/recidiviz)",
+      "attachments": [
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Civic-Impact-1.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Civic-Impact-2.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Civic-Impact-3.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Civic-Impact-4.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Civic-Impact-5.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Civic-Impact-6.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Civic-Impact-7.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Civic-Impact-8.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Civic-Impact-9.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Civic-Impact-10.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Civic-Impact-11.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Civic-Impact-12.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Civic-Impact-13.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Civic-Impact-14.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Civic-Impact-15.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Civic-Impact-16.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Civic-Impact-17.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Civic-Impact-18.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Civic-Impact-19.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Civic-Impact-20.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Civic-Impact-21.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Civic-Impact-22.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Civic-Impact-23.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Civic-Impact-24.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Civic-Impact-25.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Civic-Impact-26.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Civic-Impact-27.png"
+        }
+      ],
+      "type": "project",
+      "title": "Civic Impact",
+      "company": ""
+    },
+    {
+      "id": "PHZZ0ShLiSw8Vr4HQCCb",
+      "year": "2023",
+      "heading": "Tech Journal, Brand",
+      "url": null,
+      "collaborators": [],
+      "description": "Logo and brand work for a community made up of students, educators, writers, engineers, historians, activists, and scientists – all coming together to reimagine techno-optimism for a better collective future.",
+      "attachments": [
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Tech-Journal-Brand-1.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Tech-Journal-Brand-2.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Tech-Journal-Brand-3.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Tech-Journal-Brand-4.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Tech-Journal-Brand-5.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Tech-Journal-Brand-6.gif"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Tech-Journal-Brand-7.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Tech-Journal-Brand-8.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Tech-Journal-Brand-9.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Tech-Journal-Brand-10.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Tech-Journal-Brand-11.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Tech-Journal-Brand-12.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Tech-Journal-Brand-13.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Tech-Journal-Brand-14.png"
+        }
+      ],
+      "type": "project",
+      "title": "Tech Journal, Brand",
+      "company": ""
+    },
+    {
+      "id": "T6GJV1a8UIcU92jfCVFR",
+      "year": "2023",
+      "heading": "Venture Capital, Brand",
+      "url": null,
+      "collaborators": [],
+      "description": "Logo explorations for a venture capital studio based in New Mexico.",
+      "attachments": [
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Venture-Capital-Brand-1.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Venture-Capital-Brand-2.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Venture-Capital-Brand-3.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Venture-Capital-Brand-4.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Venture-Capital-Brand-5.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Venture-Capital-Brand-6.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Venture-Capital-Brand-7.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Venture-Capital-Brand-8.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Venture-Capital-Brand-9.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Venture-Capital-Brand-10.png"
+        }
+      ],
+      "type": "project",
+      "title": "Venture Capital, Brand",
+      "company": ""
+    },
+    {
+      "id": "7wjOqi74t3A2l7l11lq4",
+      "year": "2022",
+      "heading": "Justice System, Product",
+      "url": null,
+      "collaborators": [],
+      "description": "As part of a national initiative to enhance the consistency and transparency of data in the criminal justice system, our goal was to build a platform for gathering essential data from criminal justice agencies across the nation and get them into the hands of policymakers to support more informed decision-making.",
+      "attachments": [
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Justice-System-Product-1.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Justice-System-Product-2.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Justice-System-Product-3.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Justice-System-Product-4.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Justice-System-Product-5.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Justice-System-Product-6.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Justice-System-Product-7.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Justice-System-Product-8.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Justice-System-Product-9.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Justice-System-Product-10.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Justice-System-Product-11.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Justice-System-Product-12.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Justice-System-Product-13.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Justice-System-Product-14.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Justice-System-Product-15.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Justice-System-Product-16.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Justice-System-Product-17.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Justice-System-Product-18.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Justice-System-Product-19.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Justice-System-Product-20.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Justice-System-Product-21.png"
+        }
+      ],
+      "type": "project",
+      "title": "Justice System, Product",
+      "company": ""
+    },
+    {
+      "id": "JT8uhtFoUDxwMOFf4Orr",
+      "year": "2022",
+      "heading": "Deep–Tech, Brand",
+      "url": null,
+      "collaborators": [],
+      "description": "Advisory brand work for a venture capital studio investing in deep–tech projects.",
+      "attachments": [
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Deep-Tech-Brand-1.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Deep-Tech-Brand-2.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Deep-Tech-Brand-3.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Deep-Tech-Brand-4.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Deep-Tech-Brand-5.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Deep-Tech-Brand-6.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Deep-Tech-Brand-7.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Deep-Tech-Brand-8.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Deep-Tech-Brand-9.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Deep-Tech-Brand-10.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Deep-Tech-Brand-11.png"
+        }
+      ],
+      "type": "project",
+      "title": "Deep–Tech, Brand",
+      "company": ""
+    },
+    {
+      "id": "oTjnQ48nrpdrwy1mWBFl",
+      "year": "2022",
+      "heading": "Better Reading, Product",
+      "url": null,
+      "collaborators": [],
+      "description": "Concepts for [Matter](https://hq.getmatter.com), a reading tool that chooses agency over algorithm and quality over recency. Anchored to the onboarding experience, the design harmonized typography with minimal illustrations to guide the user along core functionality while conveying the tool's values.",
+      "attachments": [
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Better-Reading-Product-1.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Better-Reading-Product-2.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Better-Reading-Product-3.png"
+        }
+      ],
+      "type": "project",
+      "title": "Better Reading, Product",
+      "company": ""
+    },
+    {
+      "id": "noMAms5qPqZwPc4W2Xs4",
+      "year": "2021",
+      "heading": "Executive Portraits, Brand",
+      "url": null,
+      "collaborators": [],
+      "description": "Creative and art direction for a series of portraits. Credits: William DeShazer",
+      "attachments": [
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Executive-Portraits-Brand-1.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Executive-Portraits-Brand-2.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Executive-Portraits-Brand-3.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Executive-Portraits-Brand-4.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Executive-Portraits-Brand-5.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Executive-Portraits-Brand-6.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Executive-Portraits-Brand-7.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Executive-Portraits-Brand-8.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Executive-Portraits-Brand-9.png"
+        }
+      ],
+      "type": "project",
+      "title": "Executive Portraits, Brand",
+      "company": ""
+    },
+    {
+      "id": "q9BYLrMIhuo2ZMuxxgyQ",
+      "year": "2021",
+      "heading": "Social Fitness, Product",
+      "url": null,
+      "collaborators": [],
+      "description": "Digital product design for a social fitness mobile app. As an offshoot experiment from 2020's mental health initiative, its aim was to encourage and support a long-distance community of walkers.",
+      "attachments": [
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Social-Fitness-Product-1.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Social-Fitness-Product-2.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Social-Fitness-Product-3.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Social-Fitness-Product-4.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Social-Fitness-Product-5.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Social-Fitness-Product-6.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Social-Fitness-Product-7.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Social-Fitness-Product-8.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Social-Fitness-Product-9.png"
+        }
+      ],
+      "type": "project",
+      "title": "Social Fitness, Product",
+      "company": ""
+    },
+    {
+      "id": "G8yVTVcGzZ3XCcqcKfrS",
+      "year": "2020",
+      "heading": "Better Hiring, Product",
+      "url": null,
+      "collaborators": [],
+      "description": "Early product design work for a human resources platform aiming to improve the hiring process, from initial application to offer.",
+      "attachments": [
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Better-Hiring-Product-1.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Better-Hiring-Product-2.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Better-Hiring-Product-3.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Better-Hiring-Product-4.png"
+        }
+      ],
+      "type": "project",
+      "title": "Better Hiring, Product",
+      "company": ""
+    },
+    {
+      "id": "mxIRjPzV8LUAYAPRI3y0",
+      "year": "2020",
+      "heading": "Dental Hygiene, Product",
+      "url": null,
+      "collaborators": [],
+      "description": "Product design work for affordable dental hygiene. I worked on early conceptual models for the brand and customer experience as well as the staff and admin workflows.",
+      "attachments": [
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Dental-Hygiene-Product-1.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Dental-Hygiene-Product-2.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Dental-Hygiene-Product-3.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Dental-Hygiene-Product-4.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Dental-Hygiene-Product-5.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Dental-Hygiene-Product-6.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Dental-Hygiene-Product-7.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Dental-Hygiene-Product-8.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Dental-Hygiene-Product-9.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Dental-Hygiene-Product-10.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Dental-Hygiene-Product-11.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Dental-Hygiene-Product-12.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Dental-Hygiene-Product-13.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Dental-Hygiene-Product-14.png"
+        }
+      ],
+      "type": "project",
+      "title": "Dental Hygiene, Product",
+      "company": ""
+    },
+    {
+      "id": "oKWuzzEFOolla15EA4LM",
+      "year": "2020",
+      "heading": "Silk Logo, Brand",
+      "url": null,
+      "collaborators": [],
+      "description": "Logo concepts for a silk goods brand.",
+      "attachments": [
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Silk-Logo-Brand-1.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Silk-Logo-Brand-2.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Silk-Logo-Brand-3.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Silk-Logo-Brand-4.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Silk-Logo-Brand-5.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Silk-Logo-Brand-6.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Silk-Logo-Brand-7.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Silk-Logo-Brand-8.png"
+        }
+      ],
+      "type": "project",
+      "title": "Silk Logo, Brand",
+      "company": ""
+    },
+    {
+      "id": "mBpLgF4e3zDwBKuOXJSd",
+      "year": "2020",
+      "heading": "Election Consortium, Product",
+      "url": null,
+      "collaborators": [],
+      "description": "Online publication that provides informed analysis of US national elections.",
+      "attachments": [
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Election-Consortium-Product-1.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Election-Consortium-Product-2.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Election-Consortium-Product-3.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Election-Consortium-Product-4.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Election-Consortium-Product-5.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Election-Consortium-Product-6.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Election-Consortium-Product-7.png"
+        }
+      ],
+      "type": "project",
+      "title": "Election Consortium, Product",
+      "company": ""
+    },
+    {
+      "id": "y7oems5rF3MMknD6D75H",
+      "year": "2020",
+      "heading": "Schmidt Futures, Brand",
+      "url": null,
+      "collaborators": [],
+      "description": "Graphic design for a philanthropic venture funding science and technology research initiatives.",
+      "attachments": [
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Schmidt-Futures-Brand-1.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Schmidt-Futures-Brand-2.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Schmidt-Futures-Brand-3.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Schmidt-Futures-Brand-4.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Schmidt-Futures-Brand-5.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Schmidt-Futures-Brand-6.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Schmidt-Futures-Brand-7.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Schmidt-Futures-Brand-8.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Schmidt-Futures-Brand-9.png"
+        }
+      ],
+      "type": "project",
+      "title": "Schmidt Futures, Brand",
+      "company": ""
+    },
+    {
+      "id": "HD0qQop8Asw6npggthlI",
+      "year": "2020",
+      "heading": "Cannabis, Brand",
+      "url": null,
+      "collaborators": [],
+      "description": "Photography and art direction for a cannabis brand that celebrates artistry and emphasizes excellence. Credits: Kate Moore, Ron Brandon",
+      "attachments": [
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Cannabis-Brand-1.png"
+        },
+        {
+          "type": "image",
+          "width": 2049,
+          "height": 1365,
+          "url": "/content/media/Cannabis-Brand-2.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Cannabis-Brand-3.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Cannabis-Brand-4.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Cannabis-Brand-5.gif"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Cannabis-Brand-6.png"
+        }
+      ],
+      "type": "project",
+      "title": "Cannabis, Brand",
+      "company": ""
+    },
+    {
+      "id": "1HcXJhptEfBWBpf3bVpi",
+      "year": "2020",
+      "heading": "Pandemic Response, Product",
+      "url": null,
+      "collaborators": [],
+      "description": "Digital product design for a set of tools that correctional workers used to track and anticipate the impact of Covid-19 inside of prison facilities. Used in all 50 states, the toolkit allowed users to: 1) project cases, hospitalizations, and deaths among both staff and the incarcerated population, 2) compare before-and-after scenarios for policy changes and early release decisions and, 3) model the current rate of spread and trajectory of the outbreak in each facility. Credits: C. Andrew Warren, Clementine Jacoby, Joshua Essex",
+      "attachments": [
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Pandemic-Response-Product-1.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Pandemic-Response-Product-2.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Pandemic-Response-Product-3.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Pandemic-Response-Product-4.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Pandemic-Response-Product-5.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Pandemic-Response-Product-6.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Pandemic-Response-Product-7.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Pandemic-Response-Product-8.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Pandemic-Response-Product-9.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Pandemic-Response-Product-10.png"
+        }
+      ],
+      "type": "project",
+      "title": "Pandemic Response, Product",
+      "company": ""
+    },
+    {
+      "id": "TSJ8U3jHUoHwUhCimC8w",
+      "year": "2020",
+      "heading": "Emotional Health, Product",
+      "url": null,
+      "collaborators": [],
+      "description": "Digital product and brand identity design for a wellness platform. Conceived as an iOS app, the audio-first anonymous community focused on mental health and emotional support.\n\nInline with its values, the harmful “endless feed” of information was omitted by design. The ephemeral content that took its place emphasized accessibility to marginalized people, especially the visually impaired. Service was supported for 2 years before shutting down in 2022.",
+      "attachments": [
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Emotional-Health-Product-1.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Emotional-Health-Product-2.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Emotional-Health-Product-3.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Emotional-Health-Product-4.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Emotional-Health-Product-5.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Emotional-Health-Product-6.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Emotional-Health-Product-7.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Emotional-Health-Product-8.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Emotional-Health-Product-9.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Emotional-Health-Product-10.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Emotional-Health-Product-11.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Emotional-Health-Product-12.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Emotional-Health-Product-13.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Emotional-Health-Product-14.png"
+        }
+      ],
+      "type": "project",
+      "title": "Emotional Health, Product",
+      "company": ""
+    },
+    {
+      "id": "SPzKmRMuBJe8hTVXwZzi",
+      "year": "2019",
+      "heading": "Enterprise Tree, Product",
+      "url": null,
+      "collaborators": [],
+      "description": "Product growth work for a financial platform positioned as infrastructure during the rise of the legal cannabis industry. Archival in progress...",
+      "attachments": [
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Enterprise-Tree-Product-1.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Enterprise-Tree-Product-2.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Enterprise-Tree-Product-3.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Enterprise-Tree-Product-4.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Enterprise-Tree-Product-5.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Enterprise-Tree-Product-6.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Enterprise-Tree-Product-7.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Enterprise-Tree-Product-8.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Enterprise-Tree-Product-9.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Enterprise-Tree-Product-10.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Enterprise-Tree-Product-11.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Enterprise-Tree-Product-12.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Enterprise-Tree-Product-13.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Enterprise-Tree-Product-14.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Enterprise-Tree-Product-15.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Enterprise-Tree-Product-16.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Enterprise-Tree-Product-17.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Enterprise-Tree-Product-18.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Enterprise-Tree-Product-19.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Enterprise-Tree-Product-20.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Enterprise-Tree-Product-21.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Enterprise-Tree-Product-22.png"
+        }
+      ],
+      "type": "project",
+      "title": "Enterprise Tree, Product",
+      "company": ""
+    },
+    {
+      "id": "vbcaFbgXFaFYgV6S6OdU",
+      "year": "2019",
+      "heading": "Memoir, Brand",
+      "url": null,
+      "collaborators": [],
+      "description": "Website for two friends who set out across America to better understand each other and the country they love.",
+      "attachments": [
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Memoir-Brand-1.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Memoir-Brand-2.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Memoir-Brand-3.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Memoir-Brand-4.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Memoir-Brand-5.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Memoir-Brand-6.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Memoir-Brand-7.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Memoir-Brand-8.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Memoir-Brand-9.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Memoir-Brand-10.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Memoir-Brand-11.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Memoir-Brand-12.png"
+        }
+      ],
+      "type": "project",
+      "title": "Memoir, Brand",
+      "company": ""
+    },
+    {
+      "id": "Zu6kntFmjIft9GRiiL6i",
+      "year": "2019",
+      "heading": "Aerospace, Brand",
+      "url": null,
+      "collaborators": [],
+      "description": "A scalable and extensible visual language for the world's leading unmanned aircraft management platform.",
+      "attachments": [
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Aerospace-Brand-1.gif"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Aerospace-Brand-2.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Aerospace-Brand-3.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Aerospace-Brand-4.gif"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Aerospace-Brand-5.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Aerospace-Brand-6.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Aerospace-Brand-7.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Aerospace-Brand-8.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Aerospace-Brand-9.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Aerospace-Brand-10.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Aerospace-Brand-11.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Aerospace-Brand-12.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Aerospace-Brand-13.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Aerospace-Brand-14.png"
+        }
+      ],
+      "type": "project",
+      "title": "Aerospace, Brand",
+      "company": ""
+    },
+    {
+      "id": "pCYwZM3dZU4CTYyFRen8",
+      "year": "2019",
+      "heading": "City Planner, Product",
+      "url": null,
+      "collaborators": [],
+      "description": "To create a balanced environment for local residents, we designed an open-source and free-to-use platform that leveraged publicly available data to inform city planners, investment firms, and activists alike.",
+      "attachments": [
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/City-Planner-Product-1.png"
+        },
+        {
+          "type": "video",
+          "width": 2048,
+          "height": 1364,
+          "url": "/content/media/City-Planner-Product-2.mp4"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/City-Planner-Product-3.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/City-Planner-Product-4.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/City-Planner-Product-5.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/City-Planner-Product-6.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/City-Planner-Product-7.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/City-Planner-Product-8.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/City-Planner-Product-9.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/City-Planner-Product-10.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/City-Planner-Product-11.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/City-Planner-Product-12.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/City-Planner-Product-13.png"
+        }
+      ],
+      "type": "project",
+      "title": "City Planner, Product",
+      "company": ""
+    },
+    {
+      "id": "Hl5FfTRf3sEGxj2ozVMn",
+      "year": "2018",
+      "heading": "Smart Cities, Product",
+      "url": null,
+      "collaborators": [],
+      "description": "As part of a larger 'smart cities' initiative, this was an experiment to use real world rewards to incentivize alternate modes of transportation for daily commuters.",
+      "attachments": [
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Smart-Cities-Product-1.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Smart-Cities-Product-2.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Smart-Cities-Product-3.png"
+        },
+        {
+          "type": "video",
+          "width": 640,
+          "height": 1136,
+          "url": "/content/media/Smart-Cities-Product-4.mov"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Smart-Cities-Product-5.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Smart-Cities-Product-6.png"
+        }
+      ],
+      "type": "project",
+      "title": "Smart Cities, Product",
+      "company": ""
+    },
+    {
+      "id": "HZcaWljc8hZ9SH8Pq5Ma",
+      "year": "2018",
+      "heading": "Waze, Brand, Product",
+      "url": null,
+      "collaborators": [],
+      "description": "Changing the way the world moves through everyday acts of cooperation. I was the lead designer across all growth initiatives where we raised the monthly active users from 55M to 110M and formed partnerships with local agencies internationally. Archival of further work in progress. Credits: Haraldur Thorleifsson, Dominic Flask, Robin Noguier",
+      "attachments": [
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Waze-Brand-Product-1.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Waze-Brand-Product-2.png"
+        },
+        {
+          "type": "video",
+          "width": 930,
+          "height": 1100,
+          "url": "/content/media/Waze-Brand-Product-3.mp4"
+        },
+        {
+          "type": "image",
+          "width": 1200,
+          "height": 628,
+          "url": "/content/media/Waze-Brand-Product-4.gif"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Waze-Brand-Product-5.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Waze-Brand-Product-6.png"
+        },
+        {
+          "type": "video",
+          "width": 930,
+          "height": 1100,
+          "url": "/content/media/Waze-Brand-Product-7.mp4"
+        },
+        {
+          "type": "image",
+          "width": 1200,
+          "height": 628,
+          "url": "/content/media/Waze-Brand-Product-8.gif"
+        },
+        {
+          "type": "video",
+          "width": 1600,
+          "height": 1200,
+          "url": "/content/media/Waze-Brand-Product-9.mp4"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Waze-Brand-Product-10.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Waze-Brand-Product-11.png"
+        },
+        {
+          "type": "image",
+          "width": 1200,
+          "height": 628,
+          "url": "/content/media/Waze-Brand-Product-12.gif"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Waze-Brand-Product-13.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Waze-Brand-Product-14.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Waze-Brand-Product-15.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Waze-Brand-Product-16.png"
+        }
+      ],
+      "type": "project",
+      "title": "Waze, Brand, Product",
+      "company": ""
+    },
+    {
+      "id": "nj6MDv4aDfhGyrEb59Kj",
+      "year": "2017",
+      "heading": "Disaster Relief, Other",
+      "url": null,
+      "collaborators": [],
+      "description": "Following hurricane Maria, my brother and I embarked on a mission to raise $10k worth of relief and personally deliver over 350 industrial-grade water filters. The journey took us across 10 of the most impacted towns in Puerto Rico as we formed partnerships with on-site military units, World Central Kitchen, The Home Depot, and Sam's Club. We named the project Clean Water Fund.",
+      "attachments": [
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Disaster-Relief-Other-1.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Disaster-Relief-Other-2.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Disaster-Relief-Other-3.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Disaster-Relief-Other-4.png"
+        }
+      ],
+      "type": "project",
+      "title": "Disaster Relief, Other",
+      "company": ""
+    },
+    {
+      "id": "hHS58AjRVZ3PY4Msy2QK",
+      "year": "2016",
+      "heading": "Badge Maker, Tool",
+      "url": null,
+      "collaborators": [],
+      "description": "Design and development for a self-service asset generator. Credits: Lemuel R. Bezares",
+      "attachments": [
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Badge-Maker-Tool-1.gif"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Badge-Maker-Tool-2.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Badge-Maker-Tool-3.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Badge-Maker-Tool-4.png"
+        }
+      ],
+      "type": "project",
+      "title": "Badge Maker, Tool",
+      "company": ""
+    },
+    {
+      "id": "C4QeFxkwgJJbbNtpt4Dw",
+      "year": "2015",
+      "heading": "Network Management, Product",
+      "url": null,
+      "collaborators": [],
+      "description": "A cloud-based networking management platform positioned as an alternative to Cisco. I worked in the product design team as a visual and interaction designer.",
+      "attachments": [
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Network-Management-Product-1.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Network-Management-Product-2.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Network-Management-Product-3.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Network-Management-Product-4.png"
+        }
+      ],
+      "type": "project",
+      "title": "Network Management, Product",
+      "company": ""
+    },
+    {
+      "id": "8kIFRiSOZFfk20avvWfv",
+      "year": "2015",
+      "heading": "Various, Other",
+      "url": null,
+      "collaborators": [],
+      "description": "Archival in progress...",
+      "attachments": [
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Various-Other-1.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Various-Other-2.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Various-Other-3.png"
+        }
+      ],
+      "type": "project",
+      "title": "Various, Other",
+      "company": ""
+    }
+  ],
+  "sideProjects": [
+    {
+      "id": "4EAJBshUxc7CQkqFOHBd",
+      "year": "2024",
+      "heading": "♡ Game Boy, Mod",
+      "url": "https://agron.design",
+      "collaborators": [],
+      "description": "FPGA Game Boy Color. More builds coming soon...",
+      "attachments": [
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Game-Boy-Mod-1.png"
+        },
+        {
+          "type": "image",
+          "width": 1365,
+          "height": 1365,
+          "url": "/content/media/Game-Boy-Mod-2.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Game-Boy-Mod-3.png"
+        },
+        {
+          "type": "image",
+          "width": 1365,
+          "height": 1365,
+          "url": "/content/media/Game-Boy-Mod-4.png"
+        },
+        {
+          "type": "image",
+          "width": 1365,
+          "height": 1365,
+          "url": "/content/media/Game-Boy-Mod-5.png"
+        }
+      ],
+      "type": "sideProject",
+      "title": "♡ Game Boy, Mod",
+      "company": ""
+    },
+    {
+      "id": "y1gPVWnmlzDghHnZCZlf",
+      "year": "2024",
+      "heading": "♡ EOY Card, Print",
+      "url": "https://agron.design",
+      "collaborators": [],
+      "description": "3-Color Risograph Print, 4.25\" x 5.75\", 80lb. Brightwhite",
+      "attachments": [
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/EOY-Card-Print-1.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/EOY-Card-Print-2.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/EOY-Card-Print-3.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/EOY-Card-Print-4.png"
+        }
+      ],
+      "type": "sideProject",
+      "title": "♡ EOY Card, Print",
+      "company": ""
+    },
+    {
+      "id": "7VeLkViGzj7nj8zH1AnW",
+      "year": "2023",
+      "heading": "♡ Pidgeys, Pics",
+      "url": null,
+      "collaborators": [],
+      "description": "Just some bird pics.",
+      "attachments": [
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Pidgeys-Pics-1.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Pidgeys-Pics-2.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Pidgeys-Pics-3.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Pidgeys-Pics-4.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Pidgeys-Pics-5.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Pidgeys-Pics-6.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Pidgeys-Pics-7.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Pidgeys-Pics-8.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Pidgeys-Pics-9.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Pidgeys-Pics-10.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Pidgeys-Pics-11.png"
+        }
+      ],
+      "type": "sideProject",
+      "title": "♡ Pidgeys, Pics",
+      "company": ""
+    },
+    {
+      "id": "ljoyFthefwMS93mEIn9C",
+      "year": "2022",
+      "heading": "♡ Plant Kingdom, Pics",
+      "url": null,
+      "collaborators": [],
+      "description": "Photo documentation of photosynthetic organisms (leaves and whatnot).",
+      "attachments": [
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Plant-Kingdom-Pics-1.png"
+        },
+        {
+          "type": "image",
+          "width": 1920,
+          "height": 1080,
+          "url": "/content/media/Plant-Kingdom-Pics-2.jpg"
+        },
+        {
+          "type": "image",
+          "width": 1920,
+          "height": 1080,
+          "url": "/content/media/Plant-Kingdom-Pics-3.jpg"
+        },
+        {
+          "type": "image",
+          "width": 1536,
+          "height": 2048,
+          "url": "/content/media/Plant-Kingdom-Pics-4.jpg"
+        },
+        {
+          "type": "image",
+          "width": 1920,
+          "height": 1080,
+          "url": "/content/media/Plant-Kingdom-Pics-5.jpg"
+        },
+        {
+          "type": "image",
+          "width": 1920,
+          "height": 1080,
+          "url": "/content/media/Plant-Kingdom-Pics-6.jpg"
+        },
+        {
+          "type": "image",
+          "width": 1920,
+          "height": 1080,
+          "url": "/content/media/Plant-Kingdom-Pics-7.jpg"
+        }
+      ],
+      "type": "sideProject",
+      "title": "♡ Plant Kingdom, Pics",
+      "company": ""
+    },
+    {
+      "id": "RcbyoSvBs122mZQVv99B",
+      "year": "2021",
+      "heading": "♡ Food Label, Brand, Print",
+      "url": null,
+      "collaborators": [],
+      "description": "A succulent brand for a good friend and family-owned business based in California's San Joaquín Valley. Credits: Risewise",
+      "attachments": [
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Food-Label-Brand-Print-1.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Food-Label-Brand-Print-2.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Food-Label-Brand-Print-3.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Food-Label-Brand-Print-4.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Food-Label-Brand-Print-5.png"
+        }
+      ],
+      "type": "sideProject",
+      "title": "♡ Food Label, Brand, Print",
+      "company": ""
+    },
+    {
+      "id": "X1zb0gMttoPwCxnCc7WS",
+      "year": "2019",
+      "heading": "♡ Pineapples, Tool",
+      "url": null,
+      "collaborators": [],
+      "description": "Landing page for a noncomformist internet marketing agency. Credits: Lemuel R. Bezares",
+      "attachments": [
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Pineapples-Tool-1.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Pineapples-Tool-2.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Pineapples-Tool-3.png"
+        }
+      ],
+      "type": "sideProject",
+      "title": "♡ Pineapples, Tool",
+      "company": ""
+    },
+    {
+      "id": "jzEzyfYRADG9nJTvLD8e",
+      "year": "1996",
+      "heading": "♡ Adventure Game, Product",
+      "url": null,
+      "collaborators": [],
+      "description": "Early concepts and web domain research for a collaborative adventure dungeon crawler game.",
+      "attachments": [
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Adventure-Game-Product-1.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Adventure-Game-Product-2.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Adventure-Game-Product-3.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Adventure-Game-Product-4.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Adventure-Game-Product-5.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Adventure-Game-Product-6.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Adventure-Game-Product-7.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Adventure-Game-Product-8.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Adventure-Game-Product-9.png"
+        }
+      ],
+      "type": "sideProject",
+      "title": "♡ Adventure Game, Product",
+      "company": ""
+    }
+  ],
+  "exhibitions": [],
+  "talks": [],
+  "writing": [],
+  "awards": [],
+  "features": [],
+  "workExperience": [
+    {
+      "id": "1PpTYN46wRo1Xp8abbzI",
+      "year": "2019 — Now",
+      "heading": "Founding member at recidiviz",
+      "url": "https://read.cv/teams/recidiviz",
+      "collaborators": [],
+      "description": "We build practical systems that actively reduce the amount of people incarcerated in the U.S. As head of design, I am responsible for the product and brand experience across all touch points. Check out our [team page](https://read.cv/teams/recidiviz) to learn more.",
+      "attachments": [],
+      "type": "workExperience",
+      "title": "Founding member",
+      "company": "recidiviz",
+      "location": ""
+    },
+    {
+      "id": "Ht9kp7KZLNBFjPXSqSaM",
+      "year": "2018 — 2023",
+      "heading": "Independent practice...",
+      "url": null,
+      "collaborators": [],
+      "description": "Product and brand work for select clients only.",
+      "attachments": [],
+      "type": "workExperience",
+      "title": "",
+      "company": "Independent practice...",
+      "location": ""
+    },
+    {
+      "id": "gxNk09TlNRomRnyg6nyg",
+      "year": "2015 — 2019",
+      "heading": "Google",
+      "url": null,
+      "collaborators": [],
+      "description": "① Growth and brand design (Waze)\n② Product design (Area 120)",
+      "attachments": [],
+      "type": "workExperience",
+      "title": null,
+      "company": "Google",
+      "location": null
+    },
+    {
+      "id": "egAc8WIuPd0khahM9oKt",
+      "year": "2006 — 2015",
+      "heading": "Early career...",
+      "url": null,
+      "collaborators": [],
+      "description": "2015, Enterprise UX, Aerohive (💀)\\\n2015, Design Research, [GOTO](https://www.gotoresearch.com/)\\\n2012, Art Direction, Curran & Connors\\\n2006, Imagemaking with Photoshop\\\n1996, Game concepts and design",
+      "attachments": [],
+      "type": "workExperience",
+      "title": "",
+      "company": "Early career...",
+      "location": ""
+    }
+  ],
+  "volunteering": [],
+  "education": [
+    {
+      "id": "mIdjX1DWFoPAwIKU0AL1",
+      "year": "2022 — 2022",
+      "heading": "Service Design at Royal College of Art",
+      "url": "https://www.rcaservicedesign.com",
+      "collaborators": [],
+      "description": "",
+      "attachments": [],
+      "type": "education",
+      "degree": "Service Design",
+      "school": "Royal College of Art",
+      "location": "Remote"
+    },
+    {
+      "id": "ObEYCqiRJiM1uU7oPn5T",
+      "year": "2010 — 2012",
+      "heading": "The Art Institute",
+      "url": null,
+      "collaborators": [],
+      "description": "",
+      "attachments": [],
+      "type": "education",
+      "degree": "",
+      "school": "The Art Institute",
+      "location": "San Francisco, CA"
+    },
+    {
+      "id": "hsK4BTOVa6HVghxHqaD8",
+      "year": "2008 — 2010",
+      "heading": "California State University",
+      "url": null,
+      "collaborators": [],
+      "description": "",
+      "attachments": [],
+      "type": "education",
+      "degree": "",
+      "school": "California State University",
+      "location": "Sacramento, CA"
+    }
+  ],
+  "certifications": [],
+  "contact": [
+    {
+      "id": "KRNE50IE17Iyi8blUVEx",
+      "platform": "Read.cv",
+      "handle": "agron",
+      "url": "https://read.cv/agron"
+    },
+    {
+      "id": "CJ12gfjHJ7M6K9eDFcyS",
+      "platform": "Email",
+      "handle": "mail@agron.design",
+      "url": "mailto:mail@agron.design"
+    }
+  ],
+  "allCollections": [
+    {
+      "name": "Projects",
+      "items": [
+        {
+          "id": "k5ZEEqHHfv5D7otWz7bQ",
+          "year": "Ongoing",
+          "heading": "Civic Impact",
+          "url": "https://agron.design",
+          "collaborators": [],
+          "description": "Digital products aimed at systemic criminal justice issues in order to reduce the amount of people incarcerated in the U.S. Since 2019, I've worked on the product strategy, brand ethos, digital design system, website, and team operations. Credits: Sonia Chokshi, Ian MacFarland, Allison Chan, William DeShazer\n\n[Learn more...](https://read.cv/teams/recidiviz)",
+          "attachments": [
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Civic-Impact-1.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Civic-Impact-2.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Civic-Impact-3.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Civic-Impact-4.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Civic-Impact-5.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Civic-Impact-6.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Civic-Impact-7.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Civic-Impact-8.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Civic-Impact-9.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Civic-Impact-10.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Civic-Impact-11.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Civic-Impact-12.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Civic-Impact-13.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Civic-Impact-14.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Civic-Impact-15.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Civic-Impact-16.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Civic-Impact-17.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Civic-Impact-18.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Civic-Impact-19.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Civic-Impact-20.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Civic-Impact-21.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Civic-Impact-22.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Civic-Impact-23.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Civic-Impact-24.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Civic-Impact-25.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Civic-Impact-26.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Civic-Impact-27.png"
+            }
+          ],
+          "type": "project",
+          "title": "Civic Impact",
+          "company": ""
+        },
+        {
+          "id": "PHZZ0ShLiSw8Vr4HQCCb",
+          "year": "2023",
+          "heading": "Tech Journal, Brand",
+          "url": null,
+          "collaborators": [],
+          "description": "Logo and brand work for a community made up of students, educators, writers, engineers, historians, activists, and scientists – all coming together to reimagine techno-optimism for a better collective future.",
+          "attachments": [
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Tech-Journal-Brand-1.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Tech-Journal-Brand-2.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Tech-Journal-Brand-3.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Tech-Journal-Brand-4.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Tech-Journal-Brand-5.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Tech-Journal-Brand-6.gif"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Tech-Journal-Brand-7.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Tech-Journal-Brand-8.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Tech-Journal-Brand-9.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Tech-Journal-Brand-10.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Tech-Journal-Brand-11.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Tech-Journal-Brand-12.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Tech-Journal-Brand-13.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Tech-Journal-Brand-14.png"
+            }
+          ],
+          "type": "project",
+          "title": "Tech Journal, Brand",
+          "company": ""
+        },
+        {
+          "id": "T6GJV1a8UIcU92jfCVFR",
+          "year": "2023",
+          "heading": "Venture Capital, Brand",
+          "url": null,
+          "collaborators": [],
+          "description": "Logo explorations for a venture capital studio based in New Mexico.",
+          "attachments": [
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Venture-Capital-Brand-1.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Venture-Capital-Brand-2.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Venture-Capital-Brand-3.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Venture-Capital-Brand-4.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Venture-Capital-Brand-5.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Venture-Capital-Brand-6.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Venture-Capital-Brand-7.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Venture-Capital-Brand-8.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Venture-Capital-Brand-9.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Venture-Capital-Brand-10.png"
+            }
+          ],
+          "type": "project",
+          "title": "Venture Capital, Brand",
+          "company": ""
+        },
+        {
+          "id": "7wjOqi74t3A2l7l11lq4",
+          "year": "2022",
+          "heading": "Justice System, Product",
+          "url": null,
+          "collaborators": [],
+          "description": "As part of a national initiative to enhance the consistency and transparency of data in the criminal justice system, our goal was to build a platform for gathering essential data from criminal justice agencies across the nation and get them into the hands of policymakers to support more informed decision-making.",
+          "attachments": [
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Justice-System-Product-1.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Justice-System-Product-2.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Justice-System-Product-3.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Justice-System-Product-4.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Justice-System-Product-5.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Justice-System-Product-6.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Justice-System-Product-7.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Justice-System-Product-8.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Justice-System-Product-9.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Justice-System-Product-10.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Justice-System-Product-11.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Justice-System-Product-12.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Justice-System-Product-13.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Justice-System-Product-14.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Justice-System-Product-15.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Justice-System-Product-16.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Justice-System-Product-17.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Justice-System-Product-18.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Justice-System-Product-19.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Justice-System-Product-20.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Justice-System-Product-21.png"
+            }
+          ],
+          "type": "project",
+          "title": "Justice System, Product",
+          "company": ""
+        },
+        {
+          "id": "JT8uhtFoUDxwMOFf4Orr",
+          "year": "2022",
+          "heading": "Deep–Tech, Brand",
+          "url": null,
+          "collaborators": [],
+          "description": "Advisory brand work for a venture capital studio investing in deep–tech projects.",
+          "attachments": [
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Deep-Tech-Brand-1.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Deep-Tech-Brand-2.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Deep-Tech-Brand-3.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Deep-Tech-Brand-4.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Deep-Tech-Brand-5.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Deep-Tech-Brand-6.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Deep-Tech-Brand-7.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Deep-Tech-Brand-8.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Deep-Tech-Brand-9.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Deep-Tech-Brand-10.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Deep-Tech-Brand-11.png"
+            }
+          ],
+          "type": "project",
+          "title": "Deep–Tech, Brand",
+          "company": ""
+        },
+        {
+          "id": "oTjnQ48nrpdrwy1mWBFl",
+          "year": "2022",
+          "heading": "Better Reading, Product",
+          "url": null,
+          "collaborators": [],
+          "description": "Concepts for [Matter](https://hq.getmatter.com), a reading tool that chooses agency over algorithm and quality over recency. Anchored to the onboarding experience, the design harmonized typography with minimal illustrations to guide the user along core functionality while conveying the tool's values.",
+          "attachments": [
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Better-Reading-Product-1.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Better-Reading-Product-2.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Better-Reading-Product-3.png"
+            }
+          ],
+          "type": "project",
+          "title": "Better Reading, Product",
+          "company": ""
+        },
+        {
+          "id": "noMAms5qPqZwPc4W2Xs4",
+          "year": "2021",
+          "heading": "Executive Portraits, Brand",
+          "url": null,
+          "collaborators": [],
+          "description": "Creative and art direction for a series of portraits. Credits: William DeShazer",
+          "attachments": [
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Executive-Portraits-Brand-1.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Executive-Portraits-Brand-2.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Executive-Portraits-Brand-3.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Executive-Portraits-Brand-4.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Executive-Portraits-Brand-5.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Executive-Portraits-Brand-6.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Executive-Portraits-Brand-7.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Executive-Portraits-Brand-8.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Executive-Portraits-Brand-9.png"
+            }
+          ],
+          "type": "project",
+          "title": "Executive Portraits, Brand",
+          "company": ""
+        },
+        {
+          "id": "q9BYLrMIhuo2ZMuxxgyQ",
+          "year": "2021",
+          "heading": "Social Fitness, Product",
+          "url": null,
+          "collaborators": [],
+          "description": "Digital product design for a social fitness mobile app. As an offshoot experiment from 2020's mental health initiative, its aim was to encourage and support a long-distance community of walkers.",
+          "attachments": [
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Social-Fitness-Product-1.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Social-Fitness-Product-2.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Social-Fitness-Product-3.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Social-Fitness-Product-4.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Social-Fitness-Product-5.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Social-Fitness-Product-6.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Social-Fitness-Product-7.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Social-Fitness-Product-8.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Social-Fitness-Product-9.png"
+            }
+          ],
+          "type": "project",
+          "title": "Social Fitness, Product",
+          "company": ""
+        },
+        {
+          "id": "G8yVTVcGzZ3XCcqcKfrS",
+          "year": "2020",
+          "heading": "Better Hiring, Product",
+          "url": null,
+          "collaborators": [],
+          "description": "Early product design work for a human resources platform aiming to improve the hiring process, from initial application to offer.",
+          "attachments": [
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Better-Hiring-Product-1.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Better-Hiring-Product-2.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Better-Hiring-Product-3.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Better-Hiring-Product-4.png"
+            }
+          ],
+          "type": "project",
+          "title": "Better Hiring, Product",
+          "company": ""
+        },
+        {
+          "id": "mxIRjPzV8LUAYAPRI3y0",
+          "year": "2020",
+          "heading": "Dental Hygiene, Product",
+          "url": null,
+          "collaborators": [],
+          "description": "Product design work for affordable dental hygiene. I worked on early conceptual models for the brand and customer experience as well as the staff and admin workflows.",
+          "attachments": [
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Dental-Hygiene-Product-1.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Dental-Hygiene-Product-2.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Dental-Hygiene-Product-3.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Dental-Hygiene-Product-4.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Dental-Hygiene-Product-5.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Dental-Hygiene-Product-6.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Dental-Hygiene-Product-7.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Dental-Hygiene-Product-8.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Dental-Hygiene-Product-9.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Dental-Hygiene-Product-10.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Dental-Hygiene-Product-11.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Dental-Hygiene-Product-12.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Dental-Hygiene-Product-13.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Dental-Hygiene-Product-14.png"
+            }
+          ],
+          "type": "project",
+          "title": "Dental Hygiene, Product",
+          "company": ""
+        },
+        {
+          "id": "oKWuzzEFOolla15EA4LM",
+          "year": "2020",
+          "heading": "Silk Logo, Brand",
+          "url": null,
+          "collaborators": [],
+          "description": "Logo concepts for a silk goods brand.",
+          "attachments": [
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Silk-Logo-Brand-1.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Silk-Logo-Brand-2.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Silk-Logo-Brand-3.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Silk-Logo-Brand-4.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Silk-Logo-Brand-5.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Silk-Logo-Brand-6.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Silk-Logo-Brand-7.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Silk-Logo-Brand-8.png"
+            }
+          ],
+          "type": "project",
+          "title": "Silk Logo, Brand",
+          "company": ""
+        },
+        {
+          "id": "mBpLgF4e3zDwBKuOXJSd",
+          "year": "2020",
+          "heading": "Election Consortium, Product",
+          "url": null,
+          "collaborators": [],
+          "description": "Online publication that provides informed analysis of US national elections.",
+          "attachments": [
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Election-Consortium-Product-1.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Election-Consortium-Product-2.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Election-Consortium-Product-3.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Election-Consortium-Product-4.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Election-Consortium-Product-5.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Election-Consortium-Product-6.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Election-Consortium-Product-7.png"
+            }
+          ],
+          "type": "project",
+          "title": "Election Consortium, Product",
+          "company": ""
+        },
+        {
+          "id": "y7oems5rF3MMknD6D75H",
+          "year": "2020",
+          "heading": "Schmidt Futures, Brand",
+          "url": null,
+          "collaborators": [],
+          "description": "Graphic design for a philanthropic venture funding science and technology research initiatives.",
+          "attachments": [
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Schmidt-Futures-Brand-1.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Schmidt-Futures-Brand-2.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Schmidt-Futures-Brand-3.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Schmidt-Futures-Brand-4.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Schmidt-Futures-Brand-5.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Schmidt-Futures-Brand-6.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Schmidt-Futures-Brand-7.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Schmidt-Futures-Brand-8.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Schmidt-Futures-Brand-9.png"
+            }
+          ],
+          "type": "project",
+          "title": "Schmidt Futures, Brand",
+          "company": ""
+        },
+        {
+          "id": "HD0qQop8Asw6npggthlI",
+          "year": "2020",
+          "heading": "Cannabis, Brand",
+          "url": null,
+          "collaborators": [],
+          "description": "Photography and art direction for a cannabis brand that celebrates artistry and emphasizes excellence. Credits: Kate Moore, Ron Brandon",
+          "attachments": [
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Cannabis-Brand-1.png"
+            },
+            {
+              "type": "image",
+              "width": 2049,
+              "height": 1365,
+              "url": "/content/media/Cannabis-Brand-2.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Cannabis-Brand-3.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Cannabis-Brand-4.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Cannabis-Brand-5.gif"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Cannabis-Brand-6.png"
+            }
+          ],
+          "type": "project",
+          "title": "Cannabis, Brand",
+          "company": ""
+        },
+        {
+          "id": "1HcXJhptEfBWBpf3bVpi",
+          "year": "2020",
+          "heading": "Pandemic Response, Product",
+          "url": null,
+          "collaborators": [],
+          "description": "Digital product design for a set of tools that correctional workers used to track and anticipate the impact of Covid-19 inside of prison facilities. Used in all 50 states, the toolkit allowed users to: 1) project cases, hospitalizations, and deaths among both staff and the incarcerated population, 2) compare before-and-after scenarios for policy changes and early release decisions and, 3) model the current rate of spread and trajectory of the outbreak in each facility. Credits: C. Andrew Warren, Clementine Jacoby, Joshua Essex",
+          "attachments": [
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Pandemic-Response-Product-1.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Pandemic-Response-Product-2.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Pandemic-Response-Product-3.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Pandemic-Response-Product-4.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Pandemic-Response-Product-5.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Pandemic-Response-Product-6.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Pandemic-Response-Product-7.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Pandemic-Response-Product-8.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Pandemic-Response-Product-9.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Pandemic-Response-Product-10.png"
+            }
+          ],
+          "type": "project",
+          "title": "Pandemic Response, Product",
+          "company": ""
+        },
+        {
+          "id": "TSJ8U3jHUoHwUhCimC8w",
+          "year": "2020",
+          "heading": "Emotional Health, Product",
+          "url": null,
+          "collaborators": [],
+          "description": "Digital product and brand identity design for a wellness platform. Conceived as an iOS app, the audio-first anonymous community focused on mental health and emotional support.\n\nInline with its values, the harmful “endless feed” of information was omitted by design. The ephemeral content that took its place emphasized accessibility to marginalized people, especially the visually impaired. Service was supported for 2 years before shutting down in 2022.",
+          "attachments": [
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Emotional-Health-Product-1.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Emotional-Health-Product-2.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Emotional-Health-Product-3.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Emotional-Health-Product-4.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Emotional-Health-Product-5.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Emotional-Health-Product-6.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Emotional-Health-Product-7.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Emotional-Health-Product-8.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Emotional-Health-Product-9.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Emotional-Health-Product-10.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Emotional-Health-Product-11.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Emotional-Health-Product-12.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Emotional-Health-Product-13.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Emotional-Health-Product-14.png"
+            }
+          ],
+          "type": "project",
+          "title": "Emotional Health, Product",
+          "company": ""
+        },
+        {
+          "id": "SPzKmRMuBJe8hTVXwZzi",
+          "year": "2019",
+          "heading": "Enterprise Tree, Product",
+          "url": null,
+          "collaborators": [],
+          "description": "Product growth work for a financial platform positioned as infrastructure during the rise of the legal cannabis industry. Archival in progress...",
+          "attachments": [
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Enterprise-Tree-Product-1.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Enterprise-Tree-Product-2.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Enterprise-Tree-Product-3.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Enterprise-Tree-Product-4.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Enterprise-Tree-Product-5.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Enterprise-Tree-Product-6.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Enterprise-Tree-Product-7.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Enterprise-Tree-Product-8.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Enterprise-Tree-Product-9.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Enterprise-Tree-Product-10.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Enterprise-Tree-Product-11.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Enterprise-Tree-Product-12.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Enterprise-Tree-Product-13.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Enterprise-Tree-Product-14.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Enterprise-Tree-Product-15.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Enterprise-Tree-Product-16.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Enterprise-Tree-Product-17.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Enterprise-Tree-Product-18.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Enterprise-Tree-Product-19.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Enterprise-Tree-Product-20.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Enterprise-Tree-Product-21.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Enterprise-Tree-Product-22.png"
+            }
+          ],
+          "type": "project",
+          "title": "Enterprise Tree, Product",
+          "company": ""
+        },
+        {
+          "id": "vbcaFbgXFaFYgV6S6OdU",
+          "year": "2019",
+          "heading": "Memoir, Brand",
+          "url": null,
+          "collaborators": [],
+          "description": "Website for two friends who set out across America to better understand each other and the country they love.",
+          "attachments": [
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Memoir-Brand-1.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Memoir-Brand-2.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Memoir-Brand-3.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Memoir-Brand-4.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Memoir-Brand-5.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Memoir-Brand-6.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Memoir-Brand-7.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Memoir-Brand-8.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Memoir-Brand-9.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Memoir-Brand-10.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Memoir-Brand-11.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Memoir-Brand-12.png"
+            }
+          ],
+          "type": "project",
+          "title": "Memoir, Brand",
+          "company": ""
+        },
+        {
+          "id": "Zu6kntFmjIft9GRiiL6i",
+          "year": "2019",
+          "heading": "Aerospace, Brand",
+          "url": null,
+          "collaborators": [],
+          "description": "A scalable and extensible visual language for the world's leading unmanned aircraft management platform.",
+          "attachments": [
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Aerospace-Brand-1.gif"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Aerospace-Brand-2.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Aerospace-Brand-3.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Aerospace-Brand-4.gif"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Aerospace-Brand-5.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Aerospace-Brand-6.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Aerospace-Brand-7.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Aerospace-Brand-8.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Aerospace-Brand-9.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Aerospace-Brand-10.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Aerospace-Brand-11.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Aerospace-Brand-12.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Aerospace-Brand-13.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Aerospace-Brand-14.png"
+            }
+          ],
+          "type": "project",
+          "title": "Aerospace, Brand",
+          "company": ""
+        },
+        {
+          "id": "pCYwZM3dZU4CTYyFRen8",
+          "year": "2019",
+          "heading": "City Planner, Product",
+          "url": null,
+          "collaborators": [],
+          "description": "To create a balanced environment for local residents, we designed an open-source and free-to-use platform that leveraged publicly available data to inform city planners, investment firms, and activists alike.",
+          "attachments": [
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/City-Planner-Product-1.png"
+            },
+            {
+              "type": "video",
+              "width": 2048,
+              "height": 1364,
+              "url": "/content/media/City-Planner-Product-2.mp4"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/City-Planner-Product-3.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/City-Planner-Product-4.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/City-Planner-Product-5.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/City-Planner-Product-6.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/City-Planner-Product-7.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/City-Planner-Product-8.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/City-Planner-Product-9.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/City-Planner-Product-10.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/City-Planner-Product-11.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/City-Planner-Product-12.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/City-Planner-Product-13.png"
+            }
+          ],
+          "type": "project",
+          "title": "City Planner, Product",
+          "company": ""
+        },
+        {
+          "id": "Hl5FfTRf3sEGxj2ozVMn",
+          "year": "2018",
+          "heading": "Smart Cities, Product",
+          "url": null,
+          "collaborators": [],
+          "description": "As part of a larger 'smart cities' initiative, this was an experiment to use real world rewards to incentivize alternate modes of transportation for daily commuters.",
+          "attachments": [
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Smart-Cities-Product-1.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Smart-Cities-Product-2.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Smart-Cities-Product-3.png"
+            },
+            {
+              "type": "video",
+              "width": 640,
+              "height": 1136,
+              "url": "/content/media/Smart-Cities-Product-4.mov"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Smart-Cities-Product-5.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Smart-Cities-Product-6.png"
+            }
+          ],
+          "type": "project",
+          "title": "Smart Cities, Product",
+          "company": ""
+        },
+        {
+          "id": "HZcaWljc8hZ9SH8Pq5Ma",
+          "year": "2018",
+          "heading": "Waze, Brand, Product",
+          "url": null,
+          "collaborators": [],
+          "description": "Changing the way the world moves through everyday acts of cooperation. I was the lead designer across all growth initiatives where we raised the monthly active users from 55M to 110M and formed partnerships with local agencies internationally. Archival of further work in progress. Credits: Haraldur Thorleifsson, Dominic Flask, Robin Noguier",
+          "attachments": [
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Waze-Brand-Product-1.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Waze-Brand-Product-2.png"
+            },
+            {
+              "type": "video",
+              "width": 930,
+              "height": 1100,
+              "url": "/content/media/Waze-Brand-Product-3.mp4"
+            },
+            {
+              "type": "image",
+              "width": 1200,
+              "height": 628,
+              "url": "/content/media/Waze-Brand-Product-4.gif"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Waze-Brand-Product-5.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Waze-Brand-Product-6.png"
+            },
+            {
+              "type": "video",
+              "width": 930,
+              "height": 1100,
+              "url": "/content/media/Waze-Brand-Product-7.mp4"
+            },
+            {
+              "type": "image",
+              "width": 1200,
+              "height": 628,
+              "url": "/content/media/Waze-Brand-Product-8.gif"
+            },
+            {
+              "type": "video",
+              "width": 1600,
+              "height": 1200,
+              "url": "/content/media/Waze-Brand-Product-9.mp4"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Waze-Brand-Product-10.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Waze-Brand-Product-11.png"
+            },
+            {
+              "type": "image",
+              "width": 1200,
+              "height": 628,
+              "url": "/content/media/Waze-Brand-Product-12.gif"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Waze-Brand-Product-13.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Waze-Brand-Product-14.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Waze-Brand-Product-15.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Waze-Brand-Product-16.png"
+            }
+          ],
+          "type": "project",
+          "title": "Waze, Brand, Product",
+          "company": ""
+        },
+        {
+          "id": "nj6MDv4aDfhGyrEb59Kj",
+          "year": "2017",
+          "heading": "Disaster Relief, Other",
+          "url": null,
+          "collaborators": [],
+          "description": "Following hurricane Maria, my brother and I embarked on a mission to raise $10k worth of relief and personally deliver over 350 industrial-grade water filters. The journey took us across 10 of the most impacted towns in Puerto Rico as we formed partnerships with on-site military units, World Central Kitchen, The Home Depot, and Sam's Club. We named the project Clean Water Fund.",
+          "attachments": [
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Disaster-Relief-Other-1.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Disaster-Relief-Other-2.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Disaster-Relief-Other-3.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Disaster-Relief-Other-4.png"
+            }
+          ],
+          "type": "project",
+          "title": "Disaster Relief, Other",
+          "company": ""
+        },
+        {
+          "id": "hHS58AjRVZ3PY4Msy2QK",
+          "year": "2016",
+          "heading": "Badge Maker, Tool",
+          "url": null,
+          "collaborators": [],
+          "description": "Design and development for a self-service asset generator. Credits: Lemuel R. Bezares",
+          "attachments": [
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Badge-Maker-Tool-1.gif"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Badge-Maker-Tool-2.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Badge-Maker-Tool-3.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Badge-Maker-Tool-4.png"
+            }
+          ],
+          "type": "project",
+          "title": "Badge Maker, Tool",
+          "company": ""
+        },
+        {
+          "id": "C4QeFxkwgJJbbNtpt4Dw",
+          "year": "2015",
+          "heading": "Network Management, Product",
+          "url": null,
+          "collaborators": [],
+          "description": "A cloud-based networking management platform positioned as an alternative to Cisco. I worked in the product design team as a visual and interaction designer.",
+          "attachments": [
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Network-Management-Product-1.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Network-Management-Product-2.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Network-Management-Product-3.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Network-Management-Product-4.png"
+            }
+          ],
+          "type": "project",
+          "title": "Network Management, Product",
+          "company": ""
+        },
+        {
+          "id": "8kIFRiSOZFfk20avvWfv",
+          "year": "2015",
+          "heading": "Various, Other",
+          "url": null,
+          "collaborators": [],
+          "description": "Archival in progress...",
+          "attachments": [
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Various-Other-1.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Various-Other-2.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Various-Other-3.png"
+            }
+          ],
+          "type": "project",
+          "title": "Various, Other",
+          "company": ""
+        }
+      ]
+    },
+    {
+      "name": "Side Projects",
+      "items": [
+        {
+          "id": "4EAJBshUxc7CQkqFOHBd",
+          "year": "2024",
+          "heading": "♡ Game Boy, Mod",
+          "url": "https://agron.design",
+          "collaborators": [],
+          "description": "FPGA Game Boy Color. More builds coming soon...",
+          "attachments": [
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Game-Boy-Mod-1.png"
+            },
+            {
+              "type": "image",
+              "width": 1365,
+              "height": 1365,
+              "url": "/content/media/Game-Boy-Mod-2.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Game-Boy-Mod-3.png"
+            },
+            {
+              "type": "image",
+              "width": 1365,
+              "height": 1365,
+              "url": "/content/media/Game-Boy-Mod-4.png"
+            },
+            {
+              "type": "image",
+              "width": 1365,
+              "height": 1365,
+              "url": "/content/media/Game-Boy-Mod-5.png"
+            }
+          ],
+          "type": "sideProject",
+          "title": "♡ Game Boy, Mod",
+          "company": ""
+        },
+        {
+          "id": "y1gPVWnmlzDghHnZCZlf",
+          "year": "2024",
+          "heading": "♡ EOY Card, Print",
+          "url": "https://agron.design",
+          "collaborators": [],
+          "description": "3-Color Risograph Print, 4.25\" x 5.75\", 80lb. Brightwhite",
+          "attachments": [
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/EOY-Card-Print-1.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/EOY-Card-Print-2.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/EOY-Card-Print-3.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/EOY-Card-Print-4.png"
+            }
+          ],
+          "type": "sideProject",
+          "title": "♡ EOY Card, Print",
+          "company": ""
+        },
+        {
+          "id": "7VeLkViGzj7nj8zH1AnW",
+          "year": "2023",
+          "heading": "♡ Pidgeys, Pics",
+          "url": null,
+          "collaborators": [],
+          "description": "Just some bird pics.",
+          "attachments": [
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Pidgeys-Pics-1.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Pidgeys-Pics-2.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Pidgeys-Pics-3.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Pidgeys-Pics-4.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Pidgeys-Pics-5.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Pidgeys-Pics-6.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Pidgeys-Pics-7.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Pidgeys-Pics-8.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Pidgeys-Pics-9.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Pidgeys-Pics-10.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Pidgeys-Pics-11.png"
+            }
+          ],
+          "type": "sideProject",
+          "title": "♡ Pidgeys, Pics",
+          "company": ""
+        },
+        {
+          "id": "ljoyFthefwMS93mEIn9C",
+          "year": "2022",
+          "heading": "♡ Plant Kingdom, Pics",
+          "url": null,
+          "collaborators": [],
+          "description": "Photo documentation of photosynthetic organisms (leaves and whatnot).",
+          "attachments": [
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Plant-Kingdom-Pics-1.png"
+            },
+            {
+              "type": "image",
+              "width": 1920,
+              "height": 1080,
+              "url": "/content/media/Plant-Kingdom-Pics-2.jpg"
+            },
+            {
+              "type": "image",
+              "width": 1920,
+              "height": 1080,
+              "url": "/content/media/Plant-Kingdom-Pics-3.jpg"
+            },
+            {
+              "type": "image",
+              "width": 1536,
+              "height": 2048,
+              "url": "/content/media/Plant-Kingdom-Pics-4.jpg"
+            },
+            {
+              "type": "image",
+              "width": 1920,
+              "height": 1080,
+              "url": "/content/media/Plant-Kingdom-Pics-5.jpg"
+            },
+            {
+              "type": "image",
+              "width": 1920,
+              "height": 1080,
+              "url": "/content/media/Plant-Kingdom-Pics-6.jpg"
+            },
+            {
+              "type": "image",
+              "width": 1920,
+              "height": 1080,
+              "url": "/content/media/Plant-Kingdom-Pics-7.jpg"
+            }
+          ],
+          "type": "sideProject",
+          "title": "♡ Plant Kingdom, Pics",
+          "company": ""
+        },
+        {
+          "id": "RcbyoSvBs122mZQVv99B",
+          "year": "2021",
+          "heading": "♡ Food Label, Brand, Print",
+          "url": null,
+          "collaborators": [],
+          "description": "A succulent brand for a good friend and family-owned business based in California's San Joaquín Valley. Credits: Risewise",
+          "attachments": [
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Food-Label-Brand-Print-1.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Food-Label-Brand-Print-2.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Food-Label-Brand-Print-3.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Food-Label-Brand-Print-4.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Food-Label-Brand-Print-5.png"
+            }
+          ],
+          "type": "sideProject",
+          "title": "♡ Food Label, Brand, Print",
+          "company": ""
+        },
+        {
+          "id": "X1zb0gMttoPwCxnCc7WS",
+          "year": "2019",
+          "heading": "♡ Pineapples, Tool",
+          "url": null,
+          "collaborators": [],
+          "description": "Landing page for a noncomformist internet marketing agency. Credits: Lemuel R. Bezares",
+          "attachments": [
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Pineapples-Tool-1.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Pineapples-Tool-2.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Pineapples-Tool-3.png"
+            }
+          ],
+          "type": "sideProject",
+          "title": "♡ Pineapples, Tool",
+          "company": ""
+        },
+        {
+          "id": "jzEzyfYRADG9nJTvLD8e",
+          "year": "1996",
+          "heading": "♡ Adventure Game, Product",
+          "url": null,
+          "collaborators": [],
+          "description": "Early concepts and web domain research for a collaborative adventure dungeon crawler game.",
+          "attachments": [
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Adventure-Game-Product-1.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Adventure-Game-Product-2.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Adventure-Game-Product-3.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Adventure-Game-Product-4.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Adventure-Game-Product-5.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Adventure-Game-Product-6.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Adventure-Game-Product-7.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Adventure-Game-Product-8.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Adventure-Game-Product-9.png"
+            }
+          ],
+          "type": "sideProject",
+          "title": "♡ Adventure Game, Product",
+          "company": ""
+        }
+      ]
+    },
+    {
+      "name": "Work Experience",
+      "items": [
+        {
+          "id": "1PpTYN46wRo1Xp8abbzI",
+          "year": "2019 — Now",
+          "heading": "Founding member at recidiviz",
+          "url": "https://read.cv/teams/recidiviz",
+          "collaborators": [],
+          "description": "We build practical systems that actively reduce the amount of people incarcerated in the U.S. As head of design, I am responsible for the product and brand experience across all touch points. Check out our [team page](https://read.cv/teams/recidiviz) to learn more.",
+          "attachments": [],
+          "type": "workExperience",
+          "title": "Founding member",
+          "company": "recidiviz",
+          "location": ""
+        },
+        {
+          "id": "Ht9kp7KZLNBFjPXSqSaM",
+          "year": "2018 — 2023",
+          "heading": "Independent practice...",
+          "url": null,
+          "collaborators": [],
+          "description": "Product and brand work for select clients only.",
+          "attachments": [],
+          "type": "workExperience",
+          "title": "",
+          "company": "Independent practice...",
+          "location": ""
+        },
+        {
+          "id": "gxNk09TlNRomRnyg6nyg",
+          "year": "2015 — 2019",
+          "heading": "Google",
+          "url": null,
+          "collaborators": [],
+          "description": "① Growth and brand design (Waze)\n② Product design (Area 120)",
+          "attachments": [],
+          "type": "workExperience",
+          "title": null,
+          "company": "Google",
+          "location": null
+        },
+        {
+          "id": "egAc8WIuPd0khahM9oKt",
+          "year": "2006 — 2015",
+          "heading": "Early career...",
+          "url": null,
+          "collaborators": [],
+          "description": "2015, Enterprise UX, Aerohive (💀)\\\n2015, Design Research, [GOTO](https://www.gotoresearch.com/)\\\n2012, Art Direction, Curran & Connors\\\n2006, Imagemaking with Photoshop\\\n1996, Game concepts and design",
+          "attachments": [],
+          "type": "workExperience",
+          "title": "",
+          "company": "Early career...",
+          "location": ""
+        }
+      ]
+    },
+    {
+      "name": "Education",
+      "items": [
+        {
+          "id": "mIdjX1DWFoPAwIKU0AL1",
+          "year": "2022 — 2022",
+          "heading": "Service Design at Royal College of Art",
+          "url": "https://www.rcaservicedesign.com",
+          "collaborators": [],
+          "description": "",
+          "attachments": [],
+          "type": "education",
+          "degree": "Service Design",
+          "school": "Royal College of Art",
+          "location": "Remote"
+        },
+        {
+          "id": "ObEYCqiRJiM1uU7oPn5T",
+          "year": "2010 — 2012",
+          "heading": "The Art Institute",
+          "url": null,
+          "collaborators": [],
+          "description": "",
+          "attachments": [],
+          "type": "education",
+          "degree": "",
+          "school": "The Art Institute",
+          "location": "San Francisco, CA"
+        },
+        {
+          "id": "hsK4BTOVa6HVghxHqaD8",
+          "year": "2008 — 2010",
+          "heading": "California State University",
+          "url": null,
+          "collaborators": [],
+          "description": "",
+          "attachments": [],
+          "type": "education",
+          "degree": "",
+          "school": "California State University",
+          "location": "Sacramento, CA"
+        }
+      ]
+    },
+    {
+      "name": "Contact",
+      "items": [
+        {
+          "id": "KRNE50IE17Iyi8blUVEx",
+          "platform": "Read.cv",
+          "handle": "agron",
+          "url": "https://read.cv/agron"
+        },
+        {
+          "id": "CJ12gfjHJ7M6K9eDFcyS",
+          "platform": "Email",
+          "handle": "mail@agron.design",
+          "url": "mailto:mail@agron.design"
+        }
+      ]
+    }
+  ]
+}
