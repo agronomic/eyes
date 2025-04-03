@@ -381,7 +381,7 @@ function Projects(props) {
   const swipeRef = useRef(null);
   const [imageToScrollTo, setImageToScrollTo] = useState(null);
 
-  const isMobile = window.matchMedia("(max-width: 767px)").matches;
+  const isMobile = typeof window !== 'undefined' ? window.matchMedia("(max-width: 767px)").matches : false;
 
   const openProject = (project) => {
     setSelectedProject(project);
