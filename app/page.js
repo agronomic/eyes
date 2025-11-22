@@ -321,7 +321,15 @@ function ProjectIndex() {
             <span className="project-index-number">
               {index < 9 ? `0${index + 1}` : index + 1}
             </span>
-            <h3>{project.title}</h3>
+            <h3>
+              {project.url ? (
+                <a href={project.url} target="_blank" rel="noopener noreferrer">
+                  {project.title || project.heading}
+                </a>
+              ) : (
+                project.title || project.heading
+              )}
+            </h3>
             <span className="project-year">{project.year}</span>
           </div>
           <div
@@ -334,7 +342,7 @@ function ProjectIndex() {
             }}
           >
             <div className="details-right">
-              <p className="project-description">{project.description}</p>
+              <div className="project-description" dangerouslySetInnerHTML={{ __html: marked(project.description || '') }} />
             </div>
             <ImageCounter 
               currentImageIndex={currentImageIndex} 
@@ -532,14 +540,22 @@ function Projects(props) {
           </div>
 
           <div className="gallery-header fade-slide-in">
-            <h3>{selectedProject.title}</h3>
+            <h3>
+              {selectedProject.url ? (
+                <a href={selectedProject.url} target="_blank" rel="noopener noreferrer">
+                  {selectedProject.title || selectedProject.heading}
+                </a>
+              ) : (
+                selectedProject.title || selectedProject.heading
+              )}
+            </h3>
             <button className="toggle-view-button" onClick={toggleView}>
               {isGridView ? 'Fullscreen' : 'Grid'}
             </button>
           </div>
 
           <div className="gallery-text fade-slide-in">
-            <p>{selectedProject.description}</p>
+            <div dangerouslySetInnerHTML={{ __html: marked(selectedProject.description || '') }} />
           </div>
 
           <button className="close-project-button fade-slide-in" onClick={closeProject}>← Back to Projects</button>
