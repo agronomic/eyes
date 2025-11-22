@@ -9,6 +9,8 @@ import '@fontsource/atkinson-hyperlegible';
 
 import cv from './cv';
 
+export const dynamic = 'force-dynamic';
+
 function App() {
   const [view, setView] = useState('overview'); // Use 'view' as the state variable
 
