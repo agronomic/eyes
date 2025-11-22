@@ -239,7 +239,6 @@ p a:hover {
 
 .gallery-header {
   display: flex;
-  border-bottom: 0.5px solid #111;
   justify-content: space-between;
   align-items: center;
   width: 100%;
@@ -290,6 +289,8 @@ p a:hover {
 .gallery-images img {
   width: 100%;
   object-fit: contain;
+  image-rendering: auto;
+  will-change: auto;
 }
 
 
@@ -406,7 +407,6 @@ p a:hover {
 
 /* Project Index */
 .project-index .project-item {
-  border-top: 0.5px solid #111;
   padding: 10px 0;
 }
 
@@ -476,6 +476,7 @@ max-height: 60vh;
 object-fit: contain;
   border-radius: 0;
   scroll-snap-align: center; /* Snap each image to the start of the container */
+  image-rendering: auto;
 }
 
 .project-images-horizontal::-webkit-scrollbar {
@@ -512,7 +513,6 @@ object-fit: contain;
   opacity: 0; /* Start with opacity 0 for the slide-up effect */
   transform: translateY(20px); /* Start slightly below for the slide-up effect */
   transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out; /* Smooth transition */
-  border-bottom: 0.5px solid #111; /* Add a border to the top of each section */
 }
 
 /* Optional: Specific styling for different sections if needed */
@@ -521,7 +521,6 @@ object-fit: contain;
 }
 
 .experience-section {
-  border-bottom: none;
 }
 
 .experience-list {

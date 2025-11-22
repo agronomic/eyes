@@ -433,6 +433,18 @@ function Projects(props) {
   }, [isGridView, imageToScrollTo]);
 
   useEffect(() => {
+    if (selectedProject) {
+      const mediaContainers = document.querySelectorAll('.project-content .media-container');
+      mediaContainers.forEach((container, index) => {
+        setTimeout(() => {
+          container.style.opacity = 1;
+          container.style.transform = 'translateY(0)';
+        }, index * 100);
+      });
+    }
+  }, [selectedProject]);
+
+  useEffect(() => {
     const projectItems = document.querySelectorAll('.project-overview');
     projectItems.forEach((item, index) => {
       setTimeout(() => {
@@ -507,11 +519,19 @@ function Projects(props) {
         <div className="project-content">
           <div className={`gallery-images ${isGridView ? 'grid-view' : 'swipe-view'} fade-slide-in`} ref={swipeRef}>
             {selectedProject.attachments.map((attachment, i) => (
-              <div key={i} className="media-container">
+              <div 
+                key={i} 
+                className="media-container"
+                style={{
+                  opacity: 0,
+                  transform: 'translateY(20px)',
+                  transition: 'opacity 0.5s ease-in-out, transform 0.5s ease-in-out',
+                }}
+              >
                 {attachment.type === 'image' ? (
                   <img 
                     src={attachment.url} 
-                    alt={`${selectedProject.title} image ${i + 1}`} 
+                    alt={`${selectedProject.title} image ${i + 1}`}
                     onClick={() => {
                       if (isGridView) {
                         setImageToScrollTo(i);
