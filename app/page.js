@@ -416,10 +416,14 @@ function Projects(props) {
   const scrollToImage = (index) => {
     if (swipeRef.current) {
       const container = swipeRef.current;
-      const media = container.querySelectorAll('img, video')[index];
-      if (media) {
+      const mediaContainers = container.querySelectorAll('.media-container');
+      if (mediaContainers[index]) {
+        const targetContainer = mediaContainers[index];
+        const containerRect = container.getBoundingClientRect();
+        const targetRect = targetContainer.getBoundingClientRect();
+        const scrollLeft = container.scrollLeft + (targetRect.left - containerRect.left) - (containerRect.width / 2) + (targetRect.width / 2);
         container.scrollTo({
-          left: media.offsetLeft,
+          left: scrollLeft,
           behavior: 'smooth',
         });
       }
@@ -428,7 +432,10 @@ function Projects(props) {
 
   useEffect(() => {
     if (!isGridView && imageToScrollTo !== null) {
-      scrollToImage(imageToScrollTo);
+      // Wait for DOM to update after view change
+      setTimeout(() => {
+        scrollToImage(imageToScrollTo);
+      }, 50);
     }
   }, [isGridView, imageToScrollTo]);
 
@@ -533,9 +540,12 @@ function Projects(props) {
                     src={attachment.url} 
                     alt={`${selectedProject.title} image ${i + 1}`}
                     onClick={() => {
+                      setImageToScrollTo(i);
                       if (isGridView) {
-                        setImageToScrollTo(i);
                         toggleView();
+                      } else {
+                        // If already in swipe view, scroll to the clicked image
+                        setTimeout(() => scrollToImage(i), 10);
                       }
                     }}
                   />
@@ -548,9 +558,12 @@ function Projects(props) {
                     playsInline
                     className="video-player"
                     onClick={() => {
+                      setImageToScrollTo(i);
                       if (isGridView) {
-                        setImageToScrollTo(i);
                         toggleView();
+                      } else {
+                        // If already in swipe view, scroll to the clicked image
+                        setTimeout(() => scrollToImage(i), 10);
                       }
                     }}
                   />
