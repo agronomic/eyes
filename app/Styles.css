@@ -274,6 +274,10 @@ p a:hover {
   align-items: center;
 }
 
+.gallery-images.swipe-view .media-container {
+  scroll-snap-align: center;
+}
+
 .gallery-images.swipe-view img,
 .gallery-images.swipe-view video{
   scroll-snap-align: center;
