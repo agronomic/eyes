@@ -382,8 +382,13 @@ function Projects(props) {
   const [isGridView, setIsGridView] = useState(true);
   const swipeRef = useRef(null);
   const [imageToScrollTo, setImageToScrollTo] = useState(null);
+  const [isMobile, setIsMobile] = useState(false);
 
-  const isMobile = window.matchMedia("(max-width: 767px)").matches;
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      setIsMobile(window.matchMedia("(max-width: 767px)").matches);
+    }
+  }, []);
 
   const openProject = (project) => {
     setSelectedProject(project);
