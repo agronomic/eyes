@@ -263,6 +263,13 @@ p a:hover {
   margin: 0 0 2vw 0;
 }
 
+.gallery-images.grid-view .media-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 /* Swipe view for gallery images */
 .gallery-images.swipe-view {
   display: flex;
@@ -286,11 +293,17 @@ p a:hover {
 }
 
 /* Default styles for all images */
-.gallery-images img {
+.gallery-images.grid-view img {
   width: 100%;
+  height: auto;
   object-fit: contain;
   image-rendering: auto;
-  will-change: auto;
+}
+
+.gallery-images.swipe-view img {
+  width: auto;
+  object-fit: contain;
+  image-rendering: auto;
 }
 
 

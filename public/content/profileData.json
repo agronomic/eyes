@@ -2169,6 +2169,12 @@
           "width": 2048,
           "height": 1365,
           "url": "/content/media/Pidgeys-Pics-11.png"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Pidgeys-Pics-12.png"
         }
       ],
       "type": "sideProject",
@@ -4632,6 +4638,12 @@
               "width": 2048,
               "height": 1365,
               "url": "/content/media/Pidgeys-Pics-11.png"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Pidgeys-Pics-12.png"
             }
           ],
           "type": "sideProject",

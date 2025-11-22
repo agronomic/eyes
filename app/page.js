@@ -207,7 +207,19 @@ function ProjectIndex() {
   const imageIndexRef = useRef(currentImageIndex);
   const contentRefs = useRef([]); // Array to hold refs for each project's content
 
-  const projects = [...cv.projects, ...cv.sideProjects].filter(x => x.attachments.length > 0);
+  // Combine projects and sideProjects, then sort by year (newest first, "Ongoing" first)
+  const allProjects = [...cv.projects, ...cv.sideProjects].filter(x => x.attachments.length > 0);
+  const projects = allProjects.sort((a, b) => {
+    // Treat "Ongoing" as the most recent (highest priority)
+    if (a.year === 'Ongoing' && b.year !== 'Ongoing') return -1;
+    if (a.year !== 'Ongoing' && b.year === 'Ongoing') return 1;
+    if (a.year === 'Ongoing' && b.year === 'Ongoing') return 0;
+    
+    // Convert year strings to numbers for sorting (descending order - newest first)
+    const yearA = parseInt(a.year) || 0;
+    const yearB = parseInt(b.year) || 0;
+    return yearB - yearA;
+  });
 
   useEffect(() => {
     const projectItems = document.querySelectorAll('.project-item');
@@ -322,13 +334,7 @@ function ProjectIndex() {
               {index < 9 ? `0${index + 1}` : index + 1}
             </span>
             <h3>
-              {project.url ? (
-                <a href={project.url} target="_blank" rel="noopener noreferrer">
-                  {project.title || project.heading}
-                </a>
-              ) : (
-                project.title || project.heading
-              )}
+              {project.title || project.heading}
             </h3>
             <span className="project-year">{project.year}</span>
           </div>
@@ -385,7 +391,19 @@ function ProjectIndex() {
 
 
 function Projects(props) {
-  const projects = [...cv.projects, ...cv.sideProjects].filter(x => x.attachments.length > 0);
+  // Combine projects and sideProjects, then sort by year (newest first, "Ongoing" first)
+  const allProjects = [...cv.projects, ...cv.sideProjects].filter(x => x.attachments.length > 0);
+  const projects = allProjects.sort((a, b) => {
+    // Treat "Ongoing" as the most recent (highest priority)
+    if (a.year === 'Ongoing' && b.year !== 'Ongoing') return -1;
+    if (a.year !== 'Ongoing' && b.year === 'Ongoing') return 1;
+    if (a.year === 'Ongoing' && b.year === 'Ongoing') return 0;
+    
+    // Convert year strings to numbers for sorting (descending order - newest first)
+    const yearA = parseInt(a.year) || 0;
+    const yearB = parseInt(b.year) || 0;
+    return yearB - yearA;
+  });
   const [selectedProject, setSelectedProject] = useState(null);
   const [isGridView, setIsGridView] = useState(true);
   const swipeRef = useRef(null);
@@ -537,7 +555,7 @@ function Projects(props) {
               >
                 {attachment.type === 'image' ? (
                   <img 
-                    src={attachment.url} 
+                    src={attachment.url}
                     alt={`${selectedProject.title} image ${i + 1}`}
                     onClick={() => {
                       setImageToScrollTo(i);
@@ -574,13 +592,7 @@ function Projects(props) {
 
           <div className="gallery-header fade-slide-in">
             <h3>
-              {selectedProject.url ? (
-                <a href={selectedProject.url} target="_blank" rel="noopener noreferrer">
-                  {selectedProject.title || selectedProject.heading}
-                </a>
-              ) : (
-                selectedProject.title || selectedProject.heading
-              )}
+              {selectedProject.title || selectedProject.heading}
             </h3>
             <button className="toggle-view-button" onClick={toggleView}>
               {isGridView ? 'Fullscreen' : 'Grid'}
