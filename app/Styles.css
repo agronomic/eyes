@@ -61,7 +61,7 @@ p a:hover {
 
 /* Navigation Bar */
 .navigation-bar {
-  z-index: 9 !important;
+  z-index: 1000;
   position: fixed;
   top: 0;
   left: 0;
@@ -71,8 +71,7 @@ p a:hover {
   align-items: center;
   justify-content: space-between;
   padding: 0 2vw;
-  z-index: 1000;
-  animation: slideDown 0.25s ease; /* 0.75s duration, 0.25s delay */
+  animation: slideDown 0.25s ease;
   transition: opacity 0.25s ease;
 }
 
@@ -173,11 +172,6 @@ p a:hover {
 
 .contact-list {
   list-style-type: none; /* Removes default bullet points */
-
-}
-
-.contact-item {
- 
 }
 
 
@@ -531,9 +525,6 @@ object-fit: contain;
 /* Optional: Specific styling for different sections if needed */
 .about-section p {
   max-width: 500px; /* Set maximum width for the about description */
-}
-
-.experience-section {
 }
 
 .experience-list {

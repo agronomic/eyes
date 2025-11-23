@@ -1,7 +1,6 @@
 "use client";
 
-import React, { useEffect, useState, useMemo, useRef } from 'react';
-import ReactDOM from 'react-dom';
+import React, { useEffect, useState, useRef } from 'react';
 import { useSwipeable } from 'react-swipeable';
 import { marked } from 'marked'; // Importing marked for Markdown parsing
 import '@fontsource-variable/inter';
@@ -10,6 +9,39 @@ import '@fontsource/atkinson-hyperlegible';
 import cv from './cv';
 
 export const dynamic = 'force-dynamic';
+
+// Constants
+const ANIMATION_STAGGER_MS = 100;
+const SLIDE_OFFSET = 20;
+const MOBILE_BREAKPOINT = 767;
+const LAZY_LOAD_THRESHOLD_OVERVIEW = 6;
+const PRIORITY_LOAD_THRESHOLD = 3;
+const LAZY_LOAD_THRESHOLD_INDEX = 3;
+const ZERO_PADDING_THRESHOLD = 9;
+
+// Utility function to sort projects by year
+function sortProjectsByYear(projects) {
+  return projects.sort((a, b) => {
+    // Treat "Ongoing" as the most recent (highest priority)
+    if (a.year === 'Ongoing' && b.year !== 'Ongoing') return -1;
+    if (a.year !== 'Ongoing' && b.year === 'Ongoing') return 1;
+    if (a.year === 'Ongoing' && b.year === 'Ongoing') return 0;
+    
+    // Convert year strings to numbers for sorting (descending order - newest first)
+    const yearA = parseInt(a.year) || 0;
+    const yearB = parseInt(b.year) || 0;
+    return yearB - yearA;
+  });
+}
+
+// Helper function to get image loading props
+function getImageLoadingProps(index, lazyThreshold = LAZY_LOAD_THRESHOLD_OVERVIEW, priorityThreshold = PRIORITY_LOAD_THRESHOLD) {
+  return {
+    loading: index < lazyThreshold ? "eager" : "lazy",
+    fetchPriority: index < priorityThreshold ? "high" : "auto",
+    decoding: "async"
+  };
+}
 
 function App() {
   const [view, setView] = useState('overview'); // Use 'view' as the state variable
@@ -34,7 +66,7 @@ function AboutSections() {
       setTimeout(() => {
         section.style.opacity = 1;
         section.style.transform = 'translateY(0)';
-      }, index * 100); // Adjust delay as needed
+      }, index * ANIMATION_STAGGER_MS);
     });
   }, []);
 
@@ -45,7 +77,7 @@ function AboutSections() {
         className="about-section section"
         style={{
           opacity: 0,
-          transform: 'translateY(20px)',
+          transform: `translateY(${SLIDE_OFFSET}px)`,
           transition: 'opacity 0.5s ease-in-out, transform 0.5s ease-in-out',
         }}
       >
@@ -117,55 +149,6 @@ function AboutSections() {
   );
 }
 
-function Experience(props) {
-  let title;
-  if (props.url) {
-    title = <a href={props.url} target="_blank" rel="noopener noreferrer">{props.title}</a>;
-  } else {
-    title = props.title;
-  }
-
-  return (
-    <div className="experience-item">
-      <div className="experience-year">{props.year}</div>
-      <div className="experience-title">
-        {title}
-        {props.description && (
-          <div className="experience-description">
-            <RichText text={props.description} />
-          </div>
-        )}
-      </div>
-
-      {/* Attachments section */}
-      {props.attachments && props.attachments.length > 0 && (
-        <div className="experience-attachments">
-          {props.attachments.map((attachment, index) => (
-            <div key={index} className="attachment-item">
-              {attachment.type === 'image' && (
-                <img src={attachment.url} alt={`Attachment ${index + 1}`} />
-              )}
-              {attachment.type === 'video' && (
-                <video
-                  src={attachment.url}
-                  controls
-                  className="video-player"
-                />
-              )}
-              {attachment.type === 'document' && (
-                <a href={attachment.url} target="_blank" rel="noopener noreferrer">
-                  View Document
-                </a>
-              )}
-            </div>
-          ))}
-        </div>
-      )}
-    </div>
-  );
-}
-
-
 function ImageCounter({ currentImageIndex, totalImages }) {
   return (
     <div className="image-counter">
@@ -209,17 +192,7 @@ function ProjectIndex() {
 
   // Combine projects and sideProjects, then sort by year (newest first, "Ongoing" first)
   const allProjects = [...cv.projects, ...cv.sideProjects].filter(x => x.attachments.length > 0);
-  const projects = allProjects.sort((a, b) => {
-    // Treat "Ongoing" as the most recent (highest priority)
-    if (a.year === 'Ongoing' && b.year !== 'Ongoing') return -1;
-    if (a.year !== 'Ongoing' && b.year === 'Ongoing') return 1;
-    if (a.year === 'Ongoing' && b.year === 'Ongoing') return 0;
-    
-    // Convert year strings to numbers for sorting (descending order - newest first)
-    const yearA = parseInt(a.year) || 0;
-    const yearB = parseInt(b.year) || 0;
-    return yearB - yearA;
-  });
+  const projects = sortProjectsByYear([...allProjects]);
 
   useEffect(() => {
     const projectItems = document.querySelectorAll('.project-item');
@@ -227,14 +200,14 @@ function ProjectIndex() {
     projectItems.forEach((item, index) => {
       setTimeout(() => {
         item.classList.add('loaded');
-      }, index * 100);
+      }, index * ANIMATION_STAGGER_MS);
     });
 
     setTimeout(() => {
       projectItems.forEach(item => {
         item.style.transform = 'none';
       });
-    }, projects.length * 100 + 500);
+    }, projects.length * ANIMATION_STAGGER_MS + 500);
 
     projectItems.forEach(item => {
       item.addEventListener('mouseenter', () => {
@@ -331,7 +304,7 @@ function ProjectIndex() {
             onClick={() => handleProjectClick(index)}
           >
             <span className="project-index-number">
-              {index < 9 ? `0${index + 1}` : index + 1}
+              {index < ZERO_PADDING_THRESHOLD ? `0${index + 1}` : index + 1}
             </span>
             <h3>
               {project.title || project.heading}
@@ -364,8 +337,7 @@ function ProjectIndex() {
                     key={i}
                     src={attachment.url}
                     alt={`${project.title} image ${i + 1}`}
-                    loading={i < 3 ? "eager" : "lazy"}
-                    decoding="async"
+                    {...getImageLoadingProps(i, LAZY_LOAD_THRESHOLD_INDEX)}
                     onClick={() => handleImageChange(i)}
                   />
                 ) : (
@@ -395,17 +367,7 @@ function ProjectIndex() {
 function Projects(props) {
   // Combine projects and sideProjects, then sort by year (newest first, "Ongoing" first)
   const allProjects = [...cv.projects, ...cv.sideProjects].filter(x => x.attachments.length > 0);
-  const projects = allProjects.sort((a, b) => {
-    // Treat "Ongoing" as the most recent (highest priority)
-    if (a.year === 'Ongoing' && b.year !== 'Ongoing') return -1;
-    if (a.year !== 'Ongoing' && b.year === 'Ongoing') return 1;
-    if (a.year === 'Ongoing' && b.year === 'Ongoing') return 0;
-    
-    // Convert year strings to numbers for sorting (descending order - newest first)
-    const yearA = parseInt(a.year) || 0;
-    const yearB = parseInt(b.year) || 0;
-    return yearB - yearA;
-  });
+  const projects = sortProjectsByYear([...allProjects]);
   const [selectedProject, setSelectedProject] = useState(null);
   const [isGridView, setIsGridView] = useState(true);
   const swipeRef = useRef(null);
@@ -414,7 +376,7 @@ function Projects(props) {
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      setIsMobile(window.matchMedia("(max-width: 767px)").matches);
+      setIsMobile(window.matchMedia(`(max-width: ${MOBILE_BREAKPOINT}px)`).matches);
     }
   }, []);
 
@@ -466,7 +428,7 @@ function Projects(props) {
         setTimeout(() => {
           container.style.opacity = 1;
           container.style.transform = 'translateY(0)';
-        }, index * 100);
+        }, index * ANIMATION_STAGGER_MS);
       });
     }
   }, [selectedProject]);
@@ -477,7 +439,7 @@ function Projects(props) {
       setTimeout(() => {
         item.style.opacity = 1;
         item.style.transform = 'translateY(0)';
-      }, index * 100);
+      }, index * ANIMATION_STAGGER_MS);
     });
   }, [projects]);
 
@@ -501,7 +463,7 @@ function Projects(props) {
               className="project-overview"
               style={{
                 opacity: 0,
-                transform: 'translateY(20px)',
+                transform: `translateY(${SLIDE_OFFSET}px)`,
                 transition: 'opacity 0.5s ease-in-out, transform 0.5s ease-in-out',
               }}
               onClick={() => openProject(project)}
@@ -514,9 +476,7 @@ function Projects(props) {
                       src={project.attachments[0].url} 
                       alt={`${project.title} cover image`} 
                       style={{ display: 'block' }} 
-                      loading={index < 6 ? "eager" : "lazy"}
-                      fetchPriority={index < 3 ? "high" : "auto"}
-                      decoding="async"
+                      {...getImageLoadingProps(index, LAZY_LOAD_THRESHOLD_OVERVIEW)}
                       onClick={() => {
                         setImageToScrollTo(0); // Scroll to the first image in swipe view
                         toggleView();
@@ -563,7 +523,7 @@ function Projects(props) {
                     src={attachment.url}
                     alt={`${selectedProject.title} image ${i + 1}`}
                     loading="eager"
-                    fetchPriority={i < 3 ? "high" : "auto"}
+                    fetchPriority={i < PRIORITY_LOAD_THRESHOLD ? "high" : "auto"}
                     decoding="async"
                     onClick={() => {
                       setImageToScrollTo(i);
