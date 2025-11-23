@@ -364,6 +364,8 @@ function ProjectIndex() {
                     key={i}
                     src={attachment.url}
                     alt={`${project.title} image ${i + 1}`}
+                    loading={i < 3 ? "eager" : "lazy"}
+                    decoding="async"
                     onClick={() => handleImageChange(i)}
                   />
                 ) : (
@@ -512,6 +514,9 @@ function Projects(props) {
                       src={project.attachments[0].url} 
                       alt={`${project.title} cover image`} 
                       style={{ display: 'block' }} 
+                      loading={index < 6 ? "eager" : "lazy"}
+                      fetchPriority={index < 3 ? "high" : "auto"}
+                      decoding="async"
                       onClick={() => {
                         setImageToScrollTo(0); // Scroll to the first image in swipe view
                         toggleView();
@@ -557,6 +562,9 @@ function Projects(props) {
                   <img 
                     src={attachment.url}
                     alt={`${selectedProject.title} image ${i + 1}`}
+                    loading={i < 6 ? "eager" : "lazy"}
+                    fetchPriority={i < 3 ? "high" : "auto"}
+                    decoding="async"
                     onClick={() => {
                       setImageToScrollTo(i);
                       if (isGridView) {
