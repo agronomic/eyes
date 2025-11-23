@@ -562,7 +562,7 @@ function Projects(props) {
                   <img 
                     src={attachment.url}
                     alt={`${selectedProject.title} image ${i + 1}`}
-                    loading={i < 6 ? "eager" : "lazy"}
+                    loading="eager"
                     fetchPriority={i < 3 ? "high" : "auto"}
                     decoding="async"
                     onClick={() => {
