@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useState, useRef } from 'react';
+import Image from 'next/image';
 import { useSwipeable } from 'react-swipeable';
 import { marked } from 'marked'; // Importing marked for Markdown parsing
 import '@fontsource-variable/inter';
@@ -388,11 +389,20 @@ function Projects(props) {
                 <div className="project-overview-images">
                   <div className="media-container">
                     {project.attachments[0].type === 'image' ? (
-                      <img 
-                        src={project.attachments[0].url} 
-                        alt={`${project.title} cover image`} 
-                        style={{ display: 'block' }} 
-                        {...getImageLoadingProps(index, LAZY_LOAD_THRESHOLD_OVERVIEW)}
+                      <Image 
+                        src={project.attachments[0].url}
+                        alt={`${project.title} cover image`}
+                        width={400}
+                        height={267}
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        style={{ 
+                          display: 'block',
+                          width: '100%',
+                          height: 'auto',
+                          cursor: 'pointer'
+                        }}
+                        priority={index < PRIORITY_LOAD_THRESHOLD}
+                        quality={85}
                         onClick={() => {
                           setImageToScrollTo(0); // Scroll to the first image in swipe view
                           toggleView();

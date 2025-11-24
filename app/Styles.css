@@ -211,6 +211,18 @@ p a:hover {
   border-radius: 0;
 }
 
+/* Next.js Image component wrapper styling */
+.project-overview-images .media-container > span {
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+}
+
+.project-overview-images .media-container img {
+  max-height: 400px;
+  object-fit: cover;
+}
+
 /* Gallery Content (for selected project) */
 .gallery-content {
   max-width: 100%;
