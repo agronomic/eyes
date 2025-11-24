@@ -53,98 +53,6 @@ function App() {
       {/* Conditional rendering based on the selected view */}
       {view === 'overview' && <Projects />}
       {view === 'index' && <ProjectIndex />}
-      {view === 'about' && <AboutSections />}
-    </div>
-  );
-}
-
-function AboutSections() {
-  useEffect(() => {
-    const sections = document.querySelectorAll('.about-section, .contact-section, .experience-section');
-
-    sections.forEach((section, index) => {
-      setTimeout(() => {
-        section.style.opacity = 1;
-        section.style.transform = 'translateY(0)';
-      }, index * ANIMATION_STAGGER_MS);
-    });
-  }, []);
-
-  return (
-    <div>
-      {/* About Section */}
-      <section
-        className="about-section section"
-        style={{
-          opacity: 0,
-          transform: `translateY(${SLIDE_OFFSET}px)`,
-          transition: 'opacity 0.5s ease-in-out, transform 0.5s ease-in-out',
-        }}
-      >
-        <p>About</p>
-        <div dangerouslySetInnerHTML={{ __html: marked(cv.general.about) }} />
-      </section>
-
-     {/* Contact Section */}
-<section
-  className="contact-section section"
-  style={{
-    opacity: 0,
-    transform: 'translateY(20px)',
-    transition: 'opacity 0.5s ease-in-out, transform 0.5s ease-in-out',
-  }}
->
-  <p>Contact</p>
-  <ul className="contact-list">
-    {cv.contact.map((contactItem, index) => (
-      <li key={index} className="contact-item">
-        {contactItem.platform}: <a href={contactItem.url} target="_blank" rel="noopener noreferrer">{contactItem.handle}</a>
-      </li>
-    ))}
-  </ul>
-</section>
-
-   {/* Experience Section */}
-<section
-  className="experience-section section"
-  style={{
-    opacity: 0,
-    transform: 'translateY(20px)',
-    transition: 'opacity 0.5s ease-in-out, transform 0.5s ease-in-out',
-  }}
->
-  <p>Experience</p>
-  <ul className="experience-list">
-    {cv.workExperience.map((experience, index) => (
-      <li key={index} className="experience-item">
-        <div className="experience-title-year">
-          <div className="experience-year">{experience.year}</div>
-          <div className="experience-title">
-            {experience.url ? (
-              <a href={experience.url} target="_blank" rel="noopener noreferrer">
-                {experience.heading}
-              </a>
-            ) : (
-              experience.heading
-            )}
-          </div>
-        </div>
-        {experience.description && (
-          <div className="experience-description">
-            <div dangerouslySetInnerHTML={{ __html: marked(experience.description) }} />
-          </div>
-        )}
-        {experience.attachments && experience.attachments.length > 0 && (
-          <div className="experience-attachments">
-            {experience.attachments.map((attachment, i) => (
-              <img key={i} src={attachment.url} alt={`Attachment ${i + 1}`} />
-            ))}
-          </div>
-        )}
-      </li>
-    ))}
-  </ul>
-</section>
     </div>
   );
 }
@@ -171,11 +79,6 @@ function Navigation(props) {
         </button>
         <button onClick={() => props.setView('index')} className={props.view === 'index' ? 'active' : ''}>
           Index
-        </button>
-      </div>
-      <div className="about-link">
-        <button onClick={() => props.setView('about')} className={props.view === 'about' ? 'active' : ''}>
-          About
         </button>
       </div>
     </div>
@@ -443,6 +346,18 @@ function Projects(props) {
     });
   }, [projects]);
 
+  useEffect(() => {
+    if (!selectedProject) {
+      const sections = document.querySelectorAll('.about-section, .contact-section, .experience-section');
+      sections.forEach((section, index) => {
+        setTimeout(() => {
+          section.style.opacity = 1;
+          section.style.transform = 'translateY(0)';
+        }, index * ANIMATION_STAGGER_MS);
+      });
+    }
+  }, [selectedProject]);
+
   if (projects.length === 0) {
     return (
       <div className="projects-overview">
@@ -456,53 +371,129 @@ function Projects(props) {
   return (
     <div>
       {!selectedProject && (
-        <div className="projects-overview">
-          {projects.map((project, index) => (
-            <div 
-              key={index} 
-              className="project-overview"
-              style={{
-                opacity: 0,
-                transform: `translateY(${SLIDE_OFFSET}px)`,
-                transition: 'opacity 0.5s ease-in-out, transform 0.5s ease-in-out',
-              }}
-              onClick={() => openProject(project)}
-            >
-              {/* <h3>{project.title}</h3> */}
-              <div className="project-overview-images">
-                <div className="media-container">
-                  {project.attachments[0].type === 'image' ? (
-                    <img 
-                      src={project.attachments[0].url} 
-                      alt={`${project.title} cover image`} 
-                      style={{ display: 'block' }} 
-                      {...getImageLoadingProps(index, LAZY_LOAD_THRESHOLD_OVERVIEW)}
-                      onClick={() => {
-                        setImageToScrollTo(0); // Scroll to the first image in swipe view
-                        toggleView();
-                      }}
-                    />
-                  ) : (
-                    project.attachments[0].type === 'video' && (
-                      <video 
+        <>
+          <div className="projects-overview">
+            {projects.map((project, index) => (
+              <div 
+                key={index} 
+                className="project-overview"
+                style={{
+                  opacity: 0,
+                  transform: `translateY(${SLIDE_OFFSET}px)`,
+                  transition: 'opacity 0.5s ease-in-out, transform 0.5s ease-in-out',
+                }}
+                onClick={() => openProject(project)}
+              >
+                {/* <h3>{project.title}</h3> */}
+                <div className="project-overview-images">
+                  <div className="media-container">
+                    {project.attachments[0].type === 'image' ? (
+                      <img 
                         src={project.attachments[0].url} 
-                        autoPlay
-                        muted
-                        loop
-                        playsInline
-                        className={`video-player ${isMobile ? 'no-controls' : ''}`}
+                        alt={`${project.title} cover image`} 
+                        style={{ display: 'block' }} 
+                        {...getImageLoadingProps(index, LAZY_LOAD_THRESHOLD_OVERVIEW)}
                         onClick={() => {
-                          setImageToScrollTo(0); // Scroll to the first video in swipe view
+                          setImageToScrollTo(0); // Scroll to the first image in swipe view
                           toggleView();
                         }}
                       />
-                    )
-                  )}
+                    ) : (
+                      project.attachments[0].type === 'video' && (
+                        <video 
+                          src={project.attachments[0].url} 
+                          autoPlay
+                          muted
+                          loop
+                          playsInline
+                          className={`video-player ${isMobile ? 'no-controls' : ''}`}
+                          onClick={() => {
+                            setImageToScrollTo(0); // Scroll to the first video in swipe view
+                            toggleView();
+                          }}
+                        />
+                      )
+                    )}
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
+
+          {/* About Section */}
+          <section
+            className="about-section section"
+            style={{
+              opacity: 0,
+              transform: `translateY(${SLIDE_OFFSET}px)`,
+              transition: 'opacity 0.5s ease-in-out, transform 0.5s ease-in-out',
+            }}
+          >
+            <p>About</p>
+            <div dangerouslySetInnerHTML={{ __html: marked(cv.general.about) }} />
+          </section>
+
+          {/* Contact Section */}
+          <section
+            className="contact-section section"
+            style={{
+              opacity: 0,
+              transform: `translateY(${SLIDE_OFFSET}px)`,
+              transition: 'opacity 0.5s ease-in-out, transform 0.5s ease-in-out',
+            }}
+          >
+            <p>Contact</p>
+            <ul className="contact-list">
+              {cv.contact.map((contactItem, index) => (
+                <li key={index} className="contact-item">
+                  {contactItem.platform}: <a href={contactItem.url} target="_blank" rel="noopener noreferrer">{contactItem.handle}</a>
+                </li>
+              ))}
+            </ul>
+          </section>
+
+          {/* Experience Section */}
+          <section
+            className="experience-section section"
+            style={{
+              opacity: 0,
+              transform: `translateY(${SLIDE_OFFSET}px)`,
+              transition: 'opacity 0.5s ease-in-out, transform 0.5s ease-in-out',
+            }}
+          >
+            <p>Experience</p>
+            <ul className="experience-list">
+              {cv.workExperience.map((experience, index) => (
+                <li key={index} className="experience-item">
+                  <div className="experience-title-year">
+                    <div className="experience-year">{experience.year}</div>
+                    <div className="experience-title">
+                      {experience.url ? (
+                        <a href={experience.url} target="_blank" rel="noopener noreferrer">
+                          {experience.heading}
+                        </a>
+                      ) : (
+                        experience.heading
+                      )}
+                    </div>
+                  </div>
+                  {experience.description && (
+                    <div className="experience-description">
+                      <div dangerouslySetInnerHTML={{ __html: marked(experience.description) }} />
+                    </div>
+                  )}
+                  {experience.attachments && experience.attachments.length > 0 && (
+                    <div className="experience-attachments">
+                      {experience.attachments.map((attachment, i) => (
+                        <img key={i} src={attachment.url} alt={`Attachment ${i + 1}`} />
+                      ))}
+                    </div>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </section>
+        </>
       )}
 
       {selectedProject && (
