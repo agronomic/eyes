@@ -146,6 +146,10 @@ p a:hover {
   margin-bottom: 40px;
 }
 
+.section:last-child {
+  margin-bottom: 120px; /* Extra spacing at the bottom of the page */
+}
+
 .section h2 {
   font-size: var(--font-size-base);
   margin-bottom: 16px;
