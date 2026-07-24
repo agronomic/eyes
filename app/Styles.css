@@ -392,14 +392,7 @@ p a:hover {
 }
 
 
-/* Ensure all elements are hidden initially */
-.gallery-header,
-.gallery-images.grid-view,
-.gallery-text {
-  opacity: 0; /* Initially hidden */
-}
-
-/* Staggered animations for each element */
+/* Staggered fade for gallery chrome */
 @keyframes fadeSlideInSequential {
   0% {
     opacity: 0;
@@ -411,21 +404,20 @@ p a:hover {
   }
 }
 
-/* Gallery Header — above the grid */
+/* Gallery sections — visible by default (no opacity:0 trap) */
 .gallery-header {
-  animation: fadeSlideInSequential 0.5s ease-in-out forwards;
+  animation: fadeSlideInSequential 0.5s ease-in-out both;
   animation-delay: 0s;
 }
 
-/* Gallery Images */
-.gallery-images.grid-view {
-  animation: fadeSlideInSequential 0.5s ease-in-out forwards;
+.gallery-images.grid-view,
+.gallery-images.swipe-view {
+  animation: fadeSlideInSequential 0.5s ease-in-out both;
   animation-delay: 0.1s;
 }
 
-/* Gallery Text */
 .gallery-text {
-  animation: fadeSlideInSequential 0.5s ease-in-out forwards;
+  animation: fadeSlideInSequential 0.5s ease-in-out both;
   animation-delay: 0.2s;
 }
 
