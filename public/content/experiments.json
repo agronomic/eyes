@@ -1,5 +1,10 @@
 [
   {
+    "type": "image",
+    "url": "/content/media/x-20260621.png",
+    "alt": "20260621"
+  },
+  {
     "type": "video",
     "url": "/content/media/x-20251116.mp4",
     "alt": "20251116"
@@ -101,12 +106,17 @@
   },
   {
     "type": "image",
+    "url": "/content/media/x-20170319.png",
+    "alt": "20170319"
+  },
+  {
+    "type": "image",
     "url": "/content/media/x-20140223.jpg",
     "alt": "20140223"
   },
   {
     "type": "image",
-    "url": "/content/media/x-20130507.jpg",
+    "url": "/content/media/x-20130507.png",
     "alt": "20130507"
   },
   {
