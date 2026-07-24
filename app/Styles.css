@@ -319,6 +319,7 @@ p a:hover {
 .experiments-grid {
   column-count: 4;
   column-gap: 10px;
+  margin-bottom: 120px; /* Same bottom breathing room as project/home pages */
 }
 
 .experiments-grid .media-container {
