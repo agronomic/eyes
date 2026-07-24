@@ -1,363 +1,26 @@
 "use client";
 
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
-import { useSwipeable } from 'react-swipeable';
-import { marked } from 'marked'; // Importing marked for Markdown parsing
+import Link from 'next/link';
+import { marked } from 'marked';
 import '@fontsource-variable/inter';
 import '@fontsource/atkinson-hyperlegible';
 
 import cv from './cv';
+import Navigation from './Navigation';
+import { getProjects, slugify } from './projects';
 
-export const dynamic = 'force-dynamic';
-
-// Constants
-const ANIMATION_STAGGER_MS = 100;
-const SLIDE_OFFSET = 20;
 const MOBILE_BREAKPOINT = 767;
-const LAZY_LOAD_THRESHOLD_OVERVIEW = 6;
 const PRIORITY_LOAD_THRESHOLD = 3;
-const LAZY_LOAD_THRESHOLD_INDEX = 3;
-const ZERO_PADDING_THRESHOLD = 9;
 
-// Utility function to sort projects by year
-function sortProjectsByYear(projects) {
-  return projects.sort((a, b) => {
-    // Treat "Ongoing" as the most recent (highest priority)
-    if (a.year === 'Ongoing' && b.year !== 'Ongoing') return -1;
-    if (a.year !== 'Ongoing' && b.year === 'Ongoing') return 1;
-    if (a.year === 'Ongoing' && b.year === 'Ongoing') return 0;
-    
-    // Convert year strings to numbers for sorting (descending order - newest first)
-    const yearA = parseInt(a.year) || 0;
-    const yearB = parseInt(b.year) || 0;
-    return yearB - yearA;
-  });
-}
-
-// Helper function to get image loading props
-function getImageLoadingProps(index, lazyThreshold = LAZY_LOAD_THRESHOLD_OVERVIEW, priorityThreshold = PRIORITY_LOAD_THRESHOLD) {
-  return {
-    loading: index < lazyThreshold ? "eager" : "lazy",
-    fetchPriority: index < priorityThreshold ? "high" : "auto",
-    decoding: "async"
-  };
-}
-
-function App() {
-  const [view, setView] = useState('overview'); // Use 'view' as the state variable
-
-  return (
-    <div className="container">
-      <Navigation view={view} setView={setView} />
-      
-      {/* Conditional rendering based on the selected view */}
-      {view === 'overview' && <Projects />}
-      {view === 'index' && <ProjectIndex />}
-    </div>
-  );
-}
-
-function ImageCounter({ currentImageIndex, totalImages }) {
-  return (
-    <div className="image-counter">
-      {currentImageIndex + 1} — {totalImages}
-    </div>
-  );
-}
-
-function Navigation(props) {
-  return (
-    <div className="navigation-bar">
-      <div className="title">
-        <a href="/">
-          {cv.general.displayName}
-        </a>
-      </div>
-      <div className="nav-links">  
-        <button onClick={() => props.setView('overview')} className={props.view === 'overview' ? 'active' : ''}>
-          Overview
-        </button>
-        <button onClick={() => props.setView('index')} className={props.view === 'index' ? 'active' : ''}>
-          Index
-        </button>
-      </div>
-    </div>
-  );
-}
-
-
-function ProjectIndex() {
-  const [activeIndex, setActiveIndex] = useState(null);
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const [totalImages, setTotalImages] = useState(0);
-  const imageIndexRef = useRef(currentImageIndex);
-  const contentRefs = useRef([]); // Array to hold refs for each project's content
-
-  // Combine projects and sideProjects, then sort by year (newest first, "Ongoing" first)
-  const allProjects = [...cv.projects, ...cv.sideProjects].filter(x => x.attachments.length > 0);
-  const projects = sortProjectsByYear([...allProjects]);
-
-  useEffect(() => {
-    const projectItems = document.querySelectorAll('.project-item');
-
-    projectItems.forEach((item, index) => {
-      setTimeout(() => {
-        item.classList.add('loaded');
-      }, index * ANIMATION_STAGGER_MS);
-    });
-
-    setTimeout(() => {
-      projectItems.forEach(item => {
-        item.style.transform = 'none';
-      });
-    }, projects.length * ANIMATION_STAGGER_MS + 500);
-
-    projectItems.forEach(item => {
-      item.addEventListener('mouseenter', () => {
-        projectItems.forEach(otherItem => {
-          if (otherItem !== item && otherItem !== projectItems[activeIndex]) {
-            otherItem.style.opacity = '0.25';
-          }
-        });
-      });
-
-      item.addEventListener('mouseleave', () => {
-        projectItems.forEach(otherItem => {
-          if (otherItem !== projectItems[activeIndex]) {
-            otherItem.style.opacity = '1';
-          }
-        });
-      });
-    });
-
-    return () => {
-      projectItems.forEach(item => {
-        item.removeEventListener('mouseenter', null);
-        item.removeEventListener('mouseleave', null);
-      });
-    };
-  }, [projects, activeIndex]);
-
-  const handleProjectClick = (index) => {
-    const projectItems = document.querySelectorAll('.project-item');
-
-    if (activeIndex === index) {
-      setActiveIndex(null);
-      setCurrentImageIndex(0);
-      imageIndexRef.current = 0;
-      
-      // Reset opacity for all items when closing a project
-      projectItems.forEach(item => {
-        item.style.opacity = '1';
-      });
-
-      const content = contentRefs.current[index];
-      if (content) {
-        content.style.maxHeight = 0;
-      }
-    } else {
-      if (activeIndex !== null) {
-        const prevContent = contentRefs.current[activeIndex];
-        if (prevContent) {
-          prevContent.style.maxHeight = 0;
-        }
-      }
-
-      setActiveIndex(index);
-      setCurrentImageIndex(0);
-      imageIndexRef.current = 0;
-      setTotalImages(projects[index].attachments.length);
-
-      const content = contentRefs.current[index];
-      if (content) {
-        content.style.maxHeight = content.scrollHeight + "px";
-      }
-    }
-  };
-
-  const handleImageChange = (newIndex) => {
-    if (newIndex >= 0 && newIndex < totalImages) {
-      setCurrentImageIndex(newIndex);
-      imageIndexRef.current = newIndex;
-    }
-  };
-
-  const swipeHandlers = useSwipeable({
-    onSwipedLeft: () => {
-      const nextIndex = imageIndexRef.current + 1 < totalImages ? imageIndexRef.current + 1 : imageIndexRef.current;
-      handleImageChange(nextIndex);
-    },
-    onSwipedRight: () => {
-      const nextIndex = imageIndexRef.current - 1 >= 0 ? imageIndexRef.current - 1 : imageIndexRef.current;
-      handleImageChange(nextIndex);
-    },
-    preventDefaultTouchmoveEvent: true,
-    trackMouse: true,
-  });
-
-  return (
-    <div className="project-index">
-      {projects.map((project, index) => (
-        <div
-          key={index}
-          className={`project-item ${activeIndex === index ? 'expanded' : ''}`}
-        >
-          <div
-            className="project-index-header"
-            onClick={() => handleProjectClick(index)}
-          >
-            <span className="project-index-number">
-              {index < ZERO_PADDING_THRESHOLD ? `0${index + 1}` : index + 1}
-            </span>
-            <h3>
-              {project.title || project.heading}
-            </h3>
-            <span className="project-year">{project.year}</span>
-          </div>
-          <div
-            className="project-details"
-            ref={(el) => (contentRefs.current[index] = el)} // Attach ref to the content element
-            style={{
-              maxHeight: activeIndex === index ? contentRefs.current[index]?.scrollHeight : 0,
-              overflow: 'hidden',
-              transition: 'max-height 0.5s ease',
-            }}
-          >
-            <div className="details-right">
-              <div className="project-description" dangerouslySetInnerHTML={{ __html: marked(project.description || '') }} />
-            </div>
-            <ImageCounter 
-              currentImageIndex={currentImageIndex} 
-              totalImages={totalImages} 
-            />
-            <div
-              {...swipeHandlers}
-              className="project-images-horizontal"
-            >
-              {project.attachments.map((attachment, i) => (
-                attachment.type === 'image' ? (
-                  <img
-                    key={i}
-                    src={attachment.url}
-                    alt={`${project.title} image ${i + 1}`}
-                    {...getImageLoadingProps(i, LAZY_LOAD_THRESHOLD_INDEX)}
-                    onClick={() => handleImageChange(i)}
-                  />
-                ) : (
-                  <video
-                    key={i}
-                    src={attachment.url}
-                    controls
-                    autoPlay
-                    muted
-                    className="video-player"
-                    playsInline
-                  >
-                    <source src={attachment.url} type="video/mp4" />
-                  </video>
-                )
-              ))}
-            </div>
-          </div>
-        </div>
-      ))}
-    </div>
-    
-  );
-}
-
-
-function Projects(props) {
-  // Combine projects and sideProjects, then sort by year (newest first, "Ongoing" first)
-  const allProjects = [...cv.projects, ...cv.sideProjects].filter(x => x.attachments.length > 0);
-  const projects = sortProjectsByYear([...allProjects]);
-  const [selectedProject, setSelectedProject] = useState(null);
-  const [isGridView, setIsGridView] = useState(true);
-  const swipeRef = useRef(null);
-  const [imageToScrollTo, setImageToScrollTo] = useState(null);
+function Projects() {
+  const projects = getProjects();
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    if (typeof window !== 'undefined') {
-      setIsMobile(window.matchMedia(`(max-width: ${MOBILE_BREAKPOINT}px)`).matches);
-    }
+    setIsMobile(window.matchMedia(`(max-width: ${MOBILE_BREAKPOINT}px)`).matches);
   }, []);
-
-  const openProject = (project) => {
-    setSelectedProject(project);
-    setIsGridView(true);
-    setImageToScrollTo(null);
-  };
-
-  const closeProject = () => {
-    setSelectedProject(null);
-    setImageToScrollTo(null);
-  };
-
-  const toggleView = () => {
-    setIsGridView(!isGridView);
-  };
-
-  const scrollToImage = (index) => {
-    if (swipeRef.current) {
-      const container = swipeRef.current;
-      const mediaContainers = container.querySelectorAll('.media-container');
-      if (mediaContainers[index]) {
-        const targetContainer = mediaContainers[index];
-        const containerRect = container.getBoundingClientRect();
-        const targetRect = targetContainer.getBoundingClientRect();
-        const scrollLeft = container.scrollLeft + (targetRect.left - containerRect.left) - (containerRect.width / 2) + (targetRect.width / 2);
-        container.scrollTo({
-          left: scrollLeft,
-          behavior: 'smooth',
-        });
-      }
-    }
-  };
-
-  useEffect(() => {
-    if (!isGridView && imageToScrollTo !== null) {
-      // Wait for DOM to update after view change
-      setTimeout(() => {
-        scrollToImage(imageToScrollTo);
-      }, 50);
-    }
-  }, [isGridView, imageToScrollTo]);
-
-  useEffect(() => {
-    if (selectedProject) {
-      const mediaContainers = document.querySelectorAll('.project-content .media-container');
-      mediaContainers.forEach((container, index) => {
-        setTimeout(() => {
-          container.style.opacity = 1;
-          container.style.transform = 'translateY(0)';
-        }, index * ANIMATION_STAGGER_MS);
-      });
-    }
-  }, [selectedProject]);
-
-  useEffect(() => {
-    const projectItems = document.querySelectorAll('.project-overview');
-    projectItems.forEach((item, index) => {
-      setTimeout(() => {
-        item.style.opacity = 1;
-        item.style.transform = 'translateY(0)';
-      }, index * ANIMATION_STAGGER_MS);
-    });
-  }, [projects]);
-
-  useEffect(() => {
-    if (!selectedProject) {
-      const sections = document.querySelectorAll('.about-section, .contact-section, .experience-section');
-      sections.forEach((section, index) => {
-        setTimeout(() => {
-          section.style.opacity = 1;
-          section.style.transform = 'translateY(0)';
-        }, index * ANIMATION_STAGGER_MS);
-      });
-    }
-  }, [selectedProject]);
 
   if (projects.length === 0) {
     return (
@@ -371,213 +34,111 @@ function Projects(props) {
 
   return (
     <div>
-      {!selectedProject && (
-        <>
-          <div className="projects-overview">
-            {projects.map((project, index) => (
-              <div 
-                key={index} 
-                className="project-overview"
-                style={{
-                  opacity: 0,
-                  transform: `translateY(${SLIDE_OFFSET}px)`,
-                  transition: 'opacity 0.5s ease-in-out, transform 0.5s ease-in-out',
-                }}
-                onClick={() => openProject(project)}
-              >
-                {/* <h3>{project.title}</h3> */}
-                <div className="project-overview-images">
-                  <div className="media-container">
-                    {project.attachments[0].type === 'image' ? (
-                      <Image 
+      <div className="projects-overview">
+        {projects.map((project, index) => {
+          const href = `/index/${slugify(project.title || project.heading)}`;
+          return (
+            <Link
+              key={project.id || index}
+              href={href}
+              className="project-overview"
+            >
+              <div className="project-overview-images">
+                <div className="media-container">
+                  {project.attachments[0].type === 'image' ? (
+                    <Image
+                      src={project.attachments[0].url}
+                      alt={`${project.title} cover image`}
+                      width={400}
+                      height={267}
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      style={{
+                        display: 'block',
+                        width: '100%',
+                        height: 'auto',
+                        cursor: 'pointer'
+                      }}
+                      priority={index < PRIORITY_LOAD_THRESHOLD}
+                      quality={85}
+                    />
+                  ) : (
+                    project.attachments[0].type === 'video' && (
+                      <video
                         src={project.attachments[0].url}
-                        alt={`${project.title} cover image`}
-                        width={400}
-                        height={267}
-                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                        style={{ 
-                          display: 'block',
-                          width: '100%',
-                          height: 'auto',
-                          cursor: 'pointer'
-                        }}
-                        priority={index < PRIORITY_LOAD_THRESHOLD}
-                        quality={85}
-                        onClick={() => {
-                          setImageToScrollTo(0); // Scroll to the first image in swipe view
-                          toggleView();
-                        }}
+                        muted
+                        loop
+                        playsInline
+                        preload="metadata"
+                        autoPlay={index < PRIORITY_LOAD_THRESHOLD}
+                        className={`video-player ${isMobile ? 'no-controls' : ''}`}
                       />
-                    ) : (
-                      project.attachments[0].type === 'video' && (
-                        <video 
-                          src={project.attachments[0].url} 
-                          autoPlay
-                          muted
-                          loop
-                          playsInline
-                          className={`video-player ${isMobile ? 'no-controls' : ''}`}
-                          onClick={() => {
-                            setImageToScrollTo(0); // Scroll to the first video in swipe view
-                            toggleView();
-                          }}
-                        />
-                      )
-                    )}
-                  </div>
+                    )
+                  )}
                 </div>
               </div>
-            ))}
-          </div>
+            </Link>
+          );
+        })}
+      </div>
 
-          {/* About Section */}
-          <section
-            className="about-section section"
-            style={{
-              opacity: 0,
-              transform: `translateY(${SLIDE_OFFSET}px)`,
-              transition: 'opacity 0.5s ease-in-out, transform 0.5s ease-in-out',
-            }}
-          >
-            <p>About</p>
-            <div dangerouslySetInnerHTML={{ __html: marked(cv.general.about) }} />
-          </section>
+      <section className="about-section section">
+        <p>About</p>
+        <div dangerouslySetInnerHTML={{ __html: marked(cv.general.about) }} />
+      </section>
 
-          {/* Contact Section */}
-          <section
-            className="contact-section section"
-            style={{
-              opacity: 0,
-              transform: `translateY(${SLIDE_OFFSET}px)`,
-              transition: 'opacity 0.5s ease-in-out, transform 0.5s ease-in-out',
-            }}
-          >
-            <p>Contact</p>
-            <ul className="contact-list">
-              {cv.contact.map((contactItem, index) => (
-                <li key={index} className="contact-item">
-                  {contactItem.platform}: <a href={contactItem.url} target="_blank" rel="noopener noreferrer">{contactItem.handle}</a>
-                </li>
-              ))}
-            </ul>
-          </section>
+      <section className="contact-section section">
+        <p>Contact</p>
+        <ul className="contact-list">
+          {cv.contact.map((contactItem, index) => (
+            <li key={index} className="contact-item">
+              {contactItem.platform}: <a href={contactItem.url} target="_blank" rel="noopener noreferrer">{contactItem.handle}</a>
+            </li>
+          ))}
+        </ul>
+      </section>
 
-          {/* Experience Section */}
-          <section
-            className="experience-section section"
-            style={{
-              opacity: 0,
-              transform: `translateY(${SLIDE_OFFSET}px)`,
-              transition: 'opacity 0.5s ease-in-out, transform 0.5s ease-in-out',
-            }}
-          >
-            <p>Experience</p>
-            <ul className="experience-list">
-              {cv.workExperience.map((experience, index) => (
-                <li key={index} className="experience-item">
-                  <div className="experience-title-year">
-                    <div className="experience-year">{experience.year}</div>
-                    <div className="experience-title">
-                      {experience.url ? (
-                        <a href={experience.url} target="_blank" rel="noopener noreferrer">
-                          {experience.heading}
-                        </a>
-                      ) : (
-                        experience.heading
-                      )}
-                    </div>
-                  </div>
-                  {experience.description && (
-                    <div className="experience-description">
-                      <div dangerouslySetInnerHTML={{ __html: marked(experience.description) }} />
-                    </div>
+      <section className="experience-section section">
+        <p>Experience</p>
+        <ul className="experience-list">
+          {cv.workExperience.map((experience, index) => (
+            <li key={index} className="experience-item">
+              <div className="experience-title-year">
+                <div className="experience-year">{experience.year}</div>
+                <div className="experience-title">
+                  {experience.url ? (
+                    <a href={experience.url} target="_blank" rel="noopener noreferrer">
+                      {experience.heading}
+                    </a>
+                  ) : (
+                    experience.heading
                   )}
-                  {experience.attachments && experience.attachments.length > 0 && (
-                    <div className="experience-attachments">
-                      {experience.attachments.map((attachment, i) => (
-                        <img key={i} src={attachment.url} alt={`Attachment ${i + 1}`} />
-                      ))}
-                    </div>
-                  )}
-                </li>
-              ))}
-            </ul>
-          </section>
-        </>
-      )}
-
-      {selectedProject && (
-        <div className="project-content">
-          <div className={`gallery-images ${isGridView ? 'grid-view' : 'swipe-view'} fade-slide-in`} ref={swipeRef}>
-            {selectedProject.attachments.map((attachment, i) => (
-              <div 
-                key={i} 
-                className="media-container"
-                style={{
-                  opacity: 0,
-                  transform: 'translateY(20px)',
-                  transition: 'opacity 0.5s ease-in-out, transform 0.5s ease-in-out',
-                }}
-              >
-                {attachment.type === 'image' ? (
-                  <img 
-                    src={attachment.url}
-                    alt={`${selectedProject.title} image ${i + 1}`}
-                    loading="eager"
-                    fetchPriority={i < PRIORITY_LOAD_THRESHOLD ? "high" : "auto"}
-                    decoding="async"
-                    onClick={() => {
-                      setImageToScrollTo(i);
-                      if (isGridView) {
-                        toggleView();
-                      } else {
-                        // If already in swipe view, scroll to the clicked image
-                        setTimeout(() => scrollToImage(i), 10);
-                      }
-                    }}
-                  />
-                ) : (
-                  <video 
-                    src={attachment.url} 
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                    className="video-player"
-                    onClick={() => {
-                      setImageToScrollTo(i);
-                      if (isGridView) {
-                        toggleView();
-                      } else {
-                        // If already in swipe view, scroll to the clicked image
-                        setTimeout(() => scrollToImage(i), 10);
-                      }
-                    }}
-                  />
-                )}
+                </div>
               </div>
-            ))}
-          </div>
-
-          <div className="gallery-header fade-slide-in">
-            <h3>
-              {selectedProject.title || selectedProject.heading}
-            </h3>
-            <button className="toggle-view-button" onClick={toggleView}>
-              {isGridView ? 'Fullscreen' : 'Grid'}
-            </button>
-          </div>
-
-          <div className="gallery-text fade-slide-in">
-            <div dangerouslySetInnerHTML={{ __html: marked(selectedProject.description || '') }} />
-          </div>
-
-          <button className="close-project-button fade-slide-in" onClick={closeProject}>← Back to Projects</button>
-        </div>
-      )}
+              {experience.description && (
+                <div className="experience-description">
+                  <div dangerouslySetInnerHTML={{ __html: marked(experience.description) }} />
+                </div>
+              )}
+              {experience.attachments && experience.attachments.length > 0 && (
+                <div className="experience-attachments">
+                  {experience.attachments.map((attachment, i) => (
+                    <img key={i} src={attachment.url} alt={`Attachment ${i + 1}`} />
+                  ))}
+                </div>
+              )}
+            </li>
+          ))}
+        </ul>
+      </section>
     </div>
   );
 }
 
-
-export default App;
+export default function App() {
+  return (
+    <div className="container">
+      <Navigation />
+      <Projects />
+    </div>
+  );
+}
