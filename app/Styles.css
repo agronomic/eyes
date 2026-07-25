@@ -19,7 +19,7 @@
   --page-end-space: 120px;
   --media-col-min: 100px;
   --media-col-gap: 10px;
-  --media-col-nav-scale: 0.75;
+  --media-col-nav-scale: 0.40;
   /* Breakpoints — use these literals in @media / matchMedia (var() unreliable there) */
   --bp-mobile: 767px;
   --bp-narrow: 499px;
@@ -303,7 +303,7 @@ video {
   overflow-x: scroll;
   scroll-snap-type: x mandatory;
   gap: 10px;
-  margin-bottom: 2vw;
+  margin-bottom: var(--media-col-gap);
   align-items: center;
 }
 
