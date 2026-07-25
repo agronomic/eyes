@@ -20,6 +20,11 @@
   --media-col-min: 100px;
   --media-col-gap: 10px;
   --media-col-nav-scale: 0.75;
+  /* Breakpoints — use these literals in @media / matchMedia (var() unreliable there) */
+  --bp-mobile: 767px;
+  --bp-narrow: 499px;
+  /* Stage carousel: leave room so the next slide peeks */
+  --swipe-peek: clamp(12px, 4vw, 40px);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -305,7 +310,7 @@ video {
   scroll-snap-align: center;
   max-height: 60vh;
   width: auto;
-  max-width: 100vw;
+  max-width: calc(100vw - 2 * var(--swipe-peek));
 }
 
 .gallery-images.swipe-view img {
@@ -369,6 +374,7 @@ video {
   column-gap: 10px;
 }
 
+/* --bp-narrow */
 @media (max-width: 499px) {
   .experiments-grid {
     column-count: 3;

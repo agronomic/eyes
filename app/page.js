@@ -7,9 +7,8 @@ import { marked } from 'marked';
 
 import cv, { getProjects, slugify } from './content';
 import Navigation from './navigation';
-import { useStaggerReady } from './helpers';
+import { bpMobile, useStaggerReady } from './helpers';
 
-const MOBILE_BREAKPOINT = 767;
 const PRIORITY_LOAD_THRESHOLD = 3;
 
 function Projects() {
@@ -18,7 +17,7 @@ function Projects() {
   const staggerReady = useStaggerReady();
 
   useEffect(() => {
-    setIsMobile(window.matchMedia(`(max-width: ${MOBILE_BREAKPOINT}px)`).matches);
+    setIsMobile(window.matchMedia(`(max-width: ${bpMobile}px)`).matches);
   }, []);
 
   if (projects.length === 0) {
@@ -53,7 +52,7 @@ function Projects() {
                       alt={`${project.title} cover image`}
                       width={400}
                       height={267}
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      sizes={`(max-width: ${bpMobile}px) 100vw, (max-width: 1200px) 50vw, 33vw`}
                       style={{
                         display: 'block',
                         width: '100%',

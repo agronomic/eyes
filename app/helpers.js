@@ -2,6 +2,10 @@
 
 import { useEffect, useState } from 'react';
 
+/** Keep in sync with --bp-mobile / --bp-narrow in Styles.css */
+export const bpMobile = 767;
+export const bpNarrow = 499;
+
 /** After mount (and when resetKey changes), enable CSS grid stagger. */
 export function useStaggerReady(resetKey) {
   const [ready, setReady] = useState(false);
