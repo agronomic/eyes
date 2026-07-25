@@ -317,6 +317,7 @@ video {
   scroll-snap-align: center;
   max-height: var(--stage-height);
   width: auto;
+  height: auto;
   max-width: calc(100vw - 2 * var(--swipe-peek));
   object-fit: contain;
 }
