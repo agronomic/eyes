@@ -6,7 +6,7 @@ import { marked } from 'marked';
 
 import Navigation from '../../navigation';
 import { getProjectBySlug } from '../../content';
-import { playMutedVideos, useStaggerReady } from '../../helpers';
+import { mediaLoading, playMutedVideos, useStaggerReady } from '../../helpers';
 
 export default function ProjectPage() {
   const params = useParams();
@@ -24,7 +24,7 @@ export default function ProjectPage() {
   const scrollToImage = (index) => {
     const container = swipeRef.current;
     if (!container) return;
-    const slides = container.querySelectorAll('.media-container');
+    const slides = container.querySelectorAll(':scope > .media-container');
     if (!slides[index]) return;
     const target = slides[index];
     const containerRect = container.getBoundingClientRect();
@@ -43,7 +43,7 @@ export default function ProjectPage() {
 
     let ticking = false;
     const syncActive = () => {
-      const slides = container.querySelectorAll('.media-container');
+      const slides = container.querySelectorAll(':scope > .media-container');
       if (!slides.length) return;
       const mid = container.scrollLeft + container.clientWidth / 2;
       let best = 0;
@@ -103,7 +103,7 @@ export default function ProjectPage() {
                 <img
                   src={attachment.url}
                   alt={`${title} image ${i + 1}`}
-                  loading={i === 0 ? 'eager' : 'lazy'}
+                  loading={mediaLoading('stage')}
                   decoding="async"
                 />
               ) : (
@@ -113,7 +113,7 @@ export default function ProjectPage() {
                   muted
                   loop
                   playsInline
-                  preload={i === 0 ? 'auto' : 'metadata'}
+                  preload="auto"
                   className="video-player"
                 />
               )}
@@ -137,7 +137,7 @@ export default function ProjectPage() {
                 <img
                   src={attachment.url}
                   alt=""
-                  loading="lazy"
+                  loading={mediaLoading('thumb')}
                   decoding="async"
                 />
               ) : (

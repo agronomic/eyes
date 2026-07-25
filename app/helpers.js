@@ -6,6 +6,11 @@ import { useEffect, useState } from 'react';
 export const bpMobile = 767;
 export const bpNarrow = 499;
 
+/** Stage needs layout for snap/scroll; previews can defer. */
+export function mediaLoading(role) {
+  return role === 'stage' ? 'eager' : 'lazy';
+}
+
 /** After mount (and when resetKey changes), enable CSS grid stagger. */
 export function useStaggerReady(resetKey) {
   const [ready, setReady] = useState(false);
