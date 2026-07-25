@@ -25,6 +25,11 @@
   --bp-narrow: 499px;
   /* Stage carousel: leave room so the next slide peeks */
   --swipe-peek: clamp(12px, 4vw, 40px);
+  /* Shared stage frame so landscape + portrait share one height */
+  --stage-height: 60vh;
+  /* Experiments expand overlay */
+  --expand-max-width: min(900px, 90vw);
+  --expand-max-height: 85vh;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -90,7 +95,7 @@ video {
 
 .video-player {
   width: auto;
-  max-height: 60vh;
+  max-height: var(--stage-height);
 }
 
 /* =============================================================================
@@ -285,7 +290,8 @@ video {
   align-items: center;
 }
 
-.gallery-images.grid-view img {
+.gallery-images.grid-view img,
+.gallery-images.grid-view video {
   width: 100%;
   height: auto;
   object-fit: contain;
@@ -295,34 +301,38 @@ video {
 .gallery-images.swipe-view {
   display: flex;
   overflow-x: scroll;
+  overflow-y: hidden;
   scroll-snap-type: x mandatory;
   gap: 10px;
   margin-bottom: 2vw;
-  align-items: center;
+  height: var(--stage-height);
+  align-items: stretch;
 }
 
 .gallery-images.swipe-view .media-container {
   scroll-snap-align: center;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  min-height: 0;
+  /* Peek is visual from neighbors; don't width-cap media or height breaks on narrow */
+  max-width: none;
 }
 
 .gallery-images.swipe-view img,
 .gallery-images.swipe-view video {
   scroll-snap-align: center;
-  max-height: 60vh;
+  height: 100%;
   width: auto;
-  max-width: calc(100vw - 2 * var(--swipe-peek));
+  max-width: none;
+  max-height: none;
+  object-fit: contain;
 }
 
 .gallery-images.swipe-view img {
-  width: auto;
-  object-fit: contain;
   image-rendering: auto;
-}
-
-.gallery-images video {
-  width: auto;
-  max-height: 60vh;
-  object-fit: contain;
 }
 
 /* Thumbs = same grid system, scaled column floor; button chrome + active */
@@ -397,6 +407,47 @@ video {
 .experiments-grid .audio-player {
   display: block;
   width: 100%;
+}
+
+.experiments-grid .media-container.is-expandable {
+  cursor: pointer;
+}
+
+.experiments-expand {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: min(2vw, 24px);
+  background: #000;
+  cursor: pointer;
+}
+
+.experiments-expand img,
+.experiments-expand video {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: var(--expand-max-width);
+  max-height: var(--expand-max-height);
+  object-fit: contain;
+  cursor: pointer;
+}
+
+/* --bp-mobile: full-width expand */
+@media (max-width: 767px) {
+  .experiments-expand {
+    padding: 0;
+  }
+
+  .experiments-expand img,
+  .experiments-expand video {
+    width: 100%;
+    max-width: 100%;
+    max-height: 100vh;
+  }
 }
 
 /* =============================================================================

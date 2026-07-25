@@ -103,17 +103,21 @@ export default function ProjectPage() {
                 <img
                   src={attachment.url}
                   alt={`${title} image ${i + 1}`}
-                  loading={mediaLoading('stage')}
+                  width={attachment.width || undefined}
+                  height={attachment.height || undefined}
+                  loading={mediaLoading('stage', i)}
                   decoding="async"
                 />
               ) : (
                 <video
                   src={attachment.url}
+                  width={attachment.width || undefined}
+                  height={attachment.height || undefined}
                   autoPlay
                   muted
                   loop
                   playsInline
-                  preload="auto"
+                  preload={i === 0 ? 'auto' : 'metadata'}
                   className="video-player"
                 />
               )}
