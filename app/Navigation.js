@@ -1,12 +1,12 @@
-"use client";
+'use client';
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import cv from './cv';
+import cv from './content';
 
 export default function Navigation() {
   const pathname = usePathname();
-  const onProjectPage = pathname?.startsWith('/index/');
+  const onProjectPage = pathname?.startsWith('/p/');
 
   if (onProjectPage) {
     return (
@@ -21,9 +21,7 @@ export default function Navigation() {
   return (
     <div className="navigation-bar">
       <div className="title">
-        <Link href="/">
-          {cv.general.displayName}
-        </Link>
+        <Link href="/">{cv.general.displayName}</Link>
       </div>
       <div className="nav-links">
         <Link href="/" className={pathname === '/' ? 'active' : ''}>

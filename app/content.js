@@ -1,6 +1,11 @@
-import cv from './cv';
+import profileData from '../public/content/profileData.json';
 
-/** Archive projects use an a- prefix on the slug (flat under /index/). */
+/** Site content from profileData.json */
+const cv = { ...profileData };
+
+export default cv;
+
+/** Project URLs live under /p/ with an a- prefix on the slug. */
 export function slugify(title) {
   const base = String(title || '')
     .toLowerCase()

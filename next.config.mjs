@@ -5,6 +5,15 @@ const nextConfig = {
     deviceSizes: [360, 640, 768, 1024, 1280, 1536, 1920],
     imageSizes: [256, 320, 480, 640, 750, 828, 1080],
   },
+  async redirects() {
+    return [
+      {
+        source: '/index/:slug',
+        destination: '/p/:slug',
+        permanent: true,
+      },
+    ];
+  },
   async headers() {
     return [
       {

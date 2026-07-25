@@ -4,12 +4,10 @@ import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { marked } from 'marked';
-import '@fontsource-variable/inter';
-import '@fontsource/atkinson-hyperlegible';
 
-import cv from './cv';
-import Navigation from './Navigation';
-import { getProjects, slugify } from './projects';
+import cv, { getProjects, slugify } from './content';
+import Navigation from './navigation';
+import { useStaggerReady } from './helpers';
 
 const MOBILE_BREAKPOINT = 767;
 const PRIORITY_LOAD_THRESHOLD = 3;
@@ -17,6 +15,7 @@ const PRIORITY_LOAD_THRESHOLD = 3;
 function Projects() {
   const projects = getProjects();
   const [isMobile, setIsMobile] = useState(false);
+  const staggerReady = useStaggerReady();
 
   useEffect(() => {
     setIsMobile(window.matchMedia(`(max-width: ${MOBILE_BREAKPOINT}px)`).matches);
@@ -34,9 +33,9 @@ function Projects() {
 
   return (
     <div>
-      <div className="projects-overview">
+      <div className={`projects-overview${staggerReady ? ' stagger-ready' : ''}`}>
         {projects.map((project, index) => {
-          const href = `/index/${slugify(project.title || project.heading)}`;
+          const href = `/p/${slugify(project.title || project.heading)}`;
           return (
             <Link
               key={project.id || index}
@@ -44,7 +43,10 @@ function Projects() {
               className="project-overview"
             >
               <div className="project-overview-images">
-                <div className="media-container">
+                <div
+                  className="media-container"
+                  style={{ '--stagger': index }}
+                >
                   {project.attachments[0].type === 'image' ? (
                     <Image
                       src={project.attachments[0].url}
@@ -56,7 +58,7 @@ function Projects() {
                         display: 'block',
                         width: '100%',
                         height: 'auto',
-                        cursor: 'pointer'
+                        cursor: 'pointer',
                       }}
                       priority={index < PRIORITY_LOAD_THRESHOLD}
                       quality={85}
@@ -91,7 +93,10 @@ function Projects() {
         <ul className="contact-list">
           {cv.contact.map((contactItem, index) => (
             <li key={index} className="contact-item">
-              {contactItem.platform}: <a href={contactItem.url} target="_blank" rel="noopener noreferrer">{contactItem.handle}</a>
+              {contactItem.platform}:{' '}
+              <a href={contactItem.url} target="_blank" rel="noopener noreferrer">
+                {contactItem.handle}
+              </a>
             </li>
           ))}
         </ul>

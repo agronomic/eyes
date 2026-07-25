@@ -2,13 +2,15 @@
  * Archived Index list UI.
  * Kept for a future changelog section (long-form entries by year).
  * Not mounted in the live site.
+ *
+ * Note: live Styles.css no longer includes Index-only rules.
+ * If you revive this, restore styles from git history or add an archive stylesheet.
  */
 "use client";
 
 import React, { useEffect, useState, useRef } from 'react';
-import { useSwipeable } from 'react-swipeable';
 import { marked } from 'marked';
-import { getProjects } from '../projects';
+import { getProjects } from '../content';
 
 const ANIMATION_STAGGER_MS = 100;
 const LAZY_LOAD_THRESHOLD_INDEX = 3;
@@ -122,18 +124,8 @@ export default function ProjectIndex() {
     }
   };
 
-  const swipeHandlers = useSwipeable({
-    onSwipedLeft: () => {
-      const nextIndex = imageIndexRef.current + 1 < totalImages ? imageIndexRef.current + 1 : imageIndexRef.current;
-      handleImageChange(nextIndex);
-    },
-    onSwipedRight: () => {
-      const nextIndex = imageIndexRef.current - 1 >= 0 ? imageIndexRef.current - 1 : imageIndexRef.current;
-      handleImageChange(nextIndex);
-    },
-    preventDefaultTouchmoveEvent: true,
-    trackMouse: true,
-  });
+  // Swipe was via react-swipeable (removed from live deps). Restore when reviving Index.
+  const swipeHandlers = {};
 
   return (
     <div className="project-index">

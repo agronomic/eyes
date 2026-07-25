@@ -1,4 +1,7 @@
-/* Global Reset */
+/* =============================================================================
+   Tokens
+   ============================================================================= */
+
 * {
   margin: 0;
   padding: 0;
@@ -6,17 +9,19 @@
   list-style-type: none;
 }
 
-/* Root Variables */
 :root {
   --background-color: #000;
   --color: #fff;
-  --font-size-base: 14px; /* Base font size */
-  --font-size-large: 1.25rem; /* Larger font size for headings */
-  --font-weight-regular: 400; /* Regular font weight */
-  --font-weight-bold: 700; /* Bold font weight */
+  --font-size-base: 14px;
+  --font-size-large: 1.25rem;
+  --font-weight-regular: 400;
+  --font-weight-bold: 700;
+  --page-end-space: 120px;
+  --media-col-min: 100px;
+  --media-col-gap: 10px;
+  --media-col-nav-scale: 0.75;
 }
 
-/* Dark Mode */
 @media (prefers-color-scheme: dark) {
   :root {
     --background-color: #000;
@@ -24,8 +29,13 @@
   }
 }
 
-/* Global Styles */
-body, h1, h2, h3, h4, h5, h6, p, a, li, button, input, textarea {
+/* =============================================================================
+   Base
+   ============================================================================= */
+
+body,
+h1, h2, h3, h4, h5, h6,
+p, a, li, button, input, textarea {
   font-family: 'Atkinson Hyperlegible', 'Inter Variable', sans-serif;
   font-size: var(--font-size-base);
   font-weight: var(--font-weight-regular);
@@ -40,9 +50,8 @@ body {
   text-size-adjust: none;
 }
 
-
-a{
-  text-decoration:none;
+a {
+  text-decoration: none;
 }
 
 a:hover {
@@ -53,20 +62,43 @@ p a {
   text-decoration: underline;
 }
 
-
 p a:hover {
   text-decoration: none;
 }
 
+.container {
+  padding: min(2vw, 50px);
+  padding-top: 80px;
+  padding-bottom: var(--page-end-space);
+  width: 100%;
+}
 
-/* Navigation Bar */
+.media-container {
+  position: relative;
+}
+
+video {
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
+}
+
+.video-player {
+  width: auto;
+  max-height: 60vh;
+}
+
+/* =============================================================================
+   Navigation
+   ============================================================================= */
+
 .navigation-bar {
   z-index: 1000;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: 40px; /* Fixed stand-in for the old ~4vh look */
+  height: 40px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -86,33 +118,14 @@ p a:hover {
   }
 }
 
-.about-section {
-  opacity: 1;
-  transform: none;
-}
-
-.project-item {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.25s ease-in-out, transform 0.25s ease-in-out;
-}
-
-.project-item.loaded {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Title Section */
 .navigation-bar .title {
   font-size: var(--font-size-base);
   font-weight: var(--font-weight-regular);
- 
 }
 
-/* Right-Aligned Navigation Links */
 .nav-links {
   display: flex;
-  margin-left: auto; /* Pushes the links to the far right */
+  margin-left: auto;
 }
 
 .nav-links a,
@@ -135,54 +148,62 @@ p a:hover {
   margin-right: 0;
 }
 
-/* Container */
-.container {
-  padding: min(2vw, 50px);
-  padding-top: 80px; /* Adjust for the fixed navigation bar */
-  width: 100%;
+/* =============================================================================
+   Motion — one stagger system for all grids (+ project chrome)
+   ============================================================================= */
+
+@keyframes fadeSlideInSequential {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-/* Sections */
-.section {
-  margin-bottom: 40px;
+.gallery-header {
+  animation: fadeSlideInSequential 0.5s ease-in-out both;
+  animation-delay: 0s;
 }
 
-.section:last-child {
-  margin-bottom: 120px; /* Extra spacing at the bottom of the page */
+.gallery-text {
+  animation: fadeSlideInSequential 0.5s ease-in-out both;
+  animation-delay: 0.2s;
 }
 
-.section h2 {
-  font-size: var(--font-size-base);
-  margin-bottom: 16px;
+/* Animate stage + grid thumbs (same stagger as old project grid) */
+.projects-overview .media-container img,
+.projects-overview .media-container video,
+.gallery-images.swipe-view .media-container img,
+.gallery-images.swipe-view .media-container video,
+.gallery-images.grid-view .media-container img,
+.gallery-images.grid-view .media-container video,
+.experiments-grid .media-container img,
+.experiments-grid .media-container video,
+.experiments-grid .media-container audio {
+  opacity: 0;
 }
 
-.section p {
-  margin-bottom: 8px;
+.stagger-ready .media-container img,
+.stagger-ready .media-container video,
+.stagger-ready .media-container audio {
+  animation: fadeSlideInSequential 0.5s ease-in-out both;
+  animation-delay: calc(var(--stagger, 0) * 100ms);
 }
 
-.contact-list {
-  list-style-type: none; /* Removes default bullet points */
-}
+/* =============================================================================
+   Projects overview (home) + project gallery grid
+   ============================================================================= */
 
-
-.contact-item a {
-  text-decoration: underline;
-}
-
-.contact-item a:hover {
-  text-decoration: none;
-}
-
-
-
-/* Shared media grid (overview + project page) */
 .projects-overview,
 .gallery-images.grid-view {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-  gap: 10px;
+  grid-template-columns: repeat(auto-fill, minmax(var(--media-col-min), 1fr));
+  gap: var(--media-col-gap);
   align-items: flex-start;
-  margin-bottom: 40px; /* Same distance to the text/section below */
+  margin-bottom: 40px;
 }
 
 .project-overview {
@@ -208,7 +229,7 @@ p a:hover {
   display: block;
   flex-wrap: nowrap;
   gap: 8px;
-  overflow-x: auto;
+  overflow: visible;
 }
 
 .project-overview-images img {
@@ -219,7 +240,6 @@ p a:hover {
   border-radius: 0;
 }
 
-/* Next.js Image component wrapper styling */
 .project-overview-images .media-container > span {
   display: block !important;
   width: 100% !important;
@@ -231,15 +251,9 @@ p a:hover {
   object-fit: cover;
 }
 
-/* Gallery Content (for selected project) */
-.gallery-content {
-  max-width: 100%;
-  max-height: 100%;
-  overflow: hidden; /* Changed from auto to hidden to ensure no scrollbars */
-  display: flex;
-  flex-direction: column;
-  position: relative;
-}
+/* =============================================================================
+   Project detail gallery
+   ============================================================================= */
 
 .gallery-header {
   display: flex;
@@ -255,6 +269,10 @@ p a:hover {
   font-weight: var(--font-weight-regular);
 }
 
+.project-year {
+  text-align: right;
+}
+
 .gallery-images.grid-view .media-container {
   width: 100%;
   display: flex;
@@ -262,7 +280,13 @@ p a:hover {
   align-items: center;
 }
 
-/* Swipe view for gallery images */
+.gallery-images.grid-view img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  image-rendering: auto;
+}
+
 .gallery-images.swipe-view {
   display: flex;
   overflow-x: scroll;
@@ -277,19 +301,11 @@ p a:hover {
 }
 
 .gallery-images.swipe-view img,
-.gallery-images.swipe-view video{
+.gallery-images.swipe-view video {
   scroll-snap-align: center;
-  max-height: 60vh; /* Allow image to be as tall as the viewport */
-  width: auto; /* Maintain aspect ratio */
-  max-width: 100vw; /* Limit image width to viewport width */
-}
-
-/* Default styles for all images */
-.gallery-images.grid-view img {
-  width: 100%;
-  height: auto;
-  object-fit: contain;
-  image-rendering: auto;
+  max-height: 60vh;
+  width: auto;
+  max-width: 100vw;
 }
 
 .gallery-images.swipe-view img {
@@ -298,14 +314,43 @@ p a:hover {
   image-rendering: auto;
 }
 
-
-/* General styles for videos */
 .gallery-images video {
-  width: auto; /* Let video scale based on height */
-  max-height: 60vh; /* Same height limit as images for consistency */
+  width: auto;
+  max-height: 60vh;
   object-fit: contain;
 }
-/* Text and description for the gallery — spacing comes from the grid above */
+
+/* Thumbs = same grid system, scaled column floor; button chrome + active */
+.gallery-images.grid-view.gallery-thumbs {
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(calc(var(--media-col-min) * var(--media-col-nav-scale)), 1fr)
+  );
+}
+
+.gallery-thumbs .media-container {
+  appearance: none;
+  border: 1px solid transparent;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+  color: inherit;
+  font: inherit;
+  outline: none;
+  min-width: 0;
+  max-width: 100%;
+  opacity: 0.45;
+}
+
+.gallery-thumbs .media-container.is-active {
+  opacity: 1;
+  border-color: var(--color);
+}
+
+.gallery-thumbs .media-container:focus {
+  outline: none;
+}
+
 .gallery-text {
   margin: 0;
   text-align: left;
@@ -315,11 +360,19 @@ p a:hover {
   max-width: 500px;
 }
 
-/* Experiments — masonry (uneven heights, 3 columns) */
+/* =============================================================================
+   Experiments (masonry)
+   ============================================================================= */
+
 .experiments-grid {
-  column-count: 4;
+  column-width: 150px;
   column-gap: 10px;
-  margin-bottom: 120px; /* Same bottom breathing room as project/home pages */
+}
+
+@media (max-width: 499px) {
+  .experiments-grid {
+    column-count: 3;
+  }
 }
 
 .experiments-grid .media-container {
@@ -340,277 +393,73 @@ p a:hover {
   width: 100%;
 }
 
-@media (max-width: 767px) {
-  .experiments-grid {
-    column-count: 3;
-  }
-}
-
-/* Close button for selected project */
-.close-project-button {
-  background: none;
-  border: none;
-  font-family: 'Inter Variable', sans-serif;
-  font-size: var(--font-size-base);
-  font-weight: var(--font-weight-regular);
-  color: var(--color);
-  cursor: pointer;
-  margin-top: 10px;
-}
-
-
-/* Animations */
-@keyframes fadeSlideIn {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fadeSlideOut {
-  0% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  100% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-}
-
-/* Fade-in and slide-up */
-.fade-slide-in {
-  animation: fadeSlideIn 0.25s ease-in-out forwards;
-}
-
-/* Fade-out and slide-down */
-.fade-slide-out {
-  animation: fadeSlideOut 0.25s ease-in-out forwards;
-}
-
-
-/* Staggered fade for gallery chrome */
-@keyframes fadeSlideInSequential {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Gallery sections — visible by default (no opacity:0 trap) */
-.gallery-header {
-  animation: fadeSlideInSequential 0.5s ease-in-out both;
-  animation-delay: 0s;
-}
-
-.gallery-images.grid-view,
-.gallery-images.swipe-view {
-  animation: fadeSlideInSequential 0.5s ease-in-out both;
-  animation-delay: 0.1s;
-}
-
-.gallery-text {
-  animation: fadeSlideInSequential 0.5s ease-in-out both;
-  animation-delay: 0.2s;
-}
-
-
-
-
-
-/* Project Index */
-.project-index .project-item {
-  padding: 10px 0;
-}
-
-.project-index-header {
-  display: grid;
-  grid-template-columns: auto 2fr 1fr auto;
-  align-items: center;
-  gap: 8px;
-}
-
-.project-index-number {
-  margin-right: 8px;
-}
-
-.project-title {
-  text-align: left;
-  margin: 0;
-}
-
-/* Details section */
-.project-details {
-  display: block;
-  align-items: flex-start;
-  gap: 8px;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.25s ease-in-out !important; /* Smooth transition */
-}
-
-.project-item.expanded .project-details {
-  max-height: 1000px; /* Large enough to accommodate most content */
-}
-
-
-.project-description,
-.details-right {
-    margin-top:10px;
-    max-width: 500px;  /* Set a maximum width */
-    display: block;    /* Change from inline-flex to block to allow natural wrapping */
-    text-align: left;
-    white-space: normal; /* Allow wrapping of text if necessary */
-    overflow: hidden;   /* Hide any potential overflow (optional, if needed) */
-    word-wrap: break-word; /* Ensures long words or URLs wrap to the next line */
-  margin-right:30px;
-}
-
-
-
-/* Images section */
-.image-counter{
-  text-align:right;
-  margin-right:10px;
-}
-
-.project-images-horizontal {
-  display: flex;
-  gap: 8px;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory; /* Enable snapping */
-  scroll-behavior: smooth; /* Smooth scrolling effect */
-}
-
-.project-images-horizontal img,
-.project-images-horizontal video{
-  max-width: 100%;
-max-height: 60vh;
-object-fit: contain;
-  border-radius: 0;
-  scroll-snap-align: center; /* Snap each image to the start of the container */
-  image-rendering: auto;
-}
-
-.project-images-horizontal::-webkit-scrollbar {
-  display: none; /* Hide scrollbar for a cleaner look */
-}
-
-.project-images-horizontal img:last-child {
-  margin-right: 0;
-}
-
-.project-year {
-  text-align: right;
-}
-
-.details-right {
-  margin-left:30px;
-  
-}
-
-.project-index .project-item.expanded {
-  opacity: 1 !important; /* Ensure expanded project remains fully visible */
-}
-
-.project-item {
-  cursor: default; /* Default cursor for the whole project item */
-}
-
-.project-index-header {
-  cursor: pointer; /* Pointer cursor only for the header section */
-}
+/* =============================================================================
+   Home — About / Contact / Experience
+   ============================================================================= */
 
 .section {
-  margin-bottom: 24px; /* Consistent spacing between sections */
+  margin-bottom: 24px;
 }
 
-/* Optional: Specific styling for different sections if needed */
+.section h2 {
+  font-size: var(--font-size-base);
+  margin-bottom: 16px;
+}
+
+.section p {
+  margin-bottom: 8px;
+}
+
+.about-section {
+  opacity: 1;
+  transform: none;
+}
+
 .about-section p {
-  max-width: 500px; /* Set maximum width for the about description */
+  max-width: 500px;
+}
+
+.contact-list {
+  list-style-type: none;
+}
+
+.contact-item a {
+  text-decoration: underline;
+}
+
+.contact-item a:hover {
+  text-decoration: none;
 }
 
 .experience-list {
-  list-style-type: none; /* Removes default bullets */
-  padding: 0; /* Removes padding from the list */
-  margin: 0; /* Removes default margin from the list */
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
 }
 
 .experience-item {
   display: flex;
-  flex-direction: column; /* Stack title/year and description vertically */
+  flex-direction: column;
 }
 
 .experience-title-year {
   display: flex;
-  justify-content: flex-start; /* Aligns the title and year inline */
-  gap: 5vw; /* Space between year and title */
+  justify-content: flex-start;
+  gap: 5vw;
 }
 
 .experience-year {
-  width: 100px; /* Fixed width to align years */
+  width: 100px;
   text-align: left;
-  flex-shrink: 0; /* Prevent shrinking when space is tight */
+  flex-shrink: 0;
 }
 
 .experience-title {
-  flex-grow: 1; /* Title takes up remaining space */
+  flex-grow: 1;
   text-align: left;
 }
 
-.experience-attachments, .experience-description{
-  display: none; /* Hidden for now */
+.experience-attachments,
+.experience-description {
+  display: none;
 }
-
-
-
-
-
-/* General styles for videos */
-video {
-  max-width: 100%;
-  max-height: 100%;
-  display: block;
-}
-
-/* Styles for video containers */
-.media-container {
-  position: relative;
-}
-
-/* Overlay controls styling */
-.video-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  background: none; /* Remove background */
-  color: black; /* Change text color to black */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  transition: opacity 0.1s ease;
-}
-
-/* Show overlay controls on hover or focus */
-.media-container:hover .video-overlay,
-.media-container:focus-within .video-overlay {
-  opacity: 1;
-}
-
-
-/* Video player styling */
-.video-player {
-  width: auto;
-  max-height: 60vh;
-  
-}
-
