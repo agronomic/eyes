@@ -25,16 +25,11 @@ export default function ProjectPage() {
     const container = swipeRef.current;
     if (!container) return;
     const slides = container.querySelectorAll(':scope > .media-container');
-    if (!slides[index]) return;
     const target = slides[index];
-    const containerRect = container.getBoundingClientRect();
-    const targetRect = target.getBoundingClientRect();
+    if (!target) return;
     const scrollLeft =
-      container.scrollLeft +
-      (targetRect.left - containerRect.left) -
-      containerRect.width / 2 +
-      targetRect.width / 2;
-    container.scrollTo({ left: scrollLeft, behavior: 'smooth' });
+      target.offsetLeft - (container.clientWidth - target.offsetWidth) / 2;
+    container.scrollTo({ left: Math.max(0, scrollLeft), behavior: 'smooth' });
   };
 
   useEffect(() => {
@@ -97,7 +92,12 @@ export default function ProjectPage() {
             <div
               key={`stage-${attachment.url}-${i}`}
               className="media-container"
-              style={{ '--stagger': i }}
+              style={{
+                '--stagger': i,
+                ...(attachment.width && attachment.height
+                  ? { aspectRatio: `${attachment.width} / ${attachment.height}` }
+                  : {}),
+              }}
             >
               {attachment.type === 'image' ? (
                 <img
@@ -105,7 +105,7 @@ export default function ProjectPage() {
                   alt={`${title} image ${i + 1}`}
                   width={attachment.width || undefined}
                   height={attachment.height || undefined}
-                  loading={mediaLoading('stage', i)}
+                  loading={mediaLoading('stage')}
                   decoding="async"
                 />
               ) : (
@@ -117,7 +117,7 @@ export default function ProjectPage() {
                   muted
                   loop
                   playsInline
-                  preload={i === 0 ? 'auto' : 'metadata'}
+                  preload="auto"
                   className="video-player"
                 />
               )}

@@ -310,15 +310,20 @@ video {
 .gallery-images.swipe-view .media-container {
   scroll-snap-align: center;
   flex-shrink: 0;
+  max-height: var(--stage-height);
+  max-width: calc(100vw - 2 * var(--swipe-peek));
+  height: auto;
+  width: auto;
 }
 
 .gallery-images.swipe-view img,
 .gallery-images.swipe-view video {
   scroll-snap-align: center;
+  display: block;
   max-height: var(--stage-height);
   width: auto;
   height: auto;
-  max-width: calc(100vw - 2 * var(--swipe-peek));
+  max-width: 100%;
   object-fit: contain;
 }
 
