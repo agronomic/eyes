@@ -1,4 +1,3 @@
-import '@fontsource-variable/inter';
 import '@fontsource/atkinson-hyperlegible';
 import './Styles.css';
 
