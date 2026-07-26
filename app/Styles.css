@@ -233,6 +233,34 @@ video {
    Projects overview (home) + project gallery grid
    ============================================================================= */
 
+.project-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--media-col-gap);
+  margin-bottom: var(--media-col-gap);
+}
+
+.project-filters button {
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-regular);
+  font-family: inherit;
+  color: var(--color);
+  cursor: pointer;
+  opacity: 0.45;
+}
+
+.project-filters button.active,
+.project-filters button:hover {
+  opacity: 1;
+}
+
+.project-filters button.active {
+  text-decoration: underline;
+}
+
 .projects-overview,
 .gallery-images.grid-view {
   display: grid;
@@ -240,6 +268,11 @@ video {
   gap: var(--media-col-gap);
   align-items: flex-start;
   margin-bottom: 40px;
+}
+
+/* Filter height ease — keeps About/etc from jumping when the grid shrinks */
+.projects-overview {
+  transition: min-height 0.4s ease-in-out;
 }
 
 .project-overview {

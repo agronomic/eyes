@@ -5,6 +5,9 @@ const cv = { ...profileData };
 
 export default cv;
 
+/** Home grid filter pills — keep in sync with tags on projects / sideProjects. */
+export const PROJECT_TAGS = ['Product', 'Brand', 'Civic', 'Personal'];
+
 /** Project URLs live under /p/ with an a- prefix on the slug. */
 export function slugify(title) {
   const base = String(title || '')

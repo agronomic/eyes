@@ -1,24 +1,45 @@
 "use client";
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
+import { flushSync } from 'react-dom';
 import Image from 'next/image';
 import Link from 'next/link';
 import { marked } from 'marked';
 
-import cv, { getProjects, slugify } from './content';
+import cv, { getProjects, PROJECT_TAGS, slugify } from './content';
 import Navigation from './navigation';
-import { bpMobile, mediaQuality, mediaSizes, useStaggerReady } from './helpers';
+import {
+  bpMobile,
+  easeElementHeight,
+  mediaQuality,
+  mediaSizes,
+  useStaggerReady,
+} from './helpers';
 
 const PRIORITY_LOAD_THRESHOLD = 3;
 
 function Projects() {
   const projects = getProjects();
+  const gridRef = useRef(null);
   const [isMobile, setIsMobile] = useState(false);
-  const staggerReady = useStaggerReady();
+  const [activeTag, setActiveTag] = useState(null);
+  // Same cascade on first load and whenever the filter changes
+  const staggerReady = useStaggerReady(activeTag);
 
   useEffect(() => {
     setIsMobile(window.matchMedia(`(max-width: ${bpMobile}px)`).matches);
   }, []);
+
+  const visible = activeTag
+    ? projects.filter((project) => project.tags?.includes(activeTag))
+    : projects;
+
+  const selectTag = (tag) => {
+    if (tag === activeTag) return;
+    easeElementHeight(gridRef.current, () => {
+      flushSync(() => setActiveTag(tag));
+    });
+  };
 
   if (projects.length === 0) {
     return (
@@ -32,13 +53,36 @@ function Projects() {
 
   return (
     <div>
-      <div className={`projects-overview${staggerReady ? ' stagger-ready' : ''}`}>
-        {projects.map((project, index) => {
+      <div className="project-filters" role="toolbar" aria-label="Filter projects">
+        <button
+          type="button"
+          className={activeTag == null ? 'active' : undefined}
+          onClick={() => selectTag(null)}
+        >
+          All
+        </button>
+        {PROJECT_TAGS.map((tag) => (
+          <button
+            key={tag}
+            type="button"
+            className={activeTag === tag ? 'active' : undefined}
+            onClick={() => selectTag(tag)}
+          >
+            {tag}
+          </button>
+        ))}
+      </div>
+
+      <div
+        ref={gridRef}
+        className={`projects-overview${staggerReady ? ' stagger-ready' : ''}`}
+      >
+        {visible.map((project, index) => {
           const href = `/p/${slugify(project.title || project.heading)}`;
           const cover = project.attachments[0];
           return (
             <Link
-              key={project.id || index}
+              key={`${activeTag ?? 'all'}-${project.id || index}`}
               href={href}
               className="project-overview"
             >

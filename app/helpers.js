@@ -21,6 +21,35 @@ export function mediaSizes(role) {
   return '100vw';
 }
 
+/**
+ * Run a sync DOM update, then ease min-height from the old size to the new
+ * one so content below doesn't jump. commit() must flush the DOM (e.g. flushSync).
+ */
+export function easeElementHeight(el, commit) {
+  if (!el) {
+    commit();
+    return;
+  }
+
+  const from = el.offsetHeight;
+  commit();
+  const to = el.offsetHeight;
+  if (from === to) return;
+
+  el.style.transition = 'none';
+  el.style.minHeight = `${from}px`;
+  void el.offsetHeight;
+  el.style.transition = '';
+  el.style.minHeight = `${to}px`;
+
+  const done = (event) => {
+    if (event.propertyName && event.propertyName !== 'min-height') return;
+    el.style.minHeight = '';
+    el.removeEventListener('transitionend', done);
+  };
+  el.addEventListener('transitionend', done);
+}
+
 /** After mount (and when resetKey changes), enable CSS grid stagger. */
 export function useStaggerReady(resetKey) {
   const [ready, setReady] = useState(false);
