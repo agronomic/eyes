@@ -89,8 +89,6 @@ export default function ExperimentsPage() {
                     height={item.height || 600}
                     sizes={mediaSizes('experiment')}
                     quality={mediaQuality}
-                    loading="lazy"
-                    decoding="async"
                     style={{ width: '100%', height: 'auto' }}
                   />
                 )}
@@ -131,7 +129,6 @@ export default function ExperimentsPage() {
               sizes={mediaSizes('stage')}
               quality={mediaQuality}
               priority
-              style={{ width: 'auto', height: 'auto', maxWidth: '100%', maxHeight: '100%' }}
             />
           ) : (
             <video

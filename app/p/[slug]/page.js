@@ -8,11 +8,11 @@ import { marked } from 'marked';
 import Navigation from '../../navigation';
 import { getProjectBySlug } from '../../content';
 import {
-  mediaLoading,
   mediaQuality,
   mediaSizes,
   playMutedVideos,
   useStaggerReady,
+  watchMediaReady,
 } from '../../helpers';
 
 export default function ProjectPage() {
@@ -21,8 +21,22 @@ export default function ProjectPage() {
   const project = typeof slug === 'string' ? getProjectBySlug(slug) : null;
 
   const [activeIndex, setActiveIndex] = useState(0);
+  const [stageReady, setStageReady] = useState(() => new Set());
   const swipeRef = useRef(null);
   const staggerReady = useStaggerReady(slug);
+
+  useEffect(() => {
+    setStageReady(new Set());
+
+    return watchMediaReady(swipeRef.current, (index) => {
+      setStageReady((prev) => {
+        if (prev.has(index)) return prev;
+        const next = new Set(prev);
+        next.add(index);
+        return next;
+      });
+    });
+  }, [slug]);
 
   useEffect(() => {
     playMutedVideos(swipeRef.current);
@@ -91,18 +105,15 @@ export default function ProjectPage() {
           <span className="project-year">{project.year}</span>
         </div>
 
-        <div
-          className={`gallery-images swipe-view${staggerReady ? ' stagger-ready' : ''}`}
-          ref={swipeRef}
-        >
+        <div className="gallery-images swipe-view" ref={swipeRef}>
           {attachments.map((attachment, i) => (
             <div
               key={`stage-${attachment.url}-${i}`}
-              className="media-container"
+              className={`media-container${stageReady.has(i) ? '' : ' is-pending'}`}
               style={{
                 '--stagger': i,
                 ...(attachment.width && attachment.height
-                  ? { aspectRatio: `${attachment.width} / ${attachment.height}` }
+                  ? { '--media-ratio': `${attachment.width} / ${attachment.height}` }
                   : {}),
               }}
             >
@@ -114,9 +125,7 @@ export default function ProjectPage() {
                   height={attachment.height || 1067}
                   sizes={mediaSizes('stage')}
                   quality={mediaQuality}
-                  loading={mediaLoading('stage')}
-                  decoding="async"
-                  style={{ width: 'auto', height: 'auto', maxWidth: '100%', maxHeight: '100%' }}
+                  priority={i === 0}
                 />
               ) : (
                 <video
@@ -155,8 +164,6 @@ export default function ProjectPage() {
                   height={attachment.height || 267}
                   sizes={mediaSizes('thumb')}
                   quality={mediaQuality}
-                  loading={mediaLoading('thumb')}
-                  decoding="async"
                   style={{ width: '100%', height: 'auto' }}
                 />
               ) : (

@@ -124,22 +124,6 @@ function Projects() {
                   <div dangerouslySetInnerHTML={{ __html: marked(experience.description) }} />
                 </div>
               )}
-              {experience.attachments && experience.attachments.length > 0 && (
-                <div className="experience-attachments">
-                  {experience.attachments.map((attachment, i) => (
-                    <Image
-                      key={i}
-                      src={attachment.url}
-                      alt={`Attachment ${i + 1}`}
-                      width={attachment.width || 400}
-                      height={attachment.height || 267}
-                      sizes={mediaSizes('thumb')}
-                      quality={mediaQuality}
-                      style={{ width: '100%', height: 'auto' }}
-                    />
-                  ))}
-                </div>
-              )}
             </li>
           ))}
         </ul>

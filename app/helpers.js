@@ -8,11 +8,6 @@ export const bpNarrow = 499;
 
 export const mediaQuality = 85;
 
-/** Stage slides need layout for thumb jump-scroll on iOS; thumbs can defer. */
-export function mediaLoading(role) {
-  return role === 'stage' ? 'eager' : 'lazy';
-}
-
 /** Responsive sizes for next/image — keep in sync with layout density. */
 export function mediaSizes(role) {
   if (role === 'thumb') return '15vw';
@@ -37,6 +32,41 @@ export function useStaggerReady(resetKey) {
   }, [resetKey]);
 
   return ready;
+}
+
+/** Preloaded and cached media can finish before hydration, so the load event
+    never reaches React. Read the DOM instead, then watch whatever is still
+    loading. Returns a cleanup. */
+export function watchMediaReady(root, onReady) {
+  if (!root) return () => {};
+
+  const cleanups = [];
+
+  root.querySelectorAll(':scope > .media-container').forEach((slide, index) => {
+    const media = slide.querySelector('img, video');
+    if (!media) return;
+
+    const isImage = media.tagName === 'IMG';
+    const hasPixels = isImage
+      ? media.complete && media.naturalWidth > 0
+      : media.readyState >= 2;
+
+    if (hasPixels) {
+      onReady(index);
+      return;
+    }
+
+    const done = () => onReady(index);
+    const loadEvent = isImage ? 'load' : 'loadeddata';
+    media.addEventListener(loadEvent, done);
+    media.addEventListener('error', done);
+    cleanups.push(() => {
+      media.removeEventListener(loadEvent, done);
+      media.removeEventListener('error', done);
+    });
+  });
+
+  return () => cleanups.forEach((cleanup) => cleanup());
 }
 
 /** Browsers often ignore muted autoplay — kick play() explicitly. */

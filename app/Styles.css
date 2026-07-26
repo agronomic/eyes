@@ -25,8 +25,10 @@
   --bp-narrow: 499px;
   /* Stage carousel: leave room so the next slide peeks */
   --swipe-peek: clamp(12px, 4vw, 40px);
-  /* Shared stage frame so landscape + portrait share one height */
+  /* Tallest a stage slide may get; its width follows the media ratio */
   --stage-height: 60vh;
+  /* Quiet placeholder while stage media decodes */
+  --media-pending: #161616;
   /* Experiments expand overlay */
   --expand-max-width: min(900px, 90vw);
   --expand-max-height: 85vh;
@@ -173,32 +175,48 @@ video {
   }
 }
 
-.gallery-header {
+/* Page chrome reveals on load; media waits for its own trigger below */
+.gallery-header,
+.gallery-text,
+.section {
   animation: fadeSlideInSequential 0.5s ease-in-out both;
-  animation-delay: 0s;
+  animation-delay: calc(var(--stagger, 0) * 100ms);
 }
 
 .gallery-text {
-  animation: fadeSlideInSequential 0.5s ease-in-out both;
-  animation-delay: 0.2s;
+  --stagger: 2;
 }
 
-/* Animate stage + grid thumbs (same stagger as old project grid) */
+.section {
+  --stagger: 1;
+}
+
+.section:nth-of-type(2) {
+  --stagger: 2;
+}
+
+.section:nth-of-type(3) {
+  --stagger: 3;
+}
+
+/* Media stays hidden until its container is told to reveal */
 .projects-overview .media-container img,
 .projects-overview .media-container video,
-.gallery-images.swipe-view .media-container img,
-.gallery-images.swipe-view .media-container video,
-.gallery-images.grid-view .media-container img,
-.gallery-images.grid-view .media-container video,
+.gallery-images .media-container img,
+.gallery-images .media-container video,
 .experiments-grid .media-container img,
 .experiments-grid .media-container video,
 .experiments-grid .media-container audio {
   opacity: 0;
 }
 
+/* Two triggers, one motion: grids reveal on mount and stagger by index, stage
+   slides reveal individually once their own pixels land. */
 .stagger-ready .media-container img,
 .stagger-ready .media-container video,
-.stagger-ready .media-container audio {
+.stagger-ready .media-container audio,
+.swipe-view .media-container:not(.is-pending) img,
+.swipe-view .media-container:not(.is-pending) video {
   animation: fadeSlideInSequential 0.5s ease-in-out both;
   animation-delay: calc(var(--stagger, 0) * 100ms);
 }
@@ -237,8 +255,6 @@ video {
 
 .project-overview-images {
   display: block;
-  flex-wrap: nowrap;
-  gap: 8px;
   overflow: visible;
 }
 
@@ -248,12 +264,6 @@ video {
   max-height: 400px;
   object-fit: cover;
   border-radius: 0;
-}
-
-.project-overview-images .media-container > span {
-  display: block !important;
-  width: 100% !important;
-  height: auto !important;
 }
 
 .project-overview-images .media-container img {
@@ -295,45 +305,46 @@ video {
   width: 100%;
   height: auto;
   object-fit: contain;
-  image-rendering: auto;
 }
 
 .gallery-images.swipe-view {
   display: flex;
   overflow-x: scroll;
+  /* Contains the rise of the intro animation without a stray vertical scrollbar */
+  overflow-y: hidden;
   scroll-snap-type: x mandatory;
   gap: 10px;
-  margin-bottom: var(--media-col-gap);
   align-items: center;
+  margin-bottom: var(--media-col-gap);
 }
 
+/* Slide box is sized from the token + known ratio, so it measures the same
+   before, during, and after load — loading state only changes paint. */
 .gallery-images.swipe-view .media-container {
   scroll-snap-align: center;
   flex-shrink: 0;
-  max-height: var(--stage-height);
-  max-width: calc(100vw - 2 * var(--swipe-peek));
-  height: auto;
-  width: auto;
+  /* Width is whichever limit bites first: the peek, or what fits in the stage
+     height at this ratio. Height then follows the ratio, so the box hugs the
+     image at every size — no letterboxing, no dependence on loaded pixels. */
+  width: min(
+    calc(100vw - 2 * var(--swipe-peek)),
+    calc(var(--stage-height) * var(--media-ratio, 3 / 2))
+  );
+  aspect-ratio: var(--media-ratio, 3 / 2);
+  background-color: transparent;
+  transition: background-color 0.5s ease-in-out;
+}
+
+/* Quiet fill until stage pixels are ready */
+.gallery-images.swipe-view .media-container.is-pending {
+  background-color: var(--media-pending);
 }
 
 .gallery-images.swipe-view img,
 .gallery-images.swipe-view video {
-  scroll-snap-align: center;
   display: block;
-  max-height: var(--stage-height);
-  width: auto;
-  height: auto;
-  max-width: 100%;
-  object-fit: contain;
-}
-
-.gallery-images.swipe-view img {
-  image-rendering: auto;
-}
-
-.gallery-images video {
-  width: auto;
-  max-height: var(--stage-height);
+  width: 100%;
+  height: 100%;
   object-fit: contain;
 }
 
@@ -347,7 +358,7 @@ video {
 
 .gallery-thumbs .media-container {
   appearance: none;
-  border: 1px solid transparent;
+  border: none;
   background: none;
   padding: 0;
   cursor: pointer;
@@ -361,11 +372,6 @@ video {
 
 .gallery-thumbs .media-container.is-active {
   opacity: 1;
-  border-color: var(--color);
-}
-
-.gallery-thumbs .media-container:focus {
-  outline: none;
 }
 
 .gallery-text {
@@ -469,11 +475,6 @@ video {
   margin-bottom: 8px;
 }
 
-.about-section {
-  opacity: 1;
-  transform: none;
-}
-
 .about-section p {
   max-width: 500px;
 }
@@ -518,7 +519,6 @@ video {
   text-align: left;
 }
 
-.experience-attachments,
 .experience-description {
   display: none;
 }
