@@ -160,16 +160,18 @@ export function playVisibleMutedVideos(root) {
   const timers = new Set();
   const warmed = new WeakSet();
   const queued = new WeakSet();
-  const pendingCanPlay = new WeakMap();
+  // Array, not WeakMap — cleanup needs to iterate (WeakMap has no forEach)
+  const pendingCanPlay = [];
 
   const cascadeDoneAt = (video) => {
     const tile = video.closest('.media-container');
+    if (!tile) return cascadeStarted;
     const stagger = Number.parseFloat(getComputedStyle(tile).getPropertyValue('--stagger')) || 0;
     return cascadeStarted + stagger * stepMs + STAGGER_DURATION_MS;
   };
 
   const startLive = (video) => {
-    if (video.classList.contains('is-live')) return;
+    if (!video.isConnected || video.classList.contains('is-live')) return;
     video.pause();
     try {
       video.currentTime = 0;
@@ -185,16 +187,13 @@ export function playVisibleMutedVideos(root) {
     if (video.classList.contains('is-live')) return;
 
     const afterCascade = () => {
-      if (video.classList.contains('is-live')) return;
+      if (!video.isConnected || video.classList.contains('is-live')) return;
       if (video.readyState >= 2) {
         startLive(video);
         return;
       }
-      const onReady = () => {
-        pendingCanPlay.delete(video);
-        startLive(video);
-      };
-      pendingCanPlay.set(video, onReady);
+      const onReady = () => startLive(video);
+      pendingCanPlay.push({ video, onReady });
       video.addEventListener('canplay', onReady, { once: true });
     };
 
@@ -217,14 +216,18 @@ export function playVisibleMutedVideos(root) {
     }
   };
 
+  const stop = () => {
+    timers.forEach((timer) => clearTimeout(timer));
+    timers.clear();
+    pendingCanPlay.forEach(({ video, onReady }) => {
+      video.removeEventListener('canplay', onReady);
+    });
+    pendingCanPlay.length = 0;
+  };
+
   if (typeof IntersectionObserver === 'undefined') {
     videos.forEach((video) => arm(video));
-    return () => {
-      timers.forEach((timer) => clearTimeout(timer));
-      pendingCanPlay.forEach((onReady, video) => {
-        video.removeEventListener('canplay', onReady);
-      });
-    };
+    return stop;
   }
 
   const observer = new IntersectionObserver(
@@ -246,10 +249,7 @@ export function playVisibleMutedVideos(root) {
 
   videos.forEach((video) => observer.observe(video));
   return () => {
-    timers.forEach((timer) => clearTimeout(timer));
-    pendingCanPlay.forEach((onReady, video) => {
-      video.removeEventListener('canplay', onReady);
-    });
+    stop();
     observer.disconnect();
   };
 }
