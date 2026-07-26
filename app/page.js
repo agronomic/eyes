@@ -88,20 +88,6 @@ function Projects() {
         <div dangerouslySetInnerHTML={{ __html: marked(cv.general.about) }} />
       </section>
 
-      <section className="contact-section section">
-        <p>Contact</p>
-        <ul className="contact-list">
-          {cv.contact.map((contactItem, index) => (
-            <li key={index} className="contact-item">
-              {contactItem.platform}:{' '}
-              <a href={contactItem.url} target="_blank" rel="noopener noreferrer">
-                {contactItem.handle}
-              </a>
-            </li>
-          ))}
-        </ul>
-      </section>
-
       <section className="experience-section section">
         <p>Experience</p>
         <ul className="experience-list">
@@ -124,6 +110,20 @@ function Projects() {
                   <div dangerouslySetInnerHTML={{ __html: marked(experience.description) }} />
                 </div>
               )}
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section className="contact-section section">
+        <p>Contact</p>
+        <ul className="contact-list">
+          {cv.contact.map((contactItem, index) => (
+            <li key={index} className="contact-item">
+              {contactItem.platform}:{' '}
+              <a href={contactItem.url} target="_blank" rel="noopener noreferrer">
+                {contactItem.handle}
+              </a>
             </li>
           ))}
         </ul>

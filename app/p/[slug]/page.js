@@ -15,6 +15,9 @@ import {
   watchMediaReady,
 } from '../../helpers';
 
+/** Slides kept loading ahead of the one in view, so scrolling never waits. */
+const STAGE_WINDOW = 10;
+
 export default function ProjectPage() {
   const params = useParams();
   const slug = params?.slug;
@@ -94,6 +97,7 @@ export default function ProjectPage() {
 
   const title = project.title || project.heading;
   const attachments = project.attachments;
+  const eagerThrough = Math.max(STAGE_WINDOW, activeIndex + STAGE_WINDOW);
 
   return (
     <div className="container">
@@ -126,6 +130,8 @@ export default function ProjectPage() {
                   sizes={mediaSizes('stage')}
                   quality={mediaQuality}
                   priority={i === 0}
+                  loading={i <= eagerThrough ? 'eager' : 'lazy'}
+                  fetchPriority={i === 0 ? 'high' : 'low'}
                 />
               ) : (
                 <video
