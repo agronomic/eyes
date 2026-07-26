@@ -28,7 +28,10 @@ function rememberPlayed() {
 /** Covers the page while media decodes, counting to 100 before handing over to
     the reveal. Plays once a session; later visits skip straight to onDone. */
 export default function MediaCounter({ loaded, total, done, onDone }) {
-  const [phase, setPhase] = useState('idle'); // idle → counting → leaving → gone
+  // Starts covering the page from the very first paint, so the nav is never
+  // shown only to be hidden a moment later. Being the page's own black, that
+  // costs nothing to look at while the client makes up its mind.
+  const [phase, setPhase] = useState('blocking'); // → counting → leaving → gone
   const [percent, setPercent] = useState(1);
   const progress = useRef({ loaded, total, done });
 
@@ -84,7 +87,7 @@ export default function MediaCounter({ loaded, total, done, onDone }) {
   }, [phase]);
 
   useEffect(() => {
-    if (phase !== 'counting' && phase !== 'leaving') return undefined;
+    if (phase === 'gone') return undefined;
     const previous = document.body.style.overflow;
     document.body.style.overflow = 'hidden';
     return () => {
@@ -92,7 +95,7 @@ export default function MediaCounter({ loaded, total, done, onDone }) {
     };
   }, [phase]);
 
-  if (phase !== 'counting' && phase !== 'leaving') return null;
+  if (phase === 'gone') return null;
 
   return (
     <div
@@ -104,7 +107,7 @@ export default function MediaCounter({ loaded, total, done, onDone }) {
       aria-valuemax={100}
       aria-valuenow={percent}
     >
-      <span aria-hidden="true">{percent}%</span>
+      {phase !== 'blocking' && <span aria-hidden="true">{percent}%</span>}
     </div>
   );
 }
