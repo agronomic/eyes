@@ -26,7 +26,11 @@ export default function ExperimentsPage() {
 
   const openItem = openIndex == null ? null : experiments[openIndex];
 
-  useEffect(() => playVisibleMutedVideos(gridRef.current), []);
+  // Wait for the cascade gate — playing under the loader made clips visible early
+  useEffect(() => {
+    if (!staggerReady) return undefined;
+    return playVisibleMutedVideos(gridRef.current);
+  }, [staggerReady]);
 
   useEffect(() => {
     if (openIndex == null) return;

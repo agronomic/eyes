@@ -123,22 +123,119 @@ export function playMutedVideos(root) {
   });
 }
 
-/** Grid loops only while on screen, so five clips don't all decode at once. */
+/** Match fadeSlideInSequential's duration — keep in sync with Styles.css */
+const STAGGER_DURATION_MS = 500;
+
+/** Buffer a preview without letting it run ahead of its poster. */
+function warmVideo(video) {
+  video.muted = true;
+  video.preload = 'auto';
+  const pin = () => {
+    video.pause();
+    try {
+      video.currentTime = 0;
+    } catch {
+      // Some browsers reject seeks before metadata
+    }
+  };
+  video.addEventListener('loadeddata', pin, { once: true });
+  if (video.readyState >= 2) pin();
+  else video.load();
+}
+
+/**
+ * Grid loops only while on screen. Previews stay paused on frame 0 until that
+ * tile's cascade has finished and the file can play — then play + fade together
+ * so the handoff from the still is seamless.
+ */
 export function playVisibleMutedVideos(root) {
-  if (!root || typeof IntersectionObserver === 'undefined') {
-    playMutedVideos(root);
-    return () => {};
-  }
+  if (!root) return () => {};
 
   const videos = root.querySelectorAll('video');
-  const onPlaying = (event) => event.target.classList.add('is-live');
+  const cascadeStarted = performance.now();
+  const stepMs =
+    Number.parseFloat(
+      getComputedStyle(document.documentElement).getPropertyValue('--stagger-step')
+    ) || 90;
+  const timers = new Set();
+  const warmed = new WeakSet();
+  const queued = new WeakSet();
+  const pendingCanPlay = new WeakMap();
+
+  const cascadeDoneAt = (video) => {
+    const tile = video.closest('.media-container');
+    const stagger = Number.parseFloat(getComputedStyle(tile).getPropertyValue('--stagger')) || 0;
+    return cascadeStarted + stagger * stepMs + STAGGER_DURATION_MS;
+  };
+
+  const startLive = (video) => {
+    if (video.classList.contains('is-live')) return;
+    video.pause();
+    try {
+      video.currentTime = 0;
+    } catch {
+      // ignore
+    }
+    video.muted = true;
+    video.classList.add('is-live');
+    video.play().catch(() => {});
+  };
+
+  const revealWhenReady = (video) => {
+    if (video.classList.contains('is-live')) return;
+
+    const afterCascade = () => {
+      if (video.classList.contains('is-live')) return;
+      if (video.readyState >= 2) {
+        startLive(video);
+        return;
+      }
+      const onReady = () => {
+        pendingCanPlay.delete(video);
+        startLive(video);
+      };
+      pendingCanPlay.set(video, onReady);
+      video.addEventListener('canplay', onReady, { once: true });
+    };
+
+    const wait = Math.max(0, cascadeDoneAt(video) - performance.now());
+    const timer = setTimeout(() => {
+      timers.delete(timer);
+      afterCascade();
+    }, wait);
+    timers.add(timer);
+  };
+
+  const arm = (video) => {
+    if (!warmed.has(video)) {
+      warmed.add(video);
+      warmVideo(video);
+    }
+    if (!queued.has(video)) {
+      queued.add(video);
+      revealWhenReady(video);
+    }
+  };
+
+  if (typeof IntersectionObserver === 'undefined') {
+    videos.forEach((video) => arm(video));
+    return () => {
+      timers.forEach((timer) => clearTimeout(timer));
+      pendingCanPlay.forEach((onReady, video) => {
+        video.removeEventListener('canplay', onReady);
+      });
+    };
+  }
+
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
         const video = entry.target;
-        video.muted = true;
         if (entry.isIntersecting) {
-          video.play().catch(() => {});
+          arm(video);
+          if (video.classList.contains('is-live')) {
+            video.play().catch(() => {});
+          }
         } else {
           video.pause();
         }
@@ -147,12 +244,12 @@ export function playVisibleMutedVideos(root) {
     { rootMargin: '200px 0px' }
   );
 
-  videos.forEach((video) => {
-    video.addEventListener('playing', onPlaying);
-    observer.observe(video);
-  });
+  videos.forEach((video) => observer.observe(video));
   return () => {
-    videos.forEach((video) => video.removeEventListener('playing', onPlaying));
+    timers.forEach((timer) => clearTimeout(timer));
+    pendingCanPlay.forEach((onReady, video) => {
+      video.removeEventListener('canplay', onReady);
+    });
     observer.disconnect();
   };
 }

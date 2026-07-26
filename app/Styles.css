@@ -420,6 +420,7 @@ video {
   height: auto;
 }
 
+/* Still owns the cascade; preview crossfades in only after that tile has landed */
 .experiments-grid .media-container video.video-player {
   position: absolute;
   inset: 0;
@@ -427,10 +428,10 @@ video {
   height: 100%;
   object-fit: cover;
   opacity: 0;
-  transition: opacity 0.4s ease-in-out;
+  transition: opacity 0.35s ease-in-out;
 }
 
-.experiments-grid .media-container video.video-player.is-live {
+.experiments-grid.stagger-ready .media-container video.video-player.is-live {
   opacity: 1;
 }
 
