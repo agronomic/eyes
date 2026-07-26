@@ -461,6 +461,30 @@ video {
 }
 
 /* =============================================================================
+   Loading counter — first experiments visit of a session
+   ============================================================================= */
+
+.media-counter {
+  position: fixed;
+  inset: 0;
+  /* Above the nav, which it covers until the count lands */
+  z-index: 1100;
+  padding: 0 2vw;
+  background-color: var(--background-color);
+  transition: opacity 0.4s ease-in-out;
+}
+
+/* Sit where the nav title will be, so the handover is a swap, not a jump */
+.media-counter span {
+  line-height: 40px;
+}
+
+.media-counter.is-leaving {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* =============================================================================
    Home — About / Contact / Experience
    ============================================================================= */
 

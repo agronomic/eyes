@@ -1,9 +1,10 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 
 import Navigation from '../navigation';
+import MediaCounter from '../media-counter';
 import experiments from '../../public/content/experiments.json';
 import {
   mediaQuality,
@@ -15,7 +16,11 @@ import {
 export default function ExperimentsPage() {
   const gridRef = useRef(null);
   const expandRef = useRef(null);
-  const staggerReady = useMediaReady(gridRef);
+  const { ready, loaded, total } = useMediaReady(gridRef);
+  const [countedIn, setCountedIn] = useState(false);
+  const onCounted = useCallback(() => setCountedIn(true), []);
+  // The cascade is the counter's handover, so it waits for both
+  const staggerReady = ready && countedIn;
   const [openIndex, setOpenIndex] = useState(null);
 
   const openItem = openIndex == null ? null : experiments[openIndex];
@@ -49,6 +54,12 @@ export default function ExperimentsPage() {
 
   return (
     <div className="container">
+      <MediaCounter
+        loaded={loaded}
+        total={total}
+        done={ready}
+        onDone={onCounted}
+      />
       <Navigation />
 
       {experiments.length === 0 ? (

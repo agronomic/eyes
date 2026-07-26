@@ -34,8 +34,9 @@ export function useStaggerReady(resetKey) {
   return ready;
 }
 
-/** Never hold a reveal past this, however slow the network is. */
-const READY_TIMEOUT = 2000;
+/** Never hold a reveal past this, however slow the network is. Generous
+    because the counter keeps the visitor informed while we wait. */
+const READY_TIMEOUT = 3000;
 
 /** Preloaded and cached media can finish before hydration, so the load event
     never reaches React. Read the DOM instead, then watch whatever is still
@@ -78,27 +79,31 @@ export function watchMediaReady(root, onReady, selector = 'img, video') {
 
 /** Same cascade as useStaggerReady, later trigger: hold a grid until its images
     have pixels, so it reveals as one motion instead of racing the network.
-    Videos and audio stay out of the gate — they stream in on their own. */
+    Videos and audio stay out of the gate — they stream in on their own. The
+    running count is the one honest source for anything reporting progress. */
 export function useMediaReady(ref, resetKey) {
-  const [ready, setReady] = useState(false);
+  const [progress, setProgress] = useState({ ready: false, loaded: 0, total: 0 });
 
   useEffect(() => {
-    setReady(false);
-
     const root = ref.current;
     if (!root) return undefined;
 
     const total = root.querySelectorAll(':scope > .media-container').length;
+    setProgress({ ready: false, loaded: 0, total });
+
     const loaded = new Set();
     const stopWatching = watchMediaReady(
       root,
       (index) => {
         loaded.add(index);
-        if (loaded.size >= total) setReady(true);
+        setProgress({ ready: loaded.size >= total, loaded: loaded.size, total });
       },
       'img'
     );
-    const timer = setTimeout(() => setReady(true), READY_TIMEOUT);
+    const timer = setTimeout(
+      () => setProgress((prev) => ({ ...prev, ready: true })),
+      READY_TIMEOUT
+    );
 
     return () => {
       stopWatching();
@@ -106,7 +111,7 @@ export function useMediaReady(ref, resetKey) {
     };
   }, [ref, resetKey]);
 
-  return ready;
+  return progress;
 }
 
 /** Browsers often ignore muted autoplay — kick play() explicitly. */
