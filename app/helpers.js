@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 /** Keep in sync with --bp-mobile / --bp-narrow in Styles.css */
 export const bpMobile = 767;
@@ -121,4 +121,80 @@ export function playMutedVideos(root) {
     video.muted = true;
     video.play().catch(() => {});
   });
+}
+
+/** Grid loops only while on screen, so five clips don't all decode at once. */
+export function playVisibleMutedVideos(root) {
+  if (!root || typeof IntersectionObserver === 'undefined') {
+    playMutedVideos(root);
+    return () => {};
+  }
+
+  const videos = root.querySelectorAll('video');
+  const onPlaying = (event) => event.target.classList.add('is-live');
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        const video = entry.target;
+        video.muted = true;
+        if (entry.isIntersecting) {
+          video.play().catch(() => {});
+        } else {
+          video.pause();
+        }
+      });
+    },
+    { rootMargin: '200px 0px' }
+  );
+
+  videos.forEach((video) => {
+    video.addEventListener('playing', onPlaying);
+    observer.observe(video);
+  });
+  return () => {
+    videos.forEach((video) => video.removeEventListener('playing', onPlaying));
+    observer.disconnect();
+  };
+}
+
+/**
+ * Turn a 0–1 signal into a climbing percent. Never overstates real progress;
+ * a floor keeps the climb legible when the network is instant. Reads progress
+ * from a ref so buffer ticks don't restart the floor.
+ */
+export function usePacedPercent(real, { active = true, floor = 800, done = false } = {}) {
+  const [percent, setPercent] = useState(1);
+  const progress = useRef({ real, done });
+  progress.current = { real, done };
+
+  useEffect(() => {
+    if (!active) return undefined;
+
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const pace = reduced ? 0 : floor;
+    const start = performance.now();
+    let frame;
+
+    const tick = (now) => {
+      const { real: ratio, done: isDone } = progress.current;
+      const target = isDone ? 100 : Math.max(0, Math.min(100, ratio * 100));
+      const shown = pace ? Math.min(target, ((now - start) / pace) * 100) : target;
+      setPercent(Math.min(100, Math.max(1, Math.floor(shown))));
+      if (shown < 100) frame = requestAnimationFrame(tick);
+    };
+
+    frame = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(frame);
+  }, [active, floor]);
+
+  return percent;
+}
+
+/** How much of a video has buffered, 0–1. */
+export function videoBufferedRatio(video) {
+  if (!video) return 0;
+  if (video.readyState >= 3) return 1;
+  const { buffered, duration } = video;
+  if (!duration || !buffered.length) return 0;
+  return Math.min(1, buffered.end(buffered.length - 1) / duration);
 }

@@ -1,21 +1,22 @@
 "use client";
 
 import React, { useCallback, useEffect, useRef, useState } from 'react';
+import { flushSync } from 'react-dom';
 import Image from 'next/image';
 
 import Navigation from '../navigation';
 import MediaCounter from '../media-counter';
+import ExpandVideo from '../expand-video';
 import experiments from '../../public/content/experiments.json';
 import {
   mediaQuality,
   mediaSizes,
-  playMutedVideos,
+  playVisibleMutedVideos,
   useMediaReady,
 } from '../helpers';
 
 export default function ExperimentsPage() {
   const gridRef = useRef(null);
-  const expandRef = useRef(null);
   const { ready, loaded, total } = useMediaReady(gridRef);
   const [countedIn, setCountedIn] = useState(false);
   const onCounted = useCallback(() => setCountedIn(true), []);
@@ -25,15 +26,7 @@ export default function ExperimentsPage() {
 
   const openItem = openIndex == null ? null : experiments[openIndex];
 
-  useEffect(() => {
-    playMutedVideos(gridRef.current);
-  }, []);
-
-  useEffect(() => {
-    if (openItem?.type === 'video') {
-      playMutedVideos(expandRef.current);
-    }
-  }, [openItem]);
+  useEffect(() => playVisibleMutedVideos(gridRef.current), []);
 
   useEffect(() => {
     if (openIndex == null) return;
@@ -49,6 +42,11 @@ export default function ExperimentsPage() {
       window.removeEventListener('keydown', onKey);
     };
   }, [openIndex]);
+
+  const open = (index) => {
+    // Keep the click gesture alive so the expand video can start with sound.
+    flushSync(() => setOpenIndex(index));
+  };
 
   const close = () => setOpenIndex(null);
 
@@ -78,7 +76,7 @@ export default function ExperimentsPage() {
                 key={item.id || index}
                 className={`media-container${expandable ? ' is-expandable' : ''}`}
                 style={{ '--stagger': index }}
-                onClick={expandable ? () => setOpenIndex(index) : undefined}
+                onClick={expandable ? () => open(index) : undefined}
                 role={expandable ? 'button' : undefined}
                 tabIndex={expandable ? 0 : undefined}
                 onKeyDown={
@@ -86,7 +84,7 @@ export default function ExperimentsPage() {
                     ? (e) => {
                         if (e.key === 'Enter' || e.key === ' ') {
                           e.preventDefault();
-                          setOpenIndex(index);
+                          open(index);
                         }
                       }
                     : undefined
@@ -105,16 +103,31 @@ export default function ExperimentsPage() {
                   />
                 )}
                 {item.type === 'video' && (
-                  <video
-                    src={item.url}
-                    width={item.width || undefined}
-                    height={item.height || undefined}
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                    className="video-player"
-                  />
+                  <>
+                    {item.poster ? (
+                      <Image
+                        src={item.poster}
+                        alt={item.alt || ''}
+                        width={item.width || 800}
+                        height={item.height || 600}
+                        sizes={mediaSizes('experiment')}
+                        quality={mediaQuality}
+                        loading="eager"
+                        className="video-still"
+                      />
+                    ) : null}
+                    <video
+                      src={item.preview || item.url}
+                      poster={item.poster || undefined}
+                      width={item.width || undefined}
+                      height={item.height || undefined}
+                      muted
+                      loop
+                      playsInline
+                      preload="none"
+                      className="video-player"
+                    />
+                  </>
                 )}
                 {item.type === 'audio' && (
                   <audio src={item.url} controls className="audio-player" />
@@ -128,7 +141,6 @@ export default function ExperimentsPage() {
       {openItem && (
         <div
           className="experiments-expand"
-          ref={expandRef}
           onClick={close}
           role="dialog"
           aria-modal="true"
@@ -145,13 +157,11 @@ export default function ExperimentsPage() {
               priority
             />
           ) : (
-            <video
+            <ExpandVideo
               src={openItem.url}
-              autoPlay
-              muted
-              loop
-              playsInline
-              className="video-player"
+              poster={openItem.poster}
+              width={openItem.width}
+              height={openItem.height}
             />
           )}
         </div>

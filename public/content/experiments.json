@@ -11,7 +11,9 @@
     "url": "/content/media/x-20251116.mp4",
     "alt": "20251116",
     "width": 1280,
-    "height": 720
+    "height": 720,
+    "poster": "/content/media/x-20251116-poster.webp",
+    "preview": "/content/media/x-20251116-preview.mp4"
   },
   {
     "type": "image",
@@ -32,14 +34,18 @@
     "url": "/content/media/x-20240929.mp4",
     "alt": "20240929",
     "width": 932,
-    "height": 1398
+    "height": 1398,
+    "poster": "/content/media/x-20240929-poster.webp",
+    "preview": "/content/media/x-20240929-preview.mp4"
   },
   {
     "type": "video",
     "url": "/content/media/x-20240915.mp4",
     "alt": "20240915",
     "width": 1080,
-    "height": 1620
+    "height": 1620,
+    "poster": "/content/media/x-20240915-poster.webp",
+    "preview": "/content/media/x-20240915-preview.mp4"
   },
   {
     "type": "image",
@@ -60,7 +66,9 @@
     "url": "/content/media/x-20231230.mp4",
     "alt": "20231230",
     "width": 1088,
-    "height": 1088
+    "height": 1088,
+    "poster": "/content/media/x-20231230-poster.webp",
+    "preview": "/content/media/x-20231230-preview.mp4"
   },
   {
     "type": "image",
@@ -81,7 +89,9 @@
     "url": "/content/media/x-20190920.mp4",
     "alt": "20190920",
     "width": 1280,
-    "height": 960
+    "height": 960,
+    "poster": "/content/media/x-20190920-poster.webp",
+    "preview": "/content/media/x-20190920-preview.mp4"
   },
   {
     "type": "image",

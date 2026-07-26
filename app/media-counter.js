@@ -1,10 +1,8 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
+import { usePacedPercent } from './helpers';
 
-/** Long enough for the climb to register as a climb, short enough to stay out
-    of the way when everything is already cached. */
-const FLOOR = 800;
 const SESSION_KEY = 'media-counter-played';
 
 /** Private browsing can throw on storage access; then the counter just plays
@@ -32,12 +30,12 @@ export default function MediaCounter({ loaded, total, done, onDone }) {
   // shown only to be hidden a moment later. Being the page's own black, that
   // costs nothing to look at while the client makes up its mind.
   const [phase, setPhase] = useState('blocking'); // → counting → leaving → gone
-  const [percent, setPercent] = useState(1);
-  const progress = useRef({ loaded, total, done });
-
-  useEffect(() => {
-    progress.current = { loaded, total, done };
-  }, [loaded, total, done]);
+  const real = done ? 1 : total ? loaded / total : 0;
+  const percent = usePacedPercent(real, {
+    active: phase === 'counting',
+    done: done && phase === 'counting',
+    floor: 800,
+  });
 
   // sessionStorage has no server value, so the choice waits for the client
   useEffect(() => {
@@ -49,35 +47,10 @@ export default function MediaCounter({ loaded, total, done, onDone }) {
   }, [phase, onDone]);
 
   useEffect(() => {
-    if (phase !== 'counting') return undefined;
-
-    const floor = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-      ? 0
-      : FLOOR;
-    const start = performance.now();
-    let frame;
-
-    const tick = (now) => {
-      const media = progress.current;
-      const real = media.done
-        ? 100
-        : (media.total ? (media.loaded / media.total) * 100 : 0);
-      // Never overstate what has loaded, never outrun the floor
-      const shown = floor ? Math.min(real, ((now - start) / floor) * 100) : real;
-
-      setPercent(Math.min(100, Math.max(1, Math.floor(shown))));
-
-      if (shown >= 100) {
-        rememberPlayed();
-        setPhase('leaving');
-        return;
-      }
-      frame = requestAnimationFrame(tick);
-    };
-
-    frame = requestAnimationFrame(tick);
-    return () => cancelAnimationFrame(frame);
-  }, [phase]);
+    if (phase !== 'counting' || percent < 100) return;
+    rememberPlayed();
+    setPhase('leaving');
+  }, [phase, percent]);
 
   // The fade end is the normal handover; this only covers it never arriving
   useEffect(() => {

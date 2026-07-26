@@ -3,23 +3,31 @@
  *   1. Recompress large PNGs → same-dimension WebP, rewrite URLs, remove PNGs.
  *   2. Backfill width/height on every media item, so pages reserve the right
  *      box before a byte arrives.
+ *   3. For experiment videos: a first-frame poster and a small silent preview
+ *      for the grid. The original stays for the expand view (with audio).
  * Usage: npm run sync-media
  */
 import fs from 'node:fs';
 import path from 'node:path';
+import { spawn } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import sharp from 'sharp';
+import ffmpegPath from 'ffmpeg-static';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.join(__dirname, '..');
 const mediaDir = path.join(root, 'public/content/media');
+const experimentsPath = path.join(root, 'public/content/experiments.json');
 const jsonPaths = [
   path.join(root, 'public/content/profileData.json'),
-  path.join(root, 'public/content/experiments.json'),
+  experimentsPath,
 ];
 
 const MIN_BYTES = 200 * 1024;
 const WEBP_QUALITY = 88;
+const POSTER_QUALITY = 80;
+/** Long edge of the silent grid preview — enough for a 150px tile on 2x. */
+const PREVIEW_EDGE = 360;
 
 function formatMb(bytes) {
   return `${(bytes / (1024 * 1024)).toFixed(2)}MB`;
@@ -111,6 +119,121 @@ async function backfillDimensions() {
   return total;
 }
 
+function runFfmpeg(args) {
+  return new Promise((resolve, reject) => {
+    const child = spawn(ffmpegPath, args, { stdio: ['ignore', 'ignore', 'pipe'] });
+    let err = '';
+    child.stderr.on('data', (chunk) => {
+      err += chunk;
+    });
+    child.on('error', reject);
+    child.on('close', (code) => {
+      if (code === 0) resolve();
+      else reject(new Error(err.trim().split('\n').slice(-4).join('\n') || `ffmpeg exit ${code}`));
+    });
+  });
+}
+
+function publicUrl(file) {
+  return `/content/media/${path.basename(file)}`;
+}
+
+/** Silent 360px preview + first-frame poster for each experiment video. */
+async function syncExperimentVideos() {
+  if (!ffmpegPath) throw new Error('ffmpeg-static binary missing');
+
+  const data = JSON.parse(fs.readFileSync(experimentsPath, 'utf8'));
+  let updated = 0;
+
+  for (const item of data) {
+    if (item.type !== 'video' || !item.url) continue;
+
+    const source = path.join(root, 'public', item.url);
+    if (!fs.existsSync(source)) {
+      console.log(`missing ${item.url}`);
+      continue;
+    }
+
+    const base = path.basename(item.url, path.extname(item.url));
+    const posterFile = path.join(mediaDir, `${base}-poster.webp`);
+    const previewFile = path.join(mediaDir, `${base}-preview.mp4`);
+    const posterUrl = publicUrl(posterFile);
+    const previewUrl = publicUrl(previewFile);
+
+    const needsPoster = !fs.existsSync(posterFile) || fs.statSync(posterFile).size < 64;
+    if (needsPoster) {
+      const tmpPng = path.join(mediaDir, `${base}-poster-tmp.png`);
+      await runFfmpeg([
+        '-y',
+        '-i',
+        source,
+        '-frames:v',
+        '1',
+        '-q:v',
+        '2',
+        tmpPng,
+      ]);
+      await sharp(tmpPng)
+        .resize({
+          width: PREVIEW_EDGE,
+          height: PREVIEW_EDGE,
+          fit: 'inside',
+          withoutEnlargement: true,
+        })
+        .webp({ quality: POSTER_QUALITY, effort: 4 })
+        .toFile(posterFile);
+      fs.unlinkSync(tmpPng);
+      console.log(`poster ${posterUrl} ${formatMb(fs.statSync(posterFile).size)}`);
+    }
+
+    const needsPreview = !fs.existsSync(previewFile) || fs.statSync(previewFile).size < 1024;
+    if (needsPreview) {
+      // Width capped; -2 keeps height even for yuv420p. Portrait clips get a
+      // smaller width via the second pass when height would exceed the edge.
+      const dims = readVideoDimensions(source) || { width: PREVIEW_EDGE, height: PREVIEW_EDGE };
+      const scale =
+        dims.height > dims.width
+          ? `-2:${PREVIEW_EDGE}`
+          : `${PREVIEW_EDGE}:-2`;
+      await runFfmpeg([
+        '-y',
+        '-i',
+        source,
+        '-an',
+        '-vf',
+        `scale=${scale}`,
+        '-c:v',
+        'libx264',
+        '-pix_fmt',
+        'yuv420p',
+        '-crf',
+        '28',
+        '-preset',
+        'medium',
+        '-movflags',
+        '+faststart',
+        previewFile,
+      ]);
+      console.log(
+        `preview ${previewUrl} ${formatMb(fs.statSync(source).size)} → ${formatMb(fs.statSync(previewFile).size)}`
+      );
+    }
+
+    if (item.poster !== posterUrl || item.preview !== previewUrl) {
+      item.poster = posterUrl;
+      item.preview = previewUrl;
+      updated += 1;
+    }
+  }
+
+  if (updated) {
+    fs.writeFileSync(experimentsPath, `${JSON.stringify(data, null, 2)}\n`);
+    console.log(`updated experiments.json (${updated} video derivatives)`);
+  }
+
+  return updated;
+}
+
 async function main() {
   const pngs = fs
     .readdirSync(mediaDir)
@@ -185,6 +308,8 @@ async function main() {
     }
   }
 
+  const videoDerivatives = await syncExperimentVideos();
+
   // Runs last so freshly renamed URLs are measured from their new files
   const dimsAdded = await backfillDimensions();
 
@@ -192,6 +317,7 @@ async function main() {
   console.log(`converted: ${converted}`);
   console.log(`skipped:   ${skipped}`);
   console.log(`json url replacements: ${jsonUpdates}`);
+  console.log(`video derivatives: ${videoDerivatives}`);
   console.log(`dimensions added: ${dimsAdded}`);
   console.log(
     `png cohort before (all pngs scanned): ${formatMb(beforeTotal)}`
