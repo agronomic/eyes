@@ -1,12 +1,19 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from 'react';
+import Image from 'next/image';
 import { useParams, notFound } from 'next/navigation';
 import { marked } from 'marked';
 
 import Navigation from '../../navigation';
 import { getProjectBySlug } from '../../content';
-import { mediaLoading, playMutedVideos, useStaggerReady } from '../../helpers';
+import {
+  mediaLoading,
+  mediaQuality,
+  mediaSizes,
+  playMutedVideos,
+  useStaggerReady,
+} from '../../helpers';
 
 export default function ProjectPage() {
   const params = useParams();
@@ -100,13 +107,16 @@ export default function ProjectPage() {
               }}
             >
               {attachment.type === 'image' ? (
-                <img
+                <Image
                   src={attachment.url}
                   alt={`${title} image ${i + 1}`}
-                  width={attachment.width || undefined}
-                  height={attachment.height || undefined}
+                  width={attachment.width || 1600}
+                  height={attachment.height || 1067}
+                  sizes={mediaSizes('stage')}
+                  quality={mediaQuality}
                   loading={mediaLoading('stage')}
                   decoding="async"
+                  style={{ width: 'auto', height: 'auto', maxWidth: '100%', maxHeight: '100%' }}
                 />
               ) : (
                 <video
@@ -138,11 +148,16 @@ export default function ProjectPage() {
               aria-label={`Go to image ${i + 1}`}
             >
               {attachment.type === 'image' ? (
-                <img
+                <Image
                   src={attachment.url}
                   alt=""
+                  width={attachment.width || 400}
+                  height={attachment.height || 267}
+                  sizes={mediaSizes('thumb')}
+                  quality={mediaQuality}
                   loading={mediaLoading('thumb')}
                   decoding="async"
+                  style={{ width: '100%', height: 'auto' }}
                 />
               ) : (
                 <video

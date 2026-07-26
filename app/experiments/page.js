@@ -1,10 +1,16 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from 'react';
+import Image from 'next/image';
 
 import Navigation from '../navigation';
 import experiments from '../../public/content/experiments.json';
-import { playMutedVideos, useStaggerReady } from '../helpers';
+import {
+  mediaQuality,
+  mediaSizes,
+  playMutedVideos,
+  useStaggerReady,
+} from '../helpers';
 
 export default function ExperimentsPage() {
   const gridRef = useRef(null);
@@ -76,11 +82,16 @@ export default function ExperimentsPage() {
                 }
               >
                 {item.type === 'image' && (
-                  <img
+                  <Image
                     src={item.url}
                     alt={item.alt || ''}
+                    width={item.width || 800}
+                    height={item.height || 600}
+                    sizes={mediaSizes('experiment')}
+                    quality={mediaQuality}
                     loading="lazy"
                     decoding="async"
+                    style={{ width: '100%', height: 'auto' }}
                   />
                 )}
                 {item.type === 'video' && (
@@ -112,7 +123,16 @@ export default function ExperimentsPage() {
           aria-label={openItem.alt || 'Expanded media'}
         >
           {openItem.type === 'image' ? (
-            <img src={openItem.url} alt={openItem.alt || ''} />
+            <Image
+              src={openItem.url}
+              alt={openItem.alt || ''}
+              width={openItem.width || 1600}
+              height={openItem.height || 1200}
+              sizes={mediaSizes('stage')}
+              quality={mediaQuality}
+              priority
+              style={{ width: 'auto', height: 'auto', maxWidth: '100%', maxHeight: '100%' }}
+            />
           ) : (
             <video
               src={openItem.url}

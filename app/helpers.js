@@ -6,9 +6,24 @@ import { useEffect, useState } from 'react';
 export const bpMobile = 767;
 export const bpNarrow = 499;
 
+export const mediaQuality = 85;
+
 /** Stage slides need layout for thumb jump-scroll on iOS; thumbs can defer. */
 export function mediaLoading(role) {
   return role === 'stage' ? 'eager' : 'lazy';
+}
+
+/** Responsive sizes for next/image — keep in sync with layout density. */
+export function mediaSizes(role) {
+  if (role === 'thumb') return '15vw';
+  if (role === 'cover') {
+    return `(max-width: ${bpMobile}px) 100vw, (max-width: 1200px) 50vw, 33vw`;
+  }
+  if (role === 'experiment') {
+    return `(max-width: ${bpNarrow}px) 33vw, 150px`;
+  }
+  // stage + expand
+  return '100vw';
 }
 
 /** After mount (and when resetKey changes), enable CSS grid stagger. */

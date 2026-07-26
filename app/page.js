@@ -7,7 +7,7 @@ import { marked } from 'marked';
 
 import cv, { getProjects, slugify } from './content';
 import Navigation from './navigation';
-import { bpMobile, useStaggerReady } from './helpers';
+import { bpMobile, mediaQuality, mediaSizes, useStaggerReady } from './helpers';
 
 const PRIORITY_LOAD_THRESHOLD = 3;
 
@@ -35,6 +35,7 @@ function Projects() {
       <div className={`projects-overview${staggerReady ? ' stagger-ready' : ''}`}>
         {projects.map((project, index) => {
           const href = `/p/${slugify(project.title || project.heading)}`;
+          const cover = project.attachments[0];
           return (
             <Link
               key={project.id || index}
@@ -46,13 +47,13 @@ function Projects() {
                   className="media-container"
                   style={{ '--stagger': index }}
                 >
-                  {project.attachments[0].type === 'image' ? (
+                  {cover.type === 'image' ? (
                     <Image
-                      src={project.attachments[0].url}
+                      src={cover.url}
                       alt={`${project.title} cover image`}
-                      width={400}
-                      height={267}
-                      sizes={`(max-width: ${bpMobile}px) 100vw, (max-width: 1200px) 50vw, 33vw`}
+                      width={cover.width || 400}
+                      height={cover.height || 267}
+                      sizes={mediaSizes('cover')}
                       style={{
                         display: 'block',
                         width: '100%',
@@ -60,12 +61,12 @@ function Projects() {
                         cursor: 'pointer',
                       }}
                       priority={index < PRIORITY_LOAD_THRESHOLD}
-                      quality={85}
+                      quality={mediaQuality}
                     />
                   ) : (
-                    project.attachments[0].type === 'video' && (
+                    cover.type === 'video' && (
                       <video
-                        src={project.attachments[0].url}
+                        src={cover.url}
                         muted
                         loop
                         playsInline
@@ -126,7 +127,16 @@ function Projects() {
               {experience.attachments && experience.attachments.length > 0 && (
                 <div className="experience-attachments">
                   {experience.attachments.map((attachment, i) => (
-                    <img key={i} src={attachment.url} alt={`Attachment ${i + 1}`} />
+                    <Image
+                      key={i}
+                      src={attachment.url}
+                      alt={`Attachment ${i + 1}`}
+                      width={attachment.width || 400}
+                      height={attachment.height || 267}
+                      sizes={mediaSizes('thumb')}
+                      quality={mediaQuality}
+                      style={{ width: '100%', height: 'auto' }}
+                    />
                   ))}
                 </div>
               )}
