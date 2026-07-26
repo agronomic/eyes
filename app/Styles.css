@@ -17,9 +17,10 @@
   --font-weight-regular: 400;
   --font-weight-bold: 700;
   --page-end-space: 120px;
-  --media-col-min: 100px;
+  --media-col-min: 80px;
   --media-col-gap: 10px;
-  --media-col-nav-scale: 0.40;
+  /* Keeps thumbs at the old 40px floor: 80 × 0.50 = 100 × 0.40 */
+  --media-col-nav-scale: 0.50;
   /* Breakpoints — use these literals in @media / matchMedia (var() unreliable there) */
   --bp-mobile: 767px;
   --bp-narrow: 499px;
