@@ -34,6 +34,50 @@ export function useStaggerReady(resetKey) {
   return ready;
 }
 
+/**
+ * Experiments masonry fills column-major; index-based stagger leaves the right
+ * side empty too long. Assign --stagger from real column/row so every column
+ * starts early, with a small left-to-right lead: row + column * columnLead.
+ */
+export function assignColumnStagger(root, { columnLead = 2 } = {}) {
+  if (!root) return;
+
+  const tiles = [...root.querySelectorAll(':scope > .media-container')];
+  if (!tiles.length) return;
+
+  const placed = tiles.map((tile) => {
+    const rect = tile.getBoundingClientRect();
+    return { tile, left: rect.left, top: rect.top };
+  });
+
+  const colLefts = [];
+  placed.forEach(({ left }) => {
+    if (!colLefts.some((x) => Math.abs(x - left) < 4)) colLefts.push(left);
+  });
+  colLefts.sort((a, b) => a - b);
+
+  const byCol = colLefts.map(() => []);
+  placed.forEach((item) => {
+    let col = 0;
+    let best = Infinity;
+    colLefts.forEach((x, i) => {
+      const d = Math.abs(x - item.left);
+      if (d < best) {
+        best = d;
+        col = i;
+      }
+    });
+    byCol[col].push(item);
+  });
+
+  byCol.forEach((colTiles, column) => {
+    colTiles.sort((a, b) => a.top - b.top);
+    colTiles.forEach((item, row) => {
+      item.tile.style.setProperty('--stagger', String(row + column * columnLead));
+    });
+  });
+}
+
 /** Never hold a reveal past this, however slow the network is. Generous
     because the counter keeps the visitor informed while we wait. */
 const READY_TIMEOUT = 3000;

@@ -9,6 +9,7 @@ import MediaCounter from '../media-counter';
 import ExpandVideo from '../expand-video';
 import experiments from '../../public/content/experiments.json';
 import {
+  assignColumnStagger,
   mediaQuality,
   mediaSizes,
   playVisibleMutedVideos,
@@ -20,11 +21,21 @@ export default function ExperimentsPage() {
   const { ready, loaded, total } = useMediaReady(gridRef);
   const [countedIn, setCountedIn] = useState(false);
   const onCounted = useCallback(() => setCountedIn(true), []);
-  // The cascade is the counter's handover, so it waits for both
-  const staggerReady = ready && countedIn;
+  // Flip only after column stagger is written, so the cascade uses row+lead order
+  const [staggerReady, setStaggerReady] = useState(false);
   const [openIndex, setOpenIndex] = useState(null);
 
   const openItem = openIndex == null ? null : experiments[openIndex];
+
+  useEffect(() => {
+    if (!(ready && countedIn)) {
+      setStaggerReady(false);
+      return undefined;
+    }
+    assignColumnStagger(gridRef.current);
+    const id = requestAnimationFrame(() => setStaggerReady(true));
+    return () => cancelAnimationFrame(id);
+  }, [ready, countedIn]);
 
   // Wait for the cascade gate — playing under the loader made clips visible early
   useEffect(() => {
@@ -79,7 +90,6 @@ export default function ExperimentsPage() {
               <div
                 key={item.id || index}
                 className={`media-container${expandable ? ' is-expandable' : ''}`}
-                style={{ '--stagger': index }}
                 onClick={expandable ? () => open(index) : undefined}
                 role={expandable ? 'button' : undefined}
                 tabIndex={expandable ? 0 : undefined}
