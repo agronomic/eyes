@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "recompress-media": "node scripts/recompress-media.mjs"
+    "sync-media": "node scripts/sync-media.mjs"
   },
   "dependencies": {
     "@fontsource/atkinson-hyperlegible": "5.1.0",

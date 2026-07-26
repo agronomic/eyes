@@ -9,13 +9,13 @@ import {
   mediaQuality,
   mediaSizes,
   playMutedVideos,
-  useStaggerReady,
+  useMediaReady,
 } from '../helpers';
 
 export default function ExperimentsPage() {
   const gridRef = useRef(null);
   const expandRef = useRef(null);
-  const staggerReady = useStaggerReady();
+  const staggerReady = useMediaReady(gridRef);
   const [openIndex, setOpenIndex] = useState(null);
 
   const openItem = openIndex == null ? null : experiments[openIndex];
@@ -89,12 +89,15 @@ export default function ExperimentsPage() {
                     height={item.height || 600}
                     sizes={mediaSizes('experiment')}
                     quality={mediaQuality}
+                    loading="eager"
                     style={{ width: '100%', height: 'auto' }}
                   />
                 )}
                 {item.type === 'video' && (
                   <video
                     src={item.url}
+                    width={item.width || undefined}
+                    height={item.height || undefined}
                     autoPlay
                     muted
                     loop

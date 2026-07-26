@@ -34,17 +34,24 @@ export function useStaggerReady(resetKey) {
   return ready;
 }
 
+/** Never hold a reveal past this, however slow the network is. */
+const READY_TIMEOUT = 2000;
+
 /** Preloaded and cached media can finish before hydration, so the load event
     never reaches React. Read the DOM instead, then watch whatever is still
-    loading. Returns a cleanup. */
-export function watchMediaReady(root, onReady) {
+    loading. A container with nothing matching the selector has nothing to wait
+    for, so it counts as ready. Returns a cleanup. */
+export function watchMediaReady(root, onReady, selector = 'img, video') {
   if (!root) return () => {};
 
   const cleanups = [];
 
   root.querySelectorAll(':scope > .media-container').forEach((slide, index) => {
-    const media = slide.querySelector('img, video');
-    if (!media) return;
+    const media = slide.querySelector(selector);
+    if (!media) {
+      onReady(index);
+      return;
+    }
 
     const isImage = media.tagName === 'IMG';
     const hasPixels = isImage
@@ -67,6 +74,39 @@ export function watchMediaReady(root, onReady) {
   });
 
   return () => cleanups.forEach((cleanup) => cleanup());
+}
+
+/** Same cascade as useStaggerReady, later trigger: hold a grid until its images
+    have pixels, so it reveals as one motion instead of racing the network.
+    Videos and audio stay out of the gate — they stream in on their own. */
+export function useMediaReady(ref, resetKey) {
+  const [ready, setReady] = useState(false);
+
+  useEffect(() => {
+    setReady(false);
+
+    const root = ref.current;
+    if (!root) return undefined;
+
+    const total = root.querySelectorAll(':scope > .media-container').length;
+    const loaded = new Set();
+    const stopWatching = watchMediaReady(
+      root,
+      (index) => {
+        loaded.add(index);
+        if (loaded.size >= total) setReady(true);
+      },
+      'img'
+    );
+    const timer = setTimeout(() => setReady(true), READY_TIMEOUT);
+
+    return () => {
+      stopWatching();
+      clearTimeout(timer);
+    };
+  }, [ref, resetKey]);
+
+  return ready;
 }
 
 /** Browsers often ignore muted autoplay — kick play() explicitly. */

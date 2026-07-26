@@ -29,6 +29,8 @@
   --stage-height: 60vh;
   /* Quiet placeholder while stage media decodes */
   --media-pending: #161616;
+  /* Gap between each item in a staggered reveal */
+  --stagger-step: 100ms;
   /* Experiments expand overlay */
   --expand-max-width: min(900px, 90vw);
   --expand-max-height: 85vh;
@@ -180,7 +182,7 @@ video {
 .gallery-text,
 .section {
   animation: fadeSlideInSequential 0.5s ease-in-out both;
-  animation-delay: calc(var(--stagger, 0) * 100ms);
+  animation-delay: calc(var(--stagger, 0) * var(--stagger-step));
 }
 
 .gallery-text {
@@ -210,15 +212,15 @@ video {
   opacity: 0;
 }
 
-/* Two triggers, one motion: grids reveal on mount and stagger by index, stage
-   slides reveal individually once their own pixels land. */
+/* Two triggers, one motion: a grid cascades by index once it is told it is
+   ready, stage slides reveal individually as their own pixels land. */
 .stagger-ready .media-container img,
 .stagger-ready .media-container video,
 .stagger-ready .media-container audio,
 .swipe-view .media-container:not(.is-pending) img,
 .swipe-view .media-container:not(.is-pending) video {
   animation: fadeSlideInSequential 0.5s ease-in-out both;
-  animation-delay: calc(var(--stagger, 0) * 100ms);
+  animation-delay: calc(var(--stagger, 0) * var(--stagger-step));
 }
 
 /* =============================================================================
