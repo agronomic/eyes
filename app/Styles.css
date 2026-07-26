@@ -30,7 +30,7 @@
   /* Quiet placeholder while stage media decodes */
   --media-pending: #161616;
   /* Gap between each item in a staggered reveal */
-  --stagger-step: 100ms;
+  --stagger-step: 90ms;
   /* Experiments expand overlay */
   --expand-max-width: min(900px, 90vw);
   --expand-max-height: 85vh;
@@ -395,15 +395,9 @@ video {
    ============================================================================= */
 
 .experiments-grid {
-  column-width: 150px;
+  /* ~110px fits three columns on an SE-width content box without a column-count lock */
+  column-width: 110px;
   column-gap: 10px;
-}
-
-/* --bp-narrow */
-@media (max-width: 499px) {
-  .experiments-grid {
-    column-count: 3;
-  }
 }
 
 .experiments-grid .media-container {

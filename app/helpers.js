@@ -15,7 +15,7 @@ export function mediaSizes(role) {
     return `(max-width: ${bpMobile}px) 100vw, (max-width: 1200px) 50vw, 33vw`;
   }
   if (role === 'experiment') {
-    return `(max-width: ${bpNarrow}px) 33vw, 150px`;
+    return `(max-width: ${bpNarrow}px) 33vw, 110px`;
   }
   // stage + expand
   return '100vw';
