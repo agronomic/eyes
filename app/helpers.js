@@ -15,9 +15,12 @@ export function mediaSizes(role) {
     return `(max-width: ${bpMobile}px) 100vw, (max-width: 1200px) 50vw, 33vw`;
   }
   if (role === 'experiment') {
-    return `(max-width: ${bpNarrow}px) 33vw, 110px`;
+    return `(max-width: ${bpNarrow}px) 25vw, 80px`;
   }
-  // stage + expand
+  if (role === 'case-pair') {
+    return `(max-width: ${bpMobile}px) 100vw, 50vw`;
+  }
+  // stage + expand + case full-width
   return '100vw';
 }
 

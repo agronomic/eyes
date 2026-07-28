@@ -38,7 +38,7 @@
       "heading": "Civic Impact",
       "url": "https://agron.design",
       "collaborators": [],
-      "description": "Digital products aimed at systemic criminal justice issues in order to reduce the amount of people incarcerated in the U.S. Since 2019, I've worked on the product strategy, brand ethos, digital design system, website, and team operations. Credits: Sonia Chokshi, Ian MacFarland, Allison Chan, William DeShazer\n\n[Learn more...](https://www.recidiviz.org/design)",
+      "description": "Digital products aimed at systemic criminal justice issues in order to reduce the amount of people incarcerated in the U.S. Since 2019, I've worked on the product strategy, brand ethos, digital design system, website, and team operations. Credits: Sonia Chokshi, Ian MacFarland, Allison Chan, William DeShazer",
       "attachments": [
         {
           "type": "image",
@@ -50,13 +50,15 @@
           "type": "image",
           "width": 2048,
           "height": 1365,
-          "url": "/content/media/Civic-Impact-2.png"
+          "url": "/content/media/Civic-Impact-2.png",
+          "layout": "pair"
         },
         {
           "type": "image",
           "width": 2048,
           "height": 1365,
-          "url": "/content/media/Civic-Impact-3.png"
+          "url": "/content/media/Civic-Impact-3.png",
+          "layout": "pair"
         },
         {
           "type": "image",
@@ -68,13 +70,15 @@
           "type": "image",
           "width": 2048,
           "height": 1365,
-          "url": "/content/media/Civic-Impact-5.png"
+          "url": "/content/media/Civic-Impact-5.png",
+          "layout": "pair"
         },
         {
           "type": "image",
           "width": 2048,
           "height": 1365,
-          "url": "/content/media/Civic-Impact-6.webp"
+          "url": "/content/media/Civic-Impact-6.webp",
+          "layout": "pair"
         },
         {
           "type": "image",
@@ -92,13 +96,15 @@
           "type": "image",
           "width": 2048,
           "height": 1365,
-          "url": "/content/media/Civic-Impact-9.webp"
+          "url": "/content/media/Civic-Impact-9.webp",
+          "layout": "pair"
         },
         {
           "type": "image",
           "width": 2048,
           "height": 1365,
-          "url": "/content/media/Civic-Impact-10.png"
+          "url": "/content/media/Civic-Impact-10.png",
+          "layout": "pair"
         },
         {
           "type": "image",
@@ -128,25 +134,29 @@
           "type": "image",
           "width": 2048,
           "height": 1365,
-          "url": "/content/media/Civic-Impact-15.png"
+          "url": "/content/media/Civic-Impact-15.png",
+          "layout": "pair"
         },
         {
           "type": "image",
           "width": 2048,
           "height": 1365,
-          "url": "/content/media/Civic-Impact-16.png"
+          "url": "/content/media/Civic-Impact-16.png",
+          "layout": "pair"
         },
         {
           "type": "image",
           "width": 2048,
           "height": 1365,
-          "url": "/content/media/Civic-Impact-17.png"
+          "url": "/content/media/Civic-Impact-17.png",
+          "layout": "pair"
         },
         {
           "type": "image",
           "width": 2048,
           "height": 1365,
-          "url": "/content/media/Civic-Impact-18.png"
+          "url": "/content/media/Civic-Impact-18.png",
+          "layout": "pair"
         },
         {
           "type": "image",
@@ -164,13 +174,15 @@
           "type": "image",
           "width": 2048,
           "height": 1365,
-          "url": "/content/media/Civic-Impact-21.png"
+          "url": "/content/media/Civic-Impact-21.png",
+          "layout": "pair"
         },
         {
           "type": "image",
           "width": 2048,
           "height": 1365,
-          "url": "/content/media/Civic-Impact-22.png"
+          "url": "/content/media/Civic-Impact-22.png",
+          "layout": "pair"
         },
         {
           "type": "image",
@@ -182,25 +194,29 @@
           "type": "image",
           "width": 2048,
           "height": 1365,
-          "url": "/content/media/Civic-Impact-24.png"
+          "url": "/content/media/Civic-Impact-24.png",
+          "layout": "pair"
         },
         {
           "type": "image",
           "width": 2048,
           "height": 1365,
-          "url": "/content/media/Civic-Impact-25.png"
+          "url": "/content/media/Civic-Impact-25.png",
+          "layout": "pair"
         },
         {
           "type": "image",
           "width": 2048,
           "height": 1365,
-          "url": "/content/media/Civic-Impact-26.webp"
+          "url": "/content/media/Civic-Impact-26.webp",
+          "layout": "pair"
         },
         {
           "type": "image",
           "width": 2048,
           "height": 1365,
-          "url": "/content/media/Civic-Impact-27.webp"
+          "url": "/content/media/Civic-Impact-27.webp",
+          "layout": "pair"
         }
       ],
       "type": "project",
@@ -210,12 +226,13 @@
         "Product",
         "Brand",
         "Civic"
-      ]
+      ],
+      "caseStudy": true
     },
     {
       "id": "PHZZ0ShLiSw8Vr4HQCCb",
       "year": "2023",
-      "heading": "Tech Journal, Brand",
+      "heading": "Tech Journal",
       "url": null,
       "collaborators": [],
       "description": "Logo and brand work for a community made up of students, educators, writers, engineers, historians, activists, and scientists – all coming together to reimagine techno-optimism for a better collective future.",
@@ -306,7 +323,7 @@
         }
       ],
       "type": "project",
-      "title": "Tech Journal, Brand",
+      "title": "Tech Journal",
       "company": "",
       "tags": [
         "Brand"
@@ -315,7 +332,7 @@
     {
       "id": "T6GJV1a8UIcU92jfCVFR",
       "year": "2023",
-      "heading": "Venture Capital, Brand",
+      "heading": "Venture Capital",
       "url": null,
       "collaborators": [],
       "description": "Logo explorations for a venture capital studio based in New Mexico.",
@@ -382,7 +399,7 @@
         }
       ],
       "type": "project",
-      "title": "Venture Capital, Brand",
+      "title": "Venture Capital",
       "company": "",
       "tags": [
         "Brand"
@@ -391,7 +408,7 @@
     {
       "id": "7wjOqi74t3A2l7l11lq4",
       "year": "2022",
-      "heading": "Justice System, Product",
+      "heading": "Justice System",
       "url": null,
       "collaborators": [],
       "description": "As part of a national initiative to enhance the consistency and transparency of data in the criminal justice system, our goal was to build a platform for gathering essential data from criminal justice agencies across the nation and get them into the hands of policymakers to support more informed decision-making.",
@@ -524,7 +541,7 @@
         }
       ],
       "type": "project",
-      "title": "Justice System, Product",
+      "title": "Justice System",
       "company": "",
       "tags": [
         "Product",
@@ -534,7 +551,7 @@
     {
       "id": "JT8uhtFoUDxwMOFf4Orr",
       "year": "2022",
-      "heading": "Deep–Tech, Brand",
+      "heading": "Deep–Tech",
       "url": null,
       "collaborators": [],
       "description": "Advisory brand work for a venture capital studio investing in deep–tech projects.",
@@ -607,7 +624,7 @@
         }
       ],
       "type": "project",
-      "title": "Deep–Tech, Brand",
+      "title": "Deep–Tech",
       "company": "",
       "tags": [
         "Brand"
@@ -616,7 +633,7 @@
     {
       "id": "oTjnQ48nrpdrwy1mWBFl",
       "year": "2022",
-      "heading": "Better Reading, Product",
+      "heading": "Better Reading",
       "url": null,
       "collaborators": [],
       "description": "Concepts for [Matter](https://hq.getmatter.com), a reading tool that chooses agency over algorithm and quality over recency. Anchored to the onboarding experience, the design harmonized typography with minimal illustrations to guide the user along core functionality while conveying the tool's values.",
@@ -641,7 +658,7 @@
         }
       ],
       "type": "project",
-      "title": "Better Reading, Product",
+      "title": "Better Reading",
       "company": "",
       "tags": [
         "Product"
@@ -650,7 +667,7 @@
     {
       "id": "noMAms5qPqZwPc4W2Xs4",
       "year": "2021",
-      "heading": "Executive Portraits, Brand",
+      "heading": "Executive Portraits",
       "url": null,
       "collaborators": [],
       "description": "Creative and art direction for a series of portraits. Credits: William DeShazer",
@@ -711,7 +728,7 @@
         }
       ],
       "type": "project",
-      "title": "Executive Portraits, Brand",
+      "title": "Executive Portraits",
       "company": "",
       "tags": [
         "Brand"
@@ -720,7 +737,7 @@
     {
       "id": "q9BYLrMIhuo2ZMuxxgyQ",
       "year": "2021",
-      "heading": "Social Fitness, Product",
+      "heading": "Social Fitness",
       "url": null,
       "collaborators": [],
       "description": "Digital product design for a social fitness mobile app. As an offshoot experiment from 2020's mental health initiative, its aim was to encourage and support a long-distance community of walkers.",
@@ -781,7 +798,7 @@
         }
       ],
       "type": "project",
-      "title": "Social Fitness, Product",
+      "title": "Social Fitness",
       "company": "",
       "tags": [
         "Product"
@@ -790,7 +807,7 @@
     {
       "id": "G8yVTVcGzZ3XCcqcKfrS",
       "year": "2020",
-      "heading": "Better Hiring, Product",
+      "heading": "Better Hiring",
       "url": null,
       "collaborators": [],
       "description": "Early product design work for a human resources platform aiming to improve the hiring process, from initial application to offer.",
@@ -821,7 +838,7 @@
         }
       ],
       "type": "project",
-      "title": "Better Hiring, Product",
+      "title": "Better Hiring",
       "company": "",
       "tags": [
         "Product"
@@ -830,7 +847,7 @@
     {
       "id": "mxIRjPzV8LUAYAPRI3y0",
       "year": "2020",
-      "heading": "Dental Hygiene, Product",
+      "heading": "Dental Hygiene",
       "url": null,
       "collaborators": [],
       "description": "Product design work for affordable dental hygiene. I worked on early conceptual models for the brand and customer experience as well as the staff and admin workflows.",
@@ -921,7 +938,7 @@
         }
       ],
       "type": "project",
-      "title": "Dental Hygiene, Product",
+      "title": "Dental Hygiene",
       "company": "",
       "tags": [
         "Product",
@@ -931,7 +948,7 @@
     {
       "id": "oKWuzzEFOolla15EA4LM",
       "year": "2020",
-      "heading": "Silk Logo, Brand",
+      "heading": "Silk Logo",
       "url": null,
       "collaborators": [],
       "description": "Logo concepts for a silk goods brand.",
@@ -986,7 +1003,7 @@
         }
       ],
       "type": "project",
-      "title": "Silk Logo, Brand",
+      "title": "Silk Logo",
       "company": "",
       "tags": [
         "Brand"
@@ -995,7 +1012,7 @@
     {
       "id": "mBpLgF4e3zDwBKuOXJSd",
       "year": "2020",
-      "heading": "Election Consortium, Product",
+      "heading": "Election Consortium",
       "url": null,
       "collaborators": [],
       "description": "Online publication that provides informed analysis of US national elections.",
@@ -1044,7 +1061,7 @@
         }
       ],
       "type": "project",
-      "title": "Election Consortium, Product",
+      "title": "Election Consortium",
       "company": "",
       "tags": [
         "Product",
@@ -1054,7 +1071,7 @@
     {
       "id": "y7oems5rF3MMknD6D75H",
       "year": "2020",
-      "heading": "Schmidt Futures, Brand",
+      "heading": "Schmidt Futures",
       "url": null,
       "collaborators": [],
       "description": "Graphic design for a philanthropic venture funding science and technology research initiatives.",
@@ -1115,7 +1132,7 @@
         }
       ],
       "type": "project",
-      "title": "Schmidt Futures, Brand",
+      "title": "Schmidt Futures",
       "company": "",
       "tags": [
         "Brand"
@@ -1124,7 +1141,7 @@
     {
       "id": "HD0qQop8Asw6npggthlI",
       "year": "2020",
-      "heading": "Cannabis, Brand",
+      "heading": "Cannabis",
       "url": null,
       "collaborators": [],
       "description": "Photography and art direction for a cannabis brand that celebrates artistry and emphasizes excellence. Credits: Kate Moore, Ron Brandon",
@@ -1167,7 +1184,7 @@
         }
       ],
       "type": "project",
-      "title": "Cannabis, Brand",
+      "title": "Cannabis",
       "company": "",
       "tags": [
         "Brand"
@@ -1176,7 +1193,7 @@
     {
       "id": "1HcXJhptEfBWBpf3bVpi",
       "year": "2020",
-      "heading": "Pandemic Response, Product",
+      "heading": "Pandemic Response",
       "url": null,
       "collaborators": [],
       "description": "Digital product design for a set of tools that correctional workers used to track and anticipate the impact of Covid-19 inside of prison facilities. Used in all 50 states, the toolkit allowed users to: 1) project cases, hospitalizations, and deaths among both staff and the incarcerated population, 2) compare before-and-after scenarios for policy changes and early release decisions and, 3) model the current rate of spread and trajectory of the outbreak in each facility. Credits: C. Andrew Warren, Clementine Jacoby, Joshua Essex",
@@ -1243,7 +1260,7 @@
         }
       ],
       "type": "project",
-      "title": "Pandemic Response, Product",
+      "title": "Pandemic Response",
       "company": "",
       "tags": [
         "Product",
@@ -1253,7 +1270,7 @@
     {
       "id": "TSJ8U3jHUoHwUhCimC8w",
       "year": "2020",
-      "heading": "Emotional Health, Product",
+      "heading": "Emotional Health",
       "url": null,
       "collaborators": [],
       "description": "Digital product and brand identity design for a wellness platform. Conceived as an iOS app, the audio-first anonymous community focused on mental health and emotional support.\n\nInline with its values, the harmful “endless feed” of information was omitted by design. The ephemeral content that took its place emphasized accessibility to marginalized people, especially the visually impaired. Service was supported for 2 years before shutting down in 2022.",
@@ -1344,7 +1361,7 @@
         }
       ],
       "type": "project",
-      "title": "Emotional Health, Product",
+      "title": "Emotional Health",
       "company": "",
       "tags": [
         "Product",
@@ -1354,7 +1371,7 @@
     {
       "id": "SPzKmRMuBJe8hTVXwZzi",
       "year": "2019",
-      "heading": "Enterprise Tree, Product",
+      "heading": "Enterprise Tree",
       "url": null,
       "collaborators": [],
       "description": "Product growth work for a financial platform positioned as infrastructure during the rise of the legal cannabis industry. Archival in progress...",
@@ -1493,7 +1510,7 @@
         }
       ],
       "type": "project",
-      "title": "Enterprise Tree, Product",
+      "title": "Enterprise Tree",
       "company": "",
       "tags": [
         "Product"
@@ -1502,7 +1519,7 @@
     {
       "id": "vbcaFbgXFaFYgV6S6OdU",
       "year": "2019",
-      "heading": "Memoir, Brand",
+      "heading": "Memoir",
       "url": null,
       "collaborators": [],
       "description": "Website for two friends who set out across America to better understand each other and the country they love.",
@@ -1581,7 +1598,7 @@
         }
       ],
       "type": "project",
-      "title": "Memoir, Brand",
+      "title": "Memoir",
       "company": "",
       "tags": [
         "Brand"
@@ -1590,7 +1607,7 @@
     {
       "id": "Zu6kntFmjIft9GRiiL6i",
       "year": "2019",
-      "heading": "Aerospace, Brand",
+      "heading": "Aerospace",
       "url": null,
       "collaborators": [],
       "description": "A scalable and extensible visual language for the world's leading unmanned aircraft management platform.",
@@ -1681,7 +1698,7 @@
         }
       ],
       "type": "project",
-      "title": "Aerospace, Brand",
+      "title": "Aerospace",
       "company": "",
       "tags": [
         "Brand"
@@ -1690,7 +1707,7 @@
     {
       "id": "pCYwZM3dZU4CTYyFRen8",
       "year": "2019",
-      "heading": "City Planner, Product",
+      "heading": "City Planner",
       "url": null,
       "collaborators": [],
       "description": "To create a balanced environment for local residents, we designed an open-source and free-to-use platform that leveraged publicly available data to inform city planners, investment firms, and activists alike.",
@@ -1775,7 +1792,7 @@
         }
       ],
       "type": "project",
-      "title": "City Planner, Product",
+      "title": "City Planner",
       "company": "",
       "tags": [
         "Product",
@@ -1785,7 +1802,7 @@
     {
       "id": "Hl5FfTRf3sEGxj2ozVMn",
       "year": "2018",
-      "heading": "Smart Cities, Product",
+      "heading": "Smart Cities",
       "url": null,
       "collaborators": [],
       "description": "As part of a larger 'smart cities' initiative, this was an experiment to use real world rewards to incentivize alternate modes of transportation for daily commuters.",
@@ -1828,7 +1845,7 @@
         }
       ],
       "type": "project",
-      "title": "Smart Cities, Product",
+      "title": "Smart Cities",
       "company": "",
       "tags": [
         "Product",
@@ -1838,7 +1855,7 @@
     {
       "id": "HZcaWljc8hZ9SH8Pq5Ma",
       "year": "2018",
-      "heading": "Waze, Brand, Product",
+      "heading": "Waze",
       "url": null,
       "collaborators": [],
       "description": "Changing the way the world moves through everyday acts of cooperation. I was the lead designer across all growth initiatives where we raised the monthly active users from 55M to 110M and formed partnerships with local agencies internationally. Archival of further work in progress. Credits: Haraldur Thorleifsson, Dominic Flask, Robin Noguier",
@@ -1941,7 +1958,7 @@
         }
       ],
       "type": "project",
-      "title": "Waze, Brand, Product",
+      "title": "Waze",
       "company": "",
       "tags": [
         "Product",
@@ -1951,7 +1968,7 @@
     {
       "id": "nj6MDv4aDfhGyrEb59Kj",
       "year": "2017",
-      "heading": "Disaster Relief, Other",
+      "heading": "Disaster Relief",
       "url": null,
       "collaborators": [],
       "description": "Following hurricane Maria, my brother and I embarked on a mission to raise $10k worth of relief and personally deliver over 350 industrial-grade water filters. The journey took us across 10 of the most impacted towns in Puerto Rico as we formed partnerships with on-site military units, World Central Kitchen, The Home Depot, and Sam's Club. We named the project Clean Water Fund.",
@@ -1982,7 +1999,7 @@
         }
       ],
       "type": "project",
-      "title": "Disaster Relief, Other",
+      "title": "Disaster Relief",
       "company": "",
       "tags": [
         "Civic",
@@ -1992,7 +2009,7 @@
     {
       "id": "hHS58AjRVZ3PY4Msy2QK",
       "year": "2016",
-      "heading": "Badge Maker, Tool",
+      "heading": "Badge Maker",
       "url": null,
       "collaborators": [],
       "description": "Design and development for a self-service asset generator. Credits: Lemuel R. Bezares",
@@ -2023,7 +2040,7 @@
         }
       ],
       "type": "project",
-      "title": "Badge Maker, Tool",
+      "title": "Badge Maker",
       "company": "",
       "tags": [
         "Product"
@@ -2032,7 +2049,7 @@
     {
       "id": "C4QeFxkwgJJbbNtpt4Dw",
       "year": "2015",
-      "heading": "Network Management, Product",
+      "heading": "Network Management",
       "url": null,
       "collaborators": [],
       "description": "A cloud-based networking management platform positioned as an alternative to Cisco. I worked in the product design team as a visual and interaction designer.",
@@ -2063,7 +2080,7 @@
         }
       ],
       "type": "project",
-      "title": "Network Management, Product",
+      "title": "Network Management",
       "company": "",
       "tags": [
         "Product"
@@ -2072,7 +2089,7 @@
     {
       "id": "8kIFRiSOZFfk20avvWfv",
       "year": "2015",
-      "heading": "Various, Other",
+      "heading": "Various",
       "url": null,
       "collaborators": [],
       "description": "Archival in progress...",
@@ -2097,7 +2114,7 @@
         }
       ],
       "type": "project",
-      "title": "Various, Other",
+      "title": "Various",
       "company": "",
       "tags": [
         "Brand"
@@ -2108,7 +2125,7 @@
     {
       "id": "4EAJBshUxc7CQkqFOHBd",
       "year": "2024",
-      "heading": "♡ Game Boy, Mod",
+      "heading": "Game Boy",
       "url": "https://agron.design",
       "collaborators": [],
       "description": "FPGA Game Boy Color. More builds coming soon...",
@@ -2145,7 +2162,7 @@
         }
       ],
       "type": "sideProject",
-      "title": "♡ Game Boy, Mod",
+      "title": "Game Boy",
       "company": "",
       "tags": [
         "Personal"
@@ -2154,7 +2171,7 @@
     {
       "id": "y1gPVWnmlzDghHnZCZlf",
       "year": "2024",
-      "heading": "♡ EOY Card, Print",
+      "heading": "EOY Card",
       "url": "https://agron.design",
       "collaborators": [],
       "description": "3-Color Risograph Print, 4.25\" x 5.75\", 80lb. Brightwhite",
@@ -2185,7 +2202,7 @@
         }
       ],
       "type": "sideProject",
-      "title": "♡ EOY Card, Print",
+      "title": "EOY Card",
       "company": "",
       "tags": [
         "Personal"
@@ -2194,7 +2211,7 @@
     {
       "id": "7VeLkViGzj7nj8zH1AnW",
       "year": "Ongoing",
-      "heading": "♡ Pidgeys, Pics",
+      "heading": "Pidgeys",
       "url": null,
       "collaborators": [],
       "description": "Just some bird pics.",
@@ -2273,7 +2290,7 @@
         }
       ],
       "type": "sideProject",
-      "title": "♡ Pidgeys, Pics",
+      "title": "Pidgeys",
       "company": "",
       "tags": [
         "Personal"
@@ -2282,7 +2299,7 @@
     {
       "id": "ljoyFthefwMS93mEIn9C",
       "year": "2022",
-      "heading": "♡ Plant Kingdom, Pics",
+      "heading": "Plant Kingdom",
       "url": null,
       "collaborators": [],
       "description": "Photo documentation of photosynthetic organisms (leaves and whatnot).",
@@ -2331,7 +2348,7 @@
         }
       ],
       "type": "sideProject",
-      "title": "♡ Plant Kingdom, Pics",
+      "title": "Plant Kingdom",
       "company": "",
       "tags": [
         "Personal"
@@ -2340,7 +2357,7 @@
     {
       "id": "RcbyoSvBs122mZQVv99B",
       "year": "2021",
-      "heading": "♡ Food Label, Brand, Print",
+      "heading": "Food Label",
       "url": null,
       "collaborators": [],
       "description": "A succulent brand for a good friend and family-owned business based in California's San Joaquín Valley. Credits: Risewise",
@@ -2377,7 +2394,7 @@
         }
       ],
       "type": "sideProject",
-      "title": "♡ Food Label, Brand, Print",
+      "title": "Food Label",
       "company": "",
       "tags": [
         "Brand",
@@ -2387,7 +2404,7 @@
     {
       "id": "X1zb0gMttoPwCxnCc7WS",
       "year": "2019",
-      "heading": "♡ Pineapples, Tool",
+      "heading": "Pineapples",
       "url": null,
       "collaborators": [],
       "description": "Landing page for a noncomformist internet marketing agency. Credits: Lemuel R. Bezares",
@@ -2412,7 +2429,7 @@
         }
       ],
       "type": "sideProject",
-      "title": "♡ Pineapples, Tool",
+      "title": "Pineapples",
       "company": "",
       "tags": [
         "Personal"
@@ -2421,7 +2438,7 @@
     {
       "id": "jzEzyfYRADG9nJTvLD8e",
       "year": "1996",
-      "heading": "♡ Adventure Game, Product",
+      "heading": "Adventure Game",
       "url": null,
       "collaborators": [],
       "description": "Early concepts and web domain research for a collaborative adventure dungeon crawler game.",
@@ -2482,7 +2499,7 @@
         }
       ],
       "type": "sideProject",
-      "title": "♡ Adventure Game, Product",
+      "title": "Adventure Game",
       "company": "",
       "tags": [
         "Product",
@@ -2500,9 +2517,9 @@
       "id": "1PpTYN46wRo1Xp8abbzI",
       "year": "2019 — Now",
       "heading": "Founding member at recidiviz",
-      "url": "https://read.cv/teams/recidiviz",
+      "url": "https://www.recidiviz.org/design",
       "collaborators": [],
-      "description": "We build practical systems that actively reduce the amount of people incarcerated in the U.S. As head of design, I am responsible for the product and brand experience across all touch points. Check out our [team page](https://read.cv/teams/recidiviz) to learn more.",
+      "description": "We build practical systems that actively reduce the amount of people incarcerated in the U.S. As head of design, I am responsible for the product and brand experience across all touch points. Check out our [team page](https://www.recidiviz.org/design) to learn more.",
       "attachments": [],
       "type": "workExperience",
       "title": "Founding member",
@@ -2616,7 +2633,7 @@
           "heading": "Civic Impact",
           "url": "https://agron.design",
           "collaborators": [],
-          "description": "Digital products aimed at systemic criminal justice issues in order to reduce the amount of people incarcerated in the U.S. Since 2019, I've worked on the product strategy, brand ethos, digital design system, website, and team operations. Credits: Sonia Chokshi, Ian MacFarland, Allison Chan, William DeShazer\n\n[Learn more...](https://www.recidiviz.org/design)",
+          "description": "Digital products aimed at systemic criminal justice issues in order to reduce the amount of people incarcerated in the U.S. Since 2019, I've worked on the product strategy, brand ethos, digital design system, website, and team operations. Credits: Sonia Chokshi, Ian MacFarland, Allison Chan, William DeShazer",
           "attachments": [
             {
               "type": "image",
@@ -2628,13 +2645,15 @@
               "type": "image",
               "width": 2048,
               "height": 1365,
-              "url": "/content/media/Civic-Impact-2.png"
+              "url": "/content/media/Civic-Impact-2.png",
+              "layout": "pair"
             },
             {
               "type": "image",
               "width": 2048,
               "height": 1365,
-              "url": "/content/media/Civic-Impact-3.png"
+              "url": "/content/media/Civic-Impact-3.png",
+              "layout": "pair"
             },
             {
               "type": "image",
@@ -2646,13 +2665,15 @@
               "type": "image",
               "width": 2048,
               "height": 1365,
-              "url": "/content/media/Civic-Impact-5.png"
+              "url": "/content/media/Civic-Impact-5.png",
+              "layout": "pair"
             },
             {
               "type": "image",
               "width": 2048,
               "height": 1365,
-              "url": "/content/media/Civic-Impact-6.webp"
+              "url": "/content/media/Civic-Impact-6.webp",
+              "layout": "pair"
             },
             {
               "type": "image",
@@ -2670,13 +2691,15 @@
               "type": "image",
               "width": 2048,
               "height": 1365,
-              "url": "/content/media/Civic-Impact-9.webp"
+              "url": "/content/media/Civic-Impact-9.webp",
+              "layout": "pair"
             },
             {
               "type": "image",
               "width": 2048,
               "height": 1365,
-              "url": "/content/media/Civic-Impact-10.png"
+              "url": "/content/media/Civic-Impact-10.png",
+              "layout": "pair"
             },
             {
               "type": "image",
@@ -2706,25 +2729,29 @@
               "type": "image",
               "width": 2048,
               "height": 1365,
-              "url": "/content/media/Civic-Impact-15.png"
+              "url": "/content/media/Civic-Impact-15.png",
+              "layout": "pair"
             },
             {
               "type": "image",
               "width": 2048,
               "height": 1365,
-              "url": "/content/media/Civic-Impact-16.png"
+              "url": "/content/media/Civic-Impact-16.png",
+              "layout": "pair"
             },
             {
               "type": "image",
               "width": 2048,
               "height": 1365,
-              "url": "/content/media/Civic-Impact-17.png"
+              "url": "/content/media/Civic-Impact-17.png",
+              "layout": "pair"
             },
             {
               "type": "image",
               "width": 2048,
               "height": 1365,
-              "url": "/content/media/Civic-Impact-18.png"
+              "url": "/content/media/Civic-Impact-18.png",
+              "layout": "pair"
             },
             {
               "type": "image",
@@ -2742,13 +2769,15 @@
               "type": "image",
               "width": 2048,
               "height": 1365,
-              "url": "/content/media/Civic-Impact-21.png"
+              "url": "/content/media/Civic-Impact-21.png",
+              "layout": "pair"
             },
             {
               "type": "image",
               "width": 2048,
               "height": 1365,
-              "url": "/content/media/Civic-Impact-22.png"
+              "url": "/content/media/Civic-Impact-22.png",
+              "layout": "pair"
             },
             {
               "type": "image",
@@ -2760,25 +2789,29 @@
               "type": "image",
               "width": 2048,
               "height": 1365,
-              "url": "/content/media/Civic-Impact-24.png"
+              "url": "/content/media/Civic-Impact-24.png",
+              "layout": "pair"
             },
             {
               "type": "image",
               "width": 2048,
               "height": 1365,
-              "url": "/content/media/Civic-Impact-25.png"
+              "url": "/content/media/Civic-Impact-25.png",
+              "layout": "pair"
             },
             {
               "type": "image",
               "width": 2048,
               "height": 1365,
-              "url": "/content/media/Civic-Impact-26.webp"
+              "url": "/content/media/Civic-Impact-26.webp",
+              "layout": "pair"
             },
             {
               "type": "image",
               "width": 2048,
               "height": 1365,
-              "url": "/content/media/Civic-Impact-27.webp"
+              "url": "/content/media/Civic-Impact-27.webp",
+              "layout": "pair"
             }
           ],
           "type": "project",
@@ -2788,7 +2821,7 @@
         {
           "id": "PHZZ0ShLiSw8Vr4HQCCb",
           "year": "2023",
-          "heading": "Tech Journal, Brand",
+          "heading": "Tech Journal",
           "url": null,
           "collaborators": [],
           "description": "Logo and brand work for a community made up of students, educators, writers, engineers, historians, activists, and scientists – all coming together to reimagine techno-optimism for a better collective future.",
@@ -2879,13 +2912,13 @@
             }
           ],
           "type": "project",
-          "title": "Tech Journal, Brand",
+          "title": "Tech Journal",
           "company": ""
         },
         {
           "id": "T6GJV1a8UIcU92jfCVFR",
           "year": "2023",
-          "heading": "Venture Capital, Brand",
+          "heading": "Venture Capital",
           "url": null,
           "collaborators": [],
           "description": "Logo explorations for a venture capital studio based in New Mexico.",
@@ -2952,13 +2985,13 @@
             }
           ],
           "type": "project",
-          "title": "Venture Capital, Brand",
+          "title": "Venture Capital",
           "company": ""
         },
         {
           "id": "7wjOqi74t3A2l7l11lq4",
           "year": "2022",
-          "heading": "Justice System, Product",
+          "heading": "Justice System",
           "url": null,
           "collaborators": [],
           "description": "As part of a national initiative to enhance the consistency and transparency of data in the criminal justice system, our goal was to build a platform for gathering essential data from criminal justice agencies across the nation and get them into the hands of policymakers to support more informed decision-making.",
@@ -3091,13 +3124,13 @@
             }
           ],
           "type": "project",
-          "title": "Justice System, Product",
+          "title": "Justice System",
           "company": ""
         },
         {
           "id": "JT8uhtFoUDxwMOFf4Orr",
           "year": "2022",
-          "heading": "Deep–Tech, Brand",
+          "heading": "Deep–Tech",
           "url": null,
           "collaborators": [],
           "description": "Advisory brand work for a venture capital studio investing in deep–tech projects.",
@@ -3170,13 +3203,13 @@
             }
           ],
           "type": "project",
-          "title": "Deep–Tech, Brand",
+          "title": "Deep–Tech",
           "company": ""
         },
         {
           "id": "oTjnQ48nrpdrwy1mWBFl",
           "year": "2022",
-          "heading": "Better Reading, Product",
+          "heading": "Better Reading",
           "url": null,
           "collaborators": [],
           "description": "Concepts for [Matter](https://hq.getmatter.com), a reading tool that chooses agency over algorithm and quality over recency. Anchored to the onboarding experience, the design harmonized typography with minimal illustrations to guide the user along core functionality while conveying the tool's values.",
@@ -3201,13 +3234,13 @@
             }
           ],
           "type": "project",
-          "title": "Better Reading, Product",
+          "title": "Better Reading",
           "company": ""
         },
         {
           "id": "noMAms5qPqZwPc4W2Xs4",
           "year": "2021",
-          "heading": "Executive Portraits, Brand",
+          "heading": "Executive Portraits",
           "url": null,
           "collaborators": [],
           "description": "Creative and art direction for a series of portraits. Credits: William DeShazer",
@@ -3268,13 +3301,13 @@
             }
           ],
           "type": "project",
-          "title": "Executive Portraits, Brand",
+          "title": "Executive Portraits",
           "company": ""
         },
         {
           "id": "q9BYLrMIhuo2ZMuxxgyQ",
           "year": "2021",
-          "heading": "Social Fitness, Product",
+          "heading": "Social Fitness",
           "url": null,
           "collaborators": [],
           "description": "Digital product design for a social fitness mobile app. As an offshoot experiment from 2020's mental health initiative, its aim was to encourage and support a long-distance community of walkers.",
@@ -3335,13 +3368,13 @@
             }
           ],
           "type": "project",
-          "title": "Social Fitness, Product",
+          "title": "Social Fitness",
           "company": ""
         },
         {
           "id": "G8yVTVcGzZ3XCcqcKfrS",
           "year": "2020",
-          "heading": "Better Hiring, Product",
+          "heading": "Better Hiring",
           "url": null,
           "collaborators": [],
           "description": "Early product design work for a human resources platform aiming to improve the hiring process, from initial application to offer.",
@@ -3372,13 +3405,13 @@
             }
           ],
           "type": "project",
-          "title": "Better Hiring, Product",
+          "title": "Better Hiring",
           "company": ""
         },
         {
           "id": "mxIRjPzV8LUAYAPRI3y0",
           "year": "2020",
-          "heading": "Dental Hygiene, Product",
+          "heading": "Dental Hygiene",
           "url": null,
           "collaborators": [],
           "description": "Product design work for affordable dental hygiene. I worked on early conceptual models for the brand and customer experience as well as the staff and admin workflows.",
@@ -3469,13 +3502,13 @@
             }
           ],
           "type": "project",
-          "title": "Dental Hygiene, Product",
+          "title": "Dental Hygiene",
           "company": ""
         },
         {
           "id": "oKWuzzEFOolla15EA4LM",
           "year": "2020",
-          "heading": "Silk Logo, Brand",
+          "heading": "Silk Logo",
           "url": null,
           "collaborators": [],
           "description": "Logo concepts for a silk goods brand.",
@@ -3530,13 +3563,13 @@
             }
           ],
           "type": "project",
-          "title": "Silk Logo, Brand",
+          "title": "Silk Logo",
           "company": ""
         },
         {
           "id": "mBpLgF4e3zDwBKuOXJSd",
           "year": "2020",
-          "heading": "Election Consortium, Product",
+          "heading": "Election Consortium",
           "url": null,
           "collaborators": [],
           "description": "Online publication that provides informed analysis of US national elections.",
@@ -3585,13 +3618,13 @@
             }
           ],
           "type": "project",
-          "title": "Election Consortium, Product",
+          "title": "Election Consortium",
           "company": ""
         },
         {
           "id": "y7oems5rF3MMknD6D75H",
           "year": "2020",
-          "heading": "Schmidt Futures, Brand",
+          "heading": "Schmidt Futures",
           "url": null,
           "collaborators": [],
           "description": "Graphic design for a philanthropic venture funding science and technology research initiatives.",
@@ -3652,13 +3685,13 @@
             }
           ],
           "type": "project",
-          "title": "Schmidt Futures, Brand",
+          "title": "Schmidt Futures",
           "company": ""
         },
         {
           "id": "HD0qQop8Asw6npggthlI",
           "year": "2020",
-          "heading": "Cannabis, Brand",
+          "heading": "Cannabis",
           "url": null,
           "collaborators": [],
           "description": "Photography and art direction for a cannabis brand that celebrates artistry and emphasizes excellence. Credits: Kate Moore, Ron Brandon",
@@ -3701,13 +3734,13 @@
             }
           ],
           "type": "project",
-          "title": "Cannabis, Brand",
+          "title": "Cannabis",
           "company": ""
         },
         {
           "id": "1HcXJhptEfBWBpf3bVpi",
           "year": "2020",
-          "heading": "Pandemic Response, Product",
+          "heading": "Pandemic Response",
           "url": null,
           "collaborators": [],
           "description": "Digital product design for a set of tools that correctional workers used to track and anticipate the impact of Covid-19 inside of prison facilities. Used in all 50 states, the toolkit allowed users to: 1) project cases, hospitalizations, and deaths among both staff and the incarcerated population, 2) compare before-and-after scenarios for policy changes and early release decisions and, 3) model the current rate of spread and trajectory of the outbreak in each facility. Credits: C. Andrew Warren, Clementine Jacoby, Joshua Essex",
@@ -3774,13 +3807,13 @@
             }
           ],
           "type": "project",
-          "title": "Pandemic Response, Product",
+          "title": "Pandemic Response",
           "company": ""
         },
         {
           "id": "TSJ8U3jHUoHwUhCimC8w",
           "year": "2020",
-          "heading": "Emotional Health, Product",
+          "heading": "Emotional Health",
           "url": null,
           "collaborators": [],
           "description": "Digital product and brand identity design for a wellness platform. Conceived as an iOS app, the audio-first anonymous community focused on mental health and emotional support.\n\nInline with its values, the harmful “endless feed” of information was omitted by design. The ephemeral content that took its place emphasized accessibility to marginalized people, especially the visually impaired. Service was supported for 2 years before shutting down in 2022.",
@@ -3871,13 +3904,13 @@
             }
           ],
           "type": "project",
-          "title": "Emotional Health, Product",
+          "title": "Emotional Health",
           "company": ""
         },
         {
           "id": "SPzKmRMuBJe8hTVXwZzi",
           "year": "2019",
-          "heading": "Enterprise Tree, Product",
+          "heading": "Enterprise Tree",
           "url": null,
           "collaborators": [],
           "description": "Product growth work for a financial platform positioned as infrastructure during the rise of the legal cannabis industry. Archival in progress...",
@@ -4016,13 +4049,13 @@
             }
           ],
           "type": "project",
-          "title": "Enterprise Tree, Product",
+          "title": "Enterprise Tree",
           "company": ""
         },
         {
           "id": "vbcaFbgXFaFYgV6S6OdU",
           "year": "2019",
-          "heading": "Memoir, Brand",
+          "heading": "Memoir",
           "url": null,
           "collaborators": [],
           "description": "Website for two friends who set out across America to better understand each other and the country they love.",
@@ -4101,13 +4134,13 @@
             }
           ],
           "type": "project",
-          "title": "Memoir, Brand",
+          "title": "Memoir",
           "company": ""
         },
         {
           "id": "Zu6kntFmjIft9GRiiL6i",
           "year": "2019",
-          "heading": "Aerospace, Brand",
+          "heading": "Aerospace",
           "url": null,
           "collaborators": [],
           "description": "A scalable and extensible visual language for the world's leading unmanned aircraft management platform.",
@@ -4198,13 +4231,13 @@
             }
           ],
           "type": "project",
-          "title": "Aerospace, Brand",
+          "title": "Aerospace",
           "company": ""
         },
         {
           "id": "pCYwZM3dZU4CTYyFRen8",
           "year": "2019",
-          "heading": "City Planner, Product",
+          "heading": "City Planner",
           "url": null,
           "collaborators": [],
           "description": "To create a balanced environment for local residents, we designed an open-source and free-to-use platform that leveraged publicly available data to inform city planners, investment firms, and activists alike.",
@@ -4289,13 +4322,13 @@
             }
           ],
           "type": "project",
-          "title": "City Planner, Product",
+          "title": "City Planner",
           "company": ""
         },
         {
           "id": "Hl5FfTRf3sEGxj2ozVMn",
           "year": "2018",
-          "heading": "Smart Cities, Product",
+          "heading": "Smart Cities",
           "url": null,
           "collaborators": [],
           "description": "As part of a larger 'smart cities' initiative, this was an experiment to use real world rewards to incentivize alternate modes of transportation for daily commuters.",
@@ -4338,13 +4371,13 @@
             }
           ],
           "type": "project",
-          "title": "Smart Cities, Product",
+          "title": "Smart Cities",
           "company": ""
         },
         {
           "id": "HZcaWljc8hZ9SH8Pq5Ma",
           "year": "2018",
-          "heading": "Waze, Brand, Product",
+          "heading": "Waze",
           "url": null,
           "collaborators": [],
           "description": "Changing the way the world moves through everyday acts of cooperation. I was the lead designer across all growth initiatives where we raised the monthly active users from 55M to 110M and formed partnerships with local agencies internationally. Archival of further work in progress. Credits: Haraldur Thorleifsson, Dominic Flask, Robin Noguier",
@@ -4447,13 +4480,13 @@
             }
           ],
           "type": "project",
-          "title": "Waze, Brand, Product",
+          "title": "Waze",
           "company": ""
         },
         {
           "id": "nj6MDv4aDfhGyrEb59Kj",
           "year": "2017",
-          "heading": "Disaster Relief, Other",
+          "heading": "Disaster Relief",
           "url": null,
           "collaborators": [],
           "description": "Following hurricane Maria, my brother and I embarked on a mission to raise $10k worth of relief and personally deliver over 350 industrial-grade water filters. The journey took us across 10 of the most impacted towns in Puerto Rico as we formed partnerships with on-site military units, World Central Kitchen, The Home Depot, and Sam's Club. We named the project Clean Water Fund.",
@@ -4484,13 +4517,13 @@
             }
           ],
           "type": "project",
-          "title": "Disaster Relief, Other",
+          "title": "Disaster Relief",
           "company": ""
         },
         {
           "id": "hHS58AjRVZ3PY4Msy2QK",
           "year": "2016",
-          "heading": "Badge Maker, Tool",
+          "heading": "Badge Maker",
           "url": null,
           "collaborators": [],
           "description": "Design and development for a self-service asset generator. Credits: Lemuel R. Bezares",
@@ -4521,13 +4554,13 @@
             }
           ],
           "type": "project",
-          "title": "Badge Maker, Tool",
+          "title": "Badge Maker",
           "company": ""
         },
         {
           "id": "C4QeFxkwgJJbbNtpt4Dw",
           "year": "2015",
-          "heading": "Network Management, Product",
+          "heading": "Network Management",
           "url": null,
           "collaborators": [],
           "description": "A cloud-based networking management platform positioned as an alternative to Cisco. I worked in the product design team as a visual and interaction designer.",
@@ -4558,13 +4591,13 @@
             }
           ],
           "type": "project",
-          "title": "Network Management, Product",
+          "title": "Network Management",
           "company": ""
         },
         {
           "id": "8kIFRiSOZFfk20avvWfv",
           "year": "2015",
-          "heading": "Various, Other",
+          "heading": "Various",
           "url": null,
           "collaborators": [],
           "description": "Archival in progress...",
@@ -4589,7 +4622,7 @@
             }
           ],
           "type": "project",
-          "title": "Various, Other",
+          "title": "Various",
           "company": ""
         }
       ]
@@ -4600,7 +4633,7 @@
         {
           "id": "4EAJBshUxc7CQkqFOHBd",
           "year": "2024",
-          "heading": "♡ Game Boy, Mod",
+          "heading": "Game Boy",
           "url": "https://agron.design",
           "collaborators": [],
           "description": "FPGA Game Boy Color. More builds coming soon...",
@@ -4637,13 +4670,13 @@
             }
           ],
           "type": "sideProject",
-          "title": "♡ Game Boy, Mod",
+          "title": "Game Boy",
           "company": ""
         },
         {
           "id": "y1gPVWnmlzDghHnZCZlf",
           "year": "2024",
-          "heading": "♡ EOY Card, Print",
+          "heading": "EOY Card",
           "url": "https://agron.design",
           "collaborators": [],
           "description": "3-Color Risograph Print, 4.25\" x 5.75\", 80lb. Brightwhite",
@@ -4674,13 +4707,13 @@
             }
           ],
           "type": "sideProject",
-          "title": "♡ EOY Card, Print",
+          "title": "EOY Card",
           "company": ""
         },
         {
           "id": "7VeLkViGzj7nj8zH1AnW",
           "year": "2023",
-          "heading": "♡ Pidgeys, Pics",
+          "heading": "Pidgeys",
           "url": null,
           "collaborators": [],
           "description": "Just some bird pics.",
@@ -4759,13 +4792,13 @@
             }
           ],
           "type": "sideProject",
-          "title": "♡ Pidgeys, Pics",
+          "title": "Pidgeys",
           "company": ""
         },
         {
           "id": "ljoyFthefwMS93mEIn9C",
           "year": "2022",
-          "heading": "♡ Plant Kingdom, Pics",
+          "heading": "Plant Kingdom",
           "url": null,
           "collaborators": [],
           "description": "Photo documentation of photosynthetic organisms (leaves and whatnot).",
@@ -4814,13 +4847,13 @@
             }
           ],
           "type": "sideProject",
-          "title": "♡ Plant Kingdom, Pics",
+          "title": "Plant Kingdom",
           "company": ""
         },
         {
           "id": "RcbyoSvBs122mZQVv99B",
           "year": "2021",
-          "heading": "♡ Food Label, Brand, Print",
+          "heading": "Food Label",
           "url": null,
           "collaborators": [],
           "description": "A succulent brand for a good friend and family-owned business based in California's San Joaquín Valley. Credits: Risewise",
@@ -4857,13 +4890,13 @@
             }
           ],
           "type": "sideProject",
-          "title": "♡ Food Label, Brand, Print",
+          "title": "Food Label",
           "company": ""
         },
         {
           "id": "X1zb0gMttoPwCxnCc7WS",
           "year": "2019",
-          "heading": "♡ Pineapples, Tool",
+          "heading": "Pineapples",
           "url": null,
           "collaborators": [],
           "description": "Landing page for a noncomformist internet marketing agency. Credits: Lemuel R. Bezares",
@@ -4888,13 +4921,13 @@
             }
           ],
           "type": "sideProject",
-          "title": "♡ Pineapples, Tool",
+          "title": "Pineapples",
           "company": ""
         },
         {
           "id": "jzEzyfYRADG9nJTvLD8e",
           "year": "1996",
-          "heading": "♡ Adventure Game, Product",
+          "heading": "Adventure Game",
           "url": null,
           "collaborators": [],
           "description": "Early concepts and web domain research for a collaborative adventure dungeon crawler game.",
@@ -4955,7 +4988,7 @@
             }
           ],
           "type": "sideProject",
-          "title": "♡ Adventure Game, Product",
+          "title": "Adventure Game",
           "company": ""
         }
       ]
@@ -4967,9 +5000,9 @@
           "id": "1PpTYN46wRo1Xp8abbzI",
           "year": "2019 — Now",
           "heading": "Founding member at recidiviz",
-          "url": "https://read.cv/teams/recidiviz",
+          "url": "https://www.recidiviz.org/design",
           "collaborators": [],
-          "description": "We build practical systems that actively reduce the amount of people incarcerated in the U.S. As head of design, I am responsible for the product and brand experience across all touch points. Check out our [team page](https://read.cv/teams/recidiviz) to learn more.",
+          "description": "We build practical systems that actively reduce the amount of people incarcerated in the U.S. As head of design, I am responsible for the product and brand experience across all touch points. Check out our [team page](https://www.recidiviz.org/design) to learn more.",
           "attachments": [],
           "type": "workExperience",
           "title": "Founding member",

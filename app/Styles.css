@@ -17,9 +17,9 @@
   --font-weight-regular: 400;
   --font-weight-bold: 700;
   --page-end-space: 120px;
-  --media-col-min: 80px;
+  --media-col-min: 100px;
   --media-col-gap: 10px;
-  /* Keeps thumbs at the old 40px floor: 80 × 0.50 = 100 × 0.40 */
+  /* Keeps thumbs proportional: 100 × 0.50 = 50px floor */
   --media-col-nav-scale: 0.50;
   /* Breakpoints — use these literals in @media / matchMedia (var() unreliable there) */
   --bp-mobile: 767px;
@@ -32,6 +32,8 @@
   --media-pending: #161616;
   /* Gap between each item in a staggered reveal */
   --stagger-step: 90ms;
+  /* Case study media — Niklas-tight packing inside page margins */
+  --case-media-gap: 4px;
   /* Experiments expand overlay */
   --expand-max-width: min(900px, 90vw);
   --expand-max-height: 85vh;
@@ -178,7 +180,7 @@ video {
   }
 }
 
-/* Page chrome reveals on load; media waits for its own trigger below */
+/* Page chrome reveals on load; media / gated chrome wait for .stagger-ready */
 .gallery-header,
 .gallery-text,
 .section {
@@ -202,11 +204,28 @@ video {
   --stagger: 3;
 }
 
+/* -----------------------------------------------------------------------------
+   Gated cascade — one pattern for chrome + media
+   Put .stagger-ready on a parent; children with .stagger-item (or media inside
+   .media-container) stay hidden until then, then fadeSlide by --stagger.
+   ----------------------------------------------------------------------------- */
+
+.stagger-item {
+  opacity: 0;
+}
+
+.stagger-ready .stagger-item {
+  animation: fadeSlideInSequential 0.5s ease-in-out both;
+  animation-delay: calc(var(--stagger, 0) * var(--stagger-step));
+}
+
 /* Media stays hidden until its container is told to reveal.
    Experiment videos sit under their own is-live fade — the still handles the
    cascade so an empty video never covers the poster. */
 .projects-overview .media-container img,
 .projects-overview .media-container video,
+.projects-featured .media-container img,
+.projects-featured .media-container video,
 .gallery-images .media-container img,
 .gallery-images .media-container video,
 .experiments-grid .media-container img,
@@ -273,6 +292,104 @@ video {
 /* Filter height ease — keeps About/etc from jumping when the grid shrinks */
 .projects-overview {
   transition: min-height 0.4s ease-in-out;
+}
+
+.projects-featured {
+  margin-bottom: 40px;
+}
+
+.projects-featured-link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+.projects-featured-link + .projects-featured-link {
+  margin-top: var(--media-col-gap);
+}
+
+.projects-featured-link img,
+.projects-featured-link video {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.archive-heading {
+  font-size: var(--font-size-base);
+  margin-bottom: var(--media-col-gap);
+}
+
+/* =============================================================================
+   Case study (long-form)
+   ============================================================================= */
+
+.case-study-meta {
+  margin-bottom: 32px;
+}
+
+.case-study-meta p {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-regular);
+  margin-bottom: 0;
+}
+
+.case-study-description {
+  margin-top: 1em;
+}
+
+.case-study-description p {
+  margin-bottom: 0.75em;
+}
+
+.case-study-description p:last-child {
+  margin-bottom: 0;
+}
+
+.case-study-credits {
+  margin-top: 32px;
+}
+
+.case-study-media {
+  display: flex;
+  flex-direction: column;
+  gap: var(--case-media-gap);
+}
+
+.case-study-row {
+  display: grid;
+  gap: var(--case-media-gap);
+  align-items: start;
+}
+
+.case-study-row.is-full {
+  grid-template-columns: 1fr;
+}
+
+.case-study-row.is-pair {
+  grid-template-columns: 1fr 1fr;
+}
+
+.case-study-row > .media-container {
+  min-width: 0; /* keep pair columns from blowing out the grid */
+}
+
+.case-study-row .media-container img,
+.case-study-row .media-container video {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.case-study-row .media-container .video-player {
+  width: 100%;
+  max-height: none;
+}
+
+@media (max-width: 767px) {
+  .case-study-row.is-pair {
+    grid-template-columns: 1fr;
+  }
 }
 
 .project-overview {
@@ -424,13 +541,78 @@ video {
   max-width: 500px;
 }
 
+/* Archive index under project description — link-only, no expand */
+.archive-list {
+  margin-top: 40px;
+}
+
+.archive-list-row {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: baseline;
+  gap: 12px;
+  padding: 10px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  color: inherit;
+  text-decoration: none;
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-regular);
+}
+
+.archive-list-row:last-child {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+a.archive-list-row:hover .archive-list-title {
+  text-decoration: underline;
+}
+
+.archive-list-row.is-current .archive-list-number,
+.archive-list-row.is-current .archive-list-title,
+.archive-list-row.is-current .archive-list-year {
+  text-decoration: line-through;
+}
+
+.archive-list-number {
+  font-variant-numeric: tabular-nums;
+}
+
+.archive-list-title {
+  text-align: left;
+}
+
+.archive-list-year {
+  text-align: right;
+}
+
+/* Shared index row (archive list + experience): title left, year right */
+.index-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: baseline;
+  gap: 12px;
+  padding: 10px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-regular);
+}
+
+.index-row-title {
+  text-align: left;
+}
+
+.index-row-year {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
 /* =============================================================================
    Experiments (masonry)
    ============================================================================= */
 
 .experiments-grid {
-  /* ~110px fits three columns on an SE-width content box without a column-count lock */
-  column-width: 110px;
+  /* ~80px fits four columns on an SE-width content box without a column-count lock */
+  column-width: 80px;
   column-gap: 10px;
 }
 
@@ -593,25 +775,44 @@ video {
 .experience-item {
   display: flex;
   flex-direction: column;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
 }
 
-.experience-title-year {
-  display: flex;
-  justify-content: flex-start;
-  gap: 5vw;
+.experience-item:last-child {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
 }
 
-.experience-year {
-  width: 100px;
-  text-align: left;
-  flex-shrink: 0;
+.experience-item .index-row {
+  border-top: none;
 }
 
-.experience-title {
-  flex-grow: 1;
-  text-align: left;
+.experience-row {
+  cursor: pointer;
 }
 
 .experience-description {
-  display: none;
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.35s ease;
+}
+
+.experience-item.is-open .experience-description {
+  grid-template-rows: 1fr;
+}
+
+.experience-description-inner {
+  overflow: hidden;
+}
+
+.experience-description-inner > div {
+  padding: 0 0 12px;
+  max-width: 500px;
+}
+
+.experience-description-inner p {
+  margin-bottom: 0.5em;
+}
+
+.experience-description-inner p:last-child {
+  margin-bottom: 0;
 }

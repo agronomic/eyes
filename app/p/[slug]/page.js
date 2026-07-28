@@ -6,6 +6,8 @@ import { useParams, notFound } from 'next/navigation';
 import { marked } from 'marked';
 
 import Navigation from '../../navigation';
+import CaseStudy from '../../case-study';
+import ArchiveList from '../../archive-list';
 import { getProjectBySlug } from '../../content';
 import {
   mediaQuality,
@@ -29,6 +31,7 @@ export default function ProjectPage() {
   const staggerReady = useStaggerReady(slug);
 
   useEffect(() => {
+    if (!project || project.caseStudy) return undefined;
     setStageReady(new Set());
 
     return watchMediaReady(swipeRef.current, (index) => {
@@ -39,9 +42,10 @@ export default function ProjectPage() {
         return next;
       });
     });
-  }, [slug]);
+  }, [slug, project]);
 
   useEffect(() => {
+    if (!project || project.caseStudy) return;
     playMutedVideos(swipeRef.current);
   }, [project]);
 
@@ -57,8 +61,9 @@ export default function ProjectPage() {
   };
 
   useEffect(() => {
+    if (!project || project.caseStudy) return undefined;
     const container = swipeRef.current;
-    if (!container) return;
+    if (!container) return undefined;
 
     let ticking = false;
     const syncActive = () => {
@@ -93,6 +98,15 @@ export default function ProjectPage() {
 
   if (!project) {
     notFound();
+  }
+
+  if (project.caseStudy) {
+    return (
+      <div className="container">
+        <Navigation />
+        <CaseStudy project={project} />
+      </div>
+    );
   }
 
   const title = project.title || project.heading;
@@ -187,6 +201,8 @@ export default function ProjectPage() {
         <div className="gallery-text">
           <div dangerouslySetInnerHTML={{ __html: marked(project.description || '') }} />
         </div>
+
+        <ArchiveList currentSlug={slug} />
       </div>
     </div>
   );
