@@ -22,10 +22,12 @@ html {
   --font-weight-regular: 400;
   --font-weight-bold: 700;
   --page-end-space: 120px;
-  /* Fixed nav row: hit area + clearance; text sits on the bottom edge */
+  /* Fixed nav text row (hit area); text sits on its bottom edge */
   --nav-height: 40px;
-  /* Space after a header before its body (section titles → copy) */
+  /* Space after a header before its body (nav → page, section titles → copy) */
   --header-body-gap: 16px;
+  /* Fixed header footprint pages must clear */
+  --nav-clearance: calc(var(--nav-height) + var(--header-body-gap));
   --media-col-min: 50px;
   --media-col-gap: 10px;
   /* Breakpoints — use these literals in @media / matchMedia (var() unreliable there) */
@@ -92,8 +94,8 @@ p a:hover {
 
 .container {
   padding: min(2vw, 50px);
-  /* Clear the fixed nav only — content owns its own header→body gaps */
-  padding-top: var(--nav-height);
+  /* Clear the fixed header (nav row + its trailing gap) */
+  padding-top: var(--nav-clearance);
   padding-bottom: var(--page-end-space);
   width: 100%;
 }
@@ -123,11 +125,12 @@ video {
   top: 0;
   left: 0;
   width: 100%;
-  height: var(--nav-height);
+  /* Row + trailing gap — same rhythm as section headers → body */
+  height: var(--nav-clearance);
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
-  padding: 0 2vw;
+  padding: 0 2vw var(--header-body-gap);
   animation: slideDown 0.25s ease;
   transition: opacity 0.25s ease;
 }
@@ -160,8 +163,7 @@ video {
 .site-statement {
   font-size: var(--font-size-base);
   font-weight: var(--font-weight-regular);
-  /* Same rhythm as About / section headers → body */
-  margin: var(--header-body-gap) 0 40px;
+  margin: 0 0 40px;
   max-width: 36em;
   animation: fadeSlideInSequential 0.5s ease-in-out both;
 }
