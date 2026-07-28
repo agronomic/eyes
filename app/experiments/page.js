@@ -86,10 +86,16 @@ export default function ExperimentsPage() {
         >
           {experiments.map((item, index) => {
             const expandable = item.type === 'image' || item.type === 'video';
+            const hasRatio = Boolean(item.width && item.height);
             return (
               <div
                 key={item.id || index}
-                className={`media-container${expandable ? ' is-expandable' : ''}`}
+                className={`media-container${expandable ? ' is-expandable' : ''}${hasRatio ? ' has-ratio' : ''}`}
+                style={
+                  hasRatio
+                    ? { '--media-ratio': `${item.width} / ${item.height}` }
+                    : undefined
+                }
                 onClick={expandable ? () => open(index) : undefined}
                 role={expandable ? 'button' : undefined}
                 tabIndex={expandable ? 0 : undefined}
