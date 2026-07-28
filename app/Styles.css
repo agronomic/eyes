@@ -22,6 +22,10 @@ html {
   --font-weight-regular: 400;
   --font-weight-bold: 700;
   --page-end-space: 120px;
+  /* Fixed nav row: hit area + clearance; text sits on the bottom edge */
+  --nav-height: 40px;
+  /* Space after a header before its body (section titles → copy) */
+  --header-body-gap: 16px;
   --media-col-min: 50px;
   --media-col-gap: 10px;
   /* Breakpoints — use these literals in @media / matchMedia (var() unreliable there) */
@@ -88,7 +92,8 @@ p a:hover {
 
 .container {
   padding: min(2vw, 50px);
-  padding-top: 80px;
+  /* Clear the fixed nav only — content owns its own header→body gaps */
+  padding-top: var(--nav-height);
   padding-bottom: var(--page-end-space);
   width: 100%;
 }
@@ -118,9 +123,9 @@ video {
   top: 0;
   left: 0;
   width: 100%;
-  height: 40px;
+  height: var(--nav-height);
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: space-between;
   padding: 0 2vw;
   animation: slideDown 0.25s ease;
@@ -139,25 +144,39 @@ video {
 }
 
 .navigation-bar .title {
+  display: flex;
+  align-items: flex-end;
+  min-height: var(--nav-height);
   font-size: var(--font-size-base);
   font-weight: var(--font-weight-regular);
+}
+
+.navigation-bar .title a {
+  display: inline-flex;
+  align-items: flex-end;
+  min-height: var(--nav-height);
 }
 
 .site-statement {
   font-size: var(--font-size-base);
   font-weight: var(--font-weight-regular);
-  margin: 0 0 40px;
+  /* Same rhythm as About / section headers → body */
+  margin: var(--header-body-gap) 0 40px;
   max-width: 36em;
   animation: fadeSlideInSequential 0.5s ease-in-out both;
 }
 
 .nav-links {
   display: flex;
+  align-items: flex-end;
   margin-left: auto;
 }
 
 .nav-links a,
 .nav-links button {
+  display: inline-flex;
+  align-items: flex-end;
+  min-height: var(--nav-height);
   background: none;
   border: none;
   font-size: var(--font-size-base);
@@ -720,9 +739,11 @@ a.archive-list-row:hover .archive-list-title {
   transition: opacity 0.4s ease-in-out;
 }
 
-/* Sit where the nav title will be, so the handover is a swap, not a jump */
+/* Sit on the nav title’s baseline, so the handover is a swap, not a jump */
 .media-counter span {
-  line-height: 40px;
+  display: flex;
+  align-items: flex-end;
+  height: var(--nav-height);
 }
 
 .media-counter.is-leaving {
@@ -736,8 +757,10 @@ a.archive-list-row:hover .archive-list-title {
   top: 0;
   left: 0;
   z-index: 1100;
+  display: flex;
+  align-items: flex-end;
+  height: var(--nav-height);
   padding: 0 2vw;
-  line-height: 40px;
   color: var(--color);
   pointer-events: none;
 }
@@ -750,9 +773,10 @@ a.archive-list-row:hover .archive-list-title {
   margin-bottom: 24px;
 }
 
-.section h2 {
+.section h2,
+.section > p:first-child {
   font-size: var(--font-size-base);
-  margin-bottom: 16px;
+  margin-bottom: var(--header-body-gap);
 }
 
 .section p {
