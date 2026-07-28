@@ -4,7 +4,7 @@ import { useEffect, useRef } from 'react';
 import Image from 'next/image';
 import { marked } from 'marked';
 
-import { groupCaseStudyMedia, splitProjectCopy } from './content';
+import { groupCaseStudyMedia } from './content';
 import { mediaQuality, mediaSizes, playMutedVideos } from './helpers';
 
 function CaseMedia({ item, title, index, pair }) {
@@ -44,12 +44,43 @@ function CaseMedia({ item, title, index, pair }) {
   return null;
 }
 
-/** Long-form case study: stacked meta + tight full/pair media rows. */
+/** Shared blurb: Title / Year / Type / Description (+ optional Credits). */
+export function ProjectMeta({ project, includeCredits = false }) {
+  const title = project.title || project.heading;
+  const tags = project.tags || [];
+  const description = project.description;
+  const credits = project.credits;
+
+  return (
+    <div className="project-meta">
+      <p>Title: {title}</p>
+      {project.year && <p>Year: {project.year}</p>}
+      {tags.length > 0 && <p>Type: {tags.join(', ')}</p>}
+      {description && (
+        <div
+          className="project-meta-description"
+          dangerouslySetInnerHTML={{
+            __html: marked(`Description: ${description}`),
+          }}
+        />
+      )}
+      {includeCredits && credits && (
+        <p className="project-meta-credits">Credits: {credits}</p>
+      )}
+    </div>
+  );
+}
+
+/** Credits line for placement after media (case studies). */
+export function ProjectCredits({ project }) {
+  if (!project.credits) return null;
+  return <p className="project-meta-credits">Credits: {project.credits}</p>;
+}
+
+/** Long-form case study: meta + tight full/pair media rows + credits. */
 export default function CaseStudy({ project }) {
   const mediaRef = useRef(null);
   const title = project.title || project.heading;
-  const tags = project.tags || [];
-  const { description, credits } = splitProjectCopy(project);
   const rows = groupCaseStudyMedia(project.attachments || []);
 
   useEffect(() => {
@@ -58,19 +89,7 @@ export default function CaseStudy({ project }) {
 
   return (
     <div className="case-study">
-      <div className="case-study-meta">
-        <p>Title: {title}</p>
-        {project.year && <p>Year: {project.year}</p>}
-        {tags.length > 0 && <p>Type: {tags.join(', ')}</p>}
-        {description && (
-          <div
-            className="case-study-description"
-            dangerouslySetInnerHTML={{
-              __html: marked(`Description: ${description}`),
-            }}
-          />
-        )}
-      </div>
+      <ProjectMeta project={project} />
 
       <div className="case-study-media" ref={mediaRef}>
         {rows.map((row, rowIndex) => (
@@ -95,7 +114,7 @@ export default function CaseStudy({ project }) {
         ))}
       </div>
 
-      {credits && <p className="case-study-credits">Credits: {credits}</p>}
+      <ProjectCredits project={project} />
     </div>
   );
 }

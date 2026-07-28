@@ -55,22 +55,6 @@ export function groupCaseStudyMedia(attachments = []) {
   return rows;
 }
 
-/**
- * Case-study meta: pull trailing "Credits: …" out of description (or use project.credits).
- */
-export function splitProjectCopy(project = {}) {
-  const raw = String(project.description || '').trim();
-  if (project.credits) {
-    return {
-      description: raw.replace(/\s*Credits:\s*[\s\S]+$/i, '').trim(),
-      credits: String(project.credits).trim(),
-    };
-  }
-  const match = raw.match(/^(.*?)\s*Credits:\s*([\s\S]+)$/i);
-  if (!match) return { description: raw, credits: null };
-  return { description: match[1].trim(), credits: match[2].trim() };
-}
-
 export function getProjectBySlug(slug) {
   return getProjects().find(
     (p) => slugify(p.title || p.heading) === slug

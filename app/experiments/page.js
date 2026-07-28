@@ -32,9 +32,19 @@ export default function ExperimentsPage() {
       setStaggerReady(false);
       return undefined;
     }
-    assignColumnStagger(gridRef.current);
-    const id = requestAnimationFrame(() => setStaggerReady(true));
-    return () => cancelAnimationFrame(id);
+    // Layout after the loader releases overflow/scrollbar, then stamp stagger.
+    let inner = 0;
+    const outer = requestAnimationFrame(() => {
+      assignColumnStagger(gridRef.current);
+      inner = requestAnimationFrame(() => {
+        assignColumnStagger(gridRef.current);
+        setStaggerReady(true);
+      });
+    });
+    return () => {
+      cancelAnimationFrame(outer);
+      cancelAnimationFrame(inner);
+    };
   }, [ready, countedIn]);
 
   // Wait for the cascade gate — playing under the loader made clips visible early
@@ -87,15 +97,17 @@ export default function ExperimentsPage() {
           {experiments.map((item, index) => {
             const expandable = item.type === 'image' || item.type === 'video';
             const hasRatio = Boolean(item.width && item.height);
+            const ratioStyle = hasRatio
+              ? {
+                  aspectRatio: `${item.width} / ${item.height}`,
+                  '--media-ratio': `${item.width} / ${item.height}`,
+                }
+              : undefined;
             return (
               <div
                 key={item.id || index}
                 className={`media-container${expandable ? ' is-expandable' : ''}${hasRatio ? ' has-ratio' : ''}`}
-                style={
-                  hasRatio
-                    ? { '--media-ratio': `${item.width} / ${item.height}` }
-                    : undefined
-                }
+                style={ratioStyle}
                 onClick={expandable ? () => open(index) : undefined}
                 role={expandable ? 'button' : undefined}
                 tabIndex={expandable ? 0 : undefined}
@@ -119,7 +131,6 @@ export default function ExperimentsPage() {
                     sizes={mediaSizes('experiment')}
                     quality={mediaQuality}
                     loading="eager"
-                    style={{ width: '100%', height: 'auto' }}
                   />
                 )}
                 {item.type === 'video' && (

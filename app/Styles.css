@@ -9,6 +9,11 @@
   list-style-type: none;
 }
 
+html {
+  /* Keep width stable when scrollbars appear (experiments columns reflow otherwise) */
+  scrollbar-gutter: stable;
+}
+
 :root {
   --background-color: #000;
   --color: #fff;
@@ -17,10 +22,8 @@
   --font-weight-regular: 400;
   --font-weight-bold: 700;
   --page-end-space: 120px;
-  --media-col-min: 100px;
+  --media-col-min: 50px;
   --media-col-gap: 10px;
-  /* Keeps thumbs proportional: 100 × 0.50 = 50px floor */
-  --media-col-nav-scale: 0.50;
   /* Breakpoints — use these literals in @media / matchMedia (var() unreliable there) */
   --bp-mobile: 767px;
   --bp-narrow: 499px;
@@ -140,6 +143,14 @@ video {
   font-weight: var(--font-weight-regular);
 }
 
+.site-statement {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-regular);
+  margin: 0 0 40px;
+  max-width: 36em;
+  animation: fadeSlideInSequential 0.5s ease-in-out both;
+}
+
 .nav-links {
   display: flex;
   margin-left: auto;
@@ -181,14 +192,13 @@ video {
 }
 
 /* Page chrome reveals on load; media / gated chrome wait for .stagger-ready */
-.gallery-header,
-.gallery-text,
+.project-meta,
 .section {
   animation: fadeSlideInSequential 0.5s ease-in-out both;
   animation-delay: calc(var(--stagger, 0) * var(--stagger-step));
 }
 
-.gallery-text {
+.project-content > .project-meta {
   --stagger: 2;
 }
 
@@ -321,34 +331,43 @@ video {
 }
 
 /* =============================================================================
-   Case study (long-form)
+   Project meta blurb (case study + archive project pages)
    ============================================================================= */
 
-.case-study-meta {
+.project-meta {
   margin-bottom: 32px;
 }
 
-.case-study-meta p {
+.project-meta p {
   font-size: var(--font-size-base);
   font-weight: var(--font-weight-regular);
   margin-bottom: 0;
 }
 
-.case-study-description {
+.project-meta-description {
   margin-top: 1em;
 }
 
-.case-study-description p {
+.project-meta-description p {
   margin-bottom: 0.75em;
 }
 
-.case-study-description p:last-child {
+.project-meta-description p:last-child {
   margin-bottom: 0;
 }
 
-.case-study-credits {
+.project-meta-credits {
+  margin-top: 1em;
+}
+
+/* Credits after case-study media sit farther from the last image */
+.case-study > .project-meta-credits {
   margin-top: 32px;
 }
+
+/* =============================================================================
+   Case study (long-form media)
+   ============================================================================= */
 
 .case-study-media {
   display: flex;
@@ -433,24 +452,6 @@ video {
    Project detail gallery
    ============================================================================= */
 
-.gallery-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  padding: 0 0 10px 0;
-  box-sizing: border-box;
-}
-
-.gallery-header .project-year {
-  font-size: var(--font-size-base);
-  font-weight: var(--font-weight-regular);
-}
-
-.project-year {
-  text-align: right;
-}
-
 .gallery-images.grid-view .media-container {
   width: 100%;
   display: flex;
@@ -506,14 +507,7 @@ video {
   object-fit: contain;
 }
 
-/* Thumbs = same grid system, scaled column floor; button chrome + active */
-.gallery-images.grid-view.gallery-thumbs {
-  grid-template-columns: repeat(
-    auto-fill,
-    minmax(calc(var(--media-col-min) * var(--media-col-nav-scale)), 1fr)
-  );
-}
-
+/* Thumbs share the same column floor as home Archive; button chrome + active */
 .gallery-thumbs .media-container {
   appearance: none;
   border: none;
@@ -530,15 +524,6 @@ video {
 
 .gallery-thumbs .media-container.is-active {
   opacity: 1;
-}
-
-.gallery-text {
-  margin: 0;
-  text-align: left;
-}
-
-.gallery-text p {
-  max-width: 500px;
 }
 
 /* Archive index under project description — link-only, no expand */
@@ -621,8 +606,11 @@ a.archive-list-row:hover .archive-list-title {
   break-inside: avoid;
   margin-bottom: 10px;
   width: 100%;
-  /* Reserve height from content dims so column packing doesn't jump on decode */
-  aspect-ratio: var(--media-ratio, auto);
+}
+
+.experiments-grid .media-container.has-ratio {
+  /* Prefer the inline aspect-ratio; keep var as fallback */
+  aspect-ratio: var(--media-ratio);
 }
 
 .experiments-grid .media-container img,
@@ -632,13 +620,7 @@ a.archive-list-row:hover .archive-list-title {
   height: auto;
 }
 
-/* Still sets the tile size; the silent preview sits on top once it plays */
-.experiments-grid .media-container .video-still {
-  width: 100%;
-  height: auto;
-}
-
-/* When ratio is known, pin media to the reserved box (still + preview share it) */
+/* Still + preview share the reserved box — no late height from decode */
 .experiments-grid .media-container.has-ratio > img,
 .experiments-grid .media-container.has-ratio > .video-still {
   position: absolute;
@@ -657,6 +639,21 @@ a.archive-list-row:hover .archive-list-title {
   object-fit: cover;
   opacity: 0;
   transition: opacity 0.35s ease-in-out;
+}
+
+/* Transform on column children reflows masonry — opacity-only here */
+.experiments-grid.stagger-ready .media-container img,
+.experiments-grid.stagger-ready .media-container audio {
+  animation-name: experimentsFadeIn;
+}
+
+@keyframes experimentsFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .experiments-grid.stagger-ready .media-container video.video-player.is-live {

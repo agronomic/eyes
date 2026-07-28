@@ -254,6 +254,9 @@ export default function App() {
   return (
     <div className="container">
       <Navigation />
+      {cv.general.statement && (
+        <p className="site-statement">{cv.general.statement}</p>
+      )}
       <Featured />
       <Archive />
 

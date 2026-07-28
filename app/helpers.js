@@ -10,9 +10,8 @@ export const mediaQuality = 85;
 
 /** Responsive sizes for next/image — keep in sync with layout density. */
 export function mediaSizes(role) {
-  if (role === 'thumb') return '15vw';
-  if (role === 'cover') {
-    return `(max-width: ${bpMobile}px) 100vw, (max-width: 1200px) 50vw, 33vw`;
+  if (role === 'thumb' || role === 'cover') {
+    return `(max-width: ${bpMobile}px) 25vw, 15vw`;
   }
   if (role === 'experiment') {
     return `(max-width: ${bpNarrow}px) 25vw, 80px`;

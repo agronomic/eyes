@@ -7,6 +7,7 @@
     "location": null,
     "pronouns": null,
     "byline": "Civic Impact, Design, etc.",
+    "statement": "The collected works of an artist and designer building practical systems and curious artifacts.",
     "website": "https://agron.design",
     "websiteURL": "https://agron.design",
     "about": "For over a decade, I’ve contributed to companies large and small. My work spans across digital product, brand identity, and art direction. As part of [recidiviz](https://www.recidiviz.org/), I design practical systems that actively reduce the amount of people incarcerated in the U.S.\n\nOutside of my career, you’ll find me reading esoteric essays, tinkering with cameras, or practicing Muay Thai. I spent my childhood in the Caribbean and my adolescence in California so I find rainy days beautifully nostalgic but cold winters really \\**** me.",
@@ -38,7 +39,7 @@
       "heading": "Civic Impact",
       "url": "https://agron.design",
       "collaborators": [],
-      "description": "Digital products aimed at systemic criminal justice issues in order to reduce the amount of people incarcerated in the U.S. Since 2019, I've worked on the product strategy, brand ethos, digital design system, website, and team operations. Credits: Sonia Chokshi, Ian MacFarland, Allison Chan, William DeShazer",
+      "description": "Digital products aimed at systemic criminal justice issues in order to reduce the amount of people incarcerated in the U.S. Since 2019, I've worked on the product strategy, brand ethos, digital design system, website, and team operations.",
       "attachments": [
         {
           "type": "image",
@@ -227,7 +228,8 @@
         "Brand",
         "Civic"
       ],
-      "caseStudy": true
+      "caseStudy": true,
+      "credits": "Sonia Chokshi, Ian MacFarland, Allison Chan, William DeShazer"
     },
     {
       "id": "PHZZ0ShLiSw8Vr4HQCCb",
@@ -670,7 +672,7 @@
       "heading": "Executive Portraits",
       "url": null,
       "collaborators": [],
-      "description": "Creative and art direction for a series of portraits. Credits: William DeShazer",
+      "description": "Creative and art direction for a series of portraits.",
       "attachments": [
         {
           "type": "image",
@@ -732,7 +734,8 @@
       "company": "",
       "tags": [
         "Brand"
-      ]
+      ],
+      "credits": "William DeShazer"
     },
     {
       "id": "q9BYLrMIhuo2ZMuxxgyQ",
@@ -1144,7 +1147,7 @@
       "heading": "Cannabis",
       "url": null,
       "collaborators": [],
-      "description": "Photography and art direction for a cannabis brand that celebrates artistry and emphasizes excellence. Credits: Kate Moore, Ron Brandon",
+      "description": "Photography and art direction for a cannabis brand that celebrates artistry and emphasizes excellence.",
       "attachments": [
         {
           "type": "image",
@@ -1188,7 +1191,8 @@
       "company": "",
       "tags": [
         "Brand"
-      ]
+      ],
+      "credits": "Kate Moore, Ron Brandon"
     },
     {
       "id": "1HcXJhptEfBWBpf3bVpi",
@@ -1196,7 +1200,7 @@
       "heading": "Pandemic Response",
       "url": null,
       "collaborators": [],
-      "description": "Digital product design for a set of tools that correctional workers used to track and anticipate the impact of Covid-19 inside of prison facilities. Used in all 50 states, the toolkit allowed users to: 1) project cases, hospitalizations, and deaths among both staff and the incarcerated population, 2) compare before-and-after scenarios for policy changes and early release decisions and, 3) model the current rate of spread and trajectory of the outbreak in each facility. Credits: C. Andrew Warren, Clementine Jacoby, Joshua Essex",
+      "description": "Digital product design for a set of tools that correctional workers used to track and anticipate the impact of Covid-19 inside of prison facilities. Used in all 50 states, the toolkit allowed users to: 1) project cases, hospitalizations, and deaths among both staff and the incarcerated population, 2) compare before-and-after scenarios for policy changes and early release decisions and, 3) model the current rate of spread and trajectory of the outbreak in each facility.",
       "attachments": [
         {
           "type": "image",
@@ -1265,7 +1269,8 @@
       "tags": [
         "Product",
         "Civic"
-      ]
+      ],
+      "credits": "C. Andrew Warren, Clementine Jacoby, Joshua Essex"
     },
     {
       "id": "TSJ8U3jHUoHwUhCimC8w",
@@ -1858,7 +1863,7 @@
       "heading": "Waze",
       "url": null,
       "collaborators": [],
-      "description": "Changing the way the world moves through everyday acts of cooperation. I was the lead designer across all growth initiatives where we raised the monthly active users from 55M to 110M and formed partnerships with local agencies internationally. Archival of further work in progress. Credits: Haraldur Thorleifsson, Dominic Flask, Robin Noguier",
+      "description": "Changing the way the world moves through everyday acts of cooperation. I was the lead designer across all growth initiatives where we raised the monthly active users from 55M to 110M and formed partnerships with local agencies internationally. Archival of further work in progress.",
       "attachments": [
         {
           "type": "image",
@@ -1963,7 +1968,8 @@
       "tags": [
         "Product",
         "Brand"
-      ]
+      ],
+      "credits": "Haraldur Thorleifsson, Dominic Flask, Robin Noguier"
     },
     {
       "id": "nj6MDv4aDfhGyrEb59Kj",
@@ -2012,7 +2018,7 @@
       "heading": "Badge Maker",
       "url": null,
       "collaborators": [],
-      "description": "Design and development for a self-service asset generator. Credits: Lemuel R. Bezares",
+      "description": "Design and development for a self-service asset generator.",
       "attachments": [
         {
           "type": "image",
@@ -2044,7 +2050,8 @@
       "company": "",
       "tags": [
         "Product"
-      ]
+      ],
+      "credits": "Lemuel R. Bezares"
     },
     {
       "id": "C4QeFxkwgJJbbNtpt4Dw",
@@ -2360,7 +2367,7 @@
       "heading": "Food Label",
       "url": null,
       "collaborators": [],
-      "description": "A succulent brand for a good friend and family-owned business based in California's San Joaquín Valley. Credits: Risewise",
+      "description": "A succulent brand for a good friend and family-owned business based in California's San Joaquín Valley.",
       "attachments": [
         {
           "type": "image",
@@ -2399,7 +2406,8 @@
       "tags": [
         "Brand",
         "Personal"
-      ]
+      ],
+      "credits": "Risewise"
     },
     {
       "id": "X1zb0gMttoPwCxnCc7WS",
@@ -2407,7 +2415,7 @@
       "heading": "Pineapples",
       "url": null,
       "collaborators": [],
-      "description": "Landing page for a noncomformist internet marketing agency. Credits: Lemuel R. Bezares",
+      "description": "Landing page for a noncomformist internet marketing agency.",
       "attachments": [
         {
           "type": "image",
@@ -2433,7 +2441,8 @@
       "company": "",
       "tags": [
         "Personal"
-      ]
+      ],
+      "credits": "Lemuel R. Bezares"
     },
     {
       "id": "jzEzyfYRADG9nJTvLD8e",
@@ -2633,7 +2642,7 @@
           "heading": "Civic Impact",
           "url": "https://agron.design",
           "collaborators": [],
-          "description": "Digital products aimed at systemic criminal justice issues in order to reduce the amount of people incarcerated in the U.S. Since 2019, I've worked on the product strategy, brand ethos, digital design system, website, and team operations. Credits: Sonia Chokshi, Ian MacFarland, Allison Chan, William DeShazer",
+          "description": "Digital products aimed at systemic criminal justice issues in order to reduce the amount of people incarcerated in the U.S. Since 2019, I've worked on the product strategy, brand ethos, digital design system, website, and team operations.",
           "attachments": [
             {
               "type": "image",
@@ -2816,7 +2825,8 @@
           ],
           "type": "project",
           "title": "Civic Impact",
-          "company": ""
+          "company": "",
+          "credits": "Sonia Chokshi, Ian MacFarland, Allison Chan, William DeShazer"
         },
         {
           "id": "PHZZ0ShLiSw8Vr4HQCCb",
@@ -3243,7 +3253,7 @@
           "heading": "Executive Portraits",
           "url": null,
           "collaborators": [],
-          "description": "Creative and art direction for a series of portraits. Credits: William DeShazer",
+          "description": "Creative and art direction for a series of portraits.",
           "attachments": [
             {
               "type": "image",
@@ -3302,7 +3312,8 @@
           ],
           "type": "project",
           "title": "Executive Portraits",
-          "company": ""
+          "company": "",
+          "credits": "William DeShazer"
         },
         {
           "id": "q9BYLrMIhuo2ZMuxxgyQ",
@@ -3694,7 +3705,7 @@
           "heading": "Cannabis",
           "url": null,
           "collaborators": [],
-          "description": "Photography and art direction for a cannabis brand that celebrates artistry and emphasizes excellence. Credits: Kate Moore, Ron Brandon",
+          "description": "Photography and art direction for a cannabis brand that celebrates artistry and emphasizes excellence.",
           "attachments": [
             {
               "type": "image",
@@ -3735,7 +3746,8 @@
           ],
           "type": "project",
           "title": "Cannabis",
-          "company": ""
+          "company": "",
+          "credits": "Kate Moore, Ron Brandon"
         },
         {
           "id": "1HcXJhptEfBWBpf3bVpi",
@@ -3743,7 +3755,7 @@
           "heading": "Pandemic Response",
           "url": null,
           "collaborators": [],
-          "description": "Digital product design for a set of tools that correctional workers used to track and anticipate the impact of Covid-19 inside of prison facilities. Used in all 50 states, the toolkit allowed users to: 1) project cases, hospitalizations, and deaths among both staff and the incarcerated population, 2) compare before-and-after scenarios for policy changes and early release decisions and, 3) model the current rate of spread and trajectory of the outbreak in each facility. Credits: C. Andrew Warren, Clementine Jacoby, Joshua Essex",
+          "description": "Digital product design for a set of tools that correctional workers used to track and anticipate the impact of Covid-19 inside of prison facilities. Used in all 50 states, the toolkit allowed users to: 1) project cases, hospitalizations, and deaths among both staff and the incarcerated population, 2) compare before-and-after scenarios for policy changes and early release decisions and, 3) model the current rate of spread and trajectory of the outbreak in each facility.",
           "attachments": [
             {
               "type": "image",
@@ -3808,7 +3820,8 @@
           ],
           "type": "project",
           "title": "Pandemic Response",
-          "company": ""
+          "company": "",
+          "credits": "C. Andrew Warren, Clementine Jacoby, Joshua Essex"
         },
         {
           "id": "TSJ8U3jHUoHwUhCimC8w",
@@ -4380,7 +4393,7 @@
           "heading": "Waze",
           "url": null,
           "collaborators": [],
-          "description": "Changing the way the world moves through everyday acts of cooperation. I was the lead designer across all growth initiatives where we raised the monthly active users from 55M to 110M and formed partnerships with local agencies internationally. Archival of further work in progress. Credits: Haraldur Thorleifsson, Dominic Flask, Robin Noguier",
+          "description": "Changing the way the world moves through everyday acts of cooperation. I was the lead designer across all growth initiatives where we raised the monthly active users from 55M to 110M and formed partnerships with local agencies internationally. Archival of further work in progress.",
           "attachments": [
             {
               "type": "image",
@@ -4481,7 +4494,8 @@
           ],
           "type": "project",
           "title": "Waze",
-          "company": ""
+          "company": "",
+          "credits": "Haraldur Thorleifsson, Dominic Flask, Robin Noguier"
         },
         {
           "id": "nj6MDv4aDfhGyrEb59Kj",
@@ -4526,7 +4540,7 @@
           "heading": "Badge Maker",
           "url": null,
           "collaborators": [],
-          "description": "Design and development for a self-service asset generator. Credits: Lemuel R. Bezares",
+          "description": "Design and development for a self-service asset generator.",
           "attachments": [
             {
               "type": "image",
@@ -4555,7 +4569,8 @@
           ],
           "type": "project",
           "title": "Badge Maker",
-          "company": ""
+          "company": "",
+          "credits": "Lemuel R. Bezares"
         },
         {
           "id": "C4QeFxkwgJJbbNtpt4Dw",
@@ -4856,7 +4871,7 @@
           "heading": "Food Label",
           "url": null,
           "collaborators": [],
-          "description": "A succulent brand for a good friend and family-owned business based in California's San Joaquín Valley. Credits: Risewise",
+          "description": "A succulent brand for a good friend and family-owned business based in California's San Joaquín Valley.",
           "attachments": [
             {
               "type": "image",
@@ -4891,7 +4906,8 @@
           ],
           "type": "sideProject",
           "title": "Food Label",
-          "company": ""
+          "company": "",
+          "credits": "Risewise"
         },
         {
           "id": "X1zb0gMttoPwCxnCc7WS",
@@ -4899,7 +4915,7 @@
           "heading": "Pineapples",
           "url": null,
           "collaborators": [],
-          "description": "Landing page for a noncomformist internet marketing agency. Credits: Lemuel R. Bezares",
+          "description": "Landing page for a noncomformist internet marketing agency.",
           "attachments": [
             {
               "type": "image",
@@ -4922,7 +4938,8 @@
           ],
           "type": "sideProject",
           "title": "Pineapples",
-          "company": ""
+          "company": "",
+          "credits": "Lemuel R. Bezares"
         },
         {
           "id": "jzEzyfYRADG9nJTvLD8e",

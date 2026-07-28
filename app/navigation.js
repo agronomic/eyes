@@ -6,13 +6,14 @@ import cv from './content';
 
 export default function Navigation() {
   const pathname = usePathname();
-  const onProjectPage = pathname?.startsWith('/p/');
+  const onOverview = pathname === '/';
+  const showBack = !onOverview;
 
-  if (onProjectPage) {
+  if (showBack) {
     return (
       <div className="navigation-bar">
         <div className="title">
-          <Link href="/">← Back to Projects</Link>
+          <Link href="/">← Back to Overview</Link>
         </div>
       </div>
     );
@@ -24,12 +25,7 @@ export default function Navigation() {
         <Link href="/">{cv.general.displayName}</Link>
       </div>
       <div className="nav-links">
-        <Link href="/" className={pathname === '/' ? 'active' : ''}>
-          Projects
-        </Link>
-        <Link href="/experiments" className={pathname === '/experiments' ? 'active' : ''}>
-          Experiments
-        </Link>
+        <Link href="/experiments">Experiments</Link>
       </div>
     </div>
   );

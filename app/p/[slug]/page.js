@@ -3,10 +3,9 @@
 import React, { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import { useParams, notFound } from 'next/navigation';
-import { marked } from 'marked';
 
 import Navigation from '../../navigation';
-import CaseStudy from '../../case-study';
+import CaseStudy, { ProjectMeta } from '../../case-study';
 import ArchiveList from '../../archive-list';
 import { getProjectBySlug } from '../../content';
 import {
@@ -118,11 +117,6 @@ export default function ProjectPage() {
       <Navigation />
 
       <div className="project-content">
-        <div className="gallery-header">
-          <h3>{title}</h3>
-          <span className="project-year">{project.year}</span>
-        </div>
-
         <div className="gallery-images swipe-view" ref={swipeRef}>
           {attachments.map((attachment, i) => (
             <div
@@ -198,9 +192,7 @@ export default function ProjectPage() {
           ))}
         </div>
 
-        <div className="gallery-text">
-          <div dangerouslySetInnerHTML={{ __html: marked(project.description || '') }} />
-        </div>
+        <ProjectMeta project={project} includeCredits />
 
         <ArchiveList currentSlug={slug} />
       </div>

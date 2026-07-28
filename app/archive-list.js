@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { getArchiveProjects, slugify } from './content';
 import { useStaggerReady } from './helpers';
 
-/** Offset so the Archive block cascades after gallery-text (--stagger: 2). */
+/** Offset so the Archive block cascades after project meta (--stagger: 2). */
 const STAGGER_BASE = 3;
 
 /** Simple archive index — numbered title + year, links to each project. */
