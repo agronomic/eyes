@@ -21,6 +21,9 @@ html {
   --font-size-large: 1.25rem;
   --font-weight-regular: 400;
   --font-weight-bold: 700;
+  /* Readable body-copy line length — shared by intro, about, experience,
+     and project/case-study descriptions */
+  --measure: 36em;
   --page-end-space: 120px;
   /* Fixed nav text row (hit area); text sits on its bottom edge */
   --nav-height: 40px;
@@ -164,7 +167,7 @@ video {
   font-size: var(--font-size-base);
   font-weight: var(--font-weight-regular);
   margin: 0 0 40px;
-  max-width: 36em;
+  max-width: var(--measure);
   animation: fadeSlideInSequential 0.5s ease-in-out both;
 }
 
@@ -357,6 +360,7 @@ video {
 
 .project-meta {
   margin-bottom: 32px;
+  max-width: var(--measure);
 }
 
 .project-meta p {
@@ -716,7 +720,9 @@ a.archive-list-row:hover .archive-list-title {
 .experiments-expand {
   position: fixed;
   inset: 0;
-  z-index: 200;
+  /* Above the nav (1000) so its "Back to Overview" can't be clicked while
+     expanded; still below the buffering indicator (1100). */
+  z-index: 1050;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -809,7 +815,7 @@ a.archive-list-row:hover .archive-list-title {
 }
 
 .about-section p {
-  max-width: 500px;
+  max-width: var(--measure);
 }
 
 .contact-list {
@@ -864,7 +870,7 @@ a.archive-list-row:hover .archive-list-title {
 
 .experience-description-inner > div {
   padding: 0 0 12px;
-  max-width: 500px;
+  max-width: var(--measure);
 }
 
 .experience-description-inner p {
