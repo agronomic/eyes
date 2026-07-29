@@ -189,19 +189,14 @@ export function useMediaReady(ref, resetKey) {
   return progress;
 }
 
-/** Browsers often ignore muted autoplay — kick play() explicitly. */
-export function playMutedVideos(root) {
-  if (!root) return;
-  root.querySelectorAll('video').forEach((video) => {
-    video.muted = true;
-    video.play().catch(() => {});
-  });
-}
+/**
+ * Muted video helpers
+ * - playMutedVideos: stage / case study — start looping clips
+ * - warmMutedVideos: thumb grids — paint frame 0 and stay paused
+ * - playVisibleMutedVideos: experiments — loop only while on screen
+ */
 
-/** Match fadeSlideInSequential's duration — keep in sync with Styles.css */
-const STAGGER_DURATION_MS = 500;
-
-/** Buffer a preview without letting it run ahead of its poster. */
+/** Buffer without letting playback run ahead of the still we want to show. */
 function warmVideo(video) {
   video.muted = true;
   video.preload = 'auto';
@@ -217,6 +212,24 @@ function warmVideo(video) {
   if (video.readyState >= 2) pin();
   else video.load();
 }
+
+/** Browsers often ignore muted autoplay — kick play() explicitly. */
+export function playMutedVideos(root) {
+  if (!root) return;
+  root.querySelectorAll('video').forEach((video) => {
+    video.muted = true;
+    video.play().catch(() => {});
+  });
+}
+
+/** Decode a still frame for thumb grids (metadata alone often paints nothing). */
+export function warmMutedVideos(root) {
+  if (!root) return;
+  root.querySelectorAll('video').forEach(warmVideo);
+}
+
+/** Match fadeSlideInSequential's duration — keep in sync with Styles.css */
+const STAGGER_DURATION_MS = 500;
 
 /**
  * Grid loops only while on screen. Previews stay paused on frame 0 until that

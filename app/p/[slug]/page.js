@@ -13,6 +13,7 @@ import {
   mediaSizes,
   playMutedVideos,
   useStaggerReady,
+  warmMutedVideos,
   watchMediaReady,
 } from '../../helpers';
 
@@ -27,6 +28,7 @@ export default function ProjectPage() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [stageReady, setStageReady] = useState(() => new Set());
   const swipeRef = useRef(null);
+  const thumbsRef = useRef(null);
   const staggerReady = useStaggerReady(slug);
 
   useEffect(() => {
@@ -46,6 +48,7 @@ export default function ProjectPage() {
   useEffect(() => {
     if (!project || project.caseStudy) return;
     playMutedVideos(swipeRef.current);
+    warmMutedVideos(thumbsRef.current);
   }, [project]);
 
   const scrollToImage = (index) => {
@@ -112,12 +115,23 @@ export default function ProjectPage() {
   const attachments = project.attachments;
   const eagerThrough = Math.max(STAGE_WINDOW, activeIndex + STAGE_WINDOW);
 
+  // The first attachment is a consistent cover across projects; it defines the
+  // thumb row height so its thumb spans one grid column (matching the home
+  // grid), and every later thumb shares that height, widening per its ratio.
+  const cover = attachments[0];
+  const coverRatio =
+    cover?.width && cover?.height ? cover.width / cover.height : 3 / 2;
+
   return (
     <div className="container">
       <Navigation />
 
       <div className="project-content">
-        <div className="gallery-images swipe-view" ref={swipeRef}>
+        <div
+          className="gallery-images swipe-view"
+          ref={swipeRef}
+          style={{ '--stage-cover-ratio': coverRatio }}
+        >
           {attachments.map((attachment, i) => (
             <div
               key={`stage-${attachment.url}-${i}`}
@@ -159,14 +173,21 @@ export default function ProjectPage() {
         </div>
 
         <div
+          ref={thumbsRef}
           className={`gallery-images grid-view gallery-thumbs${staggerReady ? ' stagger-ready' : ''}`}
+          style={{ '--thumb-cover-ratio': coverRatio }}
         >
           {attachments.map((attachment, i) => (
             <button
               key={`thumb-${attachment.url}-${i}`}
               type="button"
               className={`media-container${activeIndex === i ? ' is-active' : ''}`}
-              style={{ '--stagger': i }}
+              style={{
+                '--stagger': i,
+                ...(attachment.width && attachment.height
+                  ? { '--media-ratio': `${attachment.width} / ${attachment.height}` }
+                  : {}),
+              }}
               onClick={() => scrollToImage(i)}
               aria-label={`Go to image ${i + 1}`}
             >
@@ -178,7 +199,6 @@ export default function ProjectPage() {
                   height={attachment.height || 267}
                   sizes={mediaSizes('thumb')}
                   quality={mediaQuality}
-                  style={{ width: '100%', height: 'auto' }}
                 />
               ) : (
                 <video

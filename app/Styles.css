@@ -35,7 +35,7 @@ html {
   --bp-narrow: 499px;
   /* Stage carousel: leave room so the next slide peeks */
   --swipe-peek: clamp(12px, 4vw, 40px);
-  /* Tallest a stage slide may get; its width follows the media ratio */
+  /* Stage: fixed height band; width follows each asset’s ratio */
   --stage-height: 60vh;
   /* Quiet placeholder while stage media decodes */
   --media-pending: #161616;
@@ -496,21 +496,23 @@ video {
   gap: 10px;
   align-items: center;
   margin-bottom: var(--media-col-gap);
+  /* The cover (first slide) drives the band height: tall enough to fill 60vh
+     on wide screens, short enough to leave a peek without letterboxing on
+     narrow ones. Every slide shares this height; width follows its own ratio. */
+  --stage-height: min(
+    60vh,
+    calc((100vw - 2 * var(--swipe-peek)) / var(--stage-cover-ratio, 1.5))
+  );
 }
 
-/* Slide box is sized from the token + known ratio, so it measures the same
-   before, during, and after load — loading state only changes paint. */
+/* Slide box: the band height is the invariant; width always follows the
+   asset's ratio. Portraits go narrow; images wider than the cover overflow
+   past the peek and scroll-snap relaxes so you can pan across them. */
 .gallery-images.swipe-view .media-container {
   scroll-snap-align: center;
   flex-shrink: 0;
-  /* Width is whichever limit bites first: the peek, or what fits in the stage
-     height at this ratio. Height then follows the ratio, so the box hugs the
-     image at every size — no letterboxing, no dependence on loaded pixels. */
-  width: min(
-    calc(100vw - 2 * var(--swipe-peek)),
-    calc(var(--stage-height) * var(--media-ratio, 3 / 2))
-  );
-  aspect-ratio: var(--media-ratio, 3 / 2);
+  height: var(--stage-height);
+  width: calc(var(--stage-height) * var(--media-ratio, 3 / 2));
   background-color: transparent;
   transition: background-color 0.5s ease-in-out;
 }
@@ -528,8 +530,18 @@ video {
   object-fit: contain;
 }
 
-/* Thumbs share the same column floor as home Archive; button chrome + active */
-.gallery-thumbs .media-container {
+/* Thumbs: one fixed height, width follows each ratio (verticals go narrow),
+   wrapping left-to-right instead of an equal-column grid. The cover ratio
+   (passed inline) sets the height so the first thumb spans one home column
+   (--media-col-min) and the rest stay visually the same scale as home. */
+.gallery-images.grid-view.gallery-thumbs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  --thumb-height: calc(var(--media-col-min) / var(--thumb-cover-ratio, 1.5));
+}
+
+.gallery-images.grid-view.gallery-thumbs .media-container {
   appearance: none;
   border: none;
   background: none;
@@ -538,13 +550,24 @@ video {
   color: inherit;
   font: inherit;
   outline: none;
-  min-width: 0;
+  display: block;
+  flex: 0 0 auto;
+  height: var(--thumb-height);
+  width: calc(var(--thumb-height) * var(--media-ratio, 3 / 2));
   max-width: 100%;
   opacity: 0.45;
 }
 
-.gallery-thumbs .media-container.is-active {
+.gallery-images.grid-view.gallery-thumbs .media-container.is-active {
   opacity: 1;
+}
+
+.gallery-images.grid-view.gallery-thumbs img,
+.gallery-images.grid-view.gallery-thumbs video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 /* Archive index under project description — link-only, no expand */

@@ -1884,10 +1884,10 @@
           "url": "/content/media/Waze-Brand-Product-3.mp4"
         },
         {
-          "type": "image",
-          "width": 1200,
-          "height": 628,
-          "url": "/content/media/Waze-Brand-Product-4.gif"
+          "type": "video",
+          "width": 2048,
+          "height": 1364,
+          "url": "/content/media/Waze-Brand-Product-4.mp4"
         },
         {
           "type": "image",
@@ -1908,16 +1908,16 @@
           "url": "/content/media/Waze-Brand-Product-7.mp4"
         },
         {
-          "type": "image",
-          "width": 1200,
-          "height": 628,
-          "url": "/content/media/Waze-Brand-Product-8.gif"
-        },
-        {
           "type": "video",
           "width": 1600,
           "height": 1200,
-          "url": "/content/media/Waze-Brand-Product-9.mp4"
+          "url": "/content/media/Waze-Brand-Product-8.mp4"
+        },
+        {
+          "type": "image",
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Waze-Brand-Product-9.webp"
         },
         {
           "type": "image",
@@ -1929,13 +1929,13 @@
           "type": "image",
           "width": 2048,
           "height": 1365,
-          "url": "/content/media/Waze-Brand-Product-11.webp"
+          "url": "/content/media/Waze-Brand-Product-11.png"
         },
         {
           "type": "image",
-          "width": 1200,
-          "height": 628,
-          "url": "/content/media/Waze-Brand-Product-12.gif"
+          "width": 2048,
+          "height": 1365,
+          "url": "/content/media/Waze-Brand-Product-12.png"
         },
         {
           "type": "image",
@@ -1948,18 +1948,6 @@
           "width": 2048,
           "height": 1365,
           "url": "/content/media/Waze-Brand-Product-14.png"
-        },
-        {
-          "type": "image",
-          "width": 2048,
-          "height": 1365,
-          "url": "/content/media/Waze-Brand-Product-15.png"
-        },
-        {
-          "type": "image",
-          "width": 2048,
-          "height": 1365,
-          "url": "/content/media/Waze-Brand-Product-16.png"
         }
       ],
       "type": "project",
@@ -4414,10 +4402,10 @@
               "url": "/content/media/Waze-Brand-Product-3.mp4"
             },
             {
-              "type": "image",
-              "width": 1200,
-              "height": 628,
-              "url": "/content/media/Waze-Brand-Product-4.gif"
+              "type": "video",
+              "width": 2048,
+              "height": 1364,
+              "url": "/content/media/Waze-Brand-Product-4.mp4"
             },
             {
               "type": "image",
@@ -4438,16 +4426,16 @@
               "url": "/content/media/Waze-Brand-Product-7.mp4"
             },
             {
-              "type": "image",
-              "width": 1200,
-              "height": 628,
-              "url": "/content/media/Waze-Brand-Product-8.gif"
-            },
-            {
               "type": "video",
               "width": 1600,
               "height": 1200,
-              "url": "/content/media/Waze-Brand-Product-9.mp4"
+              "url": "/content/media/Waze-Brand-Product-8.mp4"
+            },
+            {
+              "type": "image",
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Waze-Brand-Product-9.webp"
             },
             {
               "type": "image",
@@ -4459,13 +4447,13 @@
               "type": "image",
               "width": 2048,
               "height": 1365,
-              "url": "/content/media/Waze-Brand-Product-11.webp"
+              "url": "/content/media/Waze-Brand-Product-11.png"
             },
             {
               "type": "image",
-              "width": 1200,
-              "height": 628,
-              "url": "/content/media/Waze-Brand-Product-12.gif"
+              "width": 2048,
+              "height": 1365,
+              "url": "/content/media/Waze-Brand-Product-12.png"
             },
             {
               "type": "image",
@@ -4478,18 +4466,6 @@
               "width": 2048,
               "height": 1365,
               "url": "/content/media/Waze-Brand-Product-14.png"
-            },
-            {
-              "type": "image",
-              "width": 2048,
-              "height": 1365,
-              "url": "/content/media/Waze-Brand-Product-15.png"
-            },
-            {
-              "type": "image",
-              "width": 2048,
-              "height": 1365,
-              "url": "/content/media/Waze-Brand-Product-16.png"
             }
           ],
           "type": "project",
