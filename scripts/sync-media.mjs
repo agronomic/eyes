@@ -5,6 +5,7 @@
  *      box before a byte arrives.
  *   3. For experiment videos: a first-frame poster and a small silent preview
  *      for the grid. The original stays for the expand view (with audio).
+ *   4. Small WebP derivatives (*-sm.webp, ~800px long edge) for dense grids.
  * Usage: npm run sync-media
  */
 import fs from 'node:fs';
@@ -28,6 +29,9 @@ const WEBP_QUALITY = 88;
 const POSTER_QUALITY = 80;
 /** Long edge of the silent grid preview — enough for a 150px tile on 2x. */
 const PREVIEW_EDGE = 360;
+/** Long edge for *-sm.webp used by thumb / cover / experiment grids. */
+const SM_EDGE = 800;
+const SM_QUALITY = 80;
 
 function formatMb(bytes) {
   return `${(bytes / (1024 * 1024)).toFixed(2)}MB`;
@@ -234,6 +238,47 @@ async function syncExperimentVideos() {
   return updated;
 }
 
+/** Dense-grid derivatives: Foo.webp → Foo-sm.webp (master stays high-res). */
+async function syncSmallDerivatives() {
+  const names = fs.readdirSync(mediaDir);
+  let made = 0;
+  let skipped = 0;
+
+  for (const name of names) {
+    if (!/\.(webp|png|jpe?g)$/i.test(name)) continue;
+    if (/-sm\.(webp|png|jpe?g)$/i.test(name)) continue;
+    if (/-poster\./i.test(name)) continue;
+
+    const srcPath = path.join(mediaDir, name);
+    const base = name.replace(/\.(webp|png|jpe?g)$/i, '');
+    const smPath = path.join(mediaDir, `${base}-sm.webp`);
+    const srcStat = fs.statSync(srcPath);
+
+    if (fs.existsSync(smPath) && fs.statSync(smPath).mtimeMs >= srcStat.mtimeMs) {
+      skipped += 1;
+      continue;
+    }
+
+    await sharp(srcPath)
+      .resize({
+        width: SM_EDGE,
+        height: SM_EDGE,
+        fit: 'inside',
+        withoutEnlargement: true,
+      })
+      .webp({ quality: SM_QUALITY, effort: 4 })
+      .toFile(smPath);
+
+    made += 1;
+    console.log(
+      `sm ${base}-sm.webp ${formatMb(srcStat.size)} → ${formatMb(fs.statSync(smPath).size)}`
+    );
+  }
+
+  console.log(`small derivatives: ${made} written, ${skipped} up-to-date`);
+  return made;
+}
+
 async function main() {
   const pngs = fs
     .readdirSync(mediaDir)
@@ -309,6 +354,7 @@ async function main() {
   }
 
   const videoDerivatives = await syncExperimentVideos();
+  const smallDerivatives = await syncSmallDerivatives();
 
   // Runs last so freshly renamed URLs are measured from their new files
   const dimsAdded = await backfillDimensions();
@@ -318,6 +364,7 @@ async function main() {
   console.log(`skipped:   ${skipped}`);
   console.log(`json url replacements: ${jsonUpdates}`);
   console.log(`video derivatives: ${videoDerivatives}`);
+  console.log(`small derivatives: ${smallDerivatives}`);
   console.log(`dimensions added: ${dimsAdded}`);
   console.log(
     `png cohort before (all pngs scanned): ${formatMb(beforeTotal)}`

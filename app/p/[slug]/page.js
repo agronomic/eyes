@@ -11,6 +11,7 @@ import { getProjectBySlug } from '../../content';
 import {
   mediaQuality,
   mediaSizes,
+  mediaSrc,
   playMutedVideos,
   useStaggerReady,
   warmMutedVideos,
@@ -145,7 +146,7 @@ export default function ProjectPage() {
             >
               {attachment.type === 'image' ? (
                 <Image
-                  src={attachment.url}
+                  src={mediaSrc(attachment.url, 'stage')}
                   alt={`${title} image ${i + 1}`}
                   width={attachment.width || 1600}
                   height={attachment.height || 1067}
@@ -193,7 +194,7 @@ export default function ProjectPage() {
             >
               {attachment.type === 'image' ? (
                 <Image
-                  src={attachment.url}
+                  src={mediaSrc(attachment.url, 'thumb')}
                   alt=""
                   width={attachment.width || 400}
                   height={attachment.height || 267}

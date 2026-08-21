@@ -5,13 +5,13 @@ import Image from 'next/image';
 import { marked } from 'marked';
 
 import { groupCaseStudyMedia } from './content';
-import { mediaQuality, mediaSizes, playMutedVideos } from './helpers';
+import { mediaQuality, mediaSizes, mediaSrc, playMutedVideos } from './helpers';
 
 function CaseMedia({ item, title, index, pair }) {
   if (item.type === 'image') {
     return (
       <Image
-        src={item.url}
+        src={mediaSrc(item.url, pair ? 'case-pair' : 'stage')}
         alt={`${title} image ${index + 1}`}
         width={item.width || 1600}
         height={item.height || 1067}

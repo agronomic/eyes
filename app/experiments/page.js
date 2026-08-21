@@ -12,6 +12,7 @@ import {
   assignColumnStagger,
   mediaQuality,
   mediaSizes,
+  mediaSrc,
   playVisibleMutedVideos,
   useMediaReady,
 } from '../helpers';
@@ -124,7 +125,7 @@ export default function ExperimentsPage() {
               >
                 {item.type === 'image' && (
                   <Image
-                    src={item.url}
+                    src={mediaSrc(item.url, 'experiment')}
                     alt={item.alt || ''}
                     width={item.width || 800}
                     height={item.height || 600}
@@ -137,7 +138,7 @@ export default function ExperimentsPage() {
                   <>
                     {item.poster ? (
                       <Image
-                        src={item.poster}
+                        src={mediaSrc(item.poster, 'experiment')}
                         alt={item.alt || ''}
                         width={item.width || 800}
                         height={item.height || 600}
@@ -179,7 +180,7 @@ export default function ExperimentsPage() {
         >
           {openItem.type === 'image' ? (
             <Image
-              src={openItem.url}
+              src={mediaSrc(openItem.url, 'stage')}
               alt={openItem.alt || ''}
               width={openItem.width || 1600}
               height={openItem.height || 1200}

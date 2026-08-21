@@ -18,6 +18,7 @@ import {
   easeElementHeight,
   mediaQuality,
   mediaSizes,
+  mediaSrc,
   useStaggerReady,
 } from './helpers';
 
@@ -42,7 +43,7 @@ function Featured() {
             <div className="media-container" style={{ '--stagger': index }}>
               {cover?.type === 'image' ? (
                 <Image
-                  src={cover.url}
+                  src={mediaSrc(cover.url, 'stage')}
                   alt={`${project.title || project.heading} cover`}
                   width={cover.width || 1600}
                   height={cover.height || 1067}
@@ -164,7 +165,7 @@ function Archive() {
                 >
                   {cover.type === 'image' ? (
                     <Image
-                      src={cover.url}
+                      src={mediaSrc(cover.url, 'cover')}
                       alt={`${project.title} cover image`}
                       width={cover.width || 400}
                       height={cover.height || 267}

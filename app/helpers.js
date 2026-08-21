@@ -7,22 +7,34 @@ import { useEffect, useRef, useState } from 'react';
  * --------------------
  * Layout density lives in Styles.css tokens (--bp-mobile, --bp-narrow,
  * --media-col-min, --stage-height, …). Breakpoints below must match those.
- * Pages pass mediaSizes(role) + mediaQuality into next/image — don't invent
- * one-off sizes/quality. next.config.mjs images.deviceSizes / imageSizes must
- * cover these roles without a huge allowlist (Vercel transform quota):
- *   thumb | cover  → ~15–25vw  → imageSizes
- *   experiment     → ~80px     → imageSizes
- *   case-pair      → 50–100vw  → deviceSizes
- *   stage (default)→ 100vw     → deviceSizes
+ * Pages pass mediaSrc(url, role) + mediaSizes(role) + mediaQuality into
+ * next/image — don't invent one-off paths/sizes/quality.
+ *
+ * Vercel Image Optimization is OFF (next.config images.unoptimized).
+ * We self-host sizes via sync-media:
+ *   stage | case-pair → master URL (high-res)
+ *   thumb | cover | experiment → Basename-sm.webp (~800px long edge)
  */
 /** Keep in sync with --bp-mobile / --bp-narrow in Styles.css */
 export const bpMobile = 767;
 export const bpNarrow = 499;
 
-/** Keep in sync with images.qualities in next.config.mjs */
 export const mediaQuality = 85;
 
-/** Responsive sizes for next/image — roles above; keep in sync with layout density. */
+/**
+ * Pick master vs small derivative. sync-media writes *-sm.webp alongside masters.
+ * Non-raster (gif/video) and stage/case-pair keep the original URL.
+ */
+export function mediaSrc(url, role = 'stage') {
+  if (!url) return url;
+  if (role === 'stage' || role === 'case-pair') return url;
+  // Posters / previews are already small; *-sm is for masters only.
+  if (/-poster\./i.test(url) || /-sm\./i.test(url)) return url;
+  if (!/\.(webp|png|jpe?g)$/i.test(url)) return url;
+  return url.replace(/\.(webp|png|jpe?g)$/i, '-sm.webp');
+}
+
+/** Responsive sizes hint for next/image — keep in sync with layout density. */
 export function mediaSizes(role) {
   if (role === 'thumb' || role === 'cover') {
     return `(max-width: ${bpMobile}px) 25vw, 15vw`;
