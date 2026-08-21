@@ -1,36 +1,37 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# eyes
+
+Personal portfolio site for [agron.design](https://agron.design) (Next.js).
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Media / images
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Layout density and breakpoints live as CSS tokens in `app/Styles.css` (`--bp-mobile`, `--bp-narrow`, `--media-col-min`, `--stage-height`, `--measure`, …).
 
-## Learn More
+**Use the helpers, not one-offs.** On pages, pass `sizes={mediaSizes(role)}` and `quality={mediaQuality}` from `app/helpers.js`. Roles: `thumb` / `cover`, `experiment`, `case-pair`, and default `stage` (full-width).
 
-To learn more about Next.js, take a look at the following resources:
+**Next Image Optimization** (Vercel transform quota) is configured in `next.config.mjs`:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- WebP only (no AVIF) to cut transform variants
+- `qualities: [85]` matching `mediaQuality`
+- Small `deviceSizes` / `imageSizes` allowlists sized to those roles
+- `minimumCacheTTL` of 31 days for optimized `/_next/image` variants
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+**Two caches, two jobs:**
 
-## Deploy on Vercel
+- Raw files under `/content/media` use `must-revalidate` so same-name swaps aren’t stuck behind an immutable browser cache.
+- Optimized variants use the longer Image Optimization TTL. If you replace a file and need a fresh optimized version immediately, rename the file (or change the path) and update JSON.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+When media dimensions change, run `npm run sync-media` so `profileData.json` / experiments stay in sync with the files on disk.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+When you change breakpoints or grid density, update CSS tokens, `bpMobile` / `bpNarrow` in helpers, and re-check `deviceSizes` / `imageSizes` in `next.config.mjs`.
+
+## Deploy
+
+Push to `main`; Vercel deploys from there.

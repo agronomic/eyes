@@ -2,13 +2,27 @@
 
 import { useEffect, useRef, useState } from 'react';
 
+/**
+ * Media image contract
+ * --------------------
+ * Layout density lives in Styles.css tokens (--bp-mobile, --bp-narrow,
+ * --media-col-min, --stage-height, …). Breakpoints below must match those.
+ * Pages pass mediaSizes(role) + mediaQuality into next/image — don't invent
+ * one-off sizes/quality. next.config.mjs images.deviceSizes / imageSizes must
+ * cover these roles without a huge allowlist (Vercel transform quota):
+ *   thumb | cover  → ~15–25vw  → imageSizes
+ *   experiment     → ~80px     → imageSizes
+ *   case-pair      → 50–100vw  → deviceSizes
+ *   stage (default)→ 100vw     → deviceSizes
+ */
 /** Keep in sync with --bp-mobile / --bp-narrow in Styles.css */
 export const bpMobile = 767;
 export const bpNarrow = 499;
 
+/** Keep in sync with images.qualities in next.config.mjs */
 export const mediaQuality = 85;
 
-/** Responsive sizes for next/image — keep in sync with layout density. */
+/** Responsive sizes for next/image — roles above; keep in sync with layout density. */
 export function mediaSizes(role) {
   if (role === 'thumb' || role === 'cover') {
     return `(max-width: ${bpMobile}px) 25vw, 15vw`;
