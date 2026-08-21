@@ -1,4 +1,5 @@
 import '@fontsource/atkinson-hyperlegible';
+import { GoogleAnalytics } from '@next/third-parties/google';
 import './Styles.css';
 
 export const metadata = {
@@ -13,9 +14,12 @@ export const viewport = {
 };
 
 export default function RootLayout({ children }) {
+  const gaId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
+
   return (
     <html lang="en">
       <body>{children}</body>
+      {gaId ? <GoogleAnalytics gaId={gaId} /> : null}
     </html>
   );
 }

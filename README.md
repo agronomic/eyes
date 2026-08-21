@@ -32,6 +32,13 @@ When media dimensions change, run `npm run sync-media` so `profileData.json` / e
 
 When you change breakpoints or grid density, update CSS tokens, `bpMobile` / `bpNarrow` in helpers, and re-check `deviceSizes` / `imageSizes` in `next.config.mjs`.
 
+## Analytics
+
+Google Analytics 4 uses `NEXT_PUBLIC_GA_MEASUREMENT_ID` (your `G-…` Measurement ID).
+
+- Local: put it in `.env.local` (gitignored).
+- Production: set the same variable in Vercel → Project → Settings → Environment Variables, then redeploy.
+
 ## Deploy
 
 Push to `main`; Vercel deploys from there.
