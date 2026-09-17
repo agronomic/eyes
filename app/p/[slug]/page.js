@@ -7,6 +7,7 @@ import { useParams, notFound } from 'next/navigation';
 import Navigation from '../../navigation';
 import CaseStudy, { ProjectMeta } from '../../case-study';
 import ArchiveList from '../../archive-list';
+import Colophon from '../../colophon';
 import { getProjectBySlug } from '../../content';
 import {
   mediaQuality,
@@ -108,6 +109,8 @@ export default function ProjectPage() {
       <div className="container">
         <Navigation />
         <CaseStudy project={project} />
+        <ArchiveList currentSlug={slug} />
+        <Colophon />
       </div>
     );
   }
@@ -216,6 +219,8 @@ export default function ProjectPage() {
         <ProjectMeta project={project} includeCredits />
 
         <ArchiveList currentSlug={slug} />
+
+        <Colophon />
       </div>
     </div>
   );

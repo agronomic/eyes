@@ -11,6 +11,10 @@
     "website": "https://agron.design",
     "websiteURL": "https://agron.design",
     "about": "My professional practice spans across digital product, brand identity, and experience strategy. For over a decade, I’ve contributed my work to everyone from early-stage startups to tech giants like Google. I specialize in getting new products off the ground and establishing the foundation for a company's success.\n\nCurrently, as part of [Recidiviz](https://www.recidiviz.org/), I design catalytic systems that actively reduce the amount of people incarcerated in the U.S.\n\nOutside of my career, you’ll find me reading esoteric essays, tinkering with cameras, or curating overly specific lists. I spent my childhood in the Caribbean and my adolescence in California so I find rainy days beautifully nostalgic but cold winters really \\**** me.",
+    "colophon": {
+      "typeface": "Atkinson Hyperlegible",
+      "email": "mail@agron.design"
+    },
     "status": {
       "text": "burlao",
       "emoji": "🍶",
@@ -2608,12 +2612,6 @@
   "certifications": [],
   "contact": [
     {
-      "id": "KRNE50IE17Iyi8blUVEx",
-      "platform": "Refrakt",
-      "handle": "agron",
-      "url": "https://refrakt.app/agron"
-    },
-    {
       "id": "CJ12gfjHJ7M6K9eDFcyS",
       "platform": "Email",
       "handle": "mail@agron.design",
@@ -5090,12 +5088,6 @@
     {
       "name": "Contact",
       "items": [
-        {
-          "id": "KRNE50IE17Iyi8blUVEx",
-          "platform": "Refrakt",
-          "handle": "agron",
-          "url": "https://refrakt.app/agron"
-        },
         {
           "id": "CJ12gfjHJ7M6K9eDFcyS",
           "platform": "Email",

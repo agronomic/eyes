@@ -797,7 +797,7 @@ a.archive-list-row:hover .archive-list-title {
 }
 
 /* =============================================================================
-   Home — About / Contact / Experience
+   Home — About / Colophon / Experience
    ============================================================================= */
 
 .section {
@@ -818,15 +818,20 @@ a.archive-list-row:hover .archive-list-title {
   max-width: var(--measure);
 }
 
-.contact-list {
-  list-style-type: none;
+.archive-list + .colophon-section {
+  margin-top: 40px;
 }
 
-.contact-item a {
+.colophon-list {
+  list-style-type: none;
+  max-width: var(--measure);
+}
+
+.colophon-list a {
   text-decoration: underline;
 }
 
-.contact-item a:hover {
+.colophon-list a:hover {
   text-decoration: none;
 }
 

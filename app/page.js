@@ -13,6 +13,7 @@ import cv, {
   slugify,
 } from './content';
 import Navigation from './navigation';
+import Colophon from './colophon';
 import {
   bpMobile,
   easeElementHeight,
@@ -268,19 +269,7 @@ export default function App() {
 
       <Experience />
 
-      <section className="contact-section section">
-        <p>Contact</p>
-        <ul className="contact-list">
-          {cv.contact.map((contactItem, index) => (
-            <li key={index} className="contact-item">
-              {contactItem.platform}:{' '}
-              <a href={contactItem.url} target="_blank" rel="noopener noreferrer">
-                {contactItem.handle}
-              </a>
-            </li>
-          ))}
-        </ul>
-      </section>
+      <Colophon />
     </div>
   );
 }
