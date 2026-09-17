@@ -938,6 +938,15 @@ a.archive-list-row:hover .archive-list-title {
 }
 
 @media (max-width: 767px) {
+  .experience-title {
+    display: none;
+  }
+
+  .experience-main-header {
+    grid-template-columns: auto;
+    justify-content: end;
+  }
+
   .experience-description {
     grid-column: 1 / -1;
   }
