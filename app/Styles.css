@@ -24,7 +24,7 @@ html {
   /* Readable body-copy line length — shared by intro, about, experience,
      and project/case-study descriptions */
   --measure: 36em;
-  --page-end-space: 120px;
+  --page-end-space: 30vh;
   /* Fixed nav text row (hit area); text sits on its bottom edge */
   --nav-height: 40px;
   /* Space after a header before its body (nav → page, section titles → copy) */
@@ -96,10 +96,14 @@ p a:hover {
 }
 
 .container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
   padding: min(2vw, 50px);
   /* Clear the fixed header (nav row + its trailing gap) */
   padding-top: var(--nav-clearance);
-  padding-bottom: var(--page-end-space);
+  /* End breathing room lives above the colophon, not below the page */
+  padding-bottom: min(2vw, 50px);
   width: 100%;
 }
 
@@ -352,6 +356,25 @@ video {
 .archive-heading {
   font-size: var(--font-size-base);
   margin-bottom: var(--media-col-gap);
+}
+
+/* Home — label | body split (Archive, About). Stacks at --bp-mobile. */
+@media (min-width: 768px) {
+  .section-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 24px;
+    align-items: start;
+  }
+
+  .section-split > .section-label,
+  .section-split > .archive-heading {
+    margin-bottom: 0;
+  }
+
+  .section.section-split > p:first-child {
+    margin-bottom: 0;
+  }
 }
 
 /* =============================================================================
@@ -814,17 +837,18 @@ a.archive-list-row:hover .archive-list-title {
   margin-bottom: 8px;
 }
 
-.about-section p {
-  max-width: var(--measure);
-}
-
-.archive-list + .colophon-section {
-  margin-top: 40px;
+.colophon-section {
+  margin-top: auto;
+  margin-bottom: 0;
+  padding-top: var(--page-end-space);
+  /* Sit in the left half — same column as Archive/About labels */
+  width: calc(50% - 12px);
+  max-width: 100%;
+  align-self: flex-start;
 }
 
 .colophon-list {
   list-style-type: none;
-  max-width: var(--measure);
 }
 
 .colophon-list a {
@@ -835,6 +859,12 @@ a.archive-list-row:hover .archive-list-title {
   text-decoration: none;
 }
 
+@media (max-width: 767px) {
+  .colophon-section {
+    width: 100%;
+  }
+}
+
 .experience-list {
   list-style-type: none;
   padding: 0;
@@ -842,8 +872,6 @@ a.archive-list-row:hover .archive-list-title {
 }
 
 .experience-item {
-  display: flex;
-  flex-direction: column;
   border-top: 1px solid rgba(255, 255, 255, 0.12);
 }
 
@@ -851,15 +879,39 @@ a.archive-list-row:hover .archive-list-title {
   border-bottom: 1px solid rgba(255, 255, 255, 0.12);
 }
 
-.experience-item .index-row {
-  border-top: none;
+/* Same 50/50 page grid as section-split; borders stay full-bleed */
+.experience-item-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 24px;
+  align-items: start;
+  padding: 10px 0;
 }
 
-.experience-row {
+.experience-item-grid[role='button'] {
   cursor: pointer;
 }
 
+.experience-company {
+  min-width: 0;
+}
+
+.experience-main-header {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: baseline;
+  gap: 12px;
+  min-width: 0;
+}
+
+.experience-year {
+  text-align: right;
+  white-space: nowrap;
+}
+
+/* Desktop: body sits under title in column 2 */
 .experience-description {
+  grid-column: 2;
   display: grid;
   grid-template-rows: 0fr;
   transition: grid-template-rows 0.35s ease;
@@ -874,8 +926,7 @@ a.archive-list-row:hover .archive-list-title {
 }
 
 .experience-description-inner > div {
-  padding: 0 0 12px;
-  max-width: var(--measure);
+  padding: 8px 0 2px;
 }
 
 .experience-description-inner p {
@@ -884,4 +935,10 @@ a.archive-list-row:hover .archive-list-title {
 
 .experience-description-inner p:last-child {
   margin-bottom: 0;
+}
+
+@media (max-width: 767px) {
+  .experience-description {
+    grid-column: 1 / -1;
+  }
 }

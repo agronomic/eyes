@@ -32,6 +32,9 @@ function Featured() {
 
   return (
     <div className={`projects-featured${staggerReady ? ' stagger-ready' : ''}`}>
+      <p className="archive-heading stagger-item" style={{ '--stagger': 0 }}>
+        Featured
+      </p>
       {caseStudies.map((project, index) => {
         const cover = project.attachments[0];
         const href = `/p/${slugify(project.title || project.heading)}`;
@@ -41,7 +44,7 @@ function Featured() {
             href={href}
             className="projects-featured-link"
           >
-            <div className="media-container" style={{ '--stagger': index }}>
+            <div className="media-container" style={{ '--stagger': index + 1 }}>
               {cover?.type === 'image' ? (
                 <Image
                   src={mediaSrc(cover.url, 'stage')}
@@ -100,11 +103,11 @@ function Archive() {
 
   if (projects.length === 0) {
     return (
-      <div className="archive">
-        <div className={chromeReady ? 'stagger-ready' : undefined}>
-          <p className="archive-heading stagger-item" style={{ '--stagger': 0 }}>
-            Archive
-          </p>
+      <div className={`archive section-split${chromeReady ? ' stagger-ready' : ''}`}>
+        <p className="section-label archive-heading stagger-item" style={{ '--stagger': 0 }}>
+          Archive
+        </p>
+        <div className="section-body">
           <div className="placeholderText stagger-item" style={{ '--stagger': 1 }}>
             Add at least one project or side project with an image or video.
           </div>
@@ -114,12 +117,12 @@ function Archive() {
   }
 
   return (
-    <div className="archive">
-      <div className={chromeReady ? 'stagger-ready' : undefined}>
-        <p className="archive-heading stagger-item" style={{ '--stagger': 0 }}>
-          Archive
-        </p>
+    <div className={`archive section-split${chromeReady ? ' stagger-ready' : ''}`}>
+      <p className="section-label archive-heading stagger-item" style={{ '--stagger': 0 }}>
+        Archive
+      </p>
 
+      <div className="section-body">
         <div
           className="project-filters stagger-item"
           style={{ '--stagger': 1 }}
@@ -144,60 +147,60 @@ function Archive() {
             </button>
           ))}
         </div>
-      </div>
 
-      <div
-        ref={gridRef}
-        className={`projects-overview${gridReady ? ' stagger-ready' : ''}`}
-      >
-        {visible.map((project, index) => {
-          const href = `/p/${slugify(project.title || project.heading)}`;
-          const cover = project.attachments[0];
-          return (
-            <Link
-              key={`${activeTag ?? 'all'}-${project.id || index}`}
-              href={href}
-              className="project-overview"
-            >
-              <div className="project-overview-images">
-                <div
-                  className="media-container"
-                  style={{ '--stagger': index }}
-                >
-                  {cover.type === 'image' ? (
-                    <Image
-                      src={mediaSrc(cover.url, 'cover')}
-                      alt={`${project.title} cover image`}
-                      width={cover.width || 400}
-                      height={cover.height || 267}
-                      sizes={mediaSizes('cover')}
-                      style={{
-                        display: 'block',
-                        width: '100%',
-                        height: 'auto',
-                        cursor: 'pointer',
-                      }}
-                      priority={index < PRIORITY_LOAD_THRESHOLD}
-                      quality={mediaQuality}
-                    />
-                  ) : (
-                    cover.type === 'video' && (
-                      <video
-                        src={cover.url}
-                        muted
-                        loop
-                        playsInline
-                        preload="metadata"
-                        autoPlay={index < PRIORITY_LOAD_THRESHOLD}
-                        className={`video-player ${isMobile ? 'no-controls' : ''}`}
+        <div
+          ref={gridRef}
+          className={`projects-overview${gridReady ? ' stagger-ready' : ''}`}
+        >
+          {visible.map((project, index) => {
+            const href = `/p/${slugify(project.title || project.heading)}`;
+            const cover = project.attachments[0];
+            return (
+              <Link
+                key={`${activeTag ?? 'all'}-${project.id || index}`}
+                href={href}
+                className="project-overview"
+              >
+                <div className="project-overview-images">
+                  <div
+                    className="media-container"
+                    style={{ '--stagger': index }}
+                  >
+                    {cover.type === 'image' ? (
+                      <Image
+                        src={mediaSrc(cover.url, 'cover')}
+                        alt={`${project.title} cover image`}
+                        width={cover.width || 400}
+                        height={cover.height || 267}
+                        sizes={mediaSizes('cover')}
+                        style={{
+                          display: 'block',
+                          width: '100%',
+                          height: 'auto',
+                          cursor: 'pointer',
+                        }}
+                        priority={index < PRIORITY_LOAD_THRESHOLD}
+                        quality={mediaQuality}
                       />
-                    )
-                  )}
+                    ) : (
+                      cover.type === 'video' && (
+                        <video
+                          src={cover.url}
+                          muted
+                          loop
+                          playsInline
+                          preload="metadata"
+                          autoPlay={index < PRIORITY_LOAD_THRESHOLD}
+                          className={`video-player ${isMobile ? 'no-controls' : ''}`}
+                        />
+                      )
+                    )}
+                  </div>
                 </div>
-              </div>
-            </Link>
-          );
-        })}
+              </Link>
+            );
+          })}
+        </div>
       </div>
     </div>
   );
@@ -212,38 +215,52 @@ function Experience() {
       <ul className="experience-list">
         {cv.workExperience.map((experience, index) => {
           const isOpen = openIndex === index;
+          const company = experience.company || experience.heading;
+          const title = experience.title;
+          const canExpand = Boolean(experience.description);
           return (
             <li
               key={experience.id || index}
               className={`experience-item${isOpen ? ' is-open' : ''}`}
             >
               <div
-                className="index-row experience-row"
-                role="button"
-                tabIndex={0}
-                aria-expanded={isOpen}
-                onClick={() => setOpenIndex(isOpen ? null : index)}
-                onKeyDown={(event) => {
-                  if (event.key === 'Enter' || event.key === ' ') {
-                    event.preventDefault();
-                    setOpenIndex(isOpen ? null : index);
-                  }
-                }}
+                className="experience-item-grid"
+                role={canExpand ? 'button' : undefined}
+                tabIndex={canExpand ? 0 : undefined}
+                aria-expanded={canExpand ? isOpen : undefined}
+                onClick={
+                  canExpand
+                    ? () => setOpenIndex(isOpen ? null : index)
+                    : undefined
+                }
+                onKeyDown={
+                  canExpand
+                    ? (event) => {
+                        if (event.key === 'Enter' || event.key === ' ') {
+                          event.preventDefault();
+                          setOpenIndex(isOpen ? null : index);
+                        }
+                      }
+                    : undefined
+                }
               >
-                <span className="index-row-title">{experience.heading}</span>
-                <span className="index-row-year">{experience.year}</span>
-              </div>
-              {experience.description && (
-                <div className="experience-description">
-                  <div className="experience-description-inner">
-                    <div
-                      dangerouslySetInnerHTML={{
-                        __html: marked(experience.description),
-                      }}
-                    />
-                  </div>
+                <span className="experience-company">{company}</span>
+                <div className="experience-main-header">
+                  <span className="experience-title">{title || '\u00a0'}</span>
+                  <span className="experience-year">{experience.year}</span>
                 </div>
-              )}
+                {experience.description && (
+                  <div className="experience-description">
+                    <div className="experience-description-inner">
+                      <div
+                        dangerouslySetInnerHTML={{
+                          __html: marked(experience.description),
+                        }}
+                      />
+                    </div>
+                  </div>
+                )}
+              </div>
             </li>
           );
         })}
@@ -262,9 +279,12 @@ export default function App() {
       <Featured />
       <Archive />
 
-      <section className="about-section section">
-        <p>About</p>
-        <div dangerouslySetInnerHTML={{ __html: marked(cv.general.about) }} />
+      <section className="about-section section section-split">
+        <p className="section-label">About</p>
+        <div
+          className="section-body"
+          dangerouslySetInnerHTML={{ __html: marked(cv.general.about) }}
+        />
       </section>
 
       <Experience />
