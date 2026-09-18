@@ -453,6 +453,60 @@ video {
   margin-top: 1em;
 }
 
+/* Nested case-study stories — accordion like Experience */
+.case-story-list {
+  margin-top: 1.25em;
+}
+
+.case-story-item {
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.case-story-item:last-child {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.case-story-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 24px;
+  align-items: baseline;
+  padding: 10px 0;
+  cursor: pointer;
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-regular);
+}
+
+.case-story-audience {
+  text-align: right;
+}
+
+.case-story-body {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.35s ease;
+}
+
+.case-story-item.is-open .case-story-body {
+  grid-template-rows: 1fr;
+}
+
+.case-story-body-inner {
+  overflow: hidden;
+}
+
+.case-story-body-inner > div {
+  padding: 0 0 12px;
+}
+
+.case-story-body-inner p {
+  margin-bottom: 0.75em;
+}
+
+.case-story-body-inner p:last-child {
+  margin-bottom: 0;
+}
+
 /* Case study: Title/Year/Type | description (same split as Archive/About) */
 @media (min-width: 768px) {
   .case-study > .project-meta {
