@@ -14,6 +14,7 @@ import cv, {
 } from './content';
 import Navigation from './navigation';
 import Colophon from './colophon';
+import ExperimentsHome from './experiments-home';
 import {
   bpMobile,
   easeElementHeight,
@@ -292,6 +293,8 @@ export default function App() {
       </section>
 
       <Experience />
+
+      <ExperimentsHome />
 
       <Colophon />
     </div>

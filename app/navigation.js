@@ -24,9 +24,6 @@ export default function Navigation() {
       <div className="title">
         <Link href="/">{cv.general.displayName}</Link>
       </div>
-      <div className="nav-links">
-        <Link href="/experiments">Experiments</Link>
-      </div>
     </div>
   );
 }
