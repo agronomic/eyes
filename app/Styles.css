@@ -384,8 +384,10 @@ video {
 }
 
 .featured-cylinder-label-tl {
-  top: 1.5rem;
+  top: auto;
+  bottom: 1.5rem;
   left: 1.5rem;
+  right: auto;
   /* Lock to roughly mobile 40% width so it doesn’t grow on large screens */
   max-width: 12.5rem;
   transform: none;
@@ -395,6 +397,7 @@ video {
   top: 1.5rem;
   right: 1.5rem;
   bottom: auto;
+  left: auto;
   max-width: 12.5rem;
   text-align: left;
   transform: none;
@@ -402,6 +405,7 @@ video {
 
 /* Match section-split right column (1fr 1fr, 24px gap) — same edge as About body */
 @media (min-width: 768px) {
+  .featured-cylinder-label-tl,
   .featured-cylinder-label-br {
     left: calc(50% + 12px);
     right: auto;
