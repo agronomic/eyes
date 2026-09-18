@@ -670,7 +670,11 @@ a.archive-list-row:hover .archive-list-title {
 
 .experiments-home > p:first-child {
   font-size: var(--font-size-base);
-  margin-bottom: var(--header-body-gap);
+  margin-bottom: 0;
+}
+
+.experiments-home .experiments-home-blurb {
+  margin-bottom: 40px;
 }
 
 /* =============================================================================

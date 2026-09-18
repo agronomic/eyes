@@ -35,6 +35,9 @@ export default function ExperimentsHome() {
       ref={anchorRef}
     >
       <p>Experiments</p>
+      <p className="experiments-home-blurb">
+        A log of studies and objects made outside of the boundaries of my career.
+      </p>
       {show ? (
         <ExperimentsSection lite />
       ) : (
