@@ -47,24 +47,6 @@ function FeaturedCylinder({ stagger }) {
         Product & design strategy, storytelling, leadership,
         {'\n'}0 → 1 systems
       </p>
-      <svg
-        className="featured-cylinder-connector"
-        viewBox="0 0 100 100"
-        preserveAspectRatio="none"
-        aria-hidden="true"
-      >
-        <line
-          x1="0"
-          y1="50"
-          x2="100"
-          y2="50"
-          stroke="#1a4a4a"
-          strokeWidth="1"
-          strokeDasharray="1 5"
-          strokeLinecap="round"
-          vectorEffect="non-scaling-stroke"
-        />
-      </svg>
       <p className="featured-cylinder-label featured-cylinder-label-br">
         Building practical tools in service of more ethical systems.
       </p>

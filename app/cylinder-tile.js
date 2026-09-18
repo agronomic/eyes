@@ -2,11 +2,8 @@
 const RADIUS = 1;
 const HEIGHT = 2;
 const MARGIN = 0.12;
-const HOLD_MS = 800;
-const TURN_MS = 3200;
-const STEP_MS = HOLD_MS + TURN_MS;
-const CYCLE_MS = STEP_MS * 4;
-const YAW_STEPS = [0, 1, 2, 3, 4].map((i) => (Math.PI / 2) * i);
+/** Full 360° spin duration (continuous, no holds). */
+const CYCLE_MS = 16000;
 const SIDES = [0, Math.PI];
 const SVG_NS = 'http://www.w3.org/2000/svg';
 const BG = '#000F0F';
@@ -14,28 +11,22 @@ const STROKE_SQUARE = 'rgba(0, 161, 255, 1)';
 const STROKE_CIRCLE = 'rgba(224, 14, 0, 1)';
 const FLAT_EPS = 0.6;
 
-function easeInOut(t) {
-  return 0.5 - 0.5 * Math.cos(t * Math.PI);
-}
-
-/** Even rests (0, π) = square/flat → blue; odd (π/2, 3π/2) = circle → red. */
-function poseStroke(step) {
-  return step % 2 === 0 ? STROKE_SQUARE : STROKE_CIRCLE;
-}
-
-function stepAt(elapsed) {
-  const t = ((elapsed % CYCLE_MS) + CYCLE_MS) % CYCLE_MS;
-  return Math.min(3, Math.floor(t / STEP_MS));
-}
-
+/** Continuous yaw — steady spin, no pause on square/circle. */
 function yawAt(elapsed) {
   const t = ((elapsed % CYCLE_MS) + CYCLE_MS) % CYCLE_MS;
-  const step = stepAt(elapsed);
-  const local = t - step * STEP_MS;
-  const from = YAW_STEPS[step];
-  const to = YAW_STEPS[step + 1];
-  if (local <= HOLD_MS) return from;
-  return from + easeInOut(Math.min(1, (local - HOLD_MS) / TURN_MS)) * (to - from);
+  return (t / CYCLE_MS) * Math.PI * 2;
+}
+
+/**
+ * Color snaps when the spin arrives at a cardinal pose, then holds through
+ * the turn to the next — same timing as the old pause-on-shape version.
+ * 0, π → blue (square); π/2, 3π/2 → red (circle).
+ */
+function strokeForYaw(yaw) {
+  const twoPi = Math.PI * 2;
+  const a = ((yaw % twoPi) + twoPi) % twoPi;
+  const sector = Math.floor(a / (Math.PI / 2)) % 4;
+  return sector % 2 === 0 ? STROKE_SQUARE : STROKE_CIRCLE;
 }
 
 function ellipseAt(halfH, yaw) {
@@ -181,7 +172,7 @@ export function mountCylinder(element) {
     const w = Math.max(1, Math.round(element.clientWidth));
     const h = Math.max(1, Math.round(element.clientHeight));
     const yaw = yawAt(elapsed);
-    const color = poseStroke(stepAt(elapsed));
+    const color = strokeForYaw(yaw);
     const scale = fitScale(w, h);
     const ox = w / 2;
     const oy = h / 2;
