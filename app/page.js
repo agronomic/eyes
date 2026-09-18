@@ -45,10 +45,10 @@ function FeaturedCylinder({ stagger }) {
     >
       <p className="featured-cylinder-label featured-cylinder-label-tl">
         Product & design strategy, storytelling, leadership,
-        {'\n'}0 → 1 systems
+        {'\n'}0 → 1 scaling
       </p>
       <p className="featured-cylinder-label featured-cylinder-label-br">
-        Building practical tools in service of more ethical systems.
+        Building practical tools for a more ethical world.
       </p>
     </div>
   );

@@ -6,7 +6,6 @@ const MARGIN = 0.12;
 const CYCLE_MS = 16000;
 const SIDES = [0, Math.PI];
 const SVG_NS = 'http://www.w3.org/2000/svg';
-const BG = '#000F0F';
 const STROKE_SQUARE = 'rgba(0, 161, 255, 1)';
 const STROKE_CIRCLE = 'rgba(224, 14, 0, 1)';
 const FLAT_EPS = 0.6;
@@ -99,7 +98,6 @@ export function mountCylinder(element) {
     element.style.position = 'relative';
   }
   element.style.overflow = 'hidden';
-  element.style.background = BG;
 
   const svg = el('svg');
   svg.setAttribute('aria-hidden', 'true');
@@ -111,9 +109,11 @@ export function mountCylinder(element) {
   svg.style.pointerEvents = 'none';
 
   const bg = el('rect');
+  bg.setAttribute('class', 'cylinder-tile-bg');
   bg.setAttribute('width', '100%');
   bg.setAttribute('height', '100%');
-  bg.setAttribute('fill', BG);
+  /* Transparent — container CSS background is what eases on hover */
+  bg.setAttribute('fill', 'transparent');
 
   const top = makeCap();
   const bottom = makeCap();

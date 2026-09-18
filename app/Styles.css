@@ -360,8 +360,15 @@ video {
 .projects-featured .media-container.featured-cylinder {
   width: 100%;
   aspect-ratio: 2048 / 1365;
-  background: #000F0F;
+  background-color: #001414;
   overflow: hidden;
+  transition: background-color 0.55s ease-in-out;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .projects-featured-link:hover .featured-cylinder {
+    background-color: #000F0F;
+  }
 }
 
 .featured-cylinder-label {
@@ -385,12 +392,21 @@ video {
 }
 
 .featured-cylinder-label-br {
-  top: auto;
+  top: 1.5rem;
   right: 1.5rem;
-  bottom: 1.5rem;
+  bottom: auto;
   max-width: 12.5rem;
-  text-align: right;
+  text-align: left;
   transform: none;
+}
+
+/* Match section-split right column (1fr 1fr, 24px gap) — same edge as About body */
+@media (min-width: 768px) {
+  .featured-cylinder-label-br {
+    left: calc(50% + 12px);
+    right: auto;
+    max-width: min(12.5rem, calc(50% - 12px - 1.5rem));
+  }
 }
 
 .archive-heading {
