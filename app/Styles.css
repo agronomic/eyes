@@ -46,9 +46,10 @@ html {
   --stagger-step: 90ms;
   /* Case study media — Niklas-tight packing inside page margins */
   --case-media-gap: 4px;
-  /* Experiments expand overlay */
+  /* Experiments expand overlay — prefer dvh so mobile chrome doesn’t clip */
   --expand-max-width: min(900px, 90vw);
   --expand-max-height: 85vh;
+  --expand-max-height: 85dvh;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -769,12 +770,24 @@ a.archive-list-row:hover .archive-list-title {
   cursor: pointer;
 }
 
-.experiments-expand img,
-.experiments-expand video {
+/* Single in-flow child so flex centering isn’t thrown off by ExpandVideo’s
+   fixed percent indicator, and so Next/Image wrappers stay capped. */
+.experiments-expand-frame {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: var(--expand-max-width);
+  max-height: var(--expand-max-height);
+  min-width: 0;
+  min-height: 0;
+}
+
+.experiments-expand-frame img,
+.experiments-expand-frame video {
   display: block;
   width: auto;
   height: auto;
-  max-width: var(--expand-max-width);
+  max-width: 100%;
   max-height: var(--expand-max-height);
   object-fit: contain;
   cursor: pointer;
@@ -786,11 +799,18 @@ a.archive-list-row:hover .archive-list-title {
     padding: 0;
   }
 
-  .experiments-expand img,
-  .experiments-expand video {
+  .experiments-expand-frame {
+    max-width: 100%;
+    max-height: 100vh;
+    max-height: 100dvh;
+  }
+
+  .experiments-expand-frame img,
+  .experiments-expand-frame video {
     width: 100%;
     max-width: 100%;
     max-height: 100vh;
+    max-height: 100dvh;
   }
 }
 

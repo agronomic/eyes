@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useCallback, useEffect, useRef, useState } from 'react';
-import { flushSync } from 'react-dom';
+import { createPortal, flushSync } from 'react-dom';
 import Image from 'next/image';
 
 import ExpandVideo from './expand-video';
@@ -27,6 +27,11 @@ export default function ExperimentsSection({ lite = false }) {
   const onCounted = useCallback(() => setCountedIn(true), []);
   const [staggerReady, setStaggerReady] = useState(false);
   const [openIndex, setOpenIndex] = useState(null);
+  const [portalReady, setPortalReady] = useState(false);
+
+  useEffect(() => {
+    setPortalReady(true);
+  }, []);
 
   const openItem = openIndex == null ? null : experiments[openIndex];
   const gateOpen = lite ? true : ready && countedIn;
@@ -175,34 +180,39 @@ export default function ExperimentsSection({ lite = false }) {
         })}
       </div>
 
-      {openItem && (
-        <div
-          className="experiments-expand"
-          onClick={close}
-          role="dialog"
-          aria-modal="true"
-          aria-label={openItem.alt || 'Expanded media'}
-        >
-          {openItem.type === 'image' ? (
-            <Image
-              src={mediaSrc(openItem.url, 'stage')}
-              alt={openItem.alt || ''}
-              width={openItem.width || 1600}
-              height={openItem.height || 1200}
-              sizes={mediaSizes('stage')}
-              quality={mediaQuality}
-              priority
-            />
-          ) : (
-            <ExpandVideo
-              src={openItem.url}
-              poster={openItem.poster}
-              width={openItem.width}
-              height={openItem.height}
-            />
-          )}
-        </div>
-      )}
+      {portalReady &&
+        openItem &&
+        createPortal(
+          <div
+            className="experiments-expand"
+            onClick={close}
+            role="dialog"
+            aria-modal="true"
+            aria-label={openItem.alt || 'Expanded media'}
+          >
+            <div className="experiments-expand-frame">
+              {openItem.type === 'image' ? (
+                <Image
+                  src={mediaSrc(openItem.url, 'stage')}
+                  alt={openItem.alt || ''}
+                  width={openItem.width || 1600}
+                  height={openItem.height || 1200}
+                  sizes={mediaSizes('stage')}
+                  quality={mediaQuality}
+                  priority
+                />
+              ) : (
+                <ExpandVideo
+                  src={openItem.url}
+                  poster={openItem.poster}
+                  width={openItem.width}
+                  height={openItem.height}
+                />
+              )}
+            </div>
+          </div>,
+          document.body
+        )}
     </>
   );
 }
