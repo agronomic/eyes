@@ -448,6 +448,25 @@ video {
   margin-top: 1em;
 }
 
+/* Case study: Title/Year/Type | description (same split as Archive/About) */
+@media (min-width: 768px) {
+  .case-study > .project-meta {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 24px;
+    align-items: start;
+    max-width: none;
+  }
+
+  .case-study > .project-meta .project-meta-description {
+    margin-top: 0;
+  }
+
+  .case-study > .project-meta .project-meta-credits {
+    margin-top: 0.75em;
+  }
+}
+
 /* Credits after case-study media sit farther from the last image */
 .case-study > .project-meta-credits {
   margin-top: 32px;

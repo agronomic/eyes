@@ -50,22 +50,29 @@ export function ProjectMeta({ project, includeCredits = false }) {
   const tags = project.tags || [];
   const description = project.description;
   const credits = project.credits;
+  const showBody = Boolean(description) || (includeCredits && credits);
 
   return (
     <div className="project-meta">
-      <p>Title: {title}</p>
-      {project.year && <p>Year: {project.year}</p>}
-      {tags.length > 0 && <p>Type: {tags.join(', ')}</p>}
-      {description && (
-        <div
-          className="project-meta-description"
-          dangerouslySetInnerHTML={{
-            __html: marked(`Description: ${description}`),
-          }}
-        />
-      )}
-      {includeCredits && credits && (
-        <p className="project-meta-credits">Credits: {credits}</p>
+      <div className="project-meta-facts">
+        <p>Title: {title}</p>
+        {project.year && <p>Year: {project.year}</p>}
+        {tags.length > 0 && <p>Type: {tags.join(', ')}</p>}
+      </div>
+      {showBody && (
+        <div className="project-meta-body">
+          {description && (
+            <div
+              className="project-meta-description"
+              dangerouslySetInnerHTML={{
+                __html: marked(description),
+              }}
+            />
+          )}
+          {includeCredits && credits && (
+            <p className="project-meta-credits">Credits: {credits}</p>
+          )}
+        </div>
       )}
     </div>
   );
