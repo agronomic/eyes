@@ -364,6 +364,35 @@ video {
   overflow: hidden;
 }
 
+.featured-cylinder-label {
+  position: absolute;
+  z-index: 1;
+  margin: 0;
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-regular);
+  color: var(--color);
+  line-height: 1.35;
+  pointer-events: none;
+  white-space: pre-line;
+}
+
+.featured-cylinder-label-tl {
+  top: 1.5rem;
+  left: 1.5rem;
+  /* Lock to roughly mobile 40% width so it doesn’t grow on large screens */
+  max-width: 12.5rem;
+  transform: none;
+}
+
+.featured-cylinder-label-br {
+  top: auto;
+  right: 1.5rem;
+  bottom: 1.5rem;
+  max-width: 12.5rem;
+  text-align: right;
+  transform: none;
+}
+
 .archive-heading {
   font-size: var(--font-size-base);
   margin-bottom: var(--media-col-gap);

@@ -42,7 +42,15 @@ function FeaturedCylinder({ stagger }) {
       ref={ref}
       className="media-container featured-cylinder"
       style={{ '--stagger': stagger }}
-    />
+    >
+      <p className="featured-cylinder-label featured-cylinder-label-tl">
+        Product & design strategy, storytelling, leadership,
+        {'\n'}0 → 1 systems, prototyping
+      </p>
+      <p className="featured-cylinder-label featured-cylinder-label-br">
+        Building practical tools in service of more ethical systems.
+      </p>
+    </div>
   );
 }
 
