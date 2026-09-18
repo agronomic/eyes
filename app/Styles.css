@@ -715,6 +715,16 @@ a.archive-list-row:hover .archive-list-title {
   display: block;
   width: 100%;
   height: auto;
+  /* Thumbs stay muted; expand portal is outside the grid and stays full color */
+  filter: grayscale(1) brightness(0.72) contrast(0.92);
+  transition: filter 0.25s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .experiments-grid .media-container:hover img,
+  .experiments-grid .media-container:hover video {
+    filter: none;
+  }
 }
 
 /* Still + preview share the reserved box — no late height from decode */
