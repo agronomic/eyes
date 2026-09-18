@@ -45,7 +45,7 @@ function FeaturedCylinder({ stagger }) {
     >
       <p className="featured-cylinder-label featured-cylinder-label-tl">
         Product & design strategy, storytelling, leadership,
-        {'\n'}0 → 1 systems, prototyping
+        {'\n'}0 → 1 systems
       </p>
       <svg
         className="featured-cylinder-connector"

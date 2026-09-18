@@ -436,6 +436,11 @@ video {
   max-width: var(--measure);
 }
 
+/* Case study meta: full width when stacked; split clears this on desktop too */
+.case-study > .project-meta {
+  max-width: none;
+}
+
 .project-meta p {
   font-size: var(--font-size-base);
   font-weight: var(--font-weight-regular);
