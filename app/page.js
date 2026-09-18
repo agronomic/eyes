@@ -23,8 +23,28 @@ import {
   mediaSrc,
   useStaggerReady,
 } from './helpers';
+import { mountCylinder } from './cylinder-tile';
 
 const PRIORITY_LOAD_THRESHOLD = 3;
+
+/** Featured cover: animated cylinder mount (see cylinder-tile.js). */
+function FeaturedCylinder({ stagger }) {
+  const ref = useRef(null);
+
+  useEffect(() => {
+    if (!ref.current) return undefined;
+    const { remove } = mountCylinder(ref.current);
+    return () => remove();
+  }, []);
+
+  return (
+    <div
+      ref={ref}
+      className="media-container featured-cylinder"
+      style={{ '--stagger': stagger }}
+    />
+  );
+}
 
 function Featured() {
   const caseStudies = getCaseStudies();
@@ -39,38 +59,43 @@ function Featured() {
       {caseStudies.map((project, index) => {
         const cover = project.attachments[0];
         const href = `/p/${slugify(project.title || project.heading)}`;
+        const useCylinder = project.featuredCover === 'cylinder';
         return (
           <Link
             key={project.id}
             href={href}
             className="projects-featured-link"
           >
-            <div className="media-container" style={{ '--stagger': index + 1 }}>
-              {cover?.type === 'image' ? (
-                <Image
-                  src={mediaSrc(cover.url, 'stage')}
-                  alt={`${project.title || project.heading} cover`}
-                  width={cover.width || 1600}
-                  height={cover.height || 1067}
-                  sizes={mediaSizes('stage')}
-                  quality={mediaQuality}
-                  priority
-                  style={{ width: '100%', height: 'auto', display: 'block' }}
-                />
-              ) : (
-                cover?.type === 'video' && (
-                  <video
-                    src={cover.url}
-                    muted
-                    loop
-                    playsInline
-                    autoPlay
-                    preload="auto"
-                    className="video-player"
+            {useCylinder ? (
+              <FeaturedCylinder stagger={index + 1} />
+            ) : (
+              <div className="media-container" style={{ '--stagger': index + 1 }}>
+                {cover?.type === 'image' ? (
+                  <Image
+                    src={mediaSrc(cover.url, 'stage')}
+                    alt={`${project.title || project.heading} cover`}
+                    width={cover.width || 1600}
+                    height={cover.height || 1067}
+                    sizes={mediaSizes('stage')}
+                    quality={mediaQuality}
+                    priority
+                    style={{ width: '100%', height: 'auto', display: 'block' }}
                   />
-                )
-              )}
-            </div>
+                ) : (
+                  cover?.type === 'video' && (
+                    <video
+                      src={cover.url}
+                      muted
+                      loop
+                      playsInline
+                      autoPlay
+                      preload="auto"
+                      className="video-player"
+                    />
+                  )
+                )}
+              </div>
+            )}
           </Link>
         );
       })}

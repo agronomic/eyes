@@ -265,6 +265,7 @@ video {
 .projects-overview .media-container video,
 .projects-featured .media-container img,
 .projects-featured .media-container video,
+.projects-featured .media-container.featured-cylinder,
 .gallery-images .media-container img,
 .gallery-images .media-container video,
 .experiments-grid .media-container img,
@@ -277,6 +278,7 @@ video {
 .stagger-ready .media-container img,
 .stagger-ready .media-container video,
 .stagger-ready .media-container audio,
+.stagger-ready .media-container.featured-cylinder,
 .swipe-view .media-container:not(.is-pending) img,
 .swipe-view .media-container:not(.is-pending) video {
   animation: fadeSlideInSequential 0.5s ease-in-out both;
@@ -352,6 +354,14 @@ video {
   display: block;
   width: 100%;
   height: auto;
+}
+
+/* Featured cylinder mount — needs height; match Civic Impact cover ratio */
+.projects-featured .media-container.featured-cylinder {
+  width: 100%;
+  aspect-ratio: 2048 / 1365;
+  background: #000F0F;
+  overflow: hidden;
 }
 
 .archive-heading {
