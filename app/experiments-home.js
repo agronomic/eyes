@@ -34,10 +34,12 @@ export default function ExperimentsHome() {
       className="experiments-home section"
       ref={anchorRef}
     >
-      <p>Experiments</p>
-      <p className="experiments-home-blurb">
-        A log of studies and objects made outside of the boundaries of my career.
-      </p>
+      <div className="section-split experiments-home-intro">
+        <p className="section-label">Experiments</p>
+        <p className="experiments-home-blurb">
+          A log of studies and objects made outside of the boundaries of my career.
+        </p>
+      </div>
       {show ? (
         <ExperimentsSection lite />
       ) : (

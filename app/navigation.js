@@ -20,10 +20,13 @@ export default function Navigation() {
   }
 
   return (
-    <div className="navigation-bar">
+    <div className="navigation-bar navigation-bar-overview">
       <div className="title">
         <Link href="/">{cv.general.displayName}</Link>
       </div>
+      {cv.general.statement && (
+        <p className="site-statement">{cv.general.statement}</p>
+      )}
     </div>
   );
 }

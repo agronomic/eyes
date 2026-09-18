@@ -101,8 +101,6 @@ p a:hover {
   flex-direction: column;
   min-height: 100dvh;
   padding: min(2vw, 50px);
-  /* Clear the fixed header (nav row + its trailing gap) */
-  padding-top: var(--nav-clearance);
   /* End breathing room lives above the colophon, not below the page */
   padding-bottom: min(2vw, 50px);
   width: 100%;
@@ -128,17 +126,13 @@ video {
    ============================================================================= */
 
 .navigation-bar {
-  z-index: 1000;
-  position: fixed;
-  top: 0;
-  left: 0;
+  position: relative;
   width: 100%;
-  /* Row + trailing gap — same rhythm as section headers → body */
-  height: var(--nav-clearance);
   display: flex;
-  align-items: flex-end;
+  align-items: flex-start;
   justify-content: space-between;
-  padding: 0 2vw var(--header-body-gap);
+  /* Trailing gap before page body — same rhythm as section headers */
+  margin-bottom: var(--header-body-gap);
   animation: slideDown 0.25s ease;
   transition: opacity 0.25s ease;
 }
@@ -156,24 +150,45 @@ video {
 
 .navigation-bar .title {
   display: flex;
-  align-items: flex-end;
-  min-height: var(--nav-height);
+  align-items: flex-start;
   font-size: var(--font-size-base);
   font-weight: var(--font-weight-regular);
 }
 
 .navigation-bar .title a {
   display: inline-flex;
-  align-items: flex-end;
-  min-height: var(--nav-height);
+  align-items: flex-start;
 }
 
 .site-statement {
   font-size: var(--font-size-base);
   font-weight: var(--font-weight-regular);
-  margin: 0 0 40px;
-  max-width: var(--measure);
+  margin: 0;
+  max-width: none;
   animation: fadeSlideInSequential 0.5s ease-in-out both;
+}
+
+/* Home: name | statement — same 50/50 as Archive/About; stacks at --bp-mobile */
+.navigation-bar-overview {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  row-gap: 8px;
+  justify-content: unset;
+}
+
+@media (min-width: 768px) {
+  .navigation-bar-overview {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 24px;
+    align-items: start;
+  }
+
+  .site-statement {
+    /* Narrower than --measure so this short line wraps to two */
+    max-width: 20em;
+  }
 }
 
 .nav-links {
@@ -394,10 +409,10 @@ video {
 }
 
 .featured-cylinder-label-br {
-  top: 1.5rem;
-  right: 1.5rem;
+  top: 50%;
   bottom: auto;
-  left: auto;
+  left: 1.5rem;
+  right: auto;
   max-width: 12.5rem;
   text-align: left;
   transform: none;
@@ -806,13 +821,12 @@ a.archive-list-row:hover .archive-list-title {
   min-height: 40vh;
 }
 
-.experiments-home > p:first-child {
-  font-size: var(--font-size-base);
-  margin-bottom: 0;
+.experiments-home-intro {
+  margin-bottom: 40px;
 }
 
 .experiments-home .experiments-home-blurb {
-  margin-bottom: 40px;
+  margin-bottom: 0;
 }
 
 /* =============================================================================
