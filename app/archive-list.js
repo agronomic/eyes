@@ -34,9 +34,9 @@ export default function ArchiveList({ currentSlug }) {
         const style = { '--stagger': STAGGER_BASE + 1 + index };
         const row = (
           <>
-            <span className="archive-list-number">{number}</span>
-            <span className="archive-list-title">{title}</span>
             <span className="archive-list-year">{project.year}</span>
+            <span className="archive-list-title">{title}</span>
+            <span className="archive-list-number">{number}</span>
           </>
         );
 

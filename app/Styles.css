@@ -631,6 +631,7 @@ a.archive-list-row:hover .archive-list-title {
 
 .archive-list-number {
   font-variant-numeric: tabular-nums;
+  text-align: right;
 }
 
 .archive-list-title {
@@ -638,7 +639,8 @@ a.archive-list-row:hover .archive-list-title {
 }
 
 .archive-list-year {
-  text-align: right;
+  text-align: left;
+  font-variant-numeric: tabular-nums;
 }
 
 /* Shared index row (archive list + experience): title left, year right */
@@ -894,6 +896,7 @@ a.archive-list-row:hover .archive-list-title {
 
 .experience-company {
   min-width: 0;
+  text-align: right;
 }
 
 .experience-main-header {
@@ -905,8 +908,9 @@ a.archive-list-row:hover .archive-list-title {
 }
 
 .experience-year {
-  text-align: right;
+  text-align: left;
   white-space: nowrap;
+  font-variant-numeric: tabular-nums;
 }
 
 /* Desktop: body sits under title in column 2 */

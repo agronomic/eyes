@@ -9,7 +9,7 @@ import { marked } from 'marked';
 import cv, {
   getArchiveProjects,
   getCaseStudies,
-  PROJECT_TAGS,
+  PROJECT_FILTERS,
   slugify,
 } from './content';
 import Navigation from './navigation';
@@ -81,23 +81,27 @@ function Archive() {
   const projects = getArchiveProjects();
   const gridRef = useRef(null);
   const [isMobile, setIsMobile] = useState(false);
-  const [activeTag, setActiveTag] = useState(null);
+  const [activeFilter, setActiveFilter] = useState('product');
   /* Chrome once on mount; grid re-cascades when the filter changes */
   const chromeReady = useStaggerReady('archive-chrome');
-  const gridReady = useStaggerReady(activeTag);
+  const gridReady = useStaggerReady(activeFilter);
 
   useEffect(() => {
     setIsMobile(window.matchMedia(`(max-width: ${bpMobile}px)`).matches);
   }, []);
 
-  const visible = activeTag
-    ? projects.filter((project) => project.tags?.includes(activeTag))
-    : projects;
+  const visible =
+    activeFilter === 'all'
+      ? projects
+      : projects.filter((project) => {
+          const filter = PROJECT_FILTERS.find((f) => f.id === activeFilter);
+          return filter?.tags.some((tag) => project.tags?.includes(tag));
+        });
 
-  const selectTag = (tag) => {
-    if (tag === activeTag) return;
+  const selectFilter = (id) => {
+    if (id === activeFilter) return;
     easeElementHeight(gridRef.current, () => {
-      flushSync(() => setActiveTag(tag));
+      flushSync(() => setActiveFilter(id));
     });
   };
 
@@ -129,23 +133,23 @@ function Archive() {
           role="toolbar"
           aria-label="Filter projects"
         >
+          {PROJECT_FILTERS.map((filter) => (
+            <button
+              key={filter.id}
+              type="button"
+              className={activeFilter === filter.id ? 'active' : undefined}
+              onClick={() => selectFilter(filter.id)}
+            >
+              {filter.label}
+            </button>
+          ))}
           <button
             type="button"
-            className={activeTag == null ? 'active' : undefined}
-            onClick={() => selectTag(null)}
+            className={activeFilter === 'all' ? 'active' : undefined}
+            onClick={() => selectFilter('all')}
           >
             All
           </button>
-          {PROJECT_TAGS.map((tag) => (
-            <button
-              key={tag}
-              type="button"
-              className={activeTag === tag ? 'active' : undefined}
-              onClick={() => selectTag(tag)}
-            >
-              {tag}
-            </button>
-          ))}
         </div>
 
         <div
@@ -157,7 +161,7 @@ function Archive() {
             const cover = project.attachments[0];
             return (
               <Link
-                key={`${activeTag ?? 'all'}-${project.id || index}`}
+                key={`${activeFilter}-${project.id || index}`}
                 href={href}
                 className="project-overview"
               >
@@ -244,10 +248,10 @@ function Experience() {
                     : undefined
                 }
               >
-                <span className="experience-company">{company}</span>
+                <span className="experience-year">{experience.year}</span>
                 <div className="experience-main-header">
                   <span className="experience-title">{title || '\u00a0'}</span>
-                  <span className="experience-year">{experience.year}</span>
+                  <span className="experience-company">{company}</span>
                 </div>
                 {experience.description && (
                   <div className="experience-description">
