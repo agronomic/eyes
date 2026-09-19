@@ -51,7 +51,11 @@ function CaseStories({ stories }) {
   return (
     <div className="case-stories">
       {stories.map((story, index) => {
-        const heading = [story.audience, story.title].filter(Boolean).join('. ');
+        const exhibit = String(index + 1).padStart(2, '0');
+        const parts = [`Exhibit ${exhibit}`, story.audience, story.title].filter(
+          Boolean
+        );
+        const heading = parts.join('. ');
         return (
           <section key={story.title || index} className="case-story">
             {heading ? (
