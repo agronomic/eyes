@@ -45,7 +45,7 @@ function CaseMedia({ item, title, index, pair }) {
 }
 
 /** Nested case-study writeups — thumb left / copy right, stacks on mobile. */
-function CaseStories({ stories }) {
+function CaseStories({ stories, staggerBase = 1 }) {
   if (!stories?.length) return null;
 
   return (
@@ -60,6 +60,7 @@ function CaseStories({ stories }) {
           <section
             key={story.title || index}
             className="case-story section-split"
+            style={{ '--stagger': staggerBase + index }}
           >
             <div className="case-story-thumb">
               {story.thumb ? (
@@ -131,11 +132,12 @@ export function ProjectMeta({ project, includeCredits = false }) {
 }
 
 /** Credits line for placement after media (case studies). */
-export function ProjectCredits({ project }) {
+export function ProjectCredits({ project, stagger = 0 }) {
   if (!project.credits) return null;
   return (
     <p
       className="project-meta-credits"
+      style={{ '--stagger': stagger }}
       dangerouslySetInnerHTML={{
         __html: `Credits: ${marked.parseInline(project.credits)}`,
       }}
@@ -148,6 +150,8 @@ export default function CaseStudy({ project }) {
   const mediaRef = useRef(null);
   const title = project.title || project.heading;
   const rows = groupCaseStudyMedia(project.attachments || []);
+  const storyCount = project.stories?.length || 0;
+  const mediaStaggerBase = 1 + storyCount;
 
   useEffect(() => {
     playMutedVideos(mediaRef.current);
@@ -157,13 +161,14 @@ export default function CaseStudy({ project }) {
     <div className="case-study">
       <ProjectMeta project={project} />
 
-      <CaseStories stories={project.stories} />
+      <CaseStories stories={project.stories} staggerBase={1} />
 
       <div className="case-study-media" ref={mediaRef}>
         {rows.map((row, rowIndex) => (
           <div
             key={`row-${rowIndex}`}
             className={`case-study-row is-${row.type}`}
+            style={{ '--stagger': mediaStaggerBase + rowIndex }}
           >
             {row.items.map((item, j) => {
               const index = project.attachments.indexOf(item);
@@ -182,7 +187,10 @@ export default function CaseStudy({ project }) {
         ))}
       </div>
 
-      <ProjectCredits project={project} />
+      <ProjectCredits
+        project={project}
+        stagger={mediaStaggerBase + rows.length}
+      />
     </div>
   );
 }

@@ -239,7 +239,10 @@ video {
 
 /* Page chrome reveals on load; media / gated chrome wait for .stagger-ready */
 .project-meta,
-.section {
+.section,
+.case-story,
+.case-study-media .case-study-row,
+.case-study > .project-meta-credits {
   animation: fadeSlideInSequential 0.5s ease-in-out both;
   animation-delay: calc(var(--stagger, 0) * var(--stagger-step));
 }
