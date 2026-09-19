@@ -253,7 +253,7 @@ function Experience() {
 
   return (
     <section className="experience-section section">
-      <p>Experience</p>
+      <p>Career</p>
       <ul className="experience-list">
         {cv.workExperience.map((experience, index) => {
           const isOpen = openIndex === index;
