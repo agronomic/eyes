@@ -228,6 +228,12 @@
           "width": 2048,
           "height": 1365,
           "layout": "pair"
+        },
+        {
+          "type": "image",
+          "url": "/content/media/Civic-Impact-29.webp",
+          "width": 2048,
+          "height": 1365
         }
       ],
       "type": "project",
@@ -2889,6 +2895,12 @@
               "width": 2048,
               "height": 1365,
               "layout": "pair"
+            },
+            {
+              "type": "image",
+              "url": "/content/media/Civic-Impact-29.webp",
+              "width": 2048,
+              "height": 1365
             }
           ],
           "type": "project",
