@@ -386,10 +386,12 @@ video {
   height: auto;
 }
 
-/* Featured cylinder mount — needs height; match Civic Impact cover ratio */
+/* Featured cylinder mount — needs height; landscape on desktop, tall on mobile */
 .projects-featured .media-container.featured-cylinder {
   width: 100%;
-  aspect-ratio: 2048 / 1365;
+  /* Mobile: Instagram feed portrait (4:5), capped so tall windows don’t stretch it */
+  aspect-ratio: 4 / 5;
+  max-height: 70vh;
   background-color: #001414;
   overflow: hidden;
   transition: background-color 0.55s ease-in-out;
@@ -398,6 +400,13 @@ video {
 @media (hover: hover) and (pointer: fine) {
   .projects-featured-link:hover .featured-cylinder {
     background-color: #000F0F;
+  }
+}
+
+@media (min-width: 768px) {
+  .projects-featured .media-container.featured-cylinder {
+    aspect-ratio: 2048 / 1365;
+    max-height: none;
   }
 }
 
