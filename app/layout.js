@@ -1,4 +1,5 @@
 import '@fontsource/atkinson-hyperlegible';
+import '@fontsource/cormorant-garamond/300-italic.css';
 import { GoogleAnalytics } from '@next/third-parties/google';
 import './Styles.css';
 

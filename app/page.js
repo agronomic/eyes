@@ -44,11 +44,11 @@ function FeaturedCylinder({ stagger }) {
       style={{ '--stagger': stagger }}
     >
       <div className="featured-cylinder-labels">
-        <p className="featured-cylinder-label">
+        <p className="featured-cylinder-label quote">
           Building practical tools for a more ethical world.
         </p>
         <p className="featured-cylinder-label">
-          Product & design strategy, storytelling, leadership, 0 → 1 scaling
+          Product & design strategy, storytelling, leadership, 0→1 scaling
         </p>
         <p className="featured-cylinder-label featured-cylinder-label-cta">
           Read more

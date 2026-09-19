@@ -21,9 +21,12 @@ html {
   --font-size-large: 1.25rem;
   --font-weight-regular: 400;
   --font-weight-bold: 700;
+  --font-serif: 'Cormorant Garamond', serif;
   /* Readable body-copy line length — shared by intro, about, experience,
      and project/case-study descriptions */
   --measure: 36em;
+  /* Breathing room above the colophon — lives on the footer, every page */
+  --page-end-space: 30vh;
   /* Fixed nav text row (hit area); text sits on its bottom edge */
   --nav-height: 40px;
   /* Space after a label before its body (Featured → cover, Archive → grid, …) */
@@ -45,6 +48,10 @@ html {
   --media-pending: #161616;
   /* Gap between each item in a staggered reveal */
   --stagger-step: 90ms;
+  /* Caps micro-label (exhibit headings, quote attributions, …) */
+  --label-caps-size: 10px;
+  --label-caps-weight: 600;
+  --label-caps-tracking: 0.04em;
   /* Case study media — Niklas-tight packing inside page margins */
   --case-media-gap: 4px;
   /* Experiments expand overlay — prefer dvh so mobile chrome doesn’t clip */
@@ -242,7 +249,8 @@ video {
 .section,
 .case-story,
 .case-study-media .case-study-row,
-.case-study > .project-meta-credits {
+.case-study > .project-meta-credits,
+.case-study > .case-footnotes {
   animation: fadeSlideInSequential 0.5s ease-in-out both;
   animation-delay: calc(var(--stagger, 0) * var(--stagger-step));
 }
@@ -394,11 +402,14 @@ video {
 .featured-cylinder-labels {
   position: absolute;
   z-index: 1;
-  top: 1.5rem;
-  left: 1.5rem;
+  top: 50%;
+  left: 50%;
   right: auto;
   bottom: auto;
-  max-width: 12.5rem;
+  transform: translate(-50%, -50%);
+  /* Mobile: fixed width so the serif lede settles on two lines */
+  width: min(18rem, 100%);
+  max-width: 100%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -418,12 +429,14 @@ video {
   text-decoration: underline;
 }
 
-/* Desktop: same tight stack as mobile, anchored where the lede starts */
+/* Desktop: tight stack, mid-right of the cover */
 @media (min-width: 768px) {
   .featured-cylinder-labels {
     top: 50%;
     left: calc(50% + 12px);
-    max-width: min(12.5rem, calc(50% - 12px - 1.5rem));
+    transform: none;
+    width: auto;
+    max-width: min(10.75rem, calc(50% - 12px - 1.5rem));
   }
 }
 
@@ -432,6 +445,25 @@ video {
 .section .section-label {
   font-size: var(--font-size-base);
   margin-bottom: var(--header-body-gap);
+}
+
+/* Shared caps micro-label — Title:, Credits:, Exhibit, Notes, etc. */
+.label-caps {
+  font-family: 'Atkinson Hyperlegible', sans-serif;
+  font-size: var(--label-caps-size);
+  font-weight: var(--label-caps-weight);
+  font-style: normal;
+  text-transform: uppercase;
+  letter-spacing: var(--label-caps-tracking);
+}
+
+/* Shared serif quote — cover lede, case-study quotes, etc. */
+.quote {
+  font-family: var(--font-serif);
+  font-weight: 300;
+  font-style: italic;
+  font-size: 32px;
+  line-height: 1;
 }
 
 .archive {
@@ -493,7 +525,7 @@ video {
   margin-top: 1em;
 }
 
-/* Nested case-study stories — thumb left / copy right (stacks on mobile) */
+/* Nested case-study stories — quote left / copy right (stacks on mobile) */
 .case-stories {
   margin-top: var(--section-gap);
   margin-bottom: var(--section-gap);
@@ -503,14 +535,33 @@ video {
   margin-top: var(--section-gap);
 }
 
-.case-story-thumb {
+.case-story-aside {
   margin-bottom: var(--header-body-gap);
 }
 
-.case-story-thumb img {
-  display: block;
-  width: 40px;
-  height: 40px;
+.case-story-quote {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+/* Superscript markers → .case-footnotes at page end */
+.footnote-ref {
+  margin-left: 0.2em;
+  color: inherit;
+  text-decoration: none;
+}
+
+.footnote-ref:hover {
+  text-decoration: underline;
+}
+
+.footnote-ref sup {
+  font-family: 'Atkinson Hyperlegible', sans-serif;
+  font-size: 10px;
+  font-weight: var(--label-caps-weight);
+  font-style: normal;
+  line-height: 1;
 }
 
 .case-story-heading {
@@ -528,7 +579,7 @@ video {
 }
 
 @media (min-width: 768px) {
-  .case-story-thumb {
+  .case-story-aside {
     margin-bottom: 0;
   }
 }
@@ -552,9 +603,35 @@ video {
   }
 }
 
-/* Credits after case-study media sit farther from the last image */
+/* Credits / footnotes after case-study media — same text-block register */
+.case-study > .case-footnotes,
 .case-study > .project-meta-credits {
   margin-top: 32px;
+  max-width: var(--measure);
+}
+
+.case-study > .case-footnotes + .project-meta-credits {
+  margin-top: 1em;
+}
+
+.case-footnotes {
+  margin: 0;
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-regular);
+  line-height: 1.4;
+}
+
+.case-footnote-back {
+  margin-left: 0.25em;
+  margin-right: 0.35em;
+  color: inherit;
+  text-decoration: none;
+  opacity: 0.5;
+}
+
+.case-footnote-back:hover {
+  opacity: 1;
+  text-decoration: underline;
 }
 
 /* =============================================================================
@@ -1034,7 +1111,8 @@ a.archive-list-row:hover .archive-list-title {
 .colophon-section {
   margin-top: 0;
   margin-bottom: 0;
-  padding-top: 0;
+  /* Footer owns end breathing room so case study / archive pages match home */
+  padding-top: var(--page-end-space);
   /* Sit in the left half — same column as Archive/About labels */
   width: calc(50% - 12px);
   max-width: 100%;

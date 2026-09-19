@@ -1,4 +1,5 @@
 import cv from './content';
+import MetaLabel from './meta-label';
 
 /** Site colophon — contact, typeface, copyright. */
 export default function Colophon() {
@@ -7,14 +8,17 @@ export default function Colophon() {
       <p>Colophon</p>
       <ul className="colophon-list">
         <li>
-          Contact:{' '}
+          <MetaLabel>Contact:</MetaLabel>{' '}
           <a href={`mailto:${cv.general.colophon.email}`}>
             {cv.general.colophon.email}
           </a>
         </li>
-        <li>Typeface: {cv.general.colophon.typeface}</li>
         <li>
-          Copyright: {new Date().getFullYear()} {cv.general.displayName}
+          <MetaLabel>Typeface:</MetaLabel> {cv.general.colophon.typeface}
+        </li>
+        <li>
+          <MetaLabel>Copyright:</MetaLabel> {new Date().getFullYear()}{' '}
+          {cv.general.displayName}
         </li>
       </ul>
     </section>

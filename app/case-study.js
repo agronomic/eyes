@@ -6,7 +6,7 @@ import { marked } from 'marked';
 
 import { groupCaseStudyMedia } from './content';
 import { mediaQuality, mediaSizes, mediaSrc, playMutedVideos } from './helpers';
-
+import MetaLabel from './meta-label';
 function CaseMedia({ item, title, index, pair }) {
   if (item.type === 'image') {
     return (
@@ -44,40 +44,48 @@ function CaseMedia({ item, title, index, pair }) {
   return null;
 }
 
-/** Nested case-study writeups — thumb left / copy right, stacks on mobile. */
-function CaseStories({ stories, staggerBase = 1 }) {
+/** Nested case-study writeups — quote left / copy right, stacks on mobile. */
+function CaseStories({ stories, footnotes = [], staggerBase = 1 }) {
   if (!stories?.length) return null;
+
+  const footnoteByStory = new Map(
+    footnotes.map((fn) => [fn.storyIndex, fn])
+  );
 
   return (
     <div className="case-stories">
       {stories.map((story, index) => {
         const exhibit = String(index + 1).padStart(2, '0');
-        const parts = [`Exhibit ${exhibit}`, story.audience, story.title].filter(
-          Boolean
-        );
-        const heading = parts.join('. ');
+        const rest = [story.audience, story.title].filter(Boolean).join('. ');
+        const footnote = footnoteByStory.get(index);
         return (
           <section
             key={story.title || index}
             className="case-story section-split"
             style={{ '--stagger': staggerBase + index }}
           >
-            <div className="case-story-thumb">
-              {story.thumb ? (
-                <Image
-                  src={story.thumb}
-                  alt=""
-                  width={story.thumbWidth || 80}
-                  height={story.thumbHeight || 80}
-                  sizes="40px"
-                  quality={mediaQuality}
-                />
+            <div className="case-story-aside">
+              {story.quote ? (
+                <blockquote className="case-story-quote">
+                  <span className="quote">{story.quote}</span>
+                  {footnote ? (
+                    <a
+                      className="footnote-ref"
+                      href={`#fn-${footnote.n}`}
+                      id={`fnref-${footnote.n}`}
+                      aria-label={`Footnote ${footnote.n}`}
+                    >
+                      <sup>{footnote.n}</sup>
+                    </a>
+                  ) : null}
+                </blockquote>
               ) : null}
             </div>
             <div className="case-story-copy">
-              {heading ? (
-                <h2 className="case-story-heading">{heading}.</h2>
-              ) : null}
+              <h2 className="case-story-heading">
+                <MetaLabel>Exhibit {exhibit}.</MetaLabel>
+                {rest ? ` ${rest}.` : null}
+              </h2>
               <div
                 className="case-story-prose"
                 dangerouslySetInnerHTML={{
@@ -92,6 +100,44 @@ function CaseStories({ stories, staggerBase = 1 }) {
   );
 }
 
+/** Quote attributions as one endnote text block (same register as Credits). */
+function CaseFootnotes({ footnotes, stagger = 0 }) {
+  if (!footnotes.length) return null;
+
+  return (
+    <p className="case-footnotes" style={{ '--stagger': stagger }}>
+      <MetaLabel>Notes:</MetaLabel>{' '}
+      {footnotes.map((fn, i) => (
+        <span key={fn.n} className="case-footnote" id={`fn-${fn.n}`}>
+          {i > 0 ? ' ' : null}
+          {fn.n}. {fn.text}
+          <a
+            className="case-footnote-back"
+            href={`#fnref-${fn.n}`}
+            aria-label={`Back to reference ${fn.n}`}
+          >
+            ↩
+          </a>
+        </span>
+      ))}
+    </p>
+  );
+}
+
+/** Numbered quote attributions from case-study stories. */
+function collectQuoteFootnotes(stories = []) {
+  const footnotes = [];
+  stories.forEach((story, storyIndex) => {
+    if (!story.quote || !story.quoteAttr) return;
+    footnotes.push({
+      n: footnotes.length + 1,
+      storyIndex,
+      text: story.quoteAttr,
+    });
+  });
+  return footnotes;
+}
+
 /** Shared blurb: Title / Year / Type / Description (+ optional Credits). */
 export function ProjectMeta({ project, includeCredits = false }) {
   const title = project.title || project.heading;
@@ -103,9 +149,19 @@ export function ProjectMeta({ project, includeCredits = false }) {
   return (
     <div className="project-meta">
       <div className="project-meta-facts">
-        <p>Title: {title}</p>
-        {project.year && <p>Year: {project.year}</p>}
-        {tags.length > 0 && <p>Type: {tags.join(', ')}</p>}
+        <p>
+          <MetaLabel>Title:</MetaLabel> {title}
+        </p>
+        {project.year && (
+          <p>
+            <MetaLabel>Year:</MetaLabel> {project.year}
+          </p>
+        )}
+        {tags.length > 0 && (
+          <p>
+            <MetaLabel>Type:</MetaLabel> {tags.join(', ')}
+          </p>
+        )}
       </div>
       {showBody && (
         <div className="project-meta-body">
@@ -118,12 +174,14 @@ export function ProjectMeta({ project, includeCredits = false }) {
             />
           )}
           {includeCredits && credits && (
-            <p
-              className="project-meta-credits"
-              dangerouslySetInnerHTML={{
-                __html: `Credits: ${marked.parseInline(credits)}`,
-              }}
-            />
+            <p className="project-meta-credits">
+              <MetaLabel>Credits:</MetaLabel>{' '}
+              <span
+                dangerouslySetInnerHTML={{
+                  __html: marked.parseInline(credits),
+                }}
+              />
+            </p>
           )}
         </div>
       )}
@@ -135,23 +193,27 @@ export function ProjectMeta({ project, includeCredits = false }) {
 export function ProjectCredits({ project, stagger = 0 }) {
   if (!project.credits) return null;
   return (
-    <p
-      className="project-meta-credits"
-      style={{ '--stagger': stagger }}
-      dangerouslySetInnerHTML={{
-        __html: `Credits: ${marked.parseInline(project.credits)}`,
-      }}
-    />
+    <p className="project-meta-credits" style={{ '--stagger': stagger }}>
+      <MetaLabel>Credits:</MetaLabel>{' '}
+      <span
+        dangerouslySetInnerHTML={{
+          __html: marked.parseInline(project.credits),
+        }}
+      />
+    </p>
   );
 }
 
-/** Long-form case study: meta + exhibits + tight full/pair media rows + credits. */
+/** Long-form case study: meta + exhibits + tight full/pair media rows + footnotes + credits. */
 export default function CaseStudy({ project }) {
   const mediaRef = useRef(null);
   const title = project.title || project.heading;
   const rows = groupCaseStudyMedia(project.attachments || []);
   const storyCount = project.stories?.length || 0;
+  const footnotes = collectQuoteFootnotes(project.stories);
   const mediaStaggerBase = 1 + storyCount;
+  const footnotesStagger = mediaStaggerBase + rows.length;
+  const creditsStagger = footnotesStagger + (footnotes.length ? 1 : 0);
 
   useEffect(() => {
     playMutedVideos(mediaRef.current);
@@ -161,7 +223,11 @@ export default function CaseStudy({ project }) {
     <div className="case-study">
       <ProjectMeta project={project} />
 
-      <CaseStories stories={project.stories} staggerBase={1} />
+      <CaseStories
+        stories={project.stories}
+        footnotes={footnotes}
+        staggerBase={1}
+      />
 
       <div className="case-study-media" ref={mediaRef}>
         {rows.map((row, rowIndex) => (
@@ -187,10 +253,9 @@ export default function CaseStudy({ project }) {
         ))}
       </div>
 
-      <ProjectCredits
-        project={project}
-        stagger={mediaStaggerBase + rows.length}
-      />
+      <CaseFootnotes footnotes={footnotes} stagger={footnotesStagger} />
+
+      <ProjectCredits project={project} stagger={creditsStagger} />
     </div>
   );
 }
