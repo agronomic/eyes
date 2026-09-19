@@ -24,11 +24,12 @@ html {
   /* Readable body-copy line length — shared by intro, about, experience,
      and project/case-study descriptions */
   --measure: 36em;
-  --page-end-space: 30vh;
   /* Fixed nav text row (hit area); text sits on its bottom edge */
   --nav-height: 40px;
-  /* Space after a header before its body (nav → page, section titles → copy) */
+  /* Space after a label before its body (Featured → cover, Archive → grid, …) */
   --header-body-gap: 16px;
+  /* Space between major home sections */
+  --section-gap: 40px;
   /* Fixed header footprint pages must clear */
   --nav-clearance: calc(var(--nav-height) + var(--header-body-gap));
   --media-col-min: 50px;
@@ -131,7 +132,6 @@ video {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  /* Trailing gap before page body — same rhythm as section headers */
   margin-bottom: var(--header-body-gap);
   animation: slideDown 0.25s ease;
   transition: opacity 0.25s ease;
@@ -175,6 +175,8 @@ video {
   align-items: flex-start;
   row-gap: 8px;
   justify-content: unset;
+  /* Masthead → Featured — same as Featured → Archive, etc. */
+  margin-bottom: var(--section-gap);
 }
 
 @media (min-width: 768px) {
@@ -351,7 +353,7 @@ video {
 }
 
 .projects-featured {
-  margin-bottom: 40px;
+  margin-bottom: var(--section-gap);
 }
 
 .projects-featured-link {
@@ -425,9 +427,15 @@ video {
   }
 }
 
-.archive-heading {
+.archive-heading,
+.section-label,
+.section .section-label {
   font-size: var(--font-size-base);
-  margin-bottom: var(--media-col-gap);
+  margin-bottom: var(--header-body-gap);
+}
+
+.archive {
+  margin-bottom: var(--section-gap);
 }
 
 /* Home — label | body split (Archive, About). Stacks at --bp-mobile. */
@@ -487,17 +495,17 @@ video {
 
 /* Nested case-study stories — continuous blog sections */
 .case-stories {
-  margin-top: 1.25em;
+  margin-top: var(--section-gap);
 }
 
 .case-story + .case-story {
-  margin-top: 1.5em;
+  margin-top: var(--section-gap);
 }
 
 .case-story-heading {
   font-size: var(--font-size-base);
   font-weight: var(--font-weight-regular);
-  margin: 0 0 0.75em;
+  margin: 0 0 var(--header-body-gap);
 }
 
 .case-story-prose p {
@@ -788,11 +796,18 @@ a.archive-list-row:hover .archive-list-title {
 }
 
 .experiments-home-intro {
-  margin-bottom: 40px;
+  margin-bottom: var(--header-body-gap);
 }
 
 .experiments-home .experiments-home-blurb {
   margin-bottom: 0;
+}
+
+@media (min-width: 768px) {
+  .experiments-home-intro {
+    /* Label | blurb on one row; then gap before full-bleed grid */
+    margin-bottom: var(--section-gap);
+  }
 }
 
 /* =============================================================================
@@ -982,11 +997,11 @@ a.archive-list-row:hover .archive-list-title {
 }
 
 /* =============================================================================
-   Home — About / Colophon / Experience
+   Home — About / Colophon / Career
    ============================================================================= */
 
 .section {
-  margin-bottom: 24px;
+  margin-bottom: var(--section-gap);
 }
 
 .section h2,
@@ -1000,9 +1015,9 @@ a.archive-list-row:hover .archive-list-title {
 }
 
 .colophon-section {
-  margin-top: auto;
+  margin-top: 0;
   margin-bottom: 0;
-  padding-top: var(--page-end-space);
+  padding-top: 0;
   /* Sit in the left half — same column as Archive/About labels */
   width: calc(50% - 12px);
   max-width: 100%;
@@ -1033,9 +1048,9 @@ a.archive-list-row:hover .archive-list-title {
   margin: 0;
 }
 
-/* Match Archive → About spacing (projects-overview margin-bottom: 40px) */
+/* Same gap as other home sections (.section already sets this; keep explicit) */
 .experience-section {
-  margin-bottom: 40px;
+  margin-bottom: var(--section-gap);
 }
 
 .experience-item {
