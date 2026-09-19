@@ -44,7 +44,7 @@ function CaseMedia({ item, title, index, pair }) {
   return null;
 }
 
-/** Nested case-study writeups — continuous blog-style sections. */
+/** Nested case-study writeups — thumb left / copy right, stacks on mobile. */
 function CaseStories({ stories }) {
   if (!stories?.length) return null;
 
@@ -57,16 +57,33 @@ function CaseStories({ stories }) {
         );
         const heading = parts.join('. ');
         return (
-          <section key={story.title || index} className="case-story">
-            {heading ? (
-              <h2 className="case-story-heading">{heading}.</h2>
-            ) : null}
-            <div
-              className="case-story-prose"
-              dangerouslySetInnerHTML={{
-                __html: marked(story.body || ''),
-              }}
-            />
+          <section
+            key={story.title || index}
+            className="case-story section-split"
+          >
+            <div className="case-story-thumb">
+              {story.thumb ? (
+                <Image
+                  src={story.thumb}
+                  alt=""
+                  width={story.thumbWidth || 80}
+                  height={story.thumbHeight || 80}
+                  sizes="40px"
+                  quality={mediaQuality}
+                />
+              ) : null}
+            </div>
+            <div className="case-story-copy">
+              {heading ? (
+                <h2 className="case-story-heading">{heading}.</h2>
+              ) : null}
+              <div
+                className="case-story-prose"
+                dangerouslySetInnerHTML={{
+                  __html: marked(story.body || ''),
+                }}
+              />
+            </div>
           </section>
         );
       })}
@@ -80,11 +97,7 @@ export function ProjectMeta({ project, includeCredits = false }) {
   const tags = project.tags || [];
   const description = project.description;
   const credits = project.credits;
-  const stories = project.stories;
-  const showBody =
-    Boolean(description) ||
-    Boolean(stories?.length) ||
-    (includeCredits && credits);
+  const showBody = Boolean(description) || (includeCredits && credits);
 
   return (
     <div className="project-meta">
@@ -103,7 +116,6 @@ export function ProjectMeta({ project, includeCredits = false }) {
               }}
             />
           )}
-          <CaseStories stories={stories} />
           {includeCredits && credits && (
             <p
               className="project-meta-credits"
@@ -131,7 +143,7 @@ export function ProjectCredits({ project }) {
   );
 }
 
-/** Long-form case study: meta + tight full/pair media rows + credits. */
+/** Long-form case study: meta + exhibits + tight full/pair media rows + credits. */
 export default function CaseStudy({ project }) {
   const mediaRef = useRef(null);
   const title = project.title || project.heading;
@@ -144,6 +156,8 @@ export default function CaseStudy({ project }) {
   return (
     <div className="case-study">
       <ProjectMeta project={project} />
+
+      <CaseStories stories={project.stories} />
 
       <div className="case-study-media" ref={mediaRef}>
         {rows.map((row, rowIndex) => (

@@ -490,13 +490,24 @@ video {
   margin-top: 1em;
 }
 
-/* Nested case-study stories — continuous blog sections */
+/* Nested case-study stories — thumb left / copy right (stacks on mobile) */
 .case-stories {
   margin-top: var(--section-gap);
+  margin-bottom: var(--section-gap);
 }
 
 .case-story + .case-story {
   margin-top: var(--section-gap);
+}
+
+.case-story-thumb {
+  margin-bottom: var(--header-body-gap);
+}
+
+.case-story-thumb img {
+  display: block;
+  width: 40px;
+  height: 40px;
 }
 
 .case-story-heading {
@@ -511,6 +522,12 @@ video {
 
 .case-story-prose p:last-child {
   margin-bottom: 0;
+}
+
+@media (min-width: 768px) {
+  .case-story-thumb {
+    margin-bottom: 0;
+  }
 }
 
 /* Case study: Title/Year/Type | description (same split as Archive/About) */
