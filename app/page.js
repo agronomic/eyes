@@ -43,13 +43,17 @@ function FeaturedCylinder({ stagger }) {
       className="media-container featured-cylinder"
       style={{ '--stagger': stagger }}
     >
-      <p className="featured-cylinder-label featured-cylinder-label-tl">
-        Product & design strategy, storytelling, leadership,
-        {'\n'}0 → 1 scaling
-      </p>
-      <p className="featured-cylinder-label featured-cylinder-label-br">
-        Building practical tools for a more ethical world.
-      </p>
+      <div className="featured-cylinder-labels">
+        <p className="featured-cylinder-label">
+          Building practical tools for a more ethical world.
+        </p>
+        <p className="featured-cylinder-label">
+          Product & design strategy, storytelling, leadership, 0 → 1 scaling
+        </p>
+        <p className="featured-cylinder-label featured-cylinder-label-cta">
+          Read more
+        </p>
+      </div>
     </div>
   );
 }

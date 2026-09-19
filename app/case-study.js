@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 import Image from 'next/image';
 import { marked } from 'marked';
 
@@ -44,51 +44,29 @@ function CaseMedia({ item, title, index, pair }) {
   return null;
 }
 
-/** Nested case-study writeups — same open/close motion as Experience. */
+/** Nested case-study writeups — continuous blog-style sections. */
 function CaseStories({ stories }) {
-  const [openIndex, setOpenIndex] = useState(0);
   if (!stories?.length) return null;
 
   return (
-    <ul className="case-story-list">
+    <div className="case-stories">
       {stories.map((story, index) => {
-        const isOpen = openIndex === index;
+        const heading = [story.audience, story.title].filter(Boolean).join('. ');
         return (
-          <li
-            key={story.title || index}
-            className={`case-story-item${isOpen ? ' is-open' : ''}`}
-          >
+          <section key={story.title || index} className="case-story">
+            {heading ? (
+              <h2 className="case-story-heading">{heading}.</h2>
+            ) : null}
             <div
-              className="case-story-header"
-              role="button"
-              tabIndex={0}
-              aria-expanded={isOpen}
-              onClick={() => setOpenIndex(isOpen ? null : index)}
-              onKeyDown={(event) => {
-                if (event.key === 'Enter' || event.key === ' ') {
-                  event.preventDefault();
-                  setOpenIndex(isOpen ? null : index);
-                }
+              className="case-story-prose"
+              dangerouslySetInnerHTML={{
+                __html: marked(story.body || ''),
               }}
-            >
-              <span className="case-story-title">{story.title}</span>
-              {story.audience && (
-                <span className="case-story-audience">{story.audience}</span>
-              )}
-            </div>
-            <div className="case-story-body">
-              <div className="case-story-body-inner">
-                <div
-                  dangerouslySetInnerHTML={{
-                    __html: marked(story.body || ''),
-                  }}
-                />
-              </div>
-            </div>
-          </li>
+            />
+          </section>
         );
       })}
-    </ul>
+    </div>
   );
 }
 
