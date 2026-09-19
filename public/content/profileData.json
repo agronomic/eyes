@@ -47,180 +47,186 @@
       "attachments": [
         {
           "type": "image",
+          "url": "/content/media/Civic-Impact-19.png",
           "width": 2048,
-          "height": 1365,
-          "url": "/content/media/Civic-Impact-1.png"
+          "height": 1365
         },
         {
           "type": "image",
+          "url": "/content/media/Civic-Impact-28.png",
           "width": 2048,
-          "height": 1365,
-          "url": "/content/media/Civic-Impact-2.png",
-          "layout": "pair"
+          "height": 1365
         },
         {
           "type": "image",
-          "width": 2048,
-          "height": 1365,
-          "url": "/content/media/Civic-Impact-3.png",
-          "layout": "pair"
-        },
-        {
-          "type": "image",
-          "width": 2048,
-          "height": 1365,
-          "url": "/content/media/Civic-Impact-4.png"
-        },
-        {
-          "type": "image",
-          "width": 2048,
-          "height": 1365,
-          "url": "/content/media/Civic-Impact-5.png",
-          "layout": "pair"
-        },
-        {
-          "type": "image",
-          "width": 2048,
-          "height": 1365,
-          "url": "/content/media/Civic-Impact-6.webp",
-          "layout": "pair"
-        },
-        {
-          "type": "image",
-          "width": 2048,
-          "height": 1365,
-          "url": "/content/media/Civic-Impact-7.webp"
-        },
-        {
-          "type": "image",
-          "width": 2048,
-          "height": 1365,
-          "url": "/content/media/Civic-Impact-8.webp"
-        },
-        {
-          "type": "image",
-          "width": 2048,
-          "height": 1365,
-          "url": "/content/media/Civic-Impact-9.webp",
-          "layout": "pair"
-        },
-        {
-          "type": "image",
-          "width": 2048,
-          "height": 1365,
-          "url": "/content/media/Civic-Impact-10.png",
-          "layout": "pair"
-        },
-        {
-          "type": "image",
-          "width": 2048,
-          "height": 1365,
-          "url": "/content/media/Civic-Impact-11.png"
-        },
-        {
-          "type": "image",
-          "width": 2048,
-          "height": 1365,
-          "url": "/content/media/Civic-Impact-12.png"
-        },
-        {
-          "type": "image",
-          "width": 2048,
-          "height": 1365,
-          "url": "/content/media/Civic-Impact-13.png"
-        },
-        {
-          "type": "image",
-          "width": 2048,
-          "height": 1365,
-          "url": "/content/media/Civic-Impact-14.png"
-        },
-        {
-          "type": "image",
-          "width": 2048,
-          "height": 1365,
           "url": "/content/media/Civic-Impact-15.png",
+          "width": 2048,
+          "height": 1365,
           "layout": "pair"
         },
         {
           "type": "image",
-          "width": 2048,
-          "height": 1365,
           "url": "/content/media/Civic-Impact-16.png",
+          "width": 2048,
+          "height": 1365,
           "layout": "pair"
         },
         {
           "type": "image",
-          "width": 2048,
-          "height": 1365,
           "url": "/content/media/Civic-Impact-17.png",
+          "width": 2048,
+          "height": 1365,
           "layout": "pair"
         },
         {
           "type": "image",
-          "width": 2048,
-          "height": 1365,
           "url": "/content/media/Civic-Impact-18.png",
+          "width": 2048,
+          "height": 1365,
           "layout": "pair"
         },
         {
           "type": "image",
+          "url": "/content/media/Civic-Impact-14.png",
           "width": 2048,
-          "height": 1365,
-          "url": "/content/media/Civic-Impact-19.png"
+          "height": 1365
         },
         {
           "type": "image",
+          "url": "/content/media/Civic-Impact-20.png",
           "width": 2048,
-          "height": 1365,
-          "url": "/content/media/Civic-Impact-20.png"
+          "height": 1365
         },
         {
           "type": "image",
-          "width": 2048,
-          "height": 1365,
           "url": "/content/media/Civic-Impact-21.png",
+          "width": 2048,
+          "height": 1365,
           "layout": "pair"
         },
         {
           "type": "image",
-          "width": 2048,
-          "height": 1365,
           "url": "/content/media/Civic-Impact-22.png",
+          "width": 2048,
+          "height": 1365,
           "layout": "pair"
         },
         {
           "type": "image",
+          "url": "/content/media/Civic-Impact-23.png",
           "width": 2048,
-          "height": 1365,
-          "url": "/content/media/Civic-Impact-23.png"
+          "height": 1365
         },
         {
           "type": "image",
-          "width": 2048,
-          "height": 1365,
           "url": "/content/media/Civic-Impact-24.png",
+          "width": 2048,
+          "height": 1365,
           "layout": "pair"
         },
         {
           "type": "image",
-          "width": 2048,
-          "height": 1365,
           "url": "/content/media/Civic-Impact-25.png",
+          "width": 2048,
+          "height": 1365,
           "layout": "pair"
         },
         {
           "type": "image",
+          "url": "/content/media/Civic-Impact-1.png",
+          "width": 2048,
+          "height": 1365
+        },
+        {
+          "type": "image",
+          "url": "/content/media/Civic-Impact-2.png",
           "width": 2048,
           "height": 1365,
+          "layout": "pair"
+        },
+        {
+          "type": "image",
+          "url": "/content/media/Civic-Impact-3.png",
+          "width": 2048,
+          "height": 1365,
+          "layout": "pair"
+        },
+        {
+          "type": "image",
+          "url": "/content/media/Civic-Impact-4.png",
+          "width": 2048,
+          "height": 1365
+        },
+        {
+          "type": "image",
+          "url": "/content/media/Civic-Impact-5.png",
+          "width": 2048,
+          "height": 1365,
+          "layout": "pair"
+        },
+        {
+          "type": "image",
+          "url": "/content/media/Civic-Impact-6.webp",
+          "width": 2048,
+          "height": 1365,
+          "layout": "pair"
+        },
+        {
+          "type": "image",
+          "url": "/content/media/Civic-Impact-7.webp",
+          "width": 2048,
+          "height": 1365
+        },
+        {
+          "type": "image",
+          "url": "/content/media/Civic-Impact-8.webp",
+          "width": 2048,
+          "height": 1365
+        },
+        {
+          "type": "image",
+          "url": "/content/media/Civic-Impact-9.webp",
+          "width": 2048,
+          "height": 1365,
+          "layout": "pair"
+        },
+        {
+          "type": "image",
+          "url": "/content/media/Civic-Impact-10.png",
+          "width": 2048,
+          "height": 1365,
+          "layout": "pair"
+        },
+        {
+          "type": "image",
+          "url": "/content/media/Civic-Impact-11.png",
+          "width": 2048,
+          "height": 1365
+        },
+        {
+          "type": "image",
+          "url": "/content/media/Civic-Impact-12.png",
+          "width": 2048,
+          "height": 1365
+        },
+        {
+          "type": "image",
+          "url": "/content/media/Civic-Impact-13.png",
+          "width": 2048,
+          "height": 1365
+        },
+        {
+          "type": "image",
           "url": "/content/media/Civic-Impact-26.webp",
+          "width": 2048,
+          "height": 1365,
           "layout": "pair"
         },
         {
           "type": "image",
+          "url": "/content/media/Civic-Impact-27.webp",
           "width": 2048,
           "height": 1365,
-          "url": "/content/media/Civic-Impact-27.webp",
           "layout": "pair"
         }
       ],
@@ -234,7 +240,7 @@
       ],
       "caseStudy": true,
       "featuredCover": "cylinder",
-      "credits": "Sonia Chokshi, Ian MacFarland, Allison Chan, William DeShazer",
+      "credits": "Sonia Chokshi, Ian MacFarland, [Allison Chan](https://allisonchan.info/), [William DeShazer](https://www.williamdeshazer.com/)",
       "stories": [
         {
           "title": "Efficiency and dignity",
@@ -757,7 +763,7 @@
       "tags": [
         "Brand"
       ],
-      "credits": "William DeShazer"
+      "credits": "[William DeShazer](https://www.williamdeshazer.com/)"
     },
     {
       "id": "q9BYLrMIhuo2ZMuxxgyQ",
@@ -2577,7 +2583,7 @@
       "heading": "Growth at Google",
       "url": null,
       "collaborators": [],
-      "description": "Shaped the products, campaigns, and external programs that helped scale [Waze](/p/a-waze) from 55 million to 110 million monthly active users. Established Waze’s first comprehensive brand standards manual, which laid the foundation for Pentagram’s later brand redesign. On the product side, designed user acquisition and onboarding flows for Waze Carpool and co-designed a self-serve platform for business partners to manage their presence. Also directed narrative video campaigns by selecting and managing external creative agencies.",
+      "description": "Shaped the products, campaigns, and external programs that helped scale [Waze](/p/a-waze) from 55 million to 110 million monthly active users. Established Waze’s first comprehensive brand standards manual, which laid the foundation for Pentagram’s later brand redesign. On the product side, designed user acquisition and onboarding flows for Waze Carpool and co-designed a [badge maker](/p/a-badge-maker) for business partners to manage their presence. Also directed narrative video campaigns by selecting and managing external creative agencies.",
       "attachments": [],
       "type": "workExperience",
       "title": "Growth",
@@ -2702,187 +2708,193 @@
           "attachments": [
             {
               "type": "image",
+              "url": "/content/media/Civic-Impact-19.png",
               "width": 2048,
-              "height": 1365,
-              "url": "/content/media/Civic-Impact-1.png"
+              "height": 1365
             },
             {
               "type": "image",
+              "url": "/content/media/Civic-Impact-28.png",
               "width": 2048,
-              "height": 1365,
-              "url": "/content/media/Civic-Impact-2.png",
-              "layout": "pair"
+              "height": 1365
             },
             {
               "type": "image",
-              "width": 2048,
-              "height": 1365,
-              "url": "/content/media/Civic-Impact-3.png",
-              "layout": "pair"
-            },
-            {
-              "type": "image",
-              "width": 2048,
-              "height": 1365,
-              "url": "/content/media/Civic-Impact-4.png"
-            },
-            {
-              "type": "image",
-              "width": 2048,
-              "height": 1365,
-              "url": "/content/media/Civic-Impact-5.png",
-              "layout": "pair"
-            },
-            {
-              "type": "image",
-              "width": 2048,
-              "height": 1365,
-              "url": "/content/media/Civic-Impact-6.webp",
-              "layout": "pair"
-            },
-            {
-              "type": "image",
-              "width": 2048,
-              "height": 1365,
-              "url": "/content/media/Civic-Impact-7.webp"
-            },
-            {
-              "type": "image",
-              "width": 2048,
-              "height": 1365,
-              "url": "/content/media/Civic-Impact-8.webp"
-            },
-            {
-              "type": "image",
-              "width": 2048,
-              "height": 1365,
-              "url": "/content/media/Civic-Impact-9.webp",
-              "layout": "pair"
-            },
-            {
-              "type": "image",
-              "width": 2048,
-              "height": 1365,
-              "url": "/content/media/Civic-Impact-10.png",
-              "layout": "pair"
-            },
-            {
-              "type": "image",
-              "width": 2048,
-              "height": 1365,
-              "url": "/content/media/Civic-Impact-11.png"
-            },
-            {
-              "type": "image",
-              "width": 2048,
-              "height": 1365,
-              "url": "/content/media/Civic-Impact-12.png"
-            },
-            {
-              "type": "image",
-              "width": 2048,
-              "height": 1365,
-              "url": "/content/media/Civic-Impact-13.png"
-            },
-            {
-              "type": "image",
-              "width": 2048,
-              "height": 1365,
-              "url": "/content/media/Civic-Impact-14.png"
-            },
-            {
-              "type": "image",
-              "width": 2048,
-              "height": 1365,
               "url": "/content/media/Civic-Impact-15.png",
+              "width": 2048,
+              "height": 1365,
               "layout": "pair"
             },
             {
               "type": "image",
-              "width": 2048,
-              "height": 1365,
               "url": "/content/media/Civic-Impact-16.png",
+              "width": 2048,
+              "height": 1365,
               "layout": "pair"
             },
             {
               "type": "image",
-              "width": 2048,
-              "height": 1365,
               "url": "/content/media/Civic-Impact-17.png",
+              "width": 2048,
+              "height": 1365,
               "layout": "pair"
             },
             {
               "type": "image",
-              "width": 2048,
-              "height": 1365,
               "url": "/content/media/Civic-Impact-18.png",
+              "width": 2048,
+              "height": 1365,
               "layout": "pair"
             },
             {
               "type": "image",
+              "url": "/content/media/Civic-Impact-14.png",
               "width": 2048,
-              "height": 1365,
-              "url": "/content/media/Civic-Impact-19.png"
+              "height": 1365
             },
             {
               "type": "image",
+              "url": "/content/media/Civic-Impact-20.png",
               "width": 2048,
-              "height": 1365,
-              "url": "/content/media/Civic-Impact-20.png"
+              "height": 1365
             },
             {
               "type": "image",
-              "width": 2048,
-              "height": 1365,
               "url": "/content/media/Civic-Impact-21.png",
+              "width": 2048,
+              "height": 1365,
               "layout": "pair"
             },
             {
               "type": "image",
-              "width": 2048,
-              "height": 1365,
               "url": "/content/media/Civic-Impact-22.png",
+              "width": 2048,
+              "height": 1365,
               "layout": "pair"
             },
             {
               "type": "image",
+              "url": "/content/media/Civic-Impact-23.png",
               "width": 2048,
-              "height": 1365,
-              "url": "/content/media/Civic-Impact-23.png"
+              "height": 1365
             },
             {
               "type": "image",
-              "width": 2048,
-              "height": 1365,
               "url": "/content/media/Civic-Impact-24.png",
+              "width": 2048,
+              "height": 1365,
               "layout": "pair"
             },
             {
               "type": "image",
-              "width": 2048,
-              "height": 1365,
               "url": "/content/media/Civic-Impact-25.png",
+              "width": 2048,
+              "height": 1365,
               "layout": "pair"
             },
             {
               "type": "image",
+              "url": "/content/media/Civic-Impact-1.png",
+              "width": 2048,
+              "height": 1365
+            },
+            {
+              "type": "image",
+              "url": "/content/media/Civic-Impact-2.png",
               "width": 2048,
               "height": 1365,
+              "layout": "pair"
+            },
+            {
+              "type": "image",
+              "url": "/content/media/Civic-Impact-3.png",
+              "width": 2048,
+              "height": 1365,
+              "layout": "pair"
+            },
+            {
+              "type": "image",
+              "url": "/content/media/Civic-Impact-4.png",
+              "width": 2048,
+              "height": 1365
+            },
+            {
+              "type": "image",
+              "url": "/content/media/Civic-Impact-5.png",
+              "width": 2048,
+              "height": 1365,
+              "layout": "pair"
+            },
+            {
+              "type": "image",
+              "url": "/content/media/Civic-Impact-6.webp",
+              "width": 2048,
+              "height": 1365,
+              "layout": "pair"
+            },
+            {
+              "type": "image",
+              "url": "/content/media/Civic-Impact-7.webp",
+              "width": 2048,
+              "height": 1365
+            },
+            {
+              "type": "image",
+              "url": "/content/media/Civic-Impact-8.webp",
+              "width": 2048,
+              "height": 1365
+            },
+            {
+              "type": "image",
+              "url": "/content/media/Civic-Impact-9.webp",
+              "width": 2048,
+              "height": 1365,
+              "layout": "pair"
+            },
+            {
+              "type": "image",
+              "url": "/content/media/Civic-Impact-10.png",
+              "width": 2048,
+              "height": 1365,
+              "layout": "pair"
+            },
+            {
+              "type": "image",
+              "url": "/content/media/Civic-Impact-11.png",
+              "width": 2048,
+              "height": 1365
+            },
+            {
+              "type": "image",
+              "url": "/content/media/Civic-Impact-12.png",
+              "width": 2048,
+              "height": 1365
+            },
+            {
+              "type": "image",
+              "url": "/content/media/Civic-Impact-13.png",
+              "width": 2048,
+              "height": 1365
+            },
+            {
+              "type": "image",
               "url": "/content/media/Civic-Impact-26.webp",
+              "width": 2048,
+              "height": 1365,
               "layout": "pair"
             },
             {
               "type": "image",
+              "url": "/content/media/Civic-Impact-27.webp",
               "width": 2048,
               "height": 1365,
-              "url": "/content/media/Civic-Impact-27.webp",
               "layout": "pair"
             }
           ],
           "type": "project",
           "title": "Civic Impact",
           "company": "",
-          "credits": "Sonia Chokshi, Ian MacFarland, Allison Chan, William DeShazer",
+          "credits": "Sonia Chokshi, Ian MacFarland, [Allison Chan](https://allisonchan.info/), [William DeShazer](https://www.williamdeshazer.com/)",
           "stories": [
             {
               "title": "Efficiency and dignity",
@@ -3386,7 +3398,7 @@
           "type": "project",
           "title": "Executive Portraits",
           "company": "",
-          "credits": "William DeShazer"
+          "credits": "[William DeShazer](https://www.williamdeshazer.com/)"
         },
         {
           "id": "q9BYLrMIhuo2ZMuxxgyQ",

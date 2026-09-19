@@ -101,7 +101,12 @@ export function ProjectMeta({ project, includeCredits = false }) {
           )}
           <CaseStories stories={stories} />
           {includeCredits && credits && (
-            <p className="project-meta-credits">Credits: {credits}</p>
+            <p
+              className="project-meta-credits"
+              dangerouslySetInnerHTML={{
+                __html: `Credits: ${marked.parseInline(credits)}`,
+              }}
+            />
           )}
         </div>
       )}
@@ -112,7 +117,14 @@ export function ProjectMeta({ project, includeCredits = false }) {
 /** Credits line for placement after media (case studies). */
 export function ProjectCredits({ project }) {
   if (!project.credits) return null;
-  return <p className="project-meta-credits">Credits: {project.credits}</p>;
+  return (
+    <p
+      className="project-meta-credits"
+      dangerouslySetInnerHTML={{
+        __html: `Credits: ${marked.parseInline(project.credits)}`,
+      }}
+    />
+  );
 }
 
 /** Long-form case study: meta + tight full/pair media rows + credits. */
