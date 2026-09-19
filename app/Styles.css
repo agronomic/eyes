@@ -415,15 +415,12 @@ video {
   text-decoration: underline;
 }
 
-/* Desktop: fill the bottom half — lede at mid, CTA at bottom, scope between */
+/* Desktop: same tight stack as mobile, anchored where the lede starts */
 @media (min-width: 768px) {
   .featured-cylinder-labels {
     top: 50%;
-    bottom: 1.5rem;
     left: calc(50% + 12px);
     max-width: min(12.5rem, calc(50% - 12px - 1.5rem));
-    gap: 0;
-    justify-content: space-between;
   }
 }
 
