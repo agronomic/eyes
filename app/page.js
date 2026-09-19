@@ -23,6 +23,7 @@ import {
   mediaSrc,
   useStaggerReady,
 } from './helpers';
+import { markedWithFieldLabels } from './markdown';
 import { mountCylinder } from './cylinder-tile';
 
 const PRIORITY_LOAD_THRESHOLD = 3;
@@ -296,7 +297,9 @@ function Experience() {
                     <div className="experience-description-inner">
                       <div
                         dangerouslySetInnerHTML={{
-                          __html: marked(experience.description),
+                          __html: markedWithFieldLabels(
+                            experience.description
+                          ),
                         }}
                       />
                     </div>

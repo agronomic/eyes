@@ -49,9 +49,11 @@ html {
   /* Gap between each item in a staggered reveal */
   --stagger-step: 90ms;
   /* Caps micro-label (exhibit headings, quote attributions, …) */
-  --label-caps-size: 10px;
+  --label-caps-size: 9px;
   --label-caps-weight: 600;
   --label-caps-tracking: 0.04em;
+  /* Quiet secondary text — inactive filter tabs, caps labels, … */
+  --quiet-opacity: 0.45;
   /* Case study media — Niklas-tight packing inside page margins */
   --case-media-gap: 4px;
   /* Experiments expand overlay — prefer dvh so mobile chrome doesn’t clip */
@@ -337,7 +339,7 @@ video {
   font-family: inherit;
   color: var(--color);
   cursor: pointer;
-  opacity: 0.45;
+  opacity: var(--quiet-opacity);
 }
 
 .project-filters button.active,
@@ -455,6 +457,7 @@ video {
   font-style: normal;
   text-transform: uppercase;
   letter-spacing: var(--label-caps-tracking);
+  opacity: var(--quiet-opacity);
 }
 
 /* Shared serif quote — cover lede, case-study quotes, etc. */
@@ -558,7 +561,7 @@ video {
 
 .footnote-ref sup {
   font-family: 'Atkinson Hyperlegible', sans-serif;
-  font-size: 10px;
+  font-size: var(--label-caps-size);
   font-weight: var(--label-caps-weight);
   font-style: normal;
   line-height: 1;
